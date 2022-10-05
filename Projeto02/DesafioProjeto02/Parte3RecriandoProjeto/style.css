@@ -1,6 +1,31 @@
 @charset "UTF-8";
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    /* Colors */
+    --Color01Principal: #2F2E41;
+    --Color02: #00BFA6;
+    --Color03: #C2C2C2;
+    --Color04: #FFFFFF;
+
+    /* Fonts */
+    --fontPrincipal: 'JetBrains Mono', monospace;
+
 }
+
+body {
+    background-color: var(--Color01Principal);
+
+    font-family: var(--fontPrincipal);
+}
+
+header {}
+main {}
+main h1 {}
+main p {}
+footer{}
+footer p {}
+footer p a {}
