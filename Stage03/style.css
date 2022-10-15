@@ -1,0 +1,229 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    --color01: #535971;
+    --color02: #FF5374;
+    --color03: #EFEFEF;
+    --color04: #4E4958;
+    --color05: #C1BCCC;
+
+    --fontlarge: 'Staatliches', cursive;
+    --fontsmall: 'Poppins';
+}
+html {
+    background-color: var(--color03);
+}
+
+#colorback {
+    background-color: var(--color01);
+
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    z-index: -1;
+    
+    height: 436px;
+}
+
+body {
+    font-family: var(--fontsmall);
+    color: var(--color01);
+
+    width: 750px;
+    margin: auto;
+}
+
+/* ---Textos--- */
+h1, h2, h3 {
+    font-family: var(--fontlarge);
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 34px;
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 34px;
+}
+
+p {
+    color: var(--color04);
+
+    font-size: 14px;
+    line-height: 24px;
+}
+
+span {
+    color: var(--color05);
+
+    font-size: 12px;
+    line-height: 20px;
+}
+
+/* ---Linha de separação de seções--- */
+.line {
+    border: 1px solid var(--color03);
+}
+
+/* ---Cabeçalho/Header--- */
+header {
+    color: white;
+    padding-top: 140px;
+
+    width: 750px;
+}
+
+header h1 {
+    font-size: 48;
+    line-height: 60px;
+    
+    margin-bottom: 18px;
+}
+
+header p {
+    font-size: 20;
+    font-weight: 400;
+    line-height: 30px;
+
+    margin-bottom: 58px;
+
+    color: white;
+}
+
+/* ---Formulário/Forms--- */
+form {
+    background-color: white;
+
+    padding: 64px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 30px;
+
+    border-radius: 30px 30px 0 0
+}
+
+form input {
+    width: 100%;
+    height: 56px;
+
+    border: 1px solid var(--color03);
+    border-radius: 5px;
+
+    background-color: #FAFAFC;
+}
+
+/* ---Seção de Informações Pessoais--- */
+#sectioninfopessoa {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+#namesobre {
+    display: flex;
+    flex-direction: row;
+
+    gap: 22px;
+}
+
+#name {
+    float: left;
+    width: 100%;
+}
+
+#sobrename {
+    float: right;
+    width: 100%;
+}
+
+/* ---Seção de Informações do Mentor--- */
+#sectioninfomentor {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+/* ---Seção de Data e Horários--- */
+#sectiondatahorarios {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+#mentoria1 , #mentoria2 {
+    display: flex;
+    flex-direction: row;
+
+    gap: 32px;
+}
+
+.adata {
+    float: left;
+    width: 100%;
+}
+
+.horario {
+    float: right;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    gap: 10px;
+}
+
+.adas {
+    float: left;
+    width: 100%;
+}
+
+.aate {
+    float: right;
+    width: 100%;
+}
+
+/* ---Footer/Rodapé/Salvar/Submit--- */
+footer {
+    background-color: var(--color01);
+
+    height: 160px;
+
+    border-radius: 0 0 30px 30px;
+
+    text-align: center;
+
+    padding: 64px;
+}
+
+footer input {
+    background-color: var(--color02);
+    color: white;
+
+    border-radius: 20px;
+
+    width: 100%;
+    height: 57px;
+
+    border: none;
+
+    font-family: var(--fontlarge);
+    font-size: 20px;
+    line-height: 26px;
+}
+
+footer input:hover {
+    background-color: #ff7993;
+}

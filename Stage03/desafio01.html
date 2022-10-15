@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <div id="colorback"></div>
+
+    <header>
+        <h1>MENTORIA</h1>
+        <p>Preencher o formulário abaixo para <br> agendar a sua mentoria</p>
+    </header>
+
+    <form action="" method="get">
+        
+        <section id="sectioninfopessoa">
+
+            <h2>INFORMAÇÕES PESSOAIS</h2>
+
+            <div class="line"></div>
+
+            <div id="namesobre">
+                <div id="name">
+                    <label for="inome">Nome</label>
+                    <input type="text" name="nome" id="inome">
+                </div>
+                <div id="sobrename">
+                    <label for="isobrenome">Sobrenome</label>
+                    <input type="text" name="sobrenome" id="isobrenome">
+                </div>
+            </div>
+            <div>
+                <label for="iemail">Email <span>(digite um email válido)</span></label>
+                <input type="email" name="email" id="iemail">
+            </div>
+            <div>
+                <label for="isenha">Senha <span>(mínimo de 6 caracteres)</span></label>
+                <input type="password" name="senha" id="isenha">
+            </div>
+
+        </section>
+
+        <section id="sectioninfomentor">
+
+            <h2>INFORMAÇÕES DO MENTOR</h2>
+            <div class="line"></div>
+            <div>
+                <label for="imentor">Nome do seu mentor <span>(só o primeiro nome)</span></label>
+                <input type="text" name="mentor" id="imentor">
+            </div>
+
+        </section>
+
+        <section id="sectiondatahorarios">
+
+            <h2>SEUS HORÁRIOS DISPONÍVEIS</h2>
+
+            <div class="line"></div>
+
+            <h3>PRIMEIRA MENTORIA</h3>
+            
+            <div id="mentoria1">
+                <div class="adata">
+                    <label for="idata-1">Data <span>(DD/MM/AAAA)</span></label>
+                    <input type="date" name="primeira data" id="idata-1">
+                </div>
+                <div class="horario">
+                    <div class="aate">
+                        <label for="ihora-11">Das</label>
+                        <input type="time" name="hora começar" id="ihora-11">
+                    </div>
+                    <div class="adas">
+                        <label for="ihora-12">Até</label>
+                        <input type="time" name="hora terminar" id="ihora-12">
+                    </div>
+                </div>
+            </div>
+
+            <h3>SEGUNDA MENTORIA</h3>
+
+            <div id="mentoria2">
+                <div class="adata">
+                    <label for="idata-2">Data <span>(DD/MM/AAAA)</span></label>
+                    <input type="date" name="segunda data" id="idata-2">
+                </div>
+
+                <div class="horario">
+                    <div class="aate">
+                        <label for="ihora-21">Das</label>
+                        <input type="time" name="hora começar 2" id="ihora-21">
+                    </div>
+                    <div class="adas">
+                        <label for="ihora-22">Até</label>
+                        <input type="time" name="hora terminar 2" id="ihora-22">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </form>
+
+    <footer>
+        <input type="submit" value="SALVAR" name="salvar" id="isalvar">
+    </footer>    
+
+</body>
+</html>
