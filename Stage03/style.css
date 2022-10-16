@@ -14,6 +14,7 @@
     --fontlarge: 'Staatliches', cursive;
     --fontsmall: 'Poppins';
 }
+
 html {
     background-color: var(--color03);
 }

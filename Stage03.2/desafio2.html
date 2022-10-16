@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="colorback"></div>
+
+    <header>
+        <h1>AVALIE A SUA MENTORIA</h1>
+
+        <p>Chegou a hora de avaliar o seu mentor. bora lá?</p>
+
+        <img src="img1.svg" alt="Imagem de cabelho">
+
+    </header>
+
+    <div id="iheader">
+        <h2>INFORMAÇÕES GERAIS</h2>
+    </div>
+
+    <form action="" method="get">
+
+        <section id="infopessoais">
+
+            <div id="nomesobre">
+                <div id="anome">
+                    <label for="inome">Nome</label>
+                    <input type="text" name="nome" id="inome">
+                </div>
+
+                <div id="asobrenome">
+                    <label for="isobrenome">Sobrenome</label>
+                    <input type="text" name="sobrenome" id="isobrenome">
+                </div>
+            </div>
+
+            <label for="iemail">Email <span>(digite um email válido)</span></label>
+            <input type="email" name="email" id="iemail">
+
+        </section>
+
+        <section id="infomentor">
+
+            <h3>INFORMAÇÕES DO MENTOR</h3>
+
+            <div class="line"></div>
+
+            <div id="caixainfomentor">
+                <div>
+                    <label for="imentor">Selecione quem foi o seu mentor</label>
+                    <input type="text" name="mentor" id="imentor">
+                </div>
+                <br>
+                <div>
+                    <label for="ifeedb">Feedback sobre o mentor</label>
+                    <input type="text" name="feedback mentor" id="ifeedb">
+                </div>
+            </div>
+
+        </section>
+
+        <div id="checkbox">
+
+            <input type="checkbox" name="checkbox duvida" id="checkduvida">
+            <label for="checkduvida">Todas a minhas dúvidas foram esclarecidas durante a mentoria.</label>
+
+        </div>
+
+        <section id="agmentor">
+
+            <h3>AGENDANDO A PRÓXIMA MENTORIA</h3>
+
+            <div class="line"></div>
+
+            <div id="datahorario">
+                <div id="adata">
+                    <label for="idata">Data <span>(DD/MM/AAAA)</span></label>
+                    <input type="date" name="" id="idata">
+                </div>
+
+                <div id="horario">
+                    <div id="das">
+                        <label for="idas">Das</label>
+                        <input type="time" name="" id="idas">
+                    </div>
+                    <div id="ate">
+                        <label for="iate">Até</label>
+                        <input type="time" name="" id="iate">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <input type="submit" value="SALVAR" id="isalvar">
+
+    </form>    
+    
+</body>
+</html>
