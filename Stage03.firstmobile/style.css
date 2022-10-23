@@ -1,0 +1,145 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-style: normal;
+    font-weight: 400;
+}
+
+:root {
+    --textSmall: 'Palanquin', sans-serif;
+    --textLarge: 'Staatliches', cursive;
+
+    --colorHeader: #8E9AAF;
+    --colorMain: #EFF1FF;
+    --colorText: #4A4E69;
+    --colorBkText: #FEEAFA;
+    --colorBkH1: #CBC0D3;
+}
+
+body {
+    width: 384px;
+    margin: auto;
+}
+
+header {
+    background-color: var(--colorHeader);
+    color: white;
+
+    height: 280px;
+    text-align: center;
+}
+
+header img {
+    margin-top: 32px;
+}
+
+#h1header {
+    background-color: var(--colorBkH1);
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 20px;
+}
+
+main {
+    background-color: var(--colorMain);
+
+    text-align: center;   
+
+    padding: 14px 32px 60px 32px;
+}
+
+h1 {
+    font-family: var(--textLarge);
+    color: white;
+
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 34px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+
+    gap: 32px;
+}
+
+.h2t {
+    background-color: var(--colorBkText);
+
+    
+    
+    width: 112px;
+    height: 35px;
+
+    border-radius: 30px;
+
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    
+    animation: topBottom 1.5s ease-in;  
+}
+
+h2 {    
+    font-family: var(--textLarge);
+
+    color: var(--colorText);
+
+    font-size: 20px;
+    line-height: 34px;
+}
+
+.h2imgtransition {
+    position: relative;
+}
+
+.h2imgtransition > img {
+    animation: bottomTop 1s ease-out;
+    
+    object-fit: cover;    
+}
+
+p {
+    font-family: var(--textSmall);
+    color: var(--colorText);
+
+    margin-bottom: 63px;
+
+    font-size: 20px;
+    line-height: 15px;
+}
+
+/*---Transições---*/
+@keyframes topBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bottomTop {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
