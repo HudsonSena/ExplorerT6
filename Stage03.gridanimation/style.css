@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-style: normal;
+    font-weight: 400;
+}
+
+:root {
+    --textSmall: 'Palanquin', sans-serif;
+    --textLarge: 'Staatliches', cursive;
+
+    --colorHeader: #8E9AAF;
+    --colorMain: #EFF1FF;
+    --colorText: #4A4E69;
+    --colorBkText: #FEEAFA;
+    --colorBkH1: #CBC0D3;
+
+    font-size: 62.5%;
+}
+
+/*---Texts/Textos---*/
+h1 {
+    font-family: var(--textLarge);
+    font-size: 4.8rem;
+    line-height: 3.4rem;
+
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+p {
+    font-family: var(--textSmall);
+    font-size: 2.4rem;
+    line-height: 2.0rem;
+
+    margin: 4.8rem;
+
+    text-indent: 2.0rem;
+    text-align: justify;
+}
+
+a, div {
+    font-family: var(--textSmall);
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+}
+
+/*---Body/Corpo---*/
+body {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+/*---Header/Cabeçalho/Lateral---*/
+header {
+    float: left;
+    width: 30%;
+
+    background-color: var(--colorHeader);
+
+    color: white;
+}
+
+header img {
+    margin: 3.2rem auto 3.2rem auto;
+}
+
+#h1header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7.0rem;
+    background-color: var(--colorBkH1);
+}
+
+/*---Main/Section/Seção/Imagens---*/
+main {
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+    margin: 6.4rem auto auto auto;
+}
+
+section {
+    margin: auto 8.1rem auto 8.1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 3.2rem
+}
+
+section div {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+section img:hover{
+    scale: 1.1;
+}
+
+/*---Footer/Rodapé---*/
+#footer {
+    margin: 5.0rem;
+}
