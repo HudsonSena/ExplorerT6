@@ -1,0 +1,388 @@
+@charset "UTF-8";
+/*---General Settings/Configurações Gerais---*/
+:root {
+    --colorHeader: #8E9AAF;
+    --colorMain: #EFF1FF;
+    --colorh1: #CBC0D3;
+    --colorh2: #FEEAFA;
+    --colorText: #4A4E69;
+
+    --textSmall: 'Palanquin', sans-serif;
+    --textLarge: 'Staatliches', cursive;
+
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family: var(--textSmall);
+    font-style: normal;
+    font-weight: 400;
+}
+
+/*---Texts/Textos/h1/h2/p/a---*/
+h1 {
+    font-family: var(--textLarge);
+    color: white;
+    
+    font-size: 4.0rem;
+    line-height: 3.4rem;
+
+    letter-spacing: 0.05em;
+
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+h2 {
+    font-family: var(--textLarge);
+    color: var(--colorText);
+    
+    font-size: 2.0rem;
+    line-height: 3.4rem;
+
+    letter-spacing: 0.05em;
+}
+
+p {
+    font-family: var(--textSmall);
+    color: var(--colorText);
+
+    font-size: 2.0rem;
+    line-height: 1.5rem;
+
+    text-indent: 2.0rem;
+    text-align: center;
+}
+
+footer, a {
+    font-family: var(--textSmall);
+    color: var(--colorText);
+
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+
+    text-decoration: none;
+
+    display: none;
+}
+
+/*---Body/Corpo/---*/
+
+body {
+    width: 38.4rem;
+    margin: auto;
+}
+
+/*---Header/Cabecalho---*/
+header {
+    background-color: var(--colorHeader);
+
+    height: 28.0rem;
+
+    text-align: center;
+    padding-top: 2.0rem;
+}
+
+#idimg {
+    margin-bottom: 1.0rem;
+}
+
+#ih1 {
+    background-color: var(--colorh1);
+
+    height: 5.0rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#ipdesktop {
+    display: none;
+}
+
+/*---Main/Sections/Seções---*/
+main {
+    padding: 1.4rem 3.2rem 0 3.2rem;
+    background-color: var(--colorMain);
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    padding-bottom: 3.2rem;
+}
+
+.card {
+    position: relative;
+}
+
+.card img, .card1, footer {
+    animation: bottomTop 2s ease-in;
+}
+
+.card1, .card1 {
+    display: none;
+    position: relative;
+}
+
+.ih2 {
+    position: absolute;
+
+    right: 1.6rem;
+    top: 1.6rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--colorh2);
+
+    width: 11.2rem;
+    height: 3.5rem;
+
+    border-radius: 30px;
+
+    animation: topBottom 2s .3s ease-in;
+}
+
+/*---Media Queries---*/
+@media (min-width: 700px) and (max-width: 999px){
+
+    body {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+    }
+
+    header {
+        position: fixed;
+        left: 0;
+
+        text-align: center;
+
+        width: 50%;
+        height: 100vh;
+
+        padding-top: 3.0rem;
+    }
+
+    #idimg {
+        margin-bottom: 2.0rem;
+    }
+
+    main {
+        position: absolute;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        float: right;
+        width: 50%;
+    }
+
+    #galery {
+        object-fit: contain;
+    }
+
+    #ipmobile {
+        display: none;
+    }
+
+    #ipdesktop {
+        display: flex;
+        margin: 2.0rem;
+    }
+
+    #ipdesktop p {
+        color: white;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1299px){
+
+    body {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 100%;
+        }
+    
+    header {
+        float: left;
+    
+        text-align: center;
+    
+        width: 30%;
+        height: 100vh
+    }
+    #idimg {
+        padding: 0;
+        margin: auto;
+    }
+    main {
+        display: flex;
+        align-items: center;
+
+        padding: 3.2rem;
+
+        gap: 3.2rem;
+            
+        float: right;
+        width: 70%;
+    }
+    
+    #galery {
+        display: grid;
+        grid-template-areas: "A B" "D B" "D C";
+    }
+    #galery div:nth-child(1) {
+        grid-area: A;
+    }
+    #galery div:nth-child(2) {
+        grid-area: B;
+    }
+    #galery div:nth-child(3) {
+        grid-area: C;
+    }
+    #galery div:nth-child(4) {
+        grid-area: D;
+    }
+
+    #ipmobile {
+        display: none;
+    }
+    #ipdesktop {
+        display: flex;
+        margin: 2.0rem;
+    }
+    #ipdesktop p {
+        color: white;
+    }
+
+    footer, a {
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+
+    body {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+    }
+
+    header {
+        float: left;
+
+        text-align: center;
+
+        width: 30%;
+        height: 100vh
+    }
+    #idimg {
+        padding: 0;
+        margin: auto;
+    }
+    main {
+        display: flex;
+        align-items: center;
+
+        padding: 3.2rem;
+
+        gap: 3.2rem;
+            
+        float: right;
+        width: 80%;
+    }
+
+    #galery {
+        display: grid;
+        grid-template-areas: "A B E" "D B F" "D C F";
+    }
+    #galery div:nth-child(1) {
+        grid-area: A;
+    }
+    #galery div:nth-child(2) {
+        grid-area: B;
+    }
+    #galery div:nth-child(3) {
+        grid-area: C;
+    }
+    #galery div:nth-child(4) {
+        grid-area: D;
+    }
+    
+    #galery div:nth-child(5) {
+        grid-area: E;
+        display: block;
+    }
+    
+    #galery div:nth-child(6) {
+        grid-area: F;
+        display: block;
+    }
+
+    #galery > div:hover {
+        scale: 1.1;
+    }
+    .ih2 {
+        display: none;
+    }
+
+    #ipmobile {
+        display: none;
+    }
+    #ipdesktop {
+        display: flex;
+        margin: 2.0rem;
+    }
+    #ipdesktop p {
+        color: white;
+    }
+
+    footer, a {
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+    }    
+}
+
+/*---Animation/Animação---*/
+@keyframes topBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bottomTop {
+    0% {
+        opacity: 1;
+        transform: translateY(20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
