@@ -11,11 +11,13 @@
 //import {sum as soma} from './utils.js'
 //console.log(soma(18, 2))
 
+/*
 import * as calculator from './utils.js'
 console.log(calculator.subtract(49, 4))
 console.log(calculator.sum(49, 4))
 console.log(calculator.multiply(49, 4))
 console.log(calculator.divide(49, 4))
+*/
 
 // pode retornar funções
 // apenas um 'defaut' por arquivo
