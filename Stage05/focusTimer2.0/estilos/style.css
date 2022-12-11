@@ -1,0 +1,76 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --textButton-color: #323238;
+    --bg-songButton-color: #E1E1E6;
+    --bg-selectSongButton-color: #02799D;
+
+    font-size: 62.5%;
+}
+
+body {
+    width: 82rem;
+    height: 100vh;
+    margin: auto;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 19rem;
+
+    padding: .5rem;
+}
+
+span {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12.6rem;
+    line-height: 14.8rem;
+    text-align: center;
+    text-transform: uppercase;
+
+    color: var(--textButton-color);
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.timer {
+    display: flex;
+    flex-direction: row;
+}
+
+.cards div:nth-child(1) {
+    grid-area: A;
+}
+.cards div:nth-child(2) {
+    grid-area: B;
+}
+.cards div:nth-child(3) {
+    grid-area: C;
+}
+.cards div:nth-child(4) {
+    grid-area: D;
+}
+
+.cards {
+    display: grid;
+    grid-template-areas: "A B" "C D";
+    gap: 3.2rem;
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+}
