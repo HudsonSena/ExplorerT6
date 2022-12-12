@@ -6,7 +6,10 @@ const btnCardForest = document.querySelector('.cardForest')
 const btnCardRain = document.querySelector('.cardRain')
 const btnCardCoffee = document.querySelector('.cardCoffee')
 const btnCardFire = document.querySelector('.cardFire')
-const audioForest = new Audio("https://github.com/HudsonSena/ExplorerT6/blob/master/Stage05/focusTimer2.0/audios/Cafeteria.wav")
+const forestSound = new Audio('https://github.com/devgustavosantos/focus-timer-dark-mode/blob/main/assets/sound/forest.wav?raw-true')
+const rainSound = new Audio()
+const CoffeeSound = new Audio()
+const FireSound = new Audio()
 
 btnPlay.addEventListener('click', buttonPlay)
 btnStop.addEventListener('click', buttonStop)
@@ -50,8 +53,9 @@ function forest() {
     btnCardRain.classList.remove('blue2')
     btnCardCoffee.classList.remove('blue2')
     btnCardFire.classList.remove('blue2')
-    audioForest.play()
+    forestSound.play()
 }
+
 
 function rain() {
     btnCardRain.classList.add('blue2')
