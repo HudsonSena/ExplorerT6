@@ -121,6 +121,7 @@ let minutesPlus = 0
 function plus() {
     minutesPlus +=5
     displayMinutes.textContent = String(minutesPlus).padStart(2, "0")
+    return minutesPlus
 }
 
 function minus() {
@@ -130,9 +131,14 @@ function minus() {
         minutesPlus -= 5
     }
     displayMinutes.textContent = String(minutesPlus).padStart(2, "0")
+    return minutesPlus
 }
+let newMinutes = minutesPlus
 
 function contador() {
     let newSeconds = 60
-    seconds.textContent = String(newSeconds).padStart(2, "0")
+    seconds.textContent = String(newSeconds).padStart(2, "0");
+    while(newSeconds <= 0 && newMinutes >= 0) {
+        newSeconds - 1
+    }
 }
