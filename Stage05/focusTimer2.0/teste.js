@@ -6,10 +6,15 @@ const btnCardForest = document.querySelector('.cardForest')
 const btnCardRain = document.querySelector('.cardRain')
 const btnCardCoffee = document.querySelector('.cardCoffee')
 const btnCardFire = document.querySelector('.cardFire')
-const forestSound = new Audio('https://github.com/devgustavosantos/focus-timer-dark-mode/blob/main/assets/sound/forest.wav?raw-true')
-const rainSound = new Audio()
-const CoffeeSound = new Audio()
-const FireSound = new Audio()
+const forestSound = new Audio('https://github.com/HudsonSena/ExplorerT6/blob/master/Stage05/focusTimer2.0/audios/Floresta.mp3?raw=true')
+const rainSound = new Audio('https://github.com/HudsonSena/ExplorerT6/blob/master/Stage05/focusTimer2.0/audios/Chuva.mp3?raw=true')
+const coffeeSound = new Audio('https://github.com/HudsonSena/ExplorerT6/blob/master/Stage05/focusTimer2.0/audios/Cafeteria.mp3?raw=true')
+const fireSound = new Audio('https://github.com/HudsonSena/ExplorerT6/blob/master/Stage05/focusTimer2.0/audios/Lareira.mp3?raw=true')
+
+forestSound.loop = true;
+rainSound.loop = true;
+coffeeSound.loop = true;
+fireSound.loop = true;
 
 btnPlay.addEventListener('click', buttonPlay)
 btnStop.addEventListener('click', buttonStop)
@@ -54,14 +59,20 @@ function forest() {
     btnCardCoffee.classList.remove('blue2')
     btnCardFire.classList.remove('blue2')
     forestSound.play()
+    rainSound.pause()
+    coffeeSound.pause()
+    fireSound.pause()
 }
-
 
 function rain() {
     btnCardRain.classList.add('blue2')
     btnCardCoffee.classList.remove('blue2')
     btnCardFire.classList.remove('blue2')
     btnCardForest.classList.remove('blue2')
+    rainSound.play()
+    forestSound.pause()
+    coffeeSound.pause()
+    fireSound.pause()
 }
 
 function coffee() {
@@ -69,7 +80,10 @@ function coffee() {
     btnCardFire.classList.remove('blue2')
     btnCardForest.classList.remove('blue2')
     btnCardRain.classList.remove('blue2')
-
+    coffeeSound.play()
+    forestSound.pause()
+    rainSound.pause()
+    fireSound.pause()
 }
 
 function fire() {
@@ -77,4 +91,8 @@ function fire() {
     btnCardForest.classList.remove('blue2')
     btnCardRain.classList.remove('blue2')
     btnCardCoffee.classList.remove('blue2')
+    fireSound.play()
+    forestSound.pause()
+    rainSound.pause()
+    coffeeSound.pause()
 }

@@ -86,3 +86,12 @@ button {
 .blue2 svg path:nth-child(2) {
     fill: white;
 }
+
+@media (max-width: 1000px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+}
