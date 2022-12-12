@@ -1,45 +1,56 @@
 const btnPlay = document.querySelector('.play')
 const btnStop = document.querySelector('.stop')
+const btnPlus = document.querySelector('.vlplus')
+const btnMinus = document.querySelector('.vlminus')
 const btnCardForest = document.querySelector('.cardForest')
 const btnCardRain = document.querySelector('.cardRain')
 const btnCardCoffee = document.querySelector('.cardCoffee')
 const btnCardFire = document.querySelector('.cardFire')
+const audioForest = new Audio("https://github.com/HudsonSena/ExplorerT6/blob/master/Stage05/focusTimer2.0/audios/Cafeteria.wav")
 
-btnPlay.addEventListener('click', play)
-btnStop.addEventListener('click', stop)
-//btnPlus.addEventListener('click', plus)
-//btnMinus.addEventListener('click', minus)
+btnPlay.addEventListener('click', buttonPlay)
+btnStop.addEventListener('click', buttonStop)
+btnPlus.addEventListener('click', buttonPlus)
+btnMinus.addEventListener('click', buttonMinus)
 btnCardForest.addEventListener('click', forest)
 btnCardRain.addEventListener('click', rain)
 btnCardCoffee.addEventListener('click', coffee)
 btnCardFire.addEventListener('click', fire)
 
-function play() {
+function buttonPlay() {
     btnPlay.classList.add('blueButton')
     btnStop.classList.remove('blueButton')
+    btnPlus.classList.remove('blueButton')
+    btnMinus.classList.remove('blueButton')
 }
 
-function stop() {
+function buttonStop() {
     btnStop.classList.add('blueButton')
+    btnPlay.classList.remove('blueButton')
+    btnPlus.classList.remove('blueButton')
+    btnMinus.classList.remove('blueButton')
+}
+
+function buttonPlus() {
+    btnPlus.classList.add('blueButton')
+    btnMinus.classList.remove('blueButton')
+    btnStop.classList.remove('blueButton')
     btnPlay.classList.remove('blueButton')
 }
 
-/*function plus() {
-    btnStop.classList.add('blueButton')
+function buttonMinus() {
+    btnMinus.classList.add('blueButton')
+    btnPlus.classList.remove('blueButton')
+    btnStop.classList.remove('blueButton')
     btnPlay.classList.remove('blueButton')
 }
-
-/function minus() {
-    btnStop.classList.add('blueButton')
-    btnPlay.classList.remove('blueButton')
-}*/
 
 function forest() {
     btnCardForest.classList.add('blue2')
     btnCardRain.classList.remove('blue2')
     btnCardCoffee.classList.remove('blue2')
     btnCardFire.classList.remove('blue2')
-
+    audioForest.play()
 }
 
 function rain() {
