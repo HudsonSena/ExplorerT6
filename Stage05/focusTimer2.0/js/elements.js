@@ -1,21 +1,19 @@
 const buttonPlay = document.querySelector('.play')
+const buttonPause = document.querySelector('.pause')
 const buttonStop = document.querySelector('.stop')
-const buttonPlus = document.querySelector('.vlplus')
-const buttonMinus = document.querySelector('.vlminus')
-const buttonForest = document.querySelector('.cardForestt')
-const buttonFire = document.querySelector('.cardFire')
-const buttonCoffee = document.querySelector('.cardCoffee')
-const buttonRain = document.querySelector('.cardRain')
+const buttonSet = document.querySelector('.set')
+const buttonSoundOn = document.querySelector('.sound-on')
+const buttonSoundOff = document.querySelector('.sound-off')
 const minutesDisplay = document.querySelector('.minutes')
 const secondsDisplay = document.querySelector('.seconds')
 
 export {
   buttonPlay,
+  buttonPause,
+  buttonSet,
   buttonStop,
-  buttonForest,
-  buttonRain,
-  buttonCoffee,
-  buttonFire,
+  buttonSoundOff,
+  buttonSoundOn,
   minutesDisplay,
   secondsDisplay
 }

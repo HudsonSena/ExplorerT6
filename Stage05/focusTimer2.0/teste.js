@@ -8,10 +8,6 @@ const btnCardRain = document.querySelector('.cardRain')
 const btnCardCoffee = document.querySelector('.cardCoffee')
 const btnCardFire = document.querySelector('.cardFire')
 
-let displayMinutes = document.querySelector('.minutes')
-const seconds = document.querySelector('.seconds')
-
-
 
 const forestSound = new Audio('https://github.com/HudsonSena/ExplorerT6/blob/master/Stage05/focusTimer2.0/audios/Floresta.mp3?raw=true')
 const rainSound = new Audio('https://github.com/HudsonSena/ExplorerT6/blob/master/Stage05/focusTimer2.0/audios/Chuva.mp3?raw=true')
@@ -38,6 +34,8 @@ function buttonPlay() {
     btnStop.classList.remove('blueButton')
     btnPlus.classList.remove('blueButton')
     btnMinus.classList.remove('blueButton')
+
+    contador()
 }
 
 function buttonStop() {
@@ -45,6 +43,11 @@ function buttonStop() {
     btnPlay.classList.remove('blueButton')
     btnPlus.classList.remove('blueButton')
     btnMinus.classList.remove('blueButton')
+
+    forestSound.pause()
+    rainSound.pause()
+    coffeeSound.pause()
+    fireSound.pause()
 }
 
 function buttonPlus() {
@@ -61,6 +64,7 @@ function buttonMinus() {
     btnPlus.classList.remove('blueButton')
     btnStop.classList.remove('blueButton')
     btnPlay.classList.remove('blueButton')
+    
     minus()
 }
 
@@ -69,10 +73,11 @@ function forest() {
     btnCardRain.classList.remove('blue2')
     btnCardCoffee.classList.remove('blue2')
     btnCardFire.classList.remove('blue2')
+
     forestSound.play()
     rainSound.pause()
     coffeeSound.pause()
-    fireSound.pause()
+    fireSound.pause()    
 }
 
 function rain() {
@@ -108,19 +113,26 @@ function fire() {
     coffeeSound.pause()
 }
 
+let displayMinutes = document.querySelector('.minutes')
+let seconds = document.querySelector('.seconds')
+
 let minutesPlus = 0
 
 function plus() {
     minutesPlus +=5
-    console.log(minutesPlus)
+    displayMinutes.textContent = String(minutesPlus).padStart(2, "0")
 }
 
 function minus() {
-    if(minutesPlus <= 5) {
+    if(minutesPlus <= 0) {
         alert('Adicione Minutos!')
     } else {
         minutesPlus -= 5
     }
-    console.log(minutesPlus)
+    displayMinutes.textContent = String(minutesPlus).padStart(2, "0")
 }
-console.log(minutesPlus)
+
+function contador() {
+    let newSeconds = 60
+    seconds.textContent = String(newSeconds).padStart(2, "0")
+}
