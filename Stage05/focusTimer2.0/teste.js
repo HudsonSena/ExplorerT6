@@ -14,6 +14,9 @@ const rainSound = new Audio('https://github.com/HudsonSena/ExplorerT6/blob/maste
 const coffeeSound = new Audio('https://github.com/HudsonSena/ExplorerT6/blob/master/Stage05/focusTimer2.0/audios/Cafeteria.mp3?raw=true')
 const fireSound = new Audio('https://github.com/HudsonSena/ExplorerT6/blob/master/Stage05/focusTimer2.0/audios/Lareira.mp3?raw=true')
 
+const displayMinutes = document.querySelector('.minutes')
+const displaySeconds = document.querySelector('.seconds')
+
 forestSound.loop = true;
 rainSound.loop = true;
 coffeeSound.loop = true;
@@ -29,13 +32,54 @@ btnCardRain.addEventListener('click', rain)
 btnCardCoffee.addEventListener('click', coffee)
 btnCardFire.addEventListener('click', fire)
 
+let timerTimeOut
+
+function countdown() {
+    timerTimeOut = setTimeout(function() {
+        let seconds = Number(displaySeconds.textContent)
+        let minutes = Number(displayMinutes.textContent)
+        
+        if(minutes <= 0 && seconds <= 0) {
+            alert('Adicione os minutos!')
+        } else {
+                if(seconds <= 0) {
+                seconds = 12
+                    displayMinutes.textContent = String(minutes -1).padStart(2, "0")
+                }
+                if(minutes <= 0 && seconds <= 0) {
+                    return
+                }
+
+                displaySeconds.textContent = String(seconds -1).padStart(2, "0")
+
+                countdown()
+        }        
+    }, 1000)
+}
+
+let minutesPlus = Number(displayMinutes.textContent)
+
+function plus() {
+    minutesPlus +=5
+    displayMinutes.textContent = String(minutesPlus).padStart(2, "0")
+}
+
+function minus() {
+    if(minutesPlus <= 0 || minutesPlus < 5) {
+        alert('Adicione os minutos!')
+    } else {
+        minutesPlus -= 5
+    }
+    displayMinutes.textContent = String(minutesPlus).padStart(2, "0")
+}
+
 function buttonPlay() {
     btnPlay.classList.add('blueButton')
     btnStop.classList.remove('blueButton')
     btnPlus.classList.remove('blueButton')
     btnMinus.classList.remove('blueButton')
 
-    contador()
+    countdown()
 }
 
 function buttonStop() {
@@ -44,10 +88,17 @@ function buttonStop() {
     btnPlus.classList.remove('blueButton')
     btnMinus.classList.remove('blueButton')
 
+    clearTimeout(timerTimeOut)
+
     forestSound.pause()
     rainSound.pause()
     coffeeSound.pause()
     fireSound.pause()
+
+    btnCardForest.classList.remove('blue2')
+    btnCardRain.classList.remove('blue2')
+    btnCardCoffee.classList.remove('blue2')
+    btnCardFire.classList.remove('blue2')
 }
 
 function buttonPlus() {
@@ -111,34 +162,4 @@ function fire() {
     forestSound.pause()
     rainSound.pause()
     coffeeSound.pause()
-}
-
-let displayMinutes = document.querySelector('.minutes')
-let seconds = document.querySelector('.seconds')
-
-let minutesPlus = 0
-
-function plus() {
-    minutesPlus +=5
-    displayMinutes.textContent = String(minutesPlus).padStart(2, "0")
-    return minutesPlus
-}
-
-function minus() {
-    if(minutesPlus <= 0) {
-        alert('Adicione Minutos!')
-    } else {
-        minutesPlus -= 5
-    }
-    displayMinutes.textContent = String(minutesPlus).padStart(2, "0")
-    return minutesPlus
-}
-let newMinutes = minutesPlus
-
-function contador() {
-    let newSeconds = 60
-    seconds.textContent = String(newSeconds).padStart(2, "0");
-    while(newSeconds <= 0 && newMinutes >= 0) {
-        newSeconds - 1
-    }
 }
