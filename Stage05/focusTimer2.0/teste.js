@@ -34,6 +34,22 @@ btnCardFire.addEventListener('click', fire)
 
 let timerTimeOut
 
+let minutesPlus = Number(displayMinutes.textContent)
+
+function plus() {
+    minutesPlus +=5
+    displayMinutes.textContent = String(minutesPlus).padStart(2, "0")
+}
+
+function minus() {
+    if(minutesPlus <= 0 || minutesPlus < 5) {
+        alert('Adicione os minutos!')
+    } else {
+        minutesPlus -= 5
+    }
+    displayMinutes.textContent = String(minutesPlus).padStart(2, "0")
+}
+
 function countdown() {
     timerTimeOut = setTimeout(function() {
         let seconds = Number(displaySeconds.textContent)
@@ -55,22 +71,6 @@ function countdown() {
                 countdown()
         }        
     }, 1000)
-}
-
-let minutesPlus = Number(displayMinutes.textContent)
-
-function plus() {
-    minutesPlus +=5
-    displayMinutes.textContent = String(minutesPlus).padStart(2, "0")
-}
-
-function minus() {
-    if(minutesPlus <= 0 || minutesPlus < 5) {
-        alert('Adicione os minutos!')
-    } else {
-        minutesPlus -= 5
-    }
-    displayMinutes.textContent = String(minutesPlus).padStart(2, "0")
 }
 
 function buttonPlay() {
