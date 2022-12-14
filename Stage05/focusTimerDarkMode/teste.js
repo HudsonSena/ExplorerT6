@@ -8,14 +8,13 @@ const btnCardRain = document.querySelector('.cardRain')
 const btnCardCoffee = document.querySelector('.cardCoffee')
 const btnCardFire = document.querySelector('.cardFire')
 
+const displayMinutes = document.querySelector('.minutes')
+const displaySeconds = document.querySelector('.seconds')
 
 const forestSound = new Audio('https://github.com/HudsonSena/ExplorerT6/blob/master/Stage05/focusTimer2.0/audios/Floresta.mp3?raw=true')
 const rainSound = new Audio('https://github.com/HudsonSena/ExplorerT6/blob/master/Stage05/focusTimer2.0/audios/Chuva.mp3?raw=true')
 const coffeeSound = new Audio('https://github.com/HudsonSena/ExplorerT6/blob/master/Stage05/focusTimer2.0/audios/Cafeteria.mp3?raw=true')
 const fireSound = new Audio('https://github.com/HudsonSena/ExplorerT6/blob/master/Stage05/focusTimer2.0/audios/Lareira.mp3?raw=true')
-
-const displayMinutes = document.querySelector('.minutes')
-const displaySeconds = document.querySelector('.seconds')
 
 forestSound.loop = true;
 rainSound.loop = true;
@@ -169,3 +168,10 @@ function fire() {
     rainSound.pause()
     coffeeSound.pause()
 }
+
+const btnDarkMode = document.querySelector('btnWhiteMode')
+const btnWhiteMode = document.querySelector('btnDarkMode')
+const
+const
+const
+const
