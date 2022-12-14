@@ -66,7 +66,7 @@ function countdown() {
         } else {
                 if(seconds <= 0) {
                 seconds = 60
-                    displayMinutes.textContent = String(minutes -1).padStart(2, "0")
+                    minutesPlus = Number(displayMinutes.textContent = String(minutes -1).padStart(2, "0"))
                 }
                 if(minutes <= 0 && seconds <= 0) {
                     return
