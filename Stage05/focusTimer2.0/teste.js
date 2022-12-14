@@ -34,11 +34,17 @@ btnCardFire.addEventListener('click', fire)
 
 let timerTimeOut
 
-let minutesPlus = Number(displayMinutes.textContent)
+let minutesPlus = 0
+
+function resetTimer() {
+    displayMinutes.textContent = String(0).padStart(2, "0")
+    displaySeconds.textContent = String(0).padStart(2, "0")
+    clearTimeout(timerTimeOut)
+    minutesPlus = 0
+}
 
 function plus() {
-    minutesPlus +=5
-    displayMinutes.textContent = String(minutesPlus).padStart(2, "0")
+    displayMinutes.textContent = String(minutesPlus += 5).padStart(2, "0")
 }
 
 function minus() {
@@ -88,7 +94,7 @@ function buttonStop() {
     btnPlus.classList.remove('blueButton')
     btnMinus.classList.remove('blueButton')
 
-    clearTimeout(timerTimeOut)
+    resetTimer()
 
     forestSound.pause()
     rainSound.pause()

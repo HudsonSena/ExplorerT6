@@ -8,6 +8,7 @@
     --textButton-color: #323238;
     --bg-songButton-color: #E1E1E6;
     --bg-selectSongButton-color: #02799D;
+    --bg-dark-mode-color: #121214;
 
     font-size: 62.5%;
 }
@@ -69,6 +70,11 @@ button {
     gap: 3.2rem;
 }
 
+.cardCard {
+    width: 14.0rem;
+    height: 17.0rem;
+}
+
 .controls {
     display: flex;
     flex-direction: row;
@@ -94,4 +100,60 @@ button {
         gap: 2rem;
     }
     
+}
+
+/*--- Input Volume/Volume ---*/
+.controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: .5rem;
+}
+
+input {
+    -webkit-appearance: none;
+    border: none;
+    width: 9rem;
+    position: relative;
+    left: 2.4rem;
+    bottom: 3rem;
+}
+
+
+input::-webkit-slider-runnable-track {
+    width: auto;
+    height: 4px;
+    background: var(--textButton-color);
+    border: none;
+    border-radius: 3px;
+}
+
+.blueButton svg path {
+    fill: var(--bg-selectSongButton-color);
+}
+
+input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: var(--textButton-color);
+    margin-top: -6px
+}
+
+/*--- Button Dark Mode and White Mode---*/
+.btMode {
+    position: absolute;
+    right: 10rem;
+    top: 10rem;
+}
+
+/*--- Backgroud Dark mode ---*/
+.dark {
+    background-color: var(--bg-dark-mode-color);
+}
+
+.hide {
+    display: none;
 }
