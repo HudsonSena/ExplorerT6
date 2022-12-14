@@ -72,11 +72,11 @@ button {
 .controls {
     display: flex;
     flex-direction: row;
-    gap: 4rem;
+    justify-content: space-between;
 }
 
 .blueButton svg path {
-  fill: var(--bg-selectSongButton-color);
+    fill: var(--bg-selectSongButton-color);
 }
 
 .blue2 svg path:nth-child(1) {

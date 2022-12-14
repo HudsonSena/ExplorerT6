@@ -8,7 +8,6 @@
     --textButton-color: #323238;
     --bg-songButton-color: #E1E1E6;
     --bg-selectSongButton-color: #02799D;
-    --bg-darkMode-color: #121214;
 
     font-size: 62.5%;
 }
@@ -46,35 +45,11 @@ button {
     cursor: pointer;
 }
 
-/*--- Button Dark Mode and White Mode---*/
-.btMode {
-    position: absolute;
-    right: 10rem;
-    top: 10rem;
-}
-
-/*--- Backgroud Dark mode ---*/
-.dark {
-    background-color: var(--bg-darkMode-color);
-}
-
-.hide {
-    display: none;
-}
-
-/*--- Timer and controls ---*/
 .timer {
     display: flex;
     flex-direction: row;
 }
 
-.controls {
-    display: flex;
-    flex-direction: row;
-    gap: 4rem;
-}
-
-/*--- Button cards/Cartões ---*/
 .cards div:nth-child(1) {
     grid-area: A;
 }
@@ -94,25 +69,29 @@ button {
     gap: 3.2rem;
 }
 
-/*--- Input Volume/Volume ---*/
-input {
-    -webkit-appearance: none;
-    border: none;
-    width: auto;
+.controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
-input::-webkit-slider-runnable-track {
-    width: auto;
-    height: 5px;
-    background: var(--textButton-color);
-    border: none;
-    border-radius: 3px;
+
+.blueButton svg path {
+    fill: var(--bg-selectSongButton-color);
 }
-input::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    border: none;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background: var(--textButton-color);
-    margin-top: -4px;
+
+.blue2 svg path:nth-child(1) {
+    fill: var(--bg-selectSongButton-color);
+}
+
+.blue2 svg path:nth-child(2) {
+    fill: white;
+}
+
+@media (max-width: 1000px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
 }
