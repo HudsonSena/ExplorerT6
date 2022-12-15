@@ -125,11 +125,37 @@ function buttonMinus() {
 }
 
 function forest() {
-    btnCardForest.classList.add('blue2')
-    btnCardRain.classList.remove('blue2')
-    btnCardCoffee.classList.remove('blue2')
-    btnCardFire.classList.remove('blue2')
+    if(btnCardForest != "cardForest cardBlack") {
+        btnCardForest.classList.add('blue2')
+        btnCardRain.classList.remove('blue2')
+        btnCardCoffee.classList.remove('blue2')
+        btnCardFire.classList.remove('blue2')
 
+        displayInputForest.classList.add('blue2')
+        displayInputFire.classList.remove('blue2')
+        displayInputRain.classList.remove('blue2')
+        displayInputCoffee.classList.remove('blue2')
+
+        
+    } else {
+        btnCardForest.classList.remove('cardBlack')
+        btnCardRain.classList.add('cardBlack')
+        btnCardCoffee.classList.add('cardBlack')
+        btnCardFire.classList.add('cardBlack')
+        
+        btnCardForest.classList.add('blue2')
+        btnCardRain.classList.remove('blue2')
+        btnCardCoffee.classList.remove('blue2')
+        btnCardFire.classList.remove('blue2')
+
+        displayInputForest.classList.add('blue2')
+        displayInputFire.classList.remove('blue2')
+        displayInputRain.classList.remove('blue2')
+        displayInputCoffee.classList.remove('blue2')
+    }
+
+    
+    
     forestSound.play()
     rainSound.pause()
     coffeeSound.pause()
@@ -137,10 +163,23 @@ function forest() {
 }
 
 function rain() {
+    if(btnCardRain.classList.textContent = "cardRain cardBlack") {
+        btnCardRain.classList.remove('cardBlack')
+        btnCardForest.classList.add('cardBlack')
+        btnCardCoffee.classList.add('cardBlack')
+        btnCardFire.classList.add('cardBlack')
+    }
+
     btnCardRain.classList.add('blue2')
     btnCardCoffee.classList.remove('blue2')
     btnCardFire.classList.remove('blue2')
     btnCardForest.classList.remove('blue2')
+
+    displayInputRain.classList.add('blue2')
+    displayInputForest.classList.remove('blue2')
+    displayInputFire.classList.remove('blue2')
+    displayInputCoffee.classList.remove('blue2')
+    
     rainSound.play()
     forestSound.pause()
     coffeeSound.pause()
@@ -148,10 +187,22 @@ function rain() {
 }
 
 function coffee() {
+    if(btnCardCoffee.classList.textContent = "cardCoffee cardBlack") {
+        btnCardCoffee.classList.remove('cardBlack')
+        btnCardForest.classList.add('cardBlack')
+        btnCardRain.classList.add('cardBlack')
+        btnCardFire.classList.add('cardBlack')
+    }
+
     btnCardCoffee.classList.add('blue2')
     btnCardFire.classList.remove('blue2')
     btnCardForest.classList.remove('blue2')
     btnCardRain.classList.remove('blue2')
+    displayInputCoffee.classList.add('blue2')
+    displayInputForest.classList.remove('blue2')
+    displayInputRain.classList.remove('blue2')
+    displayInputFire.classList.remove('blue2')
+    
     coffeeSound.play()
     forestSound.pause()
     rainSound.pause()
@@ -159,19 +210,78 @@ function coffee() {
 }
 
 function fire() {
+    if(btnCardFire.classList.textContent = "cardFire cardBlack") {
+        btnCardFire.classList.remove('cardBlack')
+        btnCardForest.classList.add('cardBlack')
+        btnCardCoffee.classList.add('cardBlack')
+        btnCardRain.classList.add('cardBlack')
+    }
+
     btnCardFire.classList.add('blue2')
     btnCardForest.classList.remove('blue2')
     btnCardRain.classList.remove('blue2')
     btnCardCoffee.classList.remove('blue2')
+    displayInputFire.classList.add('blue2')
+    displayInputForest.classList.remove('blue2')
+    displayInputRain.classList.remove('blue2')
+    displayInputCoffee.classList.remove('blue2')
+
     fireSound.play()
     forestSound.pause()
     rainSound.pause()
     coffeeSound.pause()
 }
 
-const btnDarkMode = document.querySelector('btnWhiteMode')
-const btnWhiteMode = document.querySelector('btnDarkMode')
-const
-const
-const
-const
+const btnDarkMode = document.querySelector('.btnLightMode')
+const btnLightMode = document.querySelector('.btnDarkMode')
+const displayBody = document.querySelector('.body')
+const displayTimer = document.querySelector('.timer')
+const displayControls = document.querySelector('.controls')
+
+const displayInputForest = document.querySelector('.inputForest')
+const displayInputRain = document.querySelector('.inputRain')
+const displayInputCoffee = document.querySelector('.inputCoffee')
+const displayInputFire = document.querySelector('.inputFire')
+
+btnDarkMode.addEventListener('click', darkMode)
+btnLightMode.addEventListener('click', lightMode)
+
+function darkMode() {
+    displayBody.classList.add('bgBlack')
+    btnDarkMode.classList.add('hide')
+    btnLightMode.classList.remove('hide')
+    displayTimer.classList.add('tblack')
+    displayControls.classList.add('cBlack')
+
+    displayInputForest.classList.add('iBlack')
+    displayInputRain.classList.add('iBlack')
+    displayInputCoffee.classList.add('iBlack')
+    displayInputFire.classList.add('iBlack')
+
+    btnCardForest.classList.add('cardBlack')
+    btnCardRain.classList.add('cardBlack')
+    btnCardCoffee.classList.add('cardBlack')
+    btnCardFire.classList.add('cardBlack')
+
+    return
+}
+
+function lightMode() {
+    displayBody.classList.remove('bgBlack')
+    btnDarkMode.classList.remove('hide')
+    btnLightMode.classList.add('hide')
+    displayTimer.classList.remove('tblack')
+    displayControls.classList.remove('cBlack')
+
+    displayInputForest.classList.remove('iBlack')
+    displayInputRain.classList.remove('iBlack')
+    displayInputCoffee.classList.remove('iBlack')
+    displayInputFire.classList.remove('iBlack')
+
+    btnCardForest.classList.remove('cardBlack')
+    btnCardRain.classList.remove('cardBlack')
+    btnCardCoffee.classList.remove('cardBlack')
+    btnCardFire.classList.remove('cardBlack')
+
+    return
+}

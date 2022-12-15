@@ -28,13 +28,18 @@ body {
     padding: .5rem;
 }
 
+.timerControls {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
 span {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 12.6rem;
     line-height: 14.8rem;
-    text-align: center;
     text-transform: uppercase;
 
     color: var(--textButton-color);
@@ -75,18 +80,16 @@ button {
     height: 17.0rem;
 }
 
-.controls {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
 .blueButton svg path {
     fill: var(--bg-selectSongButton-color);
 }
 
 .blue2 svg path:nth-child(1) {
     fill: var(--bg-selectSongButton-color);
+}
+
+.blue2 input::-webkit-slider-thumb, .blue2 input::-webkit-slider-runnable-track {
+    background: var(--bg-songButton-color);
 }
 
 .blue2 svg path:nth-child(2) {
@@ -107,7 +110,7 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: .5rem;
+    padding: 0.5rem
 }
 
 input {
@@ -126,6 +129,7 @@ input::-webkit-slider-runnable-track {
     background: var(--textButton-color);
     border: none;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .blueButton svg path {
@@ -139,21 +143,45 @@ input::-webkit-slider-thumb {
     width: 16px;
     border-radius: 50%;
     background: var(--textButton-color);
-    margin-top: -6px
+    margin-top: -6px    
 }
 
 /*--- Button Dark Mode and White Mode---*/
-.btMode {
+.btnDarkMode, .btnLightMode {
     position: absolute;
-    right: 10rem;
+    right: 12rem;
     top: 10rem;
 }
 
-/*--- Backgroud Dark mode ---*/
-.dark {
+/*--- Button Dark mode/Backgroud Dark mode ---*/
+.bgBlack {
     background-color: var(--bg-dark-mode-color);
 }
 
 .hide {
     display: none;
+    opacity: 0;
+}
+
+/*--- Timer Dark mode---*/
+.tblack span {
+    color: white;
+}
+
+/*--- Controls Dark Mode/Controles Dark Mode---*/
+.cBlack button svg path {
+    fill: var(--bg-songButton-color);
+}
+
+/*---Cards Dark Mode---*/
+.cardBlack svg path:nth-child(1) {
+    fill: var(--textButton-color);
+}
+.cardBlack svg path:nth-child(2) {
+    fill: var(--bg-songButton-color);
+}
+
+/*---Input Dark Mode---*/
+.iBlack input::-webkit-slider-thumb, .iBlack input::-webkit-slider-runnable-track {
+    background: var(--bg-songButton-color);
 }
