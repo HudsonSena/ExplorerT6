@@ -182,7 +182,6 @@ function buttonMinus() {
 
 function forest() {
     if(btnDarkMode.className == 'btnLightMode hide') {
-        console.log('dark')
         btnCardForest.classList.add('blue2')
         btnCardRain.classList.remove('blue2')
         btnCardCoffee.classList.remove('blue2')
@@ -199,7 +198,6 @@ function forest() {
         displayInputCoffee.classList.remove('blue2')
 
     } else {
-        console.log('light')
         btnCardForest.classList.add('blue2')
         btnCardRain.classList.remove('blue2')
         btnCardCoffee.classList.remove('blue2')
@@ -219,7 +217,6 @@ function forest() {
 
 function rain() {
     if(btnDarkMode.className == 'btnLightMode hide') {
-        console.log('dark')
         btnCardRain.classList.add('blue2')
         btnCardForest.classList.remove('blue2')
         btnCardCoffee.classList.remove('blue2')
@@ -236,7 +233,6 @@ function rain() {
         displayInputCoffee.classList.remove('blue2')
 
     } else {
-        console.log('light')
         btnCardRain.classList.add('blue2')
         btnCardForest.classList.remove('blue2')
         btnCardCoffee.classList.remove('blue2')
@@ -256,7 +252,6 @@ function rain() {
 
 function coffee() {
     if(btnDarkMode.className == 'btnLightMode hide') {
-        console.log('dark')
         btnCardCoffee.classList.add('blue2')
         btnCardRain.classList.remove('blue2')
         btnCardForest.classList.remove('blue2')
@@ -273,7 +268,6 @@ function coffee() {
         displayInputForest.classList.remove('blue2')
 
     } else {
-        console.log('light')
         btnCardCoffee.classList.add('blue2')
         btnCardRain.classList.remove('blue2')
         btnCardForest.classList.remove('blue2')
@@ -293,7 +287,6 @@ function coffee() {
 
 function fire() {
     if(btnDarkMode.className == 'btnLightMode hide') {
-        console.log('dark')
         btnCardFire.classList.add('blue2')
         btnCardRain.classList.remove('blue2')
         btnCardCoffee.classList.remove('blue2')
@@ -310,7 +303,6 @@ function fire() {
         displayInputCoffee.classList.remove('blue2')
 
     } else {
-        console.log('light')
         btnCardFire.classList.add('blue2')
         btnCardRain.classList.remove('blue2')
         btnCardCoffee.classList.remove('blue2')

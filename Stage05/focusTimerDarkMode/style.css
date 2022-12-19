@@ -122,7 +122,6 @@ input {
     bottom: 3rem;
 }
 
-
 input::-webkit-slider-runnable-track {
     width: auto;
     height: 4px;
