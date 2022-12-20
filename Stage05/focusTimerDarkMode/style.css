@@ -131,10 +131,6 @@ input::-webkit-slider-runnable-track {
     cursor: pointer;
 }
 
-.blueButton svg path {
-    fill: var(--bg-selectSongButton-color);
-}
-
 input::-webkit-slider-thumb {
     -webkit-appearance: none;
     border: none;
@@ -168,7 +164,7 @@ input::-webkit-slider-thumb {
 }
 
 /*--- Controls Dark Mode/Controles Dark Mode---*/
-.cBlack button svg path {
+.cBlack svg path {
     fill: var(--bg-songButton-color);
 }
 

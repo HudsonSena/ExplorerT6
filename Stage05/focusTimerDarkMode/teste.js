@@ -47,10 +47,15 @@ btnLightMode.addEventListener('click', lightMode)
 
 function darkMode() {
     displayBody.classList.add('bgBlack')
+
     btnDarkMode.classList.add('hide')
     btnLightMode.classList.remove('hide')
     displayTimer.classList.add('tblack')
-    displayControls.classList.add('cBlack')
+
+    btnPlay.classList.add('cBlack')
+    btnStop.classList.add('cBlack')
+    btnPlus.classList.add('cBlack')
+    btnMinus.classList.add('cBlack')
 
     displayInputForest.classList.add('iBlack')
     displayInputRain.classList.add('iBlack')
@@ -79,6 +84,11 @@ function lightMode() {
     btnCardRain.classList.remove('cardBlack')
     btnCardCoffee.classList.remove('cardBlack')
     btnCardFire.classList.remove('cardBlack')
+
+    btnPlay.classList.remove('cBlack')
+    btnStop.classList.remove('cBlack')
+    btnPlus.classList.remove('cBlack')
+    btnMinus.classList.remove('cBlack')
 
 }
 
@@ -130,6 +140,14 @@ function countdown() {
 }
 
 function buttonPlay() {
+    if(btnDarkMode.className == 'btnLightMode hide') {
+        btnPlay.classList.add('blueButton')
+        btnPlay.classList.remove('cBlack')
+        btnPlus.classList.add('cBlack')
+        btnMinus.classList.add('cBlack')
+        btnStop.classList.add('cBlack')
+    }
+
     btnPlay.classList.add('blueButton')
     btnStop.classList.remove('blueButton')
     btnPlus.classList.remove('blueButton')
@@ -139,6 +157,19 @@ function buttonPlay() {
 }
 
 function buttonStop() {
+    if(btnDarkMode.className == 'btnLightMode hide') {
+        btnCardForest.classList.add('cardBlack')
+        btnCardRain.classList.add('cardBlack')
+        btnCardCoffee.classList.add('cardBlack')
+        btnCardFire.classList.add('cardBlack')
+
+        btnStop.classList.add('blueButton')
+        btnStop.classList.remove('cBlack')
+        btnPlus.classList.add('cBlack')
+        btnMinus.classList.add('cBlack')
+        btnPlay.classList.add('cBlack')
+    }
+
     btnStop.classList.add('blueButton')
     btnPlay.classList.remove('blueButton')
     btnPlus.classList.remove('blueButton')
@@ -163,6 +194,14 @@ function buttonStop() {
 }
 
 function buttonPlus() {
+    if(btnDarkMode.className == 'btnLightMode hide') {
+        btnPlus.classList.add('blueButton')
+        btnPlus.classList.remove('cBlack')
+        btnPlay.classList.add('cBlack')
+        btnMinus.classList.add('cBlack')
+        btnStop.classList.add('cBlack')
+    }
+
     btnPlus.classList.add('blueButton')
     btnMinus.classList.remove('blueButton')
     btnStop.classList.remove('blueButton')
@@ -172,6 +211,14 @@ function buttonPlus() {
 }
 
 function buttonMinus() {
+    if(btnDarkMode.className == 'btnLightMode hide') {
+        btnMinus.classList.add('blueButton')
+        btnMinus.classList.remove('cBlack')
+        btnPlus.classList.add('cBlack')
+        btnPlay.classList.add('cBlack')
+        btnStop.classList.add('cBlack')
+    }
+
     btnMinus.classList.add('blueButton')
     btnPlus.classList.remove('blueButton')
     btnStop.classList.remove('blueButton')
