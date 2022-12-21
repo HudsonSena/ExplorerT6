@@ -26,19 +26,29 @@ buttonAbrirOutroBiscoito.addEventListener('click', abrirOutroBiscoito)
 window.addEventListener('keydown', abrirOutroBiscoito)
 
 let message = 'Jaboti'
+let codicao = 1
 
 function messageSorteio() {
     message = messages[(Math.round(Math.random() * 10))]
 }
 
 function biscoitoDaSorte() {
-    biscoitoFechado.classList.add('hide')
-    biscoitoAberto.classList.remove('hide')
-    displayTransMessage.classList.add('transitionMessage')
+    if(codicao == 2) {
+        alert('Abra outro biscoito!')
+        codicao = 1
+    } else {
+        biscoitoFechado.classList.add('hide')
+        biscoitoAberto.classList.remove('hide')
+        displayTransMessage.classList.add('transitionMessage')
 
-    messageSorteio()
+        messageSorteio()
 
-    displayMessage.textContent = String(message)
+        displayMessage.textContent = String(message)
+        
+        codicao = 2
+    }
+
+    
 }
 
 function abrirOutroBiscoito() {
