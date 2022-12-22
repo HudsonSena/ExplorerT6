@@ -17,9 +17,10 @@ let quadranten7 = 'Qualquer'
 
 sorte.addEventListener('click', sortear)
 
-function sortear(event) {
-    event.preventDefault()    
 
+function sortear(event) {
+    event.preventDefault()
+    
     if(primeiroNumero.value == '') {
         num1 = Math.round(Math.random() * 30)
     } else {
@@ -99,7 +100,7 @@ function sortear(event) {
         } else if ((numero5 >= 36 && numero5 <= 40) || (numero5 >= 46 && numero5 <= 50) || (numero5 >= 56 && numero5 <= 60)) {
             quadranten5 = "Quadrante 4"
         }
-        
+
     n6 = Math.round(Math.random() * 10)
 
     let numero6 = numero5 + n6
