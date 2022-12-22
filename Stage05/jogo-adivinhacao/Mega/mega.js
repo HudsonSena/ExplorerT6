@@ -1,20 +1,20 @@
-const numeroEscolhido = document.querySelector("#numeroEscolhido")
+const primeiroNumero = document.querySelector("#numeroEscolhido")
 const sorte = document.querySelector("#sorte")
-let num1 = Number(numeroEscolhido)
+let num1 = Number(primeiroNumero.value)
+let dezVinte = 0
+const h1 = document.querySelector('.h1')
 
 sorte.addEventListener('click', sortear)
 
 function sortear(event) {
-    event.preventDefault()
-    console.log(num1)
-    if(num1 == '') {
+    event.preventDefault()    
+
+    if(primeiroNumero.value == '') {
         num1 = Math.round(Math.random() * 30)
     } else {
-        num1 = Number(numeroEscolhido)
-    }
+        num1 = Number(primeiroNumero.value)
+    }    
 
-    console.log(num1)
-    let dezVinte = 0
     while(dezVinte <= 9) {
         dezVinte = Math.round(Math.random() * 20)
     }
@@ -36,8 +36,9 @@ function sortear(event) {
     let numero5 = numero4 + dif[3]
     let numero6 = numero5 + dif[4]
 
-    const h1 = document.querySelector('.h1')
+    
     
     h1.innerHTML = String(`Os números sorteados são: </br> ${numero1}, ${numero2}, ${numero3}, ${numero4}, ${numero5}, ${numero6}.`)
-}
 
+    primeiroNumero.value = ''
+}
