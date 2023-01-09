@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'roboto';
+    color: white;
+    
+}
+
+h1 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4.8rem;
+    line-height: 125%;
+}
+
+.homepg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../assets/bghome.svg);
+    background-position: bottom;
+
+    width: 100vw;
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.exploracaopg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../assets/bgexploracao.svg);
+    background-position: bottom;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.universepg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../assets/bgOuniverse.svg);
+    background-position: bottom;
+
+    width: 100vw;
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+}
+

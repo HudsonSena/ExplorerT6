@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'roboto';
+    color: white;
+    background-color: rgb(13, 13, 13);
+    display: flex;
+    flex-direction: column;    
+}
+
+nav {
+    height: 12.2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px;
+    gap: 32px;
+
+    padding: 7.2rem;
+}
+
+a {
+    text-decoration: none;
+    color: #8D8D99;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21.6667px;
+    line-height: 22px;
+}
