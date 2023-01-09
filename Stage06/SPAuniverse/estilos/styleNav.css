@@ -11,22 +11,23 @@
 }
 
 body {
-    font-family: 'roboto';
-    color: white;
-    background-color: rgb(13, 13, 13);
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 nav {
+    position: absolute;
+    font-family: 'roboto';
+    background: transparent;    
     height: 12.2rem;
+
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    padding: 0px;
-    gap: 32px;
 
+    gap: 4.2rem;
     padding: 7.2rem;
 }
 
@@ -38,4 +39,20 @@ a {
     font-weight: 400;
     font-size: 21.6667px;
     line-height: 22px;
+}
+.textcolor {
+    color: white;
+}
+
+.bgHome {
+    background-image: url(../assets/bghome.svg);
+}
+
+.bgUniverse {
+    background-image: url(../assets/bgOuniverse.svg);
+
+}
+
+.bgExploracao {
+    background-image: url(../assets/bgexploracao.svg);
 }

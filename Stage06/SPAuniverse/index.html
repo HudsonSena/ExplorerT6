@@ -16,14 +16,15 @@
     <link rel="stylesheet" href="estilos/styleNav.css">
 
 </head>
-<body>
+<body class="body">
 
     <nav>
         <img src="assets/universe.svg" alt="">
-        <a href="./pages/home.html" onclick="route()">Home</a>
-        <a href="./pages/oUniverso.html" onclick="route()">O Universo</a>
-        <a href="./pages/exploracao.html" onclick="route()">Exploração</a>
+        <a href="/" onclick="route()" class="btHome">Home</a>
+        <a href="/oUniverso" onclick="route()" class="btUniverse">O Universo</a>
+        <a href="/exploracao" onclick="route()" class="btExploracao">Exploração</a>
     </nav>
+    
     <div id="singlePage"></div>
 
     <script src="js/index.js" type="module"></script>
