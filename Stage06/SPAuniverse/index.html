@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -13,16 +14,19 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="estilos/styleNav.css">
+
 </head>
 <body>
+
     <nav>
         <img src="assets/universe.svg" alt="">
-        <a href="">Home</a>
-        <a href="">O Universo</a>
-        <a href="">Exploração</a>
+        <a href="./pages/home.html" onclick="route()">Home</a>
+        <a href="./pages/oUniverso.html" onclick="route()">O Universo</a>
+        <a href="./pages/exploracao.html" onclick="route()">Exploração</a>
     </nav>
-    <div class="singlePage">
-        <h1>Aparecerá aqui</h1>
-    </div>
+    <div id="singlePage"></div>
+
+    <script src="./js/index.js" type="module"></script>
+
 </body>
 </html>
