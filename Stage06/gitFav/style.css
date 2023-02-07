@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --bg-color: black;
+    --bg-header-color: #092D38;
+    --bg-td01-color:#06161B80;
+    --bg-td02-placehoader-color: #06181C;
+    --bg-favorite-color: #065E7C;
+    --bg-favoriteHover-color: white;
+
+    --text-placehoader-color: #7C7C8A;
+    --text-btRemove-color: #F75A68;
+    --text-favorite-color: white;
+    --text-favoriteHover-color: #065E7C;
+    --text-color: #E1E1E6;
+}
+
+body {
+    background-color: black;
+    color: var(--text-color);
+    max-width: 80rem;
+
+    margin: auto;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 160%;
+}
+
+/*--- texts ---*/
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+span {
+    font-weight: 700;
+}
+
+.remove {
+    color: var(--text-btRemove-color);
+}
+
+input {
+    width: 46.2rem;
+    height: 4.8rem;
+}
+
+input::placeholder {
+    color: var(--text-placehoader-color);
+}
+
+/*--- header/Input/Button ---*/
+header {
+    margin-top: 11.5rem;
+    margin-bottom: 8.7rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.boxInput {
+    display: flex;
+    gap: .8rem;
+    
+}
+/*--- Main/Table ---*/
+main {
+    border: 1px solid white;
+}
+
+button {
+    cursor: pointer;
+}
