@@ -9,25 +9,28 @@
 :root {
     font-size: 62.5%;
 
-    --bg-color: black;
+    --bg-body-color: black;
     --bg-header-color: #092D38;
     --bg-td01-color:#06161B80;
     --bg-td02-placehoader-color: #06181C;
     --bg-favorite-color: #065E7C;
     --bg-favoriteHover-color: white;
+    --bg-table-color: #030B0D;
+    --border-table-color: #4A808C;
 
     --text-placehoader-color: #7C7C8A;
     --text-btRemove-color: #F75A68;
     --text-favorite-color: white;
     --text-favoriteHover-color: #065E7C;
+    --text-nenhumfavorito-color: #4E5455;
     --text-color: #E1E1E6;
 }
 
 body {
-    background-color: black;
+    background-color: var(--bg-body-color);
     color: var(--text-color);
 
-    max-width: 90rem;
+    max-width: 112rem;
 
     margin: auto;
 
@@ -52,7 +55,7 @@ span {
     color: var(--text-btRemove-color);
 }
 
-/*--- header/Input/Button ---*/
+/*--- Header/Iinput/Button ---*/
 header {
     margin-top: 11.5rem;
     margin-bottom: 8.7rem;
@@ -73,7 +76,10 @@ input {
     width: 46.2rem;
     height: 4.8rem;
 
+    padding: 1rem;
+
     background-color: var(--bg-td02-placehoader-color);
+    color: var(--text-color);
 
     border: none;
 }
@@ -81,7 +87,6 @@ input {
 input::placeholder {
     color: var(--text-placehoader-color);
     text-align: left;
-    padding: 1rem;
 }
 
 button {
@@ -100,6 +105,8 @@ button {
     color: var(--text-favorite-color);
 
     border-radius: 5px;
+
+    cursor: pointer;
 }
 
 button:hover {
@@ -113,9 +120,64 @@ button:hover svg path {
 
 /*--- Main/Table ---*/
 main {
-    border: 1px solid white;
+    border: 1px solid var(--border-table-color);
+    border-radius: 1.2rem;
 }
 
-button {
-    cursor: pointer;
+.Nfavorito {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6rem;
+
+    position: absolute;
+
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    color: var(--text-nenhumfavorito-color);
+
+    display: none;
+}
+
+/*--- table ---*/
+table {
+    background-color: var(--bg-table-color);
+    border-collapse: collapse;
+    height: 100%;
+    contain: content;
+    border-radius: 1.2rem;
+
+    overflow-y: scroll;
+}
+
+thead {
+    background-color: var(--bg-header-color);
+    text-align: left;
+    
+    border-radius: 1.2rem;
+}
+
+tbody > tr:nth-child(even) {
+    background-color: var(--bg-td02-placehoader-color);
+}
+
+th, td, tr {
+    width: 100vw;
+    padding: 1.6rem;
+    padding-left: 4rem;
+}
+
+table tr td img {
+    width: 5.6rem;
+    height: 5.6rem;
+    border-radius: 50%;
+}
+
+.cardUser {
+    display: flex;
+    flex-direction: row;
+
+    gap: 1.6rem;
 }
