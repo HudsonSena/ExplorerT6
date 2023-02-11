@@ -120,8 +120,7 @@ button:hover svg path {
 
 /*--- Main/Table ---*/
 main {
-    border: 1px solid var(--border-table-color);
-    border-radius: 1.2rem;
+    
 }
 
 .Nfavorito {
@@ -144,19 +143,17 @@ main {
 /*--- table ---*/
 table {
     background-color: var(--bg-table-color);
+    border: 1px solid red;
     border-collapse: collapse;
-    height: 100%;
     contain: content;
     border-radius: 1.2rem;
-
-    overflow-y: scroll;
 }
-
 thead {
     background-color: var(--bg-header-color);
     text-align: left;
-    
-    border-radius: 1.2rem;
+
+    position: sticky;
+    top: 0;
 }
 
 tbody > tr:nth-child(even) {
