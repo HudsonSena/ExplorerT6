@@ -16,7 +16,9 @@
     --bg-favorite-color: #065E7C;
     --bg-favoriteHover-color: white;
     --bg-table-color: #030B0D;
+
     --border-table-color: #4A808C;
+    --scroll-tumb-color: #4A808C;
 
     --text-placehoader-color: #7C7C8A;
     --text-btRemove-color: #F75A68;
@@ -147,11 +149,12 @@ main {
 /*--- table ---*/
 table {
     background-color: var(--bg-table-color);
+
     border: 1px solid red;
     border-collapse: collapse;
-    contain: content;
-
     border-radius: 1.2rem;
+
+    contain: content;
 }
 
 thead {
@@ -187,4 +190,18 @@ table tr td img {
     flex-direction: row;
 
     gap: 1.6rem;
+}
+
+main::-webkit-scrollbar {
+    width: .6rem;
+    display: none;
+}
+  
+main::-webkit-scrollbar-track {
+    display: transparent;
+}
+  
+main::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-tumb-color);
+    border-radius: 1rem;
 }
