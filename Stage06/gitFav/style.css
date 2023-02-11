@@ -120,7 +120,11 @@ button:hover svg path {
 
 /*--- Main/Table ---*/
 main {
-    
+    border: .1rem solid var(--border-table-color);
+    border-radius: 1.2rem;
+
+    height: 50rem;
+    overflow-y: auto;
 }
 
 .Nfavorito {
@@ -146,8 +150,10 @@ table {
     border: 1px solid red;
     border-collapse: collapse;
     contain: content;
+
     border-radius: 1.2rem;
 }
+
 thead {
     background-color: var(--bg-header-color);
     text-align: left;
@@ -158,6 +164,10 @@ thead {
 
 tbody > tr:nth-child(even) {
     background-color: var(--bg-td02-placehoader-color);
+}
+
+tr {
+    border: .1rem solid var(--border-table-color);
 }
 
 th, td, tr {
