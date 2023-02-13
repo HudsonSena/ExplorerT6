@@ -17,11 +17,11 @@ export class FavoritesView extends Favorites {
 
     removeAllTr() {
         const tbody = this.root.querySelector('table tbody')
-        const mensageAdd = document.querySelector('.Nfavorito')
+        const menssageAdd = document.querySelector('.Nfavorito')
 
         tbody.querySelectorAll('tr').forEach((tr) => {
             tr.remove()
-            mensageAdd.classList.add('displayOn')            
+            menssageAdd.classList.add('displayOn')
         })
     }
 }
