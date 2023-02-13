@@ -32,7 +32,7 @@ body {
     background-color: var(--bg-body-color);
     color: var(--text-color);
 
-    max-width: 112rem;
+    width: 112rem;
 
     margin: auto;
 
@@ -123,13 +123,17 @@ button:hover svg path {
 /*--- Main/Table ---*/
 main {
     border: .1rem solid var(--border-table-color);
-    border-radius: 1.2rem;
+    border-radius: 1.2rem;    
 
     height: 50rem;
     overflow-y: auto;
 }
 
 .Nfavorito {
+    top: 50%;
+    left: 30%;
+
+    margin: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -143,16 +147,18 @@ main {
     line-height: 2.5rem;
     color: var(--text-nenhumfavorito-color);
 
-    display: none;
+    opacity: 0;
 }
+
+.displayOn {
+    opacity: 1;
+} 
 
 /*--- table ---*/
 table {
     background-color: var(--bg-table-color);
-
-    border: 1px solid red;
+    
     border-collapse: collapse;
-    border-radius: 1.2rem;
 
     contain: content;
 }
@@ -160,17 +166,22 @@ table {
 thead {
     background-color: var(--bg-header-color);
     text-align: left;
+    
+    border-bottom: .1rem solid var(--border-table-color);
+    border-radius: 1.2rem 1.2rem 0 0;
 
     position: sticky;
     top: 0;
+
+    height: 6.4rem;
 }
 
 tbody > tr:nth-child(even) {
     background-color: var(--bg-td02-placehoader-color);
 }
 
-tr {
-    border: .1rem solid var(--border-table-color);
+tbody tr {
+    border-bottom: .1rem solid var(--border-table-color);
 }
 
 th, td, tr {
@@ -194,7 +205,6 @@ table tr td img {
 
 main::-webkit-scrollbar {
     width: .6rem;
-    display: none;
 }
   
 main::-webkit-scrollbar-track {
