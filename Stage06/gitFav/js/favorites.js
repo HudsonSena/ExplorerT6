@@ -13,6 +13,15 @@ export class FavoritesView extends Favorites {
 
     update() {
         this.removeAllTr()
+
+        [
+            {
+                login: 'maykbrito',
+                name: "Mayk Brito",
+                public_repos: '76',
+                followers: '120000'
+            }
+        ]
     }
 
     creatRow() {
