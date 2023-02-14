@@ -12,7 +12,26 @@ export class FavoritesView extends Favorites {
     }
 
     update() {
-        this.removeAllTr()        
+        this.removeAllTr()
+    }
+
+    creatRow() {
+        const tr = document.createElement('tr')
+        
+        tr.innerHTML = `
+            <td>
+                <div class="cardUser">
+                    <img src="https://avatars.githubusercontent.com/u/107481318?v=4.png" alt="">
+                    <a href="" target="_blank">
+                        <span class="username">Hudson Diego</span>
+                        <p class="login">HudsonSena</p>
+                    </a>
+                </div>
+            </td>
+            <td class="repositories">150</td>
+            <td class="followers">1000</td>
+            <td><a href="" class="remove">remover</a></td>
+        `
     }
 
     removeAllTr() {
