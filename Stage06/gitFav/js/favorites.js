@@ -17,8 +17,6 @@ export class Favorites {
     constructor(root) {
         this.root = document.querySelector(root)
         this.load()
-
-        GithubUser.search('HudsonSena').then(user => console.log(user))
     }
 
     load() {
