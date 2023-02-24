@@ -39,6 +39,16 @@ export class FavoritesView extends Favorites {
         this.tbody = this.root.querySelector('table tbody')
 
         this.update()
+        this.onadd()
+    }
+
+    onadd() {
+        const addButton = this.root.querySelector('.boxInput button')
+        
+        addButton.onclick = () => {
+            const input = this.root.querySelector('.boxInput input')
+            console.dir(input)
+        }
     }
 
     update() {
