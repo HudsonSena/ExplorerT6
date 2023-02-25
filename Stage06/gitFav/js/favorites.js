@@ -1,17 +1,4 @@
-export class GithubUser {
-    static search(username) {
-        const endpoint = `https://api.github.com/users/${username}`
-
-        return fetch(endpoint)
-        .then(data => data.json())
-        .then(({login, name, public_repos, followers}) => ({
-            login,
-            name,
-            public_repos,
-            followers
-        }))
-    }
-}
+import { GithubUser } from "./GithubUser.js"
 
 export class Favorites {
     constructor(root) {
@@ -24,11 +11,41 @@ export class Favorites {
         
     }
 
+    save() {
+        localStorage.setItem('@github-favorites:', JSON.stringify(this.entries))
+
+        //this.root.querySelector('.Nfavorito').classList.add('.displayOff')
+    }
+
+    async add(username) {
+        try {
+            const userExists = this.entries.find(entry => entry.login === username)
+            const user = await GithubUser.search(username)
+
+            if(userExists) {
+                throw new Error('Usuário ja existe')
+            }
+
+            if(user.login === undefined) {
+                throw new Error('Usuário não encontrado!')
+            }            
+
+            this.entries = [user, ...this.entries]
+            this.update()
+            this.save()
+
+        } catch(error) {
+            alert(error.message)
+        }
+        
+    }
+
     delete(user) {
         const filteredEntries = this.entries.filter(entry => entry.login !== user.login)
 
         this.entries = filteredEntries
         this.update()
+        this.save()
     }
 }
 
@@ -46,8 +63,9 @@ export class FavoritesView extends Favorites {
         const addButton = this.root.querySelector('.boxInput button')
         
         addButton.onclick = () => {
-            const input = this.root.querySelector('.boxInput input')
-            console.dir(input)
+            const { value } = this.root.querySelector('.boxInput input')
+
+            this.add(value)
         }
     }
 
