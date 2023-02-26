@@ -7,14 +7,11 @@ export class Favorites {
     }
 
     load() {
-        this.entries = JSON.parse(localStorage.getItem('@github-favorites:')) || []
-        
+        this.entries = JSON.parse(localStorage.getItem('@github-favorites:')) || []        
     }
 
     save() {
-        localStorage.setItem('@github-favorites:', JSON.stringify(this.entries))
-
-        //this.root.querySelector('.Nfavorito').classList.add('.displayOff')
+        localStorage.setItem('@github-favorites:', JSON.stringify(this.entries))        
     }
 
     async add(username) {
@@ -33,6 +30,7 @@ export class Favorites {
             this.entries = [user, ...this.entries]
             this.update()
             this.save()
+            this.conditiondisplay()
 
         } catch(error) {
             alert(error.message)
@@ -46,6 +44,7 @@ export class Favorites {
         this.entries = filteredEntries
         this.update()
         this.save()
+        this.conditiondisplay()
     }
 }
 
@@ -53,10 +52,21 @@ export class FavoritesView extends Favorites {
     constructor(root) {
         super(root)
 
-        this.tbody = this.root.querySelector('table tbody')
+        this.tbody = this.root.querySelector('table tbody')        
 
         this.update()
         this.onadd()
+        this.conditiondisplay()
+    }
+
+    conditiondisplay() {
+        this.displayOff = this.root.querySelector('.Nfavorito')
+
+        if(this.entries.length == 0) {
+            this.displayOff.classList.add('displayOn')
+        } else {
+            this.displayOff.classList.remove('displayOn')
+        }
     }
 
     onadd() {

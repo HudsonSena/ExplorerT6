@@ -146,12 +146,12 @@ main {
     font-size: 2rem;
     line-height: 2.5rem;
     color: var(--text-nenhumfavorito-color);
-    
-    opacity: 1;
+
+    opacity: 0;
 }
 
-.displayOff {
-    opacity: 0;
+.displayOn {
+    opacity: 1;
 } 
 
 /*--- table ---*/
