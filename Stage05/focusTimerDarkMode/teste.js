@@ -16,7 +16,10 @@ const volumeRain = document.querySelector('#rangeRain')
 const volumeCoffee = document.querySelector('#rangeCoffe')
 const volumeFire = document.querySelector('#rangeFire')
 
-console.log(volumeForest.value);
+console.log(volumeForest.value)
+console.log(volumeRain.value)
+console.log(volumeCoffee.value)
+console.log(volumeFire.value)
 
 const forestSound = new Audio('https://github.com/HudsonSena/ExplorerT6/blob/master/Stage05/focusTimer2.0/audios/Floresta.mp3?raw=true')
 const rainSound = new Audio('https://github.com/HudsonSena/ExplorerT6/blob/master/Stage05/focusTimer2.0/audios/Chuva.mp3?raw=true')
