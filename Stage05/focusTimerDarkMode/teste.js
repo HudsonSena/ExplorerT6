@@ -159,6 +159,7 @@ function buttonPlay() {
     btnStop.classList.remove('blueButton')
     btnPlus.classList.remove('blueButton')
     btnMinus.classList.remove('blueButton')
+    btnPlay.setAttribute('disabled', 'disabled')
 
     countdown()
 }
@@ -175,12 +176,15 @@ function buttonStop() {
         btnPlus.classList.add('cBlack')
         btnMinus.classList.add('cBlack')
         btnPlay.classList.add('cBlack')
+
     }
 
     btnStop.classList.add('blueButton')
     btnPlay.classList.remove('blueButton')
     btnPlus.classList.remove('blueButton')
     btnMinus.classList.remove('blueButton')
+
+    btnPlay.removeAttribute('disabled', 'disabled')
 
     resetTimer()
 
