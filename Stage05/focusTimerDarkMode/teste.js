@@ -11,20 +11,15 @@ const btnCardFire = document.querySelector('.cardFire')
 const displayMinutes = document.querySelector('.minutes')
 const displaySeconds = document.querySelector('.seconds')
 
+const forestSound = new Audio('./audios/Floresta.mp3')
+const rainSound = new Audio('./audios/Chuva.mp3')
+const coffeeSound = new Audio('./audios/Cafeteria.mp3')
+const fireSound = new Audio('./audios/Lareira.mp3')
+
 const volumeForest = document.querySelector('#rangeForest')
 const volumeRain = document.querySelector('#rangeRain')
 const volumeCoffee = document.querySelector('#rangeCoffe')
 const volumeFire = document.querySelector('#rangeFire')
-
-console.log(volumeForest.value)
-console.log(volumeRain.value)
-console.log(volumeCoffee.value)
-console.log(volumeFire.value)
-
-const forestSound = new Audio('https://github.com/HudsonSena/ExplorerT6/blob/master/Stage05/focusTimer2.0/audios/Floresta.mp3?raw=true')
-const rainSound = new Audio('https://github.com/HudsonSena/ExplorerT6/blob/master/Stage05/focusTimer2.0/audios/Chuva.mp3?raw=true')
-const coffeeSound = new Audio('https://github.com/HudsonSena/ExplorerT6/blob/master/Stage05/focusTimer2.0/audios/Cafeteria.mp3?raw=true')
-const fireSound = new Audio('https://github.com/HudsonSena/ExplorerT6/blob/master/Stage05/focusTimer2.0/audios/Lareira.mp3?raw=true')
 
 forestSound.loop = true;
 rainSound.loop = true;

@@ -9,10 +9,10 @@ const btnCardCoffee = document.querySelector('.cardCoffee')
 const btnCardFire = document.querySelector('.cardFire')
 
 
-const forestSound = new Audio('https://github.com/HudsonSena/ExplorerT6/blob/master/Stage05/focusTimer2.0/audios/Floresta.mp3?raw=true')
-const rainSound = new Audio('https://github.com/HudsonSena/ExplorerT6/blob/master/Stage05/focusTimer2.0/audios/Chuva.mp3?raw=true')
-const coffeeSound = new Audio('https://github.com/HudsonSena/ExplorerT6/blob/master/Stage05/focusTimer2.0/audios/Cafeteria.mp3?raw=true')
-const fireSound = new Audio('https://github.com/HudsonSena/ExplorerT6/blob/master/Stage05/focusTimer2.0/audios/Lareira.mp3?raw=true')
+const forestSound = new Audio('./audios/Floresta.mp3')
+const rainSound = new Audio('./audios/Chuva.mp3')
+const coffeeSound = new Audio('./audios/Cafeteria.mp3')
+const fireSound = new Audio('./audios/Lareira.mp3')
 
 const displayMinutes = document.querySelector('.minutes')
 const displaySeconds = document.querySelector('.seconds')
@@ -60,9 +60,11 @@ function countdown() {
     timerTimeOut = setTimeout(function() {
         let seconds = Number(displaySeconds.textContent)
         let minutes = Number(displayMinutes.textContent)
+        let isFinished = minutes <= 0 && seconds <= 0
         
-        if(minutes <= 0 && seconds <= 0) {
+        if(isFinished) {
             alert('Adicione os minutos!')
+            btnPlay.removeAttribute('disabled', 'disabled')            
         } else {
                 if(seconds <= 0) {
                 seconds = 60
@@ -75,7 +77,8 @@ function countdown() {
                 displaySeconds.textContent = String(seconds -1).padStart(2, "0")
 
                 countdown()
-        }        
+        }
+
     }, 1000)
 }
 
@@ -144,6 +147,7 @@ function rain() {
     btnCardCoffee.classList.remove('blue2')
     btnCardFire.classList.remove('blue2')
     btnCardForest.classList.remove('blue2')
+
     rainSound.play()
     forestSound.pause()
     coffeeSound.pause()
@@ -155,6 +159,7 @@ function coffee() {
     btnCardFire.classList.remove('blue2')
     btnCardForest.classList.remove('blue2')
     btnCardRain.classList.remove('blue2')
+
     coffeeSound.play()
     forestSound.pause()
     rainSound.pause()
@@ -166,6 +171,7 @@ function fire() {
     btnCardForest.classList.remove('blue2')
     btnCardRain.classList.remove('blue2')
     btnCardCoffee.classList.remove('blue2')
+
     fireSound.play()
     forestSound.pause()
     rainSound.pause()
