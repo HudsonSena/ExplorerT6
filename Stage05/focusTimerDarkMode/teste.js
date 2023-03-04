@@ -125,9 +125,11 @@ function countdown() {
     timerTimeOut = setTimeout(function() {
         let seconds = Number(displaySeconds.textContent)
         let minutes = Number(displayMinutes.textContent)
+        let isFinished = minutes <= 0 && seconds <= 0
         
-        if(minutes <= 0 && seconds <= 0) {
+        if(isFinished) {
             alert('Adicione os minutos!')
+            btnPlay.removeAttribute('disabled', 'disabled')            
         } else {
                 if(seconds <= 0) {
                 seconds = 60
