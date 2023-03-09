@@ -4,13 +4,13 @@ export default function Timer({
   resetControls,
 }) {
   let timerTimeOut
-
   let minutes = Number(minutesDisplay.textContent)
 
-  function updateDisplay(minutes, seconds) {
-      minutesDisplay.textContent = String(minutes).padStart(2, "0")
-      secondsDisplay.textContent = String(seconds).padStart(2, "0")      
-    }
+  function updateDisplay(newMinutes, seconds) {
+    newMinutes = newMinutes || minutes
+    minutesDisplay.textContent = String(newMinutes).padStart(2, "0")
+    secondsDisplay.textContent = String(seconds).padStart(2, "0")      
+  }
     
   function reset() {
     updateDisplay(minutes, 0)
