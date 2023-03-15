@@ -30,14 +30,15 @@ export default function Timer({
       updateDisplay(minutes, 0)
 
       if (isFinished) {
+        Sounds().timerEnd()
         resetControls()
         updateDisplay()
-        Sounds().timerEnd()
+
         return
       }
 
       if( seconds <= 0 ) {
-        seconds = 60
+        seconds = 10
         --minutes
       }
 

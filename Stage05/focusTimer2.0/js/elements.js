@@ -1,19 +1,25 @@
-const buttonPlay = document.querySelector('.play')
-const buttonPause = document.querySelector('.pause')
-const buttonStop = document.querySelector('.stop')
-const buttonSet = document.querySelector('.set')
-const buttonSoundOn = document.querySelector('.sound-on')
-const buttonSoundOff = document.querySelector('.sound-off')
-const minutesDisplay = document.querySelector('.minutes')
-const secondsDisplay = document.querySelector('.seconds')
+const btnPlay = document.querySelector('.play')
+const btnStop = document.querySelector('.stop')
+const btnPlus = document.querySelector('.vlplus')
+const btnMinus = document.querySelector('.vlminus')
+
+const btnCardForest = document.querySelector('.cardForest')
+const btnCardRain = document.querySelector('.cardRain')
+const btnCardCoffee = document.querySelector('.cardCoffee')
+const btnCardFire = document.querySelector('.cardFire')
+
+const displayMinutes = document.querySelector('.minutes')
+const displaySeconds = document.querySelector('.seconds')
 
 export {
-  buttonPlay,
-  buttonPause,
-  buttonSet,
-  buttonStop,
-  buttonSoundOff,
-  buttonSoundOn,
-  minutesDisplay,
-  secondsDisplay
+    btnPlay,
+    btnStop,
+    btnPlus,
+    btnMinus,
+    btnCardForest,
+    btnCardRain,
+    btnCardCoffee,
+    btnCardFire,
+    displayMinutes,
+    displaySeconds
 }

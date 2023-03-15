@@ -1,24 +1,24 @@
 export default function() {
-  
-  const buttonPressAudio = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/button-press.wav?raw=true")
-  const kitchenTimer = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/kichen-timer.mp3?raw=true")
-  const bgAudio = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/bg-audio.mp3?raw=true")
+    const forestSound = new Audio('./audios/Floresta.mp3')
+    const rainSound = new Audio('./audios/Chuva.mp3')
+    const coffeeSound = new Audio('./audios/Cafeteria.mp3')
+    const fireSound = new Audio('./audios/Lareira.mp3')
 
+    const buttonPressAudio = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/button-press.wav?raw=true")
+    const kitchenTimer = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/kichen-timer.mp3?raw=true")
 
-  bgAudio.loop = true
+    forestSound.loop = true;
+    rainSound.loop = true;
+    coffeeSound.loop = true;
+    fireSound.loop = true;
 
-  function pressButton() {
-    buttonPressAudio.play()
-  }
-
-  function timeEnd() {
-    kitchenTimer.play()
-  }
-
-  return {
-    pressButton,
-    timeEnd,
-    bgAudio
-  }
-
+    return {
+        forestSound,
+        rainSound,
+        coffeeSound,
+        fireSound,
+        buttonPressAudio,
+        kitchenTimer
+    }
 }
+
