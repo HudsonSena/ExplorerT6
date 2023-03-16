@@ -43,7 +43,7 @@ btnPlus.addEventListener('click', function(){
 btnMinus.addEventListener('click', function(){
     sound.buttonPressAudio.play()
     controls.minus()
-    timer.minus
+    timer.minus()
 })
 
 btnCardForest.addEventListener('click', function(){

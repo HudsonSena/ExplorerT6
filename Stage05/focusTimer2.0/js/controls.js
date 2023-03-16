@@ -1,7 +1,7 @@
-export default function Controls(
+export default function Controls({
     btnPlay, btnStop, btnPlus, btnMinus,
     btnCardCoffee, btnCardFire, btnCardForest, btnCardRain
-) {
+}) {
     function plus() {
         btnPlus.classList.add('blueButton')
         btnMinus.classList.remove('blueButton')
