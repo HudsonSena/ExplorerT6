@@ -12,13 +12,43 @@ export default function() {
     coffeeSound.loop = true;
     fireSound.loop = true;
 
+    function forest() {
+        fireSound.pause()
+        forestSound.play()
+        rainSound.pause()
+        coffeeSound.pause()
+    }
+    function rain() {
+        fireSound.pause()
+        forestSound.pause()
+        rainSound.play()
+        coffeeSound.pause()
+    }
+    function coffee() {
+        fireSound.pause()
+        forestSound.pause()
+        rainSound.pause()
+        coffeeSound.play()
+    }
+    function fire() {
+        fireSound.play()
+        forestSound.pause()
+        rainSound.pause()
+        coffeeSound.pause()
+    }
+
+    function stop() {
+        fireSound.pause()
+        forestSound.pause()
+        rainSound.pause()
+        coffeeSound.pause()
+        buttonPressAudio.play()
+    }
+
     return {
-        forestSound,
-        rainSound,
-        coffeeSound,
-        fireSound,
         buttonPressAudio,
-        kitchenTimer
+        kitchenTimer,
+        fire, forest, coffee, rain, stop
     }
 }
 

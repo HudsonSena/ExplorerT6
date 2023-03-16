@@ -80,11 +80,11 @@ button {
     height: 17.0rem;
 }
 
-.blueButton svg path {
+.blueButton svg path, .blueButton.cBlack svg path {
     fill: var(--bg-selectSongButton-color);
 }
 
-.blue2 svg path:nth-child(1) {
+.blue2 svg path:nth-child(1), .blue2.cardBlack svg path:nth-child(1) {
     fill: var(--bg-selectSongButton-color);
 }
 

@@ -6,7 +6,7 @@ export default function Controls({
         btnPlus.classList.add('blueButton')
         btnMinus.classList.remove('blueButton')
         btnStop.classList.remove('blueButton')
-        btnPlay.classList.remove('blueButton')
+        btnPlay.classList.remove('blueButton')        
     }
     
     function minus() {
@@ -16,7 +16,7 @@ export default function Controls({
         btnPlay.classList.remove('blueButton')
     }
 
-    function playTimer() {
+    function play() {
         btnPlay.classList.add('blueButton')
         btnStop.classList.remove('blueButton')
         btnPlus.classList.remove('blueButton')
@@ -25,7 +25,7 @@ export default function Controls({
         btnPlay.setAttribute('disabled', 'disabled')
     }
 
-    function stopTimer() {
+    function stop() {
         btnStop.classList.add('blueButton')
         btnPlay.classList.remove('blueButton')
         btnPlus.classList.remove('blueButton')
@@ -39,11 +39,40 @@ export default function Controls({
         btnCardFire.classList.remove('blue2')
     }
 
+    function forest() {
+        btnCardForest.classList.add('blue2')
+        btnCardRain.classList.remove('blue2')
+        btnCardCoffee.classList.remove('blue2')
+        btnCardFire.classList.remove('blue2')
+    }
+    function rain() {
+        btnCardRain.classList.add('blue2')
+        btnCardCoffee.classList.remove('blue2')
+        btnCardFire.classList.remove('blue2')
+        btnCardForest.classList.remove('blue2')
+    }
+    function coffee() {
+        btnCardCoffee.classList.add('blue2')
+        btnCardFire.classList.remove('blue2')
+        btnCardForest.classList.remove('blue2')
+        btnCardRain.classList.remove('blue2')
+    }
+    function fire() {
+        btnCardFire.classList.add('blue2')
+        btnCardForest.classList.remove('blue2')
+        btnCardRain.classList.remove('blue2')
+        btnCardCoffee.classList.remove('blue2')
+    }
+
     return{
         plus,
         minus,
-        playTimer,
-        stopTimer
+        play,
+        stop,
+        forest,
+        rain,
+        coffee,
+        fire
     }
 }
 
