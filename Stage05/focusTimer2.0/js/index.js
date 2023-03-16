@@ -5,60 +5,45 @@ import {
 import Sound from "./sounds.js"
 const sound = Sound()
 
+import Controls from "./controls.js"
+const controls = Controls({
+    btnPlay, btnStop, btnPlus, btnMinus,
+    btnCardCoffee, btnCardFire, btnCardForest, btnCardRain
+})
+
+import Timer from "./timer.js"
+const timer = Timer({
+    displayMinutes,
+    displaySeconds
+})
+
 btnPlay.addEventListener('click', function(){
-    btnPlay.classList.add('blueButton')
-    btnStop.classList.remove('blueButton')
-    btnPlus.classList.remove('blueButton')
-    btnMinus.classList.remove('blueButton')
-
-    btnPlay.setAttribute('disabled', 'disabled')
-
+    controls.playTimer()
     sound.buttonPressAudio.play()
-
-    countdown()
+    timer.countdown()
 })
 
 btnStop.addEventListener('click', function(){
-    btnStop.classList.add('blueButton')
-    btnPlay.classList.remove('blueButton')
-    btnPlus.classList.remove('blueButton')
-    btnMinus.classList.remove('blueButton')
-
-    btnPlay.removeAttribute('disabled', 'disabled')
-
+    controls.stopTimer()
     sound.buttonPressAudio.play()
-
-    resetTimer()
+    timer.reset()
 
     sound.forestSound.pause()
     sound.rainSound.pause()
     sound.coffeeSound.pause()
     sound.fireSound.pause()
-
-    btnCardForest.classList.remove('blue2')
-    btnCardRain.classList.remove('blue2')
-    btnCardCoffee.classList.remove('blue2')
-    btnCardFire.classList.remove('blue2')
 })
 
 btnPlus.addEventListener('click', function(){
     sound.buttonPressAudio.play()
-    btnPlus.classList.add('blueButton')
-    btnMinus.classList.remove('blueButton')
-    btnStop.classList.remove('blueButton')
-    btnPlay.classList.remove('blueButton')
-
-    plus()
+    controls.plus()
+    timer.plus()
 })
 
 btnMinus.addEventListener('click', function(){
     sound.buttonPressAudio.play()
-    btnMinus.classList.add('blueButton')
-    btnPlus.classList.remove('blueButton')
-    btnStop.classList.remove('blueButton')
-    btnPlay.classList.remove('blueButton')
-    
-    minus()
+    controls.minus()
+    timer.minus
 })
 
 btnCardForest.addEventListener('click', function(){
@@ -108,54 +93,3 @@ btnCardFire.addEventListener('click', function(){
     sound.rainSound.pause()
     sound.coffeeSound.pause()
 })
-
-let timerTimeOut
-
-let minutesPlus = 0
-
-function resetTimer() {
-    displayMinutes.textContent = String(0).padStart(2, "0")
-    displaySeconds.textContent = String(0).padStart(2, "0")
-    clearTimeout(timerTimeOut)
-    minutesPlus = 0
-}
-
-function plus() {
-    displayMinutes.textContent = String(minutesPlus += 5).padStart(2, "0")
-}
-
-function minus() {
-    if(minutesPlus <= 0 || minutesPlus < 5) {
-        alert('Adicione os minutos!')
-    } else {
-        minutesPlus -= 5
-    }
-    displayMinutes.textContent = String(minutesPlus).padStart(2, "0")
-}
-
-function countdown() {
-    timerTimeOut = setTimeout(function() {
-        let seconds = Number(displaySeconds.textContent)
-        let minutes = Number(displayMinutes.textContent)
-        let isFinished = minutes <= 0 && seconds <= 0
-        
-        if(isFinished) {
-            sound.kitchenTimer.play()            
-            alert('Adicione os minutos!')
-            btnPlay.removeAttribute('disabled', 'disabled')            
-        } else {
-                if(seconds <= 0) {
-                seconds = 60
-                    minutesPlus = Number(displayMinutes.textContent = String(minutes -1).padStart(2, "0"))
-                }
-                if(minutes <= 0 && seconds <= 0) {
-                    return
-                }
-
-                displaySeconds.textContent = String(seconds -1).padStart(2, "0")
-
-                countdown()
-        }
-
-    }, 1000)
-}
