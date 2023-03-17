@@ -11,15 +11,21 @@ const btnCardFire = document.querySelector('.cardFire')
 const displayMinutes = document.querySelector('.minutes')
 const displaySeconds = document.querySelector('.seconds')
 
-const forestSound = new Audio('./audios/Floresta.mp3')
+const forestSound = new Audio('./audios/Chuva.mp3')
 const rainSound = new Audio('./audios/Chuva.mp3')
 const coffeeSound = new Audio('./audios/Cafeteria.mp3')
 const fireSound = new Audio('./audios/Lareira.mp3')
 
-const volumeForest = document.querySelector('#rangeForest')
-const volumeRain = document.querySelector('#rangeRain')
-const volumeCoffee = document.querySelector('#rangeCoffe')
-const volumeFire = document.querySelector('#rangeFire')
+const inputForest = document.querySelector('#rangeForest')
+const inputRain = document.querySelector('#rangeRain')
+const inputCoffee = document.querySelector('#rangeCoffe')
+const inputFire = document.querySelector('#rangeFire')
+
+inputForest.addEventListener('input', function(){
+    forestSound.volume = inputForest.value
+})
+
+
 
 forestSound.loop = true;
 rainSound.loop = true;
