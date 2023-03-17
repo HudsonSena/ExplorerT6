@@ -12,14 +12,7 @@ const displayMinutes = document.querySelector('.minutes')
 const displaySeconds = document.querySelector('.seconds')
 
 export {
-    btnPlay,
-    btnStop,
-    btnPlus,
-    btnMinus,
-    btnCardForest,
-    btnCardRain,
-    btnCardCoffee,
-    btnCardFire,
-    displayMinutes,
-    displaySeconds
+    btnPlay, btnStop, btnPlus, btnMinus,
+    btnCardForest, btnCardRain, btnCardCoffee, btnCardFire,
+    displayMinutes, displaySeconds
 }
