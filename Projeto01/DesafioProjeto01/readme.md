@@ -1,6 +1,6 @@
 # "Móveis Customisados"
 
-![preview]()
+![preview](./images/moveisCustomizados.png)
 
 Project building from "Rocktseat" classes.
 
@@ -14,11 +14,11 @@ Project building from "Rocktseat" classes.
 
 # Learning
 
-- transitions and transforms
-- responsive
-- media screen
-- media query
-- media queries
+- Semantic (HTML)
+- selectors (CSS)
+- image applications
+- image settings
+- styles in tags
 
 # Contact
 
