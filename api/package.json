@@ -1,13 +1,13 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "description": "",
+  "description": "API developed in Rocketseat's Class 6 Explorer program",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./src/server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Hudson Sena",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2"
