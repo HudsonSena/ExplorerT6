@@ -7,8 +7,8 @@ app.get("/message/:id/:user", (request, response) => {
     const {id, user} = request.params;
 
     response.send(`
-    Menssagem ID: ${id}.
-    Para o usuário: ${user}`)
+    Message ID: ${id}. </br>
+    User Name: ${user}`)
 });
 
 app.get("/users", (request, response) => {
