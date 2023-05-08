@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    /*font-family: 'Alkatra', cursive;*/
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    font-size: 62.5%;
+
+    ---color1: #D3A435;
+    ---color2: #7A93AC;
+    ---color3: #7FB069;
+    ---color4: #B8B8B8;
+    ---color5: #122C34;
+
+    ---text-color-small: var(---color5);
+    ---text-color-large: var(---color1);
+    ---text-color-nav: var(---color1);
+}
+
+body {
+    font-family: 'Roboto';
+    font-size: 2rem;
+}
