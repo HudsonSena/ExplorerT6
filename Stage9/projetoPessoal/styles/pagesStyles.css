@@ -17,3 +17,8 @@ main {
     justify-content: space-between;
 }
 
+p {
+    text-align: justify;
+    text-indent: 3rem;
+    line-height: 2.5rem;
+}
