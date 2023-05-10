@@ -11,58 +11,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Family Health</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
+    <header>
+        <h1>Family Health</h1>
+        <nav>
+            <a href="/" onclick="route()" class="btnHome">Home</a>
+            <a href="/clinics" onclick="route()" class="btnClinics">Clínicas</a>
+            <a href="/professionals" onclick="route()" class="btnProfessionals">Profissionais</a>
+            <a href="/about" onclick="route()" class="btnAbout">Sobre</a>
+            <a href="/login" onclick="route()" class="btnLogin">Login</a>
+            <a href="/register" onclick="route()" class="btnRegister">Registre-se</a>
+        </nav>
+    </header>
     <main>
-        <header>
-            <h1>Family Health</h1>
-            <nav>
-                <a href="/" onclick="route()" class="btnHome">Home</a>
-                <a href="/clinics" onclick="route()" class="btnClinics">Clinics</a>
-                <a href="/professionals" onclick="route()" class="btnProfessionals">Professionals</a>
-                <a href="/about" onclick="route()" class="btnAbout">About</a>
-                <a href="/login" onclick="route()" class="btnLogin">Login</a>
-                <a href="/register" onclick="route()" class="btnRegister">Register</a>
-            </nav>
-        </header>
-        <body>
-            <div id="singlePage"></div>
-        </body>
-        <footer>
-            <h2>Fale Conosco:</h2>
-            <div class="contact">
-                <section>
-                    <h3>Redes Sociais</h3>
-                    <ul type="none">
-                        <li><a href="">Instagram</a></li>
-                        <li><a href="">Facebook</a></li>
-                        <li><a href="">LinkdIn</a></li>
-                    </ul>
-                </section>
-        
-                <section>
-                    <h3>Ajuda</h3>
-                    <ul type="none">
-                        <li><a href="">Forum</a></li>
-                        <li><a href="">Chat</a></li>
-                        <li><a href="">WhatsApp</a></li>
-                    </ul>
-                </section>
-                <section>
-                    <h3>Contatos</h3>
-                    <ul type="none">
-                        <li>Zona Metropolitana: xxx-xxxxxx-xxxx</li>
-                        <li>Outras Localidades: DDD-xxxxx-xxxx</li>
-                        <li>WhatsApp: +55-DDD-xxxxx-xxxx</li>
-                    </ul>
-                </section>
-            </div>
-            <p>
-                Site desenvolvido por <a href="https://github.com/HudsonSena" target="_blank">Hudson Sena</a>.
-            </p>
-        </footer>
+        <div id="singlePage"></div>
     </main>
+    <footer>
+        <h2>Fale Conosco:</h2>
+        <div class="contact">
+            <section>
+                <h3>Redes Sociais</h3>
+                <ul type="none">
+                    <li><a href="">Instagram</a></li>
+                    <li><a href="">Facebook</a></li>
+                    <li><a href="">LinkdIn</a></li>
+                </ul>
+            </section>
+    
+            <section>
+                <h3>Ajuda</h3>
+                <ul type="none">
+                    <li><a href="">Forum</a></li>
+                    <li><a href="">Chat</a></li>
+                    <li><a href="">WhatsApp</a></li>
+                </ul>
+            </section>
+            <section>
+                <h3>Contatos</h3>
+                <ul type="none">
+                    <li>Zona Metropolitana: xxx-xxxxxx-xxxx</li>
+                    <li>Outras Localidades: DDD-xxxxx-xxxx</li>
+                    <li>WhatsApp: +55-DDD-xxxxx-xxxx</li>
+                </ul>
+            </section>
+        </div>
+        <p>
+            Site desenvolvido por <a href="https://github.com/HudsonSena" target="_blank">Hudson Sena</a>.
+        </p>
+    </footer>
     <script src="./js/index.js" type="module"></script>
 </body>
 </html>
