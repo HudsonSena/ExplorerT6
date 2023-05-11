@@ -7,13 +7,13 @@
     --color01: #5899e2;
     --color02: #f0eff4;
     --color03: #2f4550;
-    --color04: #ffbf46;
+    --color04: #f6ee54;
     --color05: #8c1c13;
     --color06: #042142;
 
     --bg-color: #2f4550;
     --text-color-small: #f0eff4;
-    --text-color-large: #ffbf46;   
+    --text-color-large: #f6ee54;   
 }
 
 * {
@@ -31,11 +31,10 @@ body {
 
 header {
     width: 100%;
-    height: 15rem;
+    height: 12rem;
 
     background-color: var(---color3);
     color: var(---color1);
-    box-shadow: 0 .1rem .1rem .1rem var(--text-color-large);
 
     display: flex;
     flex-direction: column;
@@ -45,22 +44,16 @@ header {
     font-size: 2rem;
 }
 
-header h1 {
-    text-shadow: .01rem 0rem .1rem var(--text-color-small);
-}
-
 footer {
     width: 100%;
-    height: 20rem;
+    height: 15rem;
 
-    padding: 1rem;
+    padding: 0rem;
 
     background-color: var(---color3);
     color: var(---color1);
 
-    box-shadow: 0 -.1rem .1rem .1rem var(--text-color-large);
-
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-align: center;
 
     display: flex;
@@ -75,15 +68,6 @@ footer {
 li a {
     font-size: 1.2rem;
     color: var(--text-color-small);
-}
-
-h1, h2, h3, span, a {
-    font-family: 'Alkatra', cursive;
-    text-transform: uppercase;
-
-    font-weight: 700;
-
-    color: var(--text-color-large);
 }
 
 p {
@@ -113,8 +97,6 @@ nav a {
     line-height: 2rem;
     
     color: var(--text-color-small);
-
-    text-shadow: .1rem 0rem .2rem var(--text-color-large);
 }
 
 nav a:nth-child(1) {
