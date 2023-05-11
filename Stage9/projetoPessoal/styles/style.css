@@ -3,15 +3,17 @@
 :root {
     font-size: 62.5%;
 
-    ---color1: #D3A435;
-    ---color2: #7A93AC;
-    ---color3: #7FB069;
-    ---color4: #B8B8B8;
-    ---color5: #122C34;
+    /*Paleta*/
+    --color01: #5899e2;
+    --color02: #f0eff4;
+    --color03: #2f4550;
+    --color04: #ffbf46;
+    --color05: #8c1c13;
+    --color06: #042142;
 
-    ---text-color-small: var(---color5);
-    ---text-color-large: var(---color1);
-    ---text-color-nav: var(---color1);
+    --bg-color: #2f4550;
+    --text-color-small: #f0eff4;
+    --text-color-large: #ffbf46;   
 }
 
 * {
@@ -19,21 +21,21 @@
     margin: 0;
     padding: 0;
 }
-
 body {
-    height: 100%;
+    height: 50%;
     width: 100%;
 
-    background-color: rgb(255, 255, 227);
-    color: var(---color1);    
+    background-color: var(--bg-color);
+    color: var(--text-color-small);    
 }
 
 header {
     width: 100%;
     height: 15rem;
 
-    background-color: rgb(255, 255, 227);
-    box-shadow: 0 .1rem .3rem .1rem rgba(129, 106, 2, 0.5);
+    background-color: var(---color3);
+    color: var(---color1);
+    box-shadow: 0 .1rem .1rem .1rem var(--text-color-large);
 
     display: flex;
     flex-direction: column;
@@ -43,16 +45,20 @@ header {
     font-size: 2rem;
 }
 
-main {
-    width: 90rem;
-    height: 100%;
-        
-    margin: auto;
+header h1 {
+    text-shadow: .01rem 0rem .1rem var(--text-color-small);
 }
 
 footer {
-    background-color: rgb(255, 255, 227);
-    box-shadow: 0 -.1rem .3rem .1rem rgba(129, 106, 2, 0.5);
+    width: 100%;
+    height: 20rem;
+
+    padding: 1rem;
+
+    background-color: var(---color3);
+    color: var(---color1);
+
+    box-shadow: 0 -.1rem .1rem .1rem var(--text-color-large);
 
     font-size: 1.5rem;
     text-align: center;
@@ -66,11 +72,18 @@ footer {
     font-family: 'Roboto', cursive;
 }
 
+li a {
+    font-size: 1.2rem;
+    color: var(--text-color-small);
+}
+
 h1, h2, h3, span, a {
     font-family: 'Alkatra', cursive;
     text-transform: uppercase;
 
     font-weight: 700;
+
+    color: var(--text-color-large);
 }
 
 p {
@@ -79,7 +92,11 @@ p {
 
 a {
     text-decoration: none;
-    color: var(---color1);
+}
+
+a:hover {
+    color: var(--color06);
+    text-shadow: none;
 }
 
 header nav {
@@ -90,10 +107,14 @@ header nav {
 }
 
 nav a {
-    border-left: .5px solid var(---color1);
+    border-left: .5px solid var(--color04);
     padding-right: 1rem;
     padding-left: 1rem;
     line-height: 2rem;
+    
+    color: var(--text-color-small);
+
+    text-shadow: .1rem 0rem .2rem var(--text-color-large);
 }
 
 nav a:nth-child(1) {
@@ -104,7 +125,6 @@ footer div {
     display: flex;
     flex-direction: row;
 
-    align-items: center;
     justify-content: center;
     gap: 10rem;
 }
