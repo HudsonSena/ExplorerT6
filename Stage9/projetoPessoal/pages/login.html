@@ -12,22 +12,46 @@
     <main>
         <h2>Login</h2>
         <form action="">
-            <div>
-                <label for="username">Usuário</label>
-                <input type="text" id="username">
-            </div>
-            <div>
-                <label for="key">Senha</label>
-                <input type="text" id="key">
-            </div>
-            <div>
-                <button type="submit">Acessar</button>
-            </div>
-            <div>
-                <p>
-                    <a href="">Esqueci meu login/senha</a>
-                </p>
-            </div>
+            <section class="typeuser">
+                <h3>Tipo de Usuário: </h3>
+                <div>
+                    <input type="radio" name="usertype" id="pro">
+                    <label for="pro">Profissional</label>
+                </div>
+                
+                <div>
+                    <input type="radio" name="usertype" id="clinic">
+                    <label for="clinic">Clínica/Hospital/Laboratório</label>
+                </div>
+                
+                <div>
+                    <input type="radio" name="usertype" id="phealth">
+                    <label for="phealth">Pessoa Health</label>
+                </div>
+            </section>
+
+            <div class="linedivision"></div>
+            
+            <section>
+                <div>
+                    <label for="username">Usuário:</label>
+                    <input type="text" id="username">
+                </div>
+                <div>
+                    <label for="key">Senha:</label>
+                    <input type="text" id="key">
+                </div>
+            </section>
+            <section>
+                <div>
+                    <button type="submit">Acessar</button>
+                </div>
+                <div>
+                    <p>
+                        <a href="">Esqueci meu login/senha</a>
+                    </p>
+                </div>
+            </section>
         </form>
     </main>
 </body>
