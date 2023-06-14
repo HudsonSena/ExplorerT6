@@ -3,6 +3,7 @@ import { Input } from '../../components/Input';
 import { Textarea } from '../../components/Textarea';
 import { Noteitem } from '../../components/Noteitem';
 import { Section } from '../../components/Section';
+import { Button } from '../../components/Button';
 
 
 import { Container, Form } from './styles';
@@ -28,7 +29,14 @@ export function New() {
                         <Noteitem placeholder="Novo link" isNew />
                     </Section>
 
+                    <Section title="Marcadores">
+                        <div className="tags">
+                            <Noteitem value="React"/>
+                            <Noteitem placeholder="Nova tag" isNew />
+                        </div>
+                    </Section>
 
+                    <Button title="Salvar"/>
                 </Form>
             </main>
         </Container>

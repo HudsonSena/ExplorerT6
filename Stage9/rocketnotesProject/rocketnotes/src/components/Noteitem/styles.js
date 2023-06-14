@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
     display: flex;
     align-items: center;
+    justify-content: center;
 
     background: ${({ theme, isNew }) => isNew ? "transparent" : theme.COLORS.BACKGROUND_900};
     color: ${({ theme }) => theme.COLORS.GRAY_300};
@@ -20,10 +21,12 @@ export const Container = styled.div`
 
     .button-delete {
         color: ${({ theme }) => theme.COLORS.RED};
+        display: flex;
     }
 
     .button-add {
         color: ${({ theme }) => theme.COLORS.ORANGE};
+        display: flex;
     }
 
     input {
