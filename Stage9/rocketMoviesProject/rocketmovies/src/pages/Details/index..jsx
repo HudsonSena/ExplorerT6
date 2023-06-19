@@ -1,5 +1,12 @@
+import { Container} from './styles.js'
+import { Button } from '../../components/Button';
+
 export function Details() {
     return (
-        <h1>Hello World</h1>
+        <Container>
+            <Button 
+                title="Chama!"
+            />
+        </Container>
     )
 }
