@@ -1,5 +1,5 @@
 import { Container, Profile } from './styles';
-import { Input } from '../../components/Input'
+import { Input } from '../../components/Input';
 
 export function Header() {
     return (
@@ -20,7 +20,7 @@ export function Header() {
                     src="http://github.com/HudsonSena.png" 
                     alt="Imagem do usuário"
                 />               
-            </Profile>            
+            </Profile>
         </Container>
     )
 }
