@@ -14,4 +14,9 @@ export const Container = styled.button`
     &:disabled {
         opacity: 0.5;
     }
+
+    > svg {
+        width: 16px;
+        height: 16px;
+    }
 `;

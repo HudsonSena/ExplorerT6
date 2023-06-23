@@ -1,13 +1,37 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
-    padding: 32px
-    background-color: ${({ theme }) => theme.colors.pink};
+    width: auto;
+    
+    padding: 32px;
+    margin: auto;
 
-    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
 
-    width: 1120px;
-    height: 222px;
+    gap: 15px;
 
-    color: white;
+    background-color: ${({ theme }) => theme.colors.background03};
+
+    border-radius: 16px;
+    color: ${({ theme }) => theme.colors.white01};;
+
+    > .stars {
+        display: flex;
+        flex-direction: rows;
+        gap: 6px;
+    }
+
+    > p {
+        font-family: 'Roboto';
+        color: grey;
+    }
+
+    > .tags {
+        display: flex;
+        flex-direction: line;
+        gap: 8px;
+    }
+
+     
 `;

@@ -13,6 +13,4 @@ export const Container = styled.input`
     background-color: ${({ theme }) => theme.colors.background04};
     border: none;
     border-radius: 10px;
-
-    color: green;
 `; 
