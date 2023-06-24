@@ -11,7 +11,7 @@ export function Details() {
         <Container>
             <Header />           
             
-            <main>
+            <Content>                
                 <div className='h1button'>
                     <h1>Meus Filmes</h1>
                     <Button
@@ -19,8 +19,8 @@ export function Details() {
                         title="Adicionar Filmes"
                         />
                 </div>
-
-                <Content>
+                
+                <main>
                     <Section title="Star Wars">
                         <div className='stars'>
                             <Star icon={AiFillStar} />
@@ -36,7 +36,6 @@ export function Details() {
                             <Tag title="Ação"/>
                         </div>
                     </Section>
-
                     <Section title="Star Wars">
                         <div className='stars'>
                             <Star icon={AiFillStar} />
@@ -52,7 +51,6 @@ export function Details() {
                             <Tag title="Ação"/>
                         </div>
                     </Section>
-
                     <Section title="Star Wars">
                         <div className='stars'>
                             <Star icon={AiFillStar} />
@@ -68,7 +66,6 @@ export function Details() {
                             <Tag title="Ação"/>
                         </div>
                     </Section>
-
                     <Section title="Star Wars">
                         <div className='stars'>
                             <Star icon={AiFillStar} />
@@ -84,8 +81,8 @@ export function Details() {
                             <Tag title="Ação"/>
                         </div>
                     </Section>
-                </Content>
-            </main>
+                </main>
+            </Content>
             
         </Container>
     )

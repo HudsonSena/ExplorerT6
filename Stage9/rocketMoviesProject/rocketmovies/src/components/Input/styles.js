@@ -7,7 +7,7 @@ export const Container = styled.input`
     align-items: flex-start;
     padding: 19px 24px;
 
-    width: auto;
+    width: 100%;
     height: 56px;
 
     background-color: ${({ theme }) => theme.colors.background04};

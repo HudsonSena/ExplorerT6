@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 export const Container = styled.div`
     width: 100%;
-    height: 100vh;
+    height: 100%;
 
     display: grid;
     grid-template-rows: 116px auto;
@@ -12,22 +12,21 @@ export const Container = styled.div`
 
     justify-content: center;
     align-items:center;
+`;
 
-    
+export const Content = styled.div`
+    grid-area: "content";
 
-    > main {
-        grid-area: content;
+    padding: 50px 122px 60px 122px;
 
-        width: ;
-        height: ;
-        padding: 123px 50px;
-
-        .h1button {
+    > .h1button {
             display: flex;
             flex-direction: rows;
 
             justify-content: space-between;
             align-items: center;
+
+            margin-bottom: 40px;
 
             h1 {
                 color: white;
@@ -37,12 +36,11 @@ export const Container = styled.div`
                 width: 200px;
             }
         }
-    }
-`;
 
-export const Content = styled.div`
-    grid-area: "content";
-    width: 100%;
-    height: 100vh;
-    overflow: auto;
+    > main {
+        height: 60vh;
+        margin: auto;
+        overflow-y: auto;
+    }
+
 `;

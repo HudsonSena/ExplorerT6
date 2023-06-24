@@ -9,26 +9,25 @@ export const Container = styled.header`
     border-bottom: 1px solid ${({ theme }) => theme.colors.grey};
 
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+
     gap: 64px;
 
-    padding: 0 123px;
+    padding: 24px 123px;
     
     > h1 {
         color: ${({ theme }) => theme.colors.pink};
     }
-
-    > Input {
-        width: 630px;
-    }
 `;
 
 export const Profile = styled.div`
+    width: 18%;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
 
-    gap: 9px;    
+    gap: 9px;
 
     > img {
         width: 64px;
@@ -42,7 +41,7 @@ export const Profile = styled.div`
         flex-direction: column;
         align-items: flex-end;
         color: white;
-        
+
         a {
             text-decoration: none;
             color: grey;

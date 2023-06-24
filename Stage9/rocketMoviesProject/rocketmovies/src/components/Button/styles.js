@@ -1,22 +1,25 @@
 import styled from 'styled-components';
 
 export const Container = styled.button`
-    width: 100%;
     background-color: ${({ theme }) => theme.colors.pink};
 
-    height: 56px;
-    border: 0;
-    padding: 0 16px;
-    margin-top: 16px;
-    border-radius: 10px;
-    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+
+    border-radius: 8px;
+
+    
+    padding: 14px 32px;
+    align-items: center;
+
+    gap: 8px;
 
     &:disabled {
         opacity: 0.5;
     }
 
     > svg {
-        width: 16px;
-        height: 16px;
+        width: 32px;
+        height: 32px;
     }
 `;

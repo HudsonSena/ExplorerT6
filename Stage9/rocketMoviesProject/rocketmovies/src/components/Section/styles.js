@@ -5,6 +5,7 @@ export const Container = styled.section`
     
     padding: 32px;
     margin: auto;
+    margin-bottom: 24px;
 
     display: flex;
     flex-direction: column;
@@ -14,7 +15,7 @@ export const Container = styled.section`
     background-color: ${({ theme }) => theme.colors.background03};
 
     border-radius: 16px;
-    color: ${({ theme }) => theme.colors.white01};;
+    color: ${({ theme }) => theme.colors.white01};
 
     > .stars {
         display: flex;
