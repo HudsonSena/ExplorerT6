@@ -2,6 +2,7 @@ import { Container, Content } from './styles.js';
 import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
 import { Section } from '../../components/Section';
+import { ButtonText } from '../../components/ButtonText';
 import { Tag } from '../../components/Tags';
 import { Star } from '../../components/Star';
 import { AiFillStar, AiOutlineStar, AiOutlinePlus } from 'react-icons/ai';
@@ -9,9 +10,12 @@ import { AiFillStar, AiOutlineStar, AiOutlinePlus } from 'react-icons/ai';
 export function Details() {
     return (
         <Container>
-            <Header />           
+            <Header />
+
             
-            <Content>                
+            
+            <Content>
+                <ButtonText title="Testando"/>
                 <div className='h1button'>
                     <h1>Meus Filmes</h1>
                     <Button

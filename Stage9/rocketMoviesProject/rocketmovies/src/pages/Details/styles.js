@@ -40,7 +40,17 @@ export const Content = styled.div`
     > main {
         height: 60vh;
         margin: auto;
+        padding-right: 8px;
         overflow-y: auto;
+    }
+
+    > main::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    > main::-webkit-scrollbar-thumb {
+        background-color: ${({ theme })=> theme.colors.pink};
+        border-radius: 8px;
     }
 
 `;
