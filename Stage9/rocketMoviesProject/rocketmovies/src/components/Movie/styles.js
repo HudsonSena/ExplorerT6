@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.section`
+export const Container = styled.button`
     width: auto;
     
     padding: 32px;
@@ -14,6 +14,7 @@ export const Container = styled.section`
 
     background-color: ${({ theme }) => theme.colors.background03};
 
+    border: none;
     border-radius: 16px;
     color: ${({ theme }) => theme.colors.white01};
 
@@ -21,6 +22,12 @@ export const Container = styled.section`
         display: flex;
         flex-direction: rows;
         gap: 6px;
+
+        svg {
+            width: 12px;
+            height: 12px;
+            color: ${({ theme }) => theme.colors.pink};
+        }        
     }
 
     > p {

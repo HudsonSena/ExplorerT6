@@ -16,26 +16,27 @@ export const Container = styled.div`
 
 export const Content = styled.div`
     grid-area: "content";
-
-    padding: 50px 122px 60px 122px;
+    width: 80%;
+    margin: auto;
+    margin-top: 47px;
 
     > .h1button {
-            display: flex;
-            flex-direction: rows;
+        display: flex;
+        flex-direction: rows;
 
-            justify-content: space-between;
-            align-items: center;
+        justify-content: space-between;
+        align-items: center;
 
-            margin-bottom: 40px;
+        margin-bottom: 40px;
 
-            h1 {
-                color: white;
-            }
-
-            Button {
-                width: 200px;
-            }
+        h1 {
+            color: white;
         }
+
+        Button {
+            width: 200px;
+        }
+    }
 
     > main {
         height: 60vh;

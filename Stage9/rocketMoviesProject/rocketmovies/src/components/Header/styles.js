@@ -14,7 +14,7 @@ export const Container = styled.header`
 
     gap: 64px;
 
-    padding: 24px 123px;
+    padding: 24px 10%;
     
     > h1 {
         color: ${({ theme }) => theme.colors.pink};
@@ -22,7 +22,7 @@ export const Container = styled.header`
 `;
 
 export const Profile = styled.div`
-    width: 18%;
+    width: 20%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
