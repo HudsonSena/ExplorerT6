@@ -1,9 +1,8 @@
 import { Container, Content } from './styles.js';
 import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
-import { Movie } from '../../components/Movie/index.jsx';
-import { Tag } from '../../components/Tags';
-import { AiFillStar, AiOutlineStar, AiOutlinePlus } from 'react-icons/ai';
+import { Movie } from '../../components/Movie';
+import { AiOutlinePlus } from 'react-icons/ai';
 
 export function Home() {
     return (
@@ -18,17 +17,17 @@ export function Home() {
                         title="Adicionar Filmes"
                         />
                 </div>
-                
+                              
                 <main>
                     <Movie data={{
                         title: 'Star Wars 1000',
 
-                        description: 'Muita coisa vai ser escrita aqui, até achar o que escrever',
+                        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit magni, porro sapiente est esse deserunt consectetur sit neque laboriosam repellat vel! Praesentium recusandae incidunt, cum debitis pariatur tenetur suscipit laborum!',
 
                         tags: [
-                            { id: '1', name: 'tag01'},
-                            { id: '2', name: 'tag03'},
-                            { id: '3', name: 'tag04'},
+                            { id: '1', name: 'Ficçõa Científica'},
+                            { id: '2', name: 'Ação'},
+                            { id: '3', name: 'Drama'},
                         ]
                     }} 
                     />

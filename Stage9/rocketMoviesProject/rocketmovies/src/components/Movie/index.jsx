@@ -1,8 +1,9 @@
 import { Container } from './styles';
-import { Tag } from '../../components/Tags';
+import { Tag } from '../Tags';
+import { Star} from '../Star';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 
-export function Movie({ data, ...rest }) {
+export function Movie({ data, icon: Icon, ...rest }) {
     /*const rate5 = `
         <Star icon={AiFillStar} />
         <Star icon={AiFillStar} />
@@ -56,25 +57,23 @@ export function Movie({ data, ...rest }) {
             <h2>{data.title}</h2>
 
             <div className='stars'>
-                <img src={AiFillStar} />
-                <img src={AiFillStar} />
-                <img src={AiFillStar} />
-                <img src={AiFillStar} />
-                <img src={AiOutlineStar} />                
+                <Star icon={AiFillStar} />
+                <Star icon={AiFillStar} />
+                <Star icon={AiFillStar} />
+                <Star icon={AiFillStar} />
+                <Star icon={AiOutlineStar} />
             </div>
 
             <p>{data.description}</p>
 
             {
                 data.tags &&
-                <div className='tags'>
+                <footer>
                     {
-                        data.tags.map( tag => {
-                            <Tag key={tag.id} title={tag.name}>
-                            </Tag>
-                        })
+                        data.tags.map( tag => <Tag key={tag.id} title={tag.name} />
+                        )
                     }
-                </div>
+                </footer>
             }
         </Container>
     )

@@ -13,33 +13,26 @@ export const Container = styled.button`
     gap: 15px;
 
     background-color: ${({ theme }) => theme.colors.background03};
+    color: ${({ theme }) => theme.colors.white01};
 
     border: none;
-    border-radius: 16px;
-    color: ${({ theme }) => theme.colors.white01};
+    border-radius: 16px;    
 
     > .stars {
         display: flex;
         flex-direction: rows;
-        gap: 6px;
-
-        svg {
-            width: 12px;
-            height: 12px;
-            color: ${({ theme }) => theme.colors.pink};
-        }        
+        gap: 6px;       
     }
 
     > p {
         font-family: 'Roboto';
         color: grey;
+        text-align: left;
     }
 
-    > .tags {
+    > footer {
         display: flex;
-        flex-direction: line;
+        flex-direction: rows;
         gap: 8px;
-    }
-
-     
+    }     
 `;

@@ -1,9 +1,6 @@
 import { styled } from 'styled-components';
 
-export const Container = styled.div`
-    width: auto;
-    height: auto;
-
+export const Container = styled.span`
     padding: 5px 16px;
 
     color: ${({ theme })=> theme.colors.white03};
