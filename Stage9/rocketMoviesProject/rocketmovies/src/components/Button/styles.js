@@ -6,11 +6,13 @@ export const Container = styled.button`
     display: flex;
     flex-direction: row;
 
+    border: none;
     border-radius: 8px;
 
     
     padding: 14px 32px;
     align-items: center;
+    justify-content: center;
 
     gap: 8px;
 
