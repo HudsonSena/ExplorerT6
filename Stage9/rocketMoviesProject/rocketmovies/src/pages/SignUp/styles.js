@@ -48,7 +48,7 @@ export const Form = styled.form`
     > div div {
         margin-bottom: 8px;
     }
-    > div div:nth-child(2){
+    > div div:nth-child(3){
         margin-bottom: 16px;
     } 
 `;

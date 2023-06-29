@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.button`
+    width: 100%;
+
     background-color: ${({ theme }) => theme.colors.pink};
 
     display: flex;
@@ -8,7 +10,6 @@ export const Container = styled.button`
 
     border: none;
     border-radius: 8px;
-
     
     padding: 14px 32px;
     align-items: center;
