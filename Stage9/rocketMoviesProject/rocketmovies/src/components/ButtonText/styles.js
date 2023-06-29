@@ -5,13 +5,10 @@ export const Container = styled.button`
     align-items: center;
     gap: 8px;
 
-    margin: auto;
-
     background: none;
-
-    color: ${({ theme }) => theme.colors.pink};
-
     border: none;
+
+    color: ${({ theme }) => theme.colors.pink};    
 
     font-size: 16px;
     font-family: 'Roboto Slab';

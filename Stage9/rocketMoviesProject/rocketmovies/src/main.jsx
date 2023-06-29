@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { SingUp } from './pages/SignUp/index';
 import { ThemeProvider } from 'styled-components';
 import theme from './styles/theme.js';
 import GlobalStyles from './styles/global';
+import { CreateMovie } from './pages/CreateMovie';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <SingUp />
+      <CreateMovie />
     </ThemeProvider>
     
   </React.StrictMode>,

@@ -2,16 +2,17 @@ import styled from 'styled-components';
 
 export const Container = styled.div`    
     width: 100%;
-    height: 56px;
+    min-height: 236px;
     
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 
-    padding-left: 24px;
+    padding: 24px;
 
     gap: 16px;
 
     background-color: ${({ theme }) => theme.colors.background04};
+    color: white;
     
     border: none;
     border-radius: 10px;
