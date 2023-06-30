@@ -36,8 +36,10 @@ export function CreateMovie() {
                         />
                         <h2>Marcadores</h2>
                         <div className="marcadores">
-                            <MovieItem />
-                            <MovieItem />
+                            <MovieItem value="Ficção científica"/>
+                            <MovieItem value="Ação"/>
+                            <MovieItem value="Drama"/>
+                            <MovieItem  isNew placeholder="Novo marcador"/>
                         </div>
                         <div className="buttons">
                             <Button title="Excluir filme"/>
