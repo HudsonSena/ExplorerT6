@@ -1,19 +1,20 @@
 import { Container } from './styles';
 import { Tag } from '../Tags';
-import { Star } from '../Star';
 import { AiFillStar, AiOutlineStar, AiOutlineClockCircle } from 'react-icons/ai';
 
 export function MoviePreviewComp({ data, icon: Icon, ...rest }) {
     return (
         <Container {...rest}>
             <div>
-                <h2>{data.title}</h2>
+                <h1>{data.title}</h1>
+                <div className='stars'>
+                    <AiFillStar />
+                    <AiFillStar />
+                    <AiFillStar />
+                    <AiFillStar />
+                    <AiOutlineStar />
+                </div>
 
-                <Star icon={AiFillStar} />
-                <Star icon={AiFillStar} />
-                <Star icon={AiFillStar} />
-                <Star icon={AiFillStar} />
-                <Star icon={AiOutlineStar} />
             </div>
 
             <p>

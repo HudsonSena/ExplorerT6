@@ -1,28 +1,28 @@
 import styled from 'styled-components';
 
-export const Container = styled.button`
-    width: auto;
-    
-    padding: 32px;
-    margin: auto;
-    margin-bottom: 24px;
+export const Container = styled.div`
+    width: 100%;
 
     display: flex;
     flex-direction: column;
 
-    gap: 15px;
+    gap: 40px;
 
-    background-color: ${({ theme }) => theme.colors.background03};
+    background: none;
     color: ${({ theme }) => theme.colors.white01};
 
     border: none;
-    border-radius: 16px;    
 
-    > .stars {
+    > div {
+        display: flex;
+        align-items: center;
+        gap: 19px;
+    }
+
+    > div .stars {
         display: flex;
         flex-direction: row;
         gap: 10px;
-        scale: 1.8;
 
         svg {
             width: 20px;
