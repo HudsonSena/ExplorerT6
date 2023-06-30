@@ -1,14 +1,14 @@
 import { Container } from './styles';
 import { Tag } from '../Tags';
-import { Star } from '../../components/Star';
-import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
+import { Star } from '../Star';
+import { AiFillStar, AiOutlineStar, AiOutlineClockCircle } from 'react-icons/ai';
 
-export function Movie({ data, icon: Icon, ...rest }) {
+export function MoviePreviewComp({ data, icon: Icon, ...rest }) {
     return (
         <Container {...rest}>
-            <h2>{data.title}</h2>
+            <div>
+                <h2>{data.title}</h2>
 
-            <div className='stars'>
                 <Star icon={AiFillStar} />
                 <Star icon={AiFillStar} />
                 <Star icon={AiFillStar} />
@@ -16,8 +16,12 @@ export function Movie({ data, icon: Icon, ...rest }) {
                 <Star icon={AiOutlineStar} />
             </div>
 
-            <p>{data.description}</p>
-
+            <p>
+                <img src="http://github.com/HudsonSena.png" alt="" />
+                 Por Hudson Sena 
+                 <AiOutlineClockCircle /> 30/06/2023 às 17:00
+            </p>
+            
             {
                 data.tags &&
                 <footer>
@@ -27,6 +31,9 @@ export function Movie({ data, icon: Icon, ...rest }) {
                     }
                 </footer>
             }
+
+            <p>{data.description}</p>
+            
         </Container>
     )
 }
