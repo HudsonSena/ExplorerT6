@@ -4,6 +4,7 @@ export default {
         background02: "#262529",
         background03: "#282124",
         background04: "#312E38",
+        background05: "#0D0C0F",
 
         white01: "#FFFFFF",
         white02: "#F4EDE8",

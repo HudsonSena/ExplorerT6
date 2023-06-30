@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`    
-    width: 100%;
+export const Container = styled.textarea`    
+    max-width: 100%;
     min-height: 236px;
     
     display: flex;

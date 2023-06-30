@@ -8,29 +8,48 @@ export const Container = styled.div`
     grid-template-rows: 116px auto;
     grid-template-areas:
     "header"
-    "content";
+    "content";   
+`;
 
+export const Content = styled.div`
+    width: 80%;
+    margin: auto;
+    
+    > Button {
+        margin-bottom: 24px;
+    }
 
     > main {
-        margin: 40px 10%;
+        height: 600px;
+        padding: 0 8px 8px 0;
+
         display: flex;
         flex-direction: column;
         gap: 24px;
 
+        overflow-y: auto;
+
         h1 {
             color: ${({ theme }) => theme.colors.white01};
         }
+    }
 
+    > main::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+    > main::-webkit-scrollbar-thumb {
+        background-color: ${({ theme })=> theme.colors.pink};
+        border-radius: 8px;
     }
 `;
 
 export const Form = styled.form`
     width: 100%;
-    overflow-y: auto;
 
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 40px;    
 
     > div {
         display: flex;
@@ -39,5 +58,22 @@ export const Form = styled.form`
 
     > h2 {
         color: ${({ theme }) => theme.colors.grey};
+    }
+
+    > .marcadores {
+        width: 100%;
+        background-color: ${({ theme }) => theme.colors.background05};
+
+        border-radius: 8px;
+
+        display: flex;
+        gap: 24px;
+
+        padding: 16px;
+    }
+    
+    > .buttons button:nth-child(1) {
+        background-color: ${({ theme }) => theme.colors.background05};
+        color: ${({ theme }) => theme.colors.pink};
     }
 `;
