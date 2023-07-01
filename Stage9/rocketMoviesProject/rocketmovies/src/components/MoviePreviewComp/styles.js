@@ -27,17 +27,21 @@ export const Container = styled.div`
         svg {
             width: 20px;
             height: 20px;
+            color: ${({ theme }) => theme.colors.pink};
         }
     }
 
     > p {
         font-family: 'Roboto';
-        color: grey;
-        text-align: left;
+        color: ${({ theme }) => theme.colors.white03};
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
 
         img {
-            width: 30px;
-            height: 30px;
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
         }
     }
@@ -46,5 +50,9 @@ export const Container = styled.div`
         display: flex;
         flex-direction: rows;
         gap: 8px;
+
+        span {
+            background: ${({ theme }) => theme.colors.background03};
+        }
     }     
 `;

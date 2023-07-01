@@ -4,7 +4,7 @@ import { ButtonText } from '../../components/ButtonText';
 import { FiMail, FiLock, FiUser, FiArrowLeft } from 'react-icons/fi';
 import { Input } from '../../components/Input';
 
-export function SingUp() {
+export function SignUp() {
     return(
         <Container>
             <section>

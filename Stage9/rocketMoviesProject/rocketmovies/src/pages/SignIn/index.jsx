@@ -4,7 +4,7 @@ import { ButtonText } from '../../components/ButtonText';
 import { FiMail, FiLock } from 'react-icons/fi';
 import { Input } from '../../components/Input';
 
-export function SingIn() {
+export function SignIn() {
     return(
         <Container>
             <section>
