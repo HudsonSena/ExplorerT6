@@ -72,7 +72,7 @@ export const Form = styled.form`
         padding: 16px;
     }
 
-    > .buttons button:nth-child(1) {
+    > .buttons:nth-child(1) {
         background-color: ${({ theme }) => theme.colors.background05};
         color: ${({ theme }) => theme.colors.pink};
     }

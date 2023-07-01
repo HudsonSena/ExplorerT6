@@ -30,10 +30,6 @@ export const Form = styled.form`
 
     align-items: stretch;
 
-    > button {
-        margin: auto;
-    }
-
     > div h1 {
         color: #FF859B;
         font-size: 48px;

@@ -1,9 +1,11 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-export const Container = styled.button`
-    width: 100%;
+export const Container = styled(Link)`
+    width: auto;
 
     background-color: ${({ theme }) => theme.colors.pink};
+    color: ${({ theme }) => theme.colors.background02};
 
     display: flex;
     flex-direction: row;

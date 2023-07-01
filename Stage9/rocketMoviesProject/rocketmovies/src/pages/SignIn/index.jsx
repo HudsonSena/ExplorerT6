@@ -27,7 +27,7 @@ export function SignIn() {
                 
                         <Button title="Entrar"/>
                     </div>
-                    <ButtonText title="Criar conta"/>
+                    <ButtonText title="Criar conta" to="/register"/>
                 </Form>
             </section>
 

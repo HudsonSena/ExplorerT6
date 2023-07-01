@@ -35,7 +35,8 @@ export function SignUp() {
                     </div>
                     <ButtonText 
                         title="Voltar para o login"
-                        icon={FiArrowLeft}/>
+                        icon={FiArrowLeft}
+                        to="/"/>
                 </Form>
             </section>
 

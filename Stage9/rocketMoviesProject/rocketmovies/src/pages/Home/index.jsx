@@ -15,6 +15,7 @@ export function Home() {
                     <Button
                         icon={AiOutlinePlus}
                         title="Adicionar Filmes"
+                        to="/createmovie"
                         />
                 </div>
                               

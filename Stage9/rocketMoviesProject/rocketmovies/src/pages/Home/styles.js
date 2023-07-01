@@ -22,7 +22,7 @@ export const Content = styled.div`
 
     > .h1button {
         display: flex;
-        flex-direction: rows;
+        flex-direction: row;
 
         justify-content: space-between;
         align-items: center;
@@ -31,6 +31,7 @@ export const Content = styled.div`
 
         h1 {
             color: white;
+            width: 100%;
         }
 
         Button {
