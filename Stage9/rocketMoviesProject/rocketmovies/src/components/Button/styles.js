@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Container = styled(Link)`
-    width: auto;
+    width: 100%;
 
     background-color: ${({ theme }) => theme.colors.pink};
     color: ${({ theme }) => theme.colors.background02};

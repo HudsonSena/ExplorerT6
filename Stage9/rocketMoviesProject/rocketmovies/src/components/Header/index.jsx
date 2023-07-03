@@ -1,5 +1,6 @@
 import { Container, Profile } from './styles';
 import { Input } from '../../components/Input';
+import { Link } from 'react-router-dom';
 
 export function Header() {
     return (
@@ -12,8 +13,8 @@ export function Header() {
 
             <Profile>
                 <div>                    
-                    <strong>Hudson Sena</strong>
-                    <a href="#">sair</a>
+                    <Link className='btnperfil' to="/perfil" >Hudson Sena</Link>
+                    <Link>sair</Link>
                 </div>
 
                 <img 

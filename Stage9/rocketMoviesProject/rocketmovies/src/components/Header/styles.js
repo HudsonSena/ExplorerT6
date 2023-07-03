@@ -42,6 +42,10 @@ export const Profile = styled.div`
         align-items: flex-end;
         color: white;
 
+        .btnperfil {
+            color: white;
+        }
+
         a {
             text-decoration: none;
             color: grey;

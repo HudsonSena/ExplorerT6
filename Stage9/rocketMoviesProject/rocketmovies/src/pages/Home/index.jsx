@@ -13,6 +13,7 @@ export function Home() {
                 <div className='h1button'>
                     <h1>Meus Filmes</h1>
                     <Button
+                        className="btnaddfilm"
                         icon={AiOutlinePlus}
                         title="Adicionar Filmes"
                         to="/createmovie"
@@ -20,17 +21,19 @@ export function Home() {
                 </div>
                               
                 <main>
-                    <Movie data={{
-                        title: 'Star Wars 1000',
+                    <Movie
+                        to="/moviepreview/1"
+                        data={{
+                            title: 'Star Wars 1000',
 
-                        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit magni, porro sapiente est esse deserunt consectetur sit neque laboriosam repellat vel! Praesentium recusandae incidunt, cum debitis pariatur tenetur suscipit laborum!',
+                            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit magni, porro sapiente est esse deserunt consectetur sit neque laboriosam repellat vel! Praesentium recusandae incidunt, cum debitis pariatur tenetur suscipit laborum!',
 
-                        tags: [
-                            { id: '1', name: 'Ficçõa Científica'},
-                            { id: '2', name: 'Ação'},
-                            { id: '3', name: 'Drama'},
-                        ]
-                    }} 
+                            tags: [
+                                { id: '1', name: 'Ficçõa Científica'},
+                                { id: '2', name: 'Ação'},
+                                { id: '3', name: 'Drama'},
+                            ]
+                        }} 
                     />
                 </main>
             </Content>

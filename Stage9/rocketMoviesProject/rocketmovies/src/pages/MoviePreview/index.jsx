@@ -10,6 +10,8 @@ export function MoviePreview() {
             <Header />
             <Content>
                 <ButtonText
+                    to="/"
+                    className="btnback"
                     title="Voltar"
                     icon={FiArrowLeft}
                 />

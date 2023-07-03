@@ -11,6 +11,10 @@ export const Container = styled.div`
         display: flex;
         padding-left: 144px;
     }
+
+    > header .btnback {
+        margin-left: 0;
+    }
 `;
 
 export const Form = styled.form`

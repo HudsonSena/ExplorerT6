@@ -15,7 +15,7 @@ export const Content = styled.div`
     width: 80%;
     margin: auto;
     
-    > Button {
+    > .btnback {
         margin-bottom: 24px;
     }
 
@@ -72,7 +72,7 @@ export const Form = styled.form`
         padding: 16px;
     }
 
-    > .buttons:nth-child(1) {
+    > div .deletefilme {
         background-color: ${({ theme }) => theme.colors.background05};
         color: ${({ theme }) => theme.colors.pink};
     }

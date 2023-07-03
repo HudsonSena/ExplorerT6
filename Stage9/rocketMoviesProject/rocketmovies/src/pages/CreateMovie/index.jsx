@@ -13,8 +13,10 @@ export function CreateMovie() {
             <Header />
             <Content>
                 <ButtonText
+                    className="btnback"
                     title="Voltar"
                     icon={FiArrowLeft}
+                    to="/"
                 />
 
                 <main>                    
@@ -42,7 +44,7 @@ export function CreateMovie() {
                             <MovieItem  isNew placeholder="Novo marcador"/>
                         </div>
                         <div className="buttons">
-                            <Button title="Excluir filme"/>
+                            <Button className="deletefilme" title="Excluir filme"/>
                             <Button title="Salvar alterações"/>
                         </div>
                     </Form>

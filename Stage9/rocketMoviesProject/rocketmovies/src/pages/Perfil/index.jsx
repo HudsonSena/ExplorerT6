@@ -9,6 +9,8 @@ export function Perfil() {
         <Container>
             <header>
                 <ButtonText
+                    className="btnback"
+                    to="/"
                     title="Voltar"
                     icon={FiArrowLeft}
                 />

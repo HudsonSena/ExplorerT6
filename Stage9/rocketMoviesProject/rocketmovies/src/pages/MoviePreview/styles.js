@@ -8,14 +8,14 @@ export const Container = styled.div`
     grid-template-rows: 116px auto;
     grid-template-areas:
     "header"
-    "content";   
+    "content";  
 `;
 
 export const Content = styled.div`
     width: 80%;
     margin: auto;
     
-    > Button {
+    > .btnback {
         margin-bottom: 24px;
     }
 
