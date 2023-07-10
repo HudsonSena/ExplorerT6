@@ -19,7 +19,7 @@ export function CreateMovie() {
                     to="/"
                 />
 
-                <main>                    
+                <main>
                     <Form>
                         <h1>Novo Filme</h1>
                         <div>
