@@ -26,7 +26,7 @@ export function SignIn(){
 
                 <Input
                     placeholder="E-mail"
-                    type="text"
+                    type="mail"
                     icon={FiMail}
                     onChange={e => setEmail(e.target.value)}
                 />
@@ -40,7 +40,7 @@ export function SignIn(){
 
                 <Button title="Entrar" onClick={handleSignIn} />
 
-                <Link to="/register">Criar nota</Link>
+                <Link to="/register">Criar Conta</Link>
             </Form>
 
             <Background />

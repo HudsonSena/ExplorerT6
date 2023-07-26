@@ -13,7 +13,7 @@ function AuthProvider({ children }) {
 
             const { user, token } = response.data;
 
-            api.dafaults.headers.autorization = `Bearer ${token}`;
+            api.defaults.headers.authorization = `Bearer ${token}`;
             setData({ user, token });
 
         } catch (error) {
