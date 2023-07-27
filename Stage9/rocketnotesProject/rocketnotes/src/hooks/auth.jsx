@@ -13,6 +13,9 @@ function AuthProvider({ children }) {
 
             const { user, token } = response.data;
 
+            localStorage.setItem("@rocketnotes:user", JSON.stringify(user));
+            localStorage.setItem("@rocketnotes:token", token);
+
             api.defaults.headers.authorization = `Bearer ${token}`;
             setData({ user, token });
 
@@ -37,7 +40,7 @@ function AuthProvider({ children }) {
                 user: JSON.parse(user)
             });
         }
-    })
+    }, []);
 
     return (
         <AuthContext.Provider value={{ signIn, user: data.user }}>
