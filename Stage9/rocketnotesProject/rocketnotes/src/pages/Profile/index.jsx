@@ -54,7 +54,7 @@ export function Profile() {
                 <Avatar>
                     <img 
                         src={avatar} 
-                        alt="testanto"
+                        alt={user.name}
                     />
                     <label htmlFor="avatar">
                         <FiCamera />

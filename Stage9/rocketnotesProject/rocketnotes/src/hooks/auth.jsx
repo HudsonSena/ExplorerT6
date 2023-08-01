@@ -28,8 +28,8 @@ function AuthProvider({ children }) {
     }
 
     function signOut(){
-        localStorage.removeItem("@rocketnotes: token");
-        localStorage.removeItem("@rocketnotes: user");        
+        localStorage.removeItem("@rocketnotes:token");
+        localStorage.removeItem("@rocketnotes:user");        
 
         setData({});
     }
@@ -47,7 +47,7 @@ function AuthProvider({ children }) {
             }
 
             await api.put("/users", user);
-            localStorage.setItem("@rocketnotes: user", JSON.stringify(user));
+            localStorage.setItem("@rocketnotes:user", JSON.stringify(user));
 
             setData({ user, token: data.token});
             alert("Perfil atualizado");
@@ -61,8 +61,8 @@ function AuthProvider({ children }) {
     }
 
     useEffect(() => {
-        const token = localStorage.getItem("@rocketnotes: token");
-        const user = localStorage.getItem("@rocketnotes: user");
+        const token = localStorage.getItem("@rocketnotes:token");
+        const user = localStorage.getItem("@rocketnotes:user");
 
         if(token && user) {
             api.defaults.headers.common['Authorization'] = `Bearer ${token}`;

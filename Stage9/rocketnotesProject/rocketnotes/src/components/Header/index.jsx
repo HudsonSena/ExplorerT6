@@ -12,12 +12,12 @@ export function Header() {
         <Container>
             <Profile to="/profile">
                 <img src={avatarUrl} 
-                    alt="Foto do usuário"
+                    alt={user.name}
                 />
 
                 <div>
                     <span>Bem-vindo(a),</span>
-                    <strong>Testando</strong>
+                    <strong>{user.name}</strong>
                 </div>
             </Profile>
 
