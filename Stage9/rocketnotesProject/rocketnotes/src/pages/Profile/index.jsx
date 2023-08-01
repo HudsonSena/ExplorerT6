@@ -16,11 +16,13 @@ export function Profile() {
     const [email, setEmail] = useState(user.email);
     const [passwordOld, setPasswordOld] = useState();
     const [passwordNew, setPasswordNew] = useState();
-    
+
     const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
 
     const [avatar, setAvatar] = useState(avatarUrl);
     const [avatarFile, setAvatarFile] = useState(null)
+
+    
 
     async function handleUpdate() {
         const user = {
@@ -51,8 +53,8 @@ export function Profile() {
             <Form>
                 <Avatar>
                     <img 
-                        src={avatarUrl} 
-                        alt={user.name}
+                        src={avatar} 
+                        alt="testanto"
                     />
                     <label htmlFor="avatar">
                         <FiCamera />

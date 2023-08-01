@@ -3,23 +3,21 @@ import { useAuth } from "../../hooks/auth";
 
 import { Container, Profile, Logout } from './styles';
 import { api } from "../../../../../../api/src/services/api";
-import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
 
 export function Header() {
     const { signOut, user } = useAuth();
-
     const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
     
     return (
         <Container>
             <Profile to="/profile">
                 <img src={avatarUrl} 
-                    alt={user.name}
+                    alt="Foto do usuário"
                 />
 
                 <div>
                     <span>Bem-vindo(a),</span>
-                    <strong>{user.name}</strong>
+                    <strong>Testando</strong>
                 </div>
             </Profile>
 
