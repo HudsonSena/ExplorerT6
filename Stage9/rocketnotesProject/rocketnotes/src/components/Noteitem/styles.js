@@ -33,6 +33,8 @@ export const Container = styled.div`
         height: 56px;
         width: 100%;
 
+        margin-right: 15px;
+
         padding: 12px;
 
         color: ${({ theme }) => theme.COLORS.WHITE};

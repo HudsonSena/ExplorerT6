@@ -1,7 +1,8 @@
+import { useState  } from 'react';
 import { Header } from '../../components/Header';
 import { Input } from '../../components/Input';
 import { Textarea } from '../../components/Textarea';
-import { Noteitem } from '../../components/Noteitem';
+import { NoteItem } from '../../components/NoteItem';
 import { Section } from '../../components/Section';
 import { Button } from '../../components/Button';
 import { Link } from 'react-router-dom';
@@ -10,6 +11,13 @@ import { Link } from 'react-router-dom';
 import { Container, Form } from './styles';
 
 export function New() {
+    const [links, setLinks] = useState([]);
+    const [newLink, setNewLink] = useState("");
+
+    function handleAddLink(){
+        setLinks(prevState => [...prevState, newLink]);
+        setNewLink("");
+    }
     return (
         <Container>
             <Header />
@@ -26,14 +34,28 @@ export function New() {
                     <Textarea placeholder="Observações"/>
 
                     <Section title="Links úteis">
-                        <Noteitem value="https://rocketseat.com.br"/>
-                        <Noteitem placeholder="Novo link" isNew />
+                        {
+                            links.map((link, index) => (
+                                <NoteItem
+                                    key={String(index)}
+                                    value={link}
+                                    onClick={() => {}}
+                                />
+                            ))
+                        }
+                        <NoteItem
+                            isNew
+                            placeholder="Novo link"
+                            value={newLink}
+                            onChange={e => setNewLink(e.target.value)}
+                            onClick={handleAddLink}
+                        />
                     </Section>
 
                     <Section title="Marcadores">
                         <div className="tags">
-                            <Noteitem value="React"/>
-                            <Noteitem placeholder="Nova tag" isNew />
+                            <NoteItem value="React"/>
+                            <NoteItem placeholder="Nova tag" isNew />
                         </div>
                     </Section>
 
