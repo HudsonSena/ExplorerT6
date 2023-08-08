@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+    min-width: 48%;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background: ${({ theme, isNew }) => isNew ? "transparent" : theme.COLORS.BACKGROUND_900};
+    background: ${({ theme, isNew }) => isNew ? `1px solid ${({ theme }) => theme.COLORS.GRAY_300}` : theme.COLORS.BACKGROUND_900};
     color: ${({ theme }) => theme.COLORS.GRAY_300};
 
     border: ${({ theme, isNew }) => isNew ? `1px dashed ${ theme.COLORS.GRAY_300}` : "none"};
