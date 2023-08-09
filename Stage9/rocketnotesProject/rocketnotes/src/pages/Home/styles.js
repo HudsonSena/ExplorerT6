@@ -42,7 +42,10 @@ export const Menu = styled.ul`
 
     padding-top: 64px;
     text-align: center;
-    
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 `;
 
 export const Search = styled.div`
