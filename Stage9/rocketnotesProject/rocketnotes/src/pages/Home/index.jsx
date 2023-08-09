@@ -7,7 +7,13 @@ import { Note } from '../../components/Note';
 import { Section } from '../../components/Section';
 import { ButtonText} from '../../components/ButtonText';
 
+import { useState, useEffect } from 'react';
+
 export function Home() {
+    const [tags, setTags] = useState([]);
+    
+    useEffect(() => {},[])
+    
     return(
             <Container>
                 <Brand>
