@@ -1,3 +1,5 @@
+import { api } from '../../../../../../api/src/services/api';
+import { useState, useEffect } from "react";
 import { Container, Links, Content } from "./styles";
 import { useParams } from "react-router-dom";
 import { Header} from '../../components/Header';
@@ -7,39 +9,54 @@ import { Tag } from "../../components/Tag";
 import { ButtonText } from "../../components/ButtonText";
 
 export function Details(){
+  const [data, setData] = useState(null);
+  const params = useParams();
+
+  useEffect(() => {
+    async function fetchNote(){
+      const response = await api.get(`/notes/${params.id}`);
+      setData(response.data);
+    }
+
+    fetchNote();
+  }, [])
 
   return(
     <Container>
       <Header />
+        {data &&
+          <main>
+            <Content>
+              <ButtonText title="Excluir Nota"/>
 
-      <main>
-        <Content>
-          <ButtonText title="Excluir Nota"/>
+              <h1>
+                {data.title}
+              </h1>
 
-          <h1>
-            Introdução ao React
-          </h1>
+              <p>
+                {data.description}
+              </p>
 
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex recusandae illo odio vel harum quos vitae blanditiis rerum dignissimos dolorem ipsa, incidunt dicta enim doloribus! Fugiat aperiam a quibusdam facilis.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati hic commodi ab pariatur repellendus totam, eligendi labore adipisci magni eum recusandae dolorem dolore itaque architecto quos esse distinctio a officiis?
-          </p>
+              {data.links &&
+                <Section title="Links úteis">
+                  <Links>
+                    {
+                      <li><a href="">https://www.rocketseat.com.br</a></li>
+                    }
+                  </Links>
+                </Section>
+              }
 
-          <Section title="Links úteis">
-            <Links>
-              <li><a href="">https://www.rocketseat.com.br</a></li>
-              <li><a href="">https://www.rocketseat.com.br</a></li>
-            </Links>
-          </Section>
+              <Section title="Marcadores">
+                <Tag title="express"/>
+                <Tag title="nodejs"/>
+              </Section>
 
-          <Section title="Marcadores">
-            <Tag title="express"/>
-            <Tag title="nodejs"/>
-          </Section>
-
-          <Button title="Voltar" />
-        </Content>
-      </main>
+              <Button title="Voltar" />
+            </Content>
+          </main>
+        }
+        
     </Container>
   )
 }
