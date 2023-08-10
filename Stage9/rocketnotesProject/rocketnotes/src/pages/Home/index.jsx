@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FiPlus } from 'react-icons/fi';
 import { Container, Brand, Menu, Search, Content, NewNote } from './styles';
 import { api } from '../../../../../../api/src/services/api';
@@ -11,10 +12,17 @@ import { ButtonText} from '../../components/ButtonText';
 
 
 export function Home() {
+    const [search, setSearch] = useState("");
     const [tags, setTags] = useState([]);
     const [tagsSelected, setTagsSelected] = useState([]);
+    const [notes, setNotes] = useState([]);
+    const navigate = useNavigate();
 
     function handleTagsSelected(tagName){
+        if(tagName === "all"){
+            return setTagsSelected([]);
+        }
+
         const alreadySelected = tagsSelected.includes(tagName);
 
         if(alreadySelected) {
@@ -23,6 +31,10 @@ export function Home() {
         } else {
             setTagsSelected(prevState => [...prevState, tagName]);
         }
+    }
+
+    function handleDetails(id){
+        navigate(`/details/${id}`);
     }
     
     useEffect(() => {
@@ -33,6 +45,14 @@ export function Home() {
         fetchTags();
     },[]);
     
+    useEffect(() => {
+        async function fetchNotes() {
+            const response = await api.get(`/notes?title=${search}&tags=${tagsSelected}`)
+            setNotes(response.data);
+        }
+        fetchNotes();
+    }, [tagsSelected, search]);
+
     return(
             <Container>
                 <Brand>
@@ -63,19 +83,23 @@ export function Home() {
                 </Menu>
 
                 <Search>
-                    <Input placeholder="Pesquisar pelo título" />
+                    <Input
+                        placeholder="Pesquisar pelo título"
+                        onChange={(e) => setSearch(e.target.value)}
+                    />
                 </Search>
 
                 <Content>
                     <Section title="Minha notas" >
-                        <Note data={{
-                            title: 'React',
-                            tags: [
-                                { id: '1', name: 'react'},
-                                { id: '2', name: 'rocketseat'}
-                            ]
-                        }}
-                        />
+                        {
+                            notes.map(note => (
+                               <Note 
+                                    key={String(note.id)}
+                                    data={note}
+                                    onClick={() => handleDetails(note.id)}
+                                /> 
+                            ))                            
+                        }
                     </Section>
                 </Content>
 
