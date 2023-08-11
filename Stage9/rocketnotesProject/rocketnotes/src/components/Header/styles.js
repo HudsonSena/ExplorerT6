@@ -45,12 +45,16 @@ export const Profile = styled(Link)`
     }
 `;
 
-export const Logout = styled(Link)`
+export const Logout = styled.button`
     border: none;
     background: none;
 
     > svg {
         color: ${({theme }) => theme.COLORS.GRAY_100};
         font-size: 36px;
+    }
+
+    > svg:hover {
+        color: ${({theme }) => theme.COLORS.WHITE};
     }
 `;
