@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useAuth } from '../../hooks/auth';
 import { FiArrowLeft, FiUser, FiMail, FiLock, FiCamera} from 'react-icons/fi';
-import { api } from "../../../../../api/src/services/api"; 
+import { api } from "../../services/api"; 
 import { Container, Form, Avatar } from './styles';
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';

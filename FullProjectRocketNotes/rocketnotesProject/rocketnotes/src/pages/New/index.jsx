@@ -7,7 +7,7 @@ import { Section } from '../../components/Section';
 import { Button } from '../../components/Button';
 import { ButtonText } from '../../components/ButtonText';
 
-import { api } from '../../../../../api/src/services/api';
+import { api } from '../../services/api';
 import { useNavigate } from 'react-router-dom';
 
 
