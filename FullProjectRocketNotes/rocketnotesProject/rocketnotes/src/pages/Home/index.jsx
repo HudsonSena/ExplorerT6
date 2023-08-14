@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FiPlus } from 'react-icons/fi';
 import { Container, Brand, Menu, Search, Content, NewNote } from './styles';
-import { api } from '../../../../../../api/src/services/api';
+import { api } from '../../../../../api/src/services/api';
 import { Header } from '../../components/Header';
 import { Input } from '../../components/Input';
 import { Note } from '../../components/Note';
