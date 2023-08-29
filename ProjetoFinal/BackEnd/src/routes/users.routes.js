@@ -9,7 +9,7 @@ function myMiddleware(request, response, next){
     next();
 };
 
-usersRoutes.post("/", myMiddleware, userController.create);
+usersRoutes.post("/", userController.create);
 usersRoutes.put("/:id", userController.update);
 
 module.exports = usersRoutes;
