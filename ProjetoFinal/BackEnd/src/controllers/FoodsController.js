@@ -67,7 +67,7 @@ class FoodsController{
                     "foods.title"
                 ])
                 .whereLike("foods.title", `%${title}%`)
-                .whereLike("name", `%${filterTags}%`)
+               .whereLike("name", `%${filterTags}%`)
                 .innerJoin("foods", "foods.id", "tags.food_id")
                 .orderBy("foods.title")
 
