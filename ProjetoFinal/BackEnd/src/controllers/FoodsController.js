@@ -74,7 +74,7 @@ class FoodsController{
         } else {
             foods = await knex("foods")
             .whereLike("title", `%${title}%`)
-            .orderBy("title"); 
+            .orderBy("title");
         }
 
         const foodTags = await knex("tags").where("foods_id");
