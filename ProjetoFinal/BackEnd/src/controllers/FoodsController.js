@@ -53,45 +53,39 @@ class FoodsController{
         return response.json();
     }
 
-    async index(request, response){
+    async index(request, response) {
         const { title, tags } = request.query;
-
+    
         let foods;
-
-        if(tags){
+    
+        if (tags) {
             const filterTags = tags.split(",").map(tag => tag.trim());
-
-            foods = await knex("tags")
+    
+            foods = await knex("foods")
                 .select([
                     "foods.id",
-                    "foods.title"
+                    "foods.title",
+                    "tags.name as tag_name"
                 ])
-                .whereLike("foods.title", `%${title}%`)
-                .whereLike("name", `%${filterTags}%`)
-                .innerJoin("foods", "foods.id", "tags.food_id")
-                .orderBy("foods.title")
-
+                .where("foods.title", "like", `%${title}%`)
+                .join("tags", "foods.id", "tags.food_id")
+                .whereIn("tags.name", filterTags)
+                .orderBy("foods.title");
         } else {
             foods = await knex("foods")
-            .whereLike("title", `%${title}%`)
-            .orderBy("title"); 
+                .select([
+                    "foods.id",
+                    "foods.title",
+                    "tags.name as tag_name"
+                ])
+                .where("foods.title", "like", `%${title}%`)
+                .leftJoin("tags", "foods.id", "tags.food_id")
+                .orderBy("foods.title");
         }
 
-        const { foods_id } = request.body;
-
-        const foodTags = await knex("tags").where(foods_id);
-
-        const foodsWithTags = foods.map(food => {
-            const tagsInFood = foodTags.filter(tag => tag.food_id === food.id);
-
-            return {
-                ...food,
-                tags: tagsInFood,
-            }
-        })
-
-        return response.json(foodsWithTags);
-    }
+        return response.json();
+    }    
+    
 
     async update(request, response){
         const { title, description, cost } = request.body;
