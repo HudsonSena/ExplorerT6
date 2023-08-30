@@ -67,7 +67,7 @@ class FoodsController{
                     "foods.title"
                 ])
                 .whereLike("foods.title", `%${title}%`)
-               .whereLike("name", `%${filterTags}%`)
+                .whereLike("name", `%${filterTags}%`)
                 .innerJoin("foods", "foods.id", "tags.food_id")
                 .orderBy("foods.title")
 
@@ -76,20 +76,9 @@ class FoodsController{
             .whereLike("title", `%${title}%`)
             .orderBy("title");
         }
-
-        const foodTags = await knex("tags").where("foods_id");
-
-        const foodsWithTags = foods.map(food => {
-            const tagsInFood = foodTags.filter(tag => tag.food_id === food.id);
-
-            return {
-                ...food,
-                tags: tagsInFood,
-            }
-        })
-
-        return response.json(foodsWithTags);
-    }
+        
+        return response.json(foods);
+    } 
 
     async update(request, response){
         const { title, description, cost } = request.body;
