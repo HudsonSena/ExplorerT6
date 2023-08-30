@@ -77,9 +77,7 @@ class FoodsController{
             .orderBy("title"); 
         }
 
-        const { foods_id } = request.body;
-
-        const foodTags = await knex("tags").where(foods_id);
+        const foodTags = await knex("tags").where("foods_id");
 
         const foodsWithTags = foods.map(food => {
             const tagsInFood = foodTags.filter(tag => tag.food_id === food.id);
