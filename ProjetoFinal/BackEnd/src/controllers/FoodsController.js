@@ -74,10 +74,10 @@ class FoodsController{
         } else {
             foods = await knex("foods")
             .whereLike("title", `%${title}%`)
-            .orderBy("title"); 
+            .orderBy("title");
         }
         
-        return response.json();
+        return response.json(foods);
     }   
     
 
