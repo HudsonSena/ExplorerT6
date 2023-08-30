@@ -100,7 +100,7 @@ class FoodsController{
                 ])
                 .where("foods.title", "like", `%${title}%`)
                 .leftJoin("tags", "foods.id", "tags.food_id")
-                .orderBy("foods.title");
+                .orderBy("foods.title").groupBy("foods.title");
     
             const foodIds = foods.map(food => food.id);
     
