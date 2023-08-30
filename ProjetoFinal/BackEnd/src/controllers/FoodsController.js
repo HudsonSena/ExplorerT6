@@ -57,22 +57,43 @@ class FoodsController{
     async index(request, response) {
         const { title, tags } = request.query;
     
-        let foods;
-    
         if (tags) {
             const filterTags = tags.split(",").map(tag => tag.trim());
     
-            foods = await knex("foods")
+            const foods = await knex("foods")
                 .select([
                     "foods.id",
                     "foods.title"
                 ])
-                .where("foods.title", "like", `%${title}%`)
-                .join("tags", "foods.id", "tags.food_id")
-                .whereIn("tags.name", filterTags)
+                .leftJoin("tags", "foods.id", "tags.food_id")
+                .whereLike("tags.name", `%${filterTags}%`)
                 .orderBy("foods.title");
+    
+            const foodIds = foods.map(food => food.id);
+    
+            const tagsFood = await knex("tags")
+                .select([
+                    "tags.food_id",
+                    "tags.name"
+                ])
+                .whereIn("tags.food_id", foodIds)
+                .orderBy("tags.name");
+    
+            const foodsWithTags = foods.map(food => {
+                const foodTags = tagsFood
+                    .filter(tag => tag.food_id === food.id)
+                    .map(tag => tag.name);
+    
+                return {
+                    id: food.id,
+                    title: food.title,
+                    tags: foodTags
+                };
+            });
+    
+            return response.json(foodsWithTags);
         } else {
-            foods = await knex("foods")
+            const foods = await knex("foods")
                 .select([
                     "foods.id",
                     "foods.title"
@@ -80,32 +101,32 @@ class FoodsController{
                 .where("foods.title", "like", `%${title}%`)
                 .leftJoin("tags", "foods.id", "tags.food_id")
                 .orderBy("foods.title");
+    
+            const foodIds = foods.map(food => food.id);
+    
+            const tagsFood = await knex("tags")
+                .select([
+                    "tags.food_id",
+                    "tags.name"
+                ])
+                .whereIn("tags.food_id", foodIds)
+                .orderBy("tags.name");
+    
+            const foodsWithTags = foods.map(food => {
+                const foodTags = tagsFood
+                    .filter(tag => tag.food_id === food.id)
+                    .map(tag => tag.name);
+    
+                return {
+                    id: food.id,
+                    title: food.title,
+                    tags: foodTags
+                };
+            });
+    
+            return response.json(foodsWithTags);
         }
-    
-        const foodIds = foods.map(food => food.id);
-    
-        const tagsFood = await knex("tags")
-            .select([
-                "tags.food_id",
-                "tags.name"
-            ])
-            .whereIn("tags.food_id", foodIds)
-            .orderBy("tags.name");
-    
-        const foodsWithTags = foods.map(food => {
-            const foodTags = tagsFood
-                .filter(tag => tag.food_id === food.id)
-                .map(tag => tag.name);
-    
-            return {
-                id: food.id,
-                title: food.title,
-                tags: foodTags
-            };
-        });
-    
-        return response.json(foodsWithTags);
-    } 
+    }     
 
     async update(request, response){
         const { title, description, cost } = request.body;
