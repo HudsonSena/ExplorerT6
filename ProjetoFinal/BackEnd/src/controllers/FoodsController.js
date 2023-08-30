@@ -24,6 +24,7 @@ class FoodsController{
         const tagsInsert = tags.map(name => {
             return {
                 food_id,
+                user_id,
                 name
             }
         });
@@ -54,7 +55,7 @@ class FoodsController{
     }
 
     async index(request, response){
-        const { title, tags } = request.query;
+        const { title, tags, food_id } = request.query;        
 
         let foods;
 
@@ -64,20 +65,33 @@ class FoodsController{
             foods = await knex("tags")
                 .select([
                     "foods.id",
-                    "foods.title"
+                    "foods.title",
+                    "foods.description",
+                    "foods.user_id"
                 ])
-                .whereLike("foods.title", `%${title}%`)
+                .where("foods.id", food_id)
                 .whereLike("name", `%${filterTags}%`)
                 .innerJoin("foods", "foods.id", "tags.food_id")
                 .orderBy("foods.title")
 
         } else {
             foods = await knex("foods")
+            .where({ food_id })
             .whereLike("title", `%${title}%`)
             .orderBy("title");
         }
+
+        const foodTags = await knex("tags").where(food_id);
+        const foodsWithTags = foods.map(food => {
+            const foodInTags = foodTags.filter(tag => tag.food_id === food_id);
+
+            return {
+                ...food,
+                tags: foodInTags
+            }
+        });
         
-        return response.json(foods);
+        return response.json(foodsWithTags);
     } 
 
     async update(request, response){
