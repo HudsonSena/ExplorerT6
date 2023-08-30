@@ -18,7 +18,7 @@ class FoodsController{
             title,
             description,
             cost,
-            user_id
+            user_id,
         });
 
         const tagsInsert = tags.map(name => {
@@ -54,43 +54,56 @@ class FoodsController{
         return response.json();
     }
 
-    async index(request, response){
-        const { title, tags, food_id } = request.query;        
-
+    async index(request, response) {
+        const { title, tags } = request.query;
+    
         let foods;
-
-        if(tags){
+    
+        if (tags) {
             const filterTags = tags.split(",").map(tag => tag.trim());
-
-            foods = await knex("tags")
+    
+            foods = await knex("foods")
                 .select([
                     "foods.id",
-                    "foods.title",
-                    "foods.description",
-                    "foods.user_id"
+                    "foods.title"
                 ])
-                .where("foods.id", food_id)
-                .whereLike("name", `%${filterTags}%`)
-                .innerJoin("foods", "foods.id", "tags.food_id")
-                .orderBy("foods.title")
-
+                .where("foods.title", "like", `%${title}%`)
+                .join("tags", "foods.id", "tags.food_id")
+                .whereIn("tags.name", filterTags)
+                .orderBy("foods.title");
         } else {
             foods = await knex("foods")
-            .where({ food_id })
-            .whereLike("title", `%${title}%`)
-            .orderBy("title");
+                .select([
+                    "foods.id",
+                    "foods.title"
+                ])
+                .where("foods.title", "like", `%${title}%`)
+                .leftJoin("tags", "foods.id", "tags.food_id")
+                .orderBy("foods.title");
         }
-
-        const foodTags = await knex("tags").where(food_id);
+    
+        const foodIds = foods.map(food => food.id);
+    
+        const tagsFood = await knex("tags")
+            .select([
+                "tags.food_id",
+                "tags.name"
+            ])
+            .whereIn("tags.food_id", foodIds)
+            .orderBy("tags.name");
+    
         const foodsWithTags = foods.map(food => {
-            const foodInTags = foodTags.filter(tag => tag.food_id === food_id);
-
+            const foodTags = tagsFood
+                .filter(tag => tag.food_id === food.id)
+                .map(tag => tag.name);
+    
             return {
-                ...food,
-                tags: foodInTags
-            }
+                id: food.id,
+                title: food.title,
+                tags: foodTags
+            };
         });
-        
+    
         return response.json(foodsWithTags);
     } 
 
