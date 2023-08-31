@@ -5,7 +5,7 @@ const sqliteConnection = require("../database/sqlite");
 
 class UserController {
     async create(request, response) {
-        const { name, email, password} = request.body;
+        const { name, email, password, admin} = request.body;
         const database = await sqliteConnection();
         const checkUserExists = await database.get("SELECT * FROM users  WHERE email = (?)", [email])
 
@@ -16,15 +16,15 @@ class UserController {
         const hashedPassword = await hash(password, 8);
 
         await database.run(
-            "INSERT INTO users (name, email, password) VALUES (?, ?, ?)",
-            [name, email, hashedPassword]
+            "INSERT INTO users (name, email, password, admin) VALUES (?, ?, ?, ?)",
+            [name, email, hashedPassword, admin]
         );
 
         return response.status(201).json();
     }
 
     async update(request, response) {
-        const { name, email, password, old_password } = request.body;
+        const { name, email, password, old_password, admin } = request.body;
         const { id } = request.params;
 
         const database = await sqliteConnection();
@@ -42,6 +42,7 @@ class UserController {
 
         user.name = name ?? user.name;
         user.email = email ?? user.email;
+        user.admin = admin ?? user.admin;
 
         if(password && !old_password){
             throw new AppError("Você precisa informar a senha antiga para definir a nova senha");            
@@ -62,9 +63,10 @@ class UserController {
             name = ?,
             email = ?,
             password = ?,
+            admin = ?,
             updated_at = DATETIME('now')
             WHERE id = ?`,
-            [user.name, user.email, user.password, id]
+            [user.name, user.email, user.password, user.admin, id]
         );
 
         return response.json();        

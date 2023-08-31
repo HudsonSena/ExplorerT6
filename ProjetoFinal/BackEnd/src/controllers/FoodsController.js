@@ -63,7 +63,9 @@ class FoodsController{
             const foods = await knex("foods")
                 .select([
                     "foods.id",
-                    "foods.title"
+                    "foods.title",
+                    "foods.description",
+                    "foods.cost"
                 ])
                 .leftJoin("tags", "foods.id", "tags.food_id")
                 .whereLike("tags.name", `%${filterTags}%`)
@@ -87,6 +89,8 @@ class FoodsController{
                 return {
                     id: food.id,
                     title: food.title,
+                    description: food.description,
+                    cost: food.cost,
                     tags: foodTags
                 };
             });
@@ -96,7 +100,9 @@ class FoodsController{
             const foods = await knex("foods")
                 .select([
                     "foods.id",
-                    "foods.title"
+                    "foods.title",
+                    "foods.description",
+                    "foods.cost"
                 ])
                 .where("foods.title", "like", `%${title}%`)
                 .leftJoin("tags", "foods.id", "tags.food_id")
@@ -120,6 +126,8 @@ class FoodsController{
                 return {
                     id: food.id,
                     title: food.title,
+                    description: food.description,
+                    cost: food.cost,
                     tags: foodTags
                 };
             });
