@@ -1,7 +1,7 @@
 const knex = require("../database/knex");
 class TagsController {
     async index(request, response) {
-        const tags = await knex("tags").orderBy("tags.name");
+        const tags = await knex("tags").orderBy("tags.name").groupBy("tags.name");
         
         return response.json(tags)
     }    
