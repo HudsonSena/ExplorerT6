@@ -1,8 +1,7 @@
 import { styled } from 'styled-components';
 
 export const Container = styled.header`
-    width: 100%;
-    height: 104px;    
+    width: 100%;   
     background-color: ${({ theme }) => theme.colors.bgHeader};
 
     display: flex;
@@ -12,4 +11,16 @@ export const Container = styled.header`
 
     padding-left: 123px;
     padding-right: 123px;
+
+    div {
+        display: flex;
+        width: 300px;
+    }
+
+    > img {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+    }
+
 `;
