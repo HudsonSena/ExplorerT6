@@ -15,9 +15,7 @@ export default createGlobalStyle`
 
         font-family: 'Roboto';
     }
-
-    body
-
+    
     a {
         text-decoration: none;
     }
