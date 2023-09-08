@@ -1,18 +1,22 @@
 import { Container } from './styles';
 import { Button } from '../Button';
-import { FiLogOut } from 'react-icons/fi';
+import { FiLogOut, FiSearch } from 'react-icons/fi';
 import { Input } from '../Input';
-import { logo } from '../../assets/logo.svg';
 
 export function Header() {
     return(
         <Container>
             <div>
-                <img src={logo} alt="" />
-                <h1>food Explorer</h1>
+                <svg width="26" height="31" viewBox="0 0 26 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 0.866394L25.9904 8.36639V23.3664L13 30.8664L0.00961876 23.3664V8.36639L13 0.866394Z" fill="#065E7C"/>
+                </svg>
+                <div>
+                    <h1>food explorer</h1>
+                    <span>admin</span>
+                </div>
             </div>
             
-            <Input placeholder="Busque por pedidos"/>
+            <Input type="input-text" placeholder="Busque por pratos ou ingredientes" icon={FiSearch}/>
             <Button title="Pedidos"></Button>
             <a href=""><FiLogOut /></a>
         </Container>

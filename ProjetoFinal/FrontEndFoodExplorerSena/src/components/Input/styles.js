@@ -5,10 +5,25 @@ export const Container =  styled.div`
     
     border: none;
     background-color: ${({ theme }) => theme.colors.bgIpt};
-    padding: 5px;
+    border-radius: 5px;
+
+    color: ${({ theme }) => theme.colors.txtPlaceholder};
+
+    padding: 14px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;    
 
     > input {
+        width: 100%;
+        height: 100%;
         background: transparent;
         border: none;
+
+        font-family: 'Roboto';
+        font-size: 16px;
+        text-align: center;
     }
 `;
