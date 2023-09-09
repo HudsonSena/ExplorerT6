@@ -2,6 +2,8 @@ import { Container, Content } from './styles';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { Button } from '../../components/Button';
+import { ButtonText } from '../../components/ButtonText';
+import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 import imageFood from '../../assets/Mask group.png';
 
 export function Details() {
@@ -15,9 +17,9 @@ export function Details() {
           </svg>
           voltar
         </a>
-        <div>
+        <div className='details'>
           <img src={imageFood} alt="" />
-          <div>
+          <div className='order'>
             <div className='infoFood'>
               <h1>Salada Ravanello</h1>
               <p>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim. O pão naan dá um toque especial.</p>
@@ -30,7 +32,16 @@ export function Details() {
                 <div className='tags'>tomate</div>
               </section>
             </div>
-            <Button title="Editar prato"></Button>
+            <div className='user'>
+              <div>
+                <ButtonText icon={AiOutlineMinus}/><h3>01</h3><ButtonText icon={AiOutlinePlus}/>
+              </div>
+              <Button title="Incluir : 25,00" className="user"/>
+            </div>
+            <div className='admin'>
+              <Button title="Editar prato" className="admin"/>
+            </div>
+            
           </div>
         </div>
       </Content>

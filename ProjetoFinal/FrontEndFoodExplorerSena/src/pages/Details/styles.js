@@ -16,7 +16,7 @@ export const Container = styled.div`
     }
 `;
 
-export const Content = styled.div`
+export const Content = styled.main`
     grid-area: content;
     width: 100%;
     height: 100%;
@@ -29,6 +29,29 @@ export const Content = styled.div`
     color: ${({ theme }) => theme.colors.txtDescription};
     font-family: 'Poppins';
 
+    .user {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 33px;
+
+        div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 17px;
+            letter-spacing: 3px;
+        }        
+    }
+
+    .adminOff {
+        display: none;
+    }
+
+    .user {
+        display: none;
+    }
+
     > div {
         display: flex;
         flex-direction: row;
@@ -36,37 +59,37 @@ export const Content = styled.div`
 
         align-items: center;
 
-        .infoFood {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-            margin-bottom: 48px;
-        }
-
-        .tags {
-            background-color: ${({ theme }) => theme.colors.bgTags};
-            border-radius: 5px;
-            padding: 4px 5px;
-            white-space: nowrap;
-        }
-
         img {
             width: 390px;
             height: 390px;
         }
 
-        h1 {
-            font-size: 40px;
-        }
+        .infoFood {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 48px;
 
-        p {
-            font-size: 24px
-        }
+            h1 {
+                font-size: 40px;
+            }
 
+            p {
+                font-size: 24px
+            }
+        }
+        
         section {
             display: flex;
             flex-direction: row;
             gap: 12px;
+
+            .tags {
+                background-color: ${({ theme }) => theme.colors.bgTags};
+                border-radius: 5px;
+                padding: 4px 5px;
+                white-space: nowrap;
+            }
         }
     }
 

@@ -2,6 +2,7 @@ import { Container } from './styles';
 import { Button } from '../Button';
 import { FiLogOut, FiSearch } from 'react-icons/fi';
 import { Input } from '../Input';
+import { ButtonText } from '../ButtonText';
 
 export function Header() {
     return(
@@ -12,13 +13,13 @@ export function Header() {
                 </svg>
                 <div>
                     <h1>food explorer</h1>
-                    <span>admin</span>
+                    <span className='admin'>admin</span>
                 </div>
             </div>
             
             <Input type="input-text" placeholder="Busque por pratos ou ingredientes" icon={FiSearch}/>
             <Button title="Pedidos"></Button>
-            <a href=""><FiLogOut /></a>
+            <ButtonText icon={FiLogOut} size={50}/>
         </Container>
     )
 }

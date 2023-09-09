@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.footer`
     grid-area: footer;
     width: 100%;
     background-color: ${({ theme }) => theme.colors.bgHeader};

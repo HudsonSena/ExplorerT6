@@ -12,6 +12,10 @@ export const Container = styled.header`
 
     padding: 10px 123px;
 
+    .adminOn {
+        display: none;
+    }
+
     > div {
         display: flex;
         gap: 10px;
@@ -43,5 +47,4 @@ export const Container = styled.header`
         color: white;
         font-size: 22px;
     }
-
 `;

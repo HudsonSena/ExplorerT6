@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.button`
-
-    margin: auto;
     padding: 12px 68px 12px 68px;
 
     border-radius: 5px;
