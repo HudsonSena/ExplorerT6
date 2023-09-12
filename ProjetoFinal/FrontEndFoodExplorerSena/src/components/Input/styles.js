@@ -4,7 +4,7 @@ export const Container =  styled.div`
     width: 100%;
     
     border: none;
-    background-color: ${({ theme }) => theme.colors.bgIpt};
+    background-color: ${({ theme }) => theme.colors.bgIpt01};
     border-radius: 5px;
 
     color: ${({ theme }) => theme.colors.txtPlaceholder};

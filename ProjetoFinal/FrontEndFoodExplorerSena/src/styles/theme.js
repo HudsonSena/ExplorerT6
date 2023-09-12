@@ -6,7 +6,8 @@ export default {
         bgForm: "#001119",
         bgCard: "#00070A",
 
-        bgIpt: "#0D1D25",
+        bgIpt01: "#0D1D25",
+        bgIpt02: "#0D161B",
         bgBtn: "#750310",
         bgBtnHover: "#92000E",
         bgBtnInert: "#AB4D55",

@@ -20,7 +20,7 @@ export const Content = styled.main`
 
     display: flex;
     flex-direction: column;
-    gap: 42px;
+    gap: 24px;
 
     color: ${({ theme }) => theme.colors.txtDescription};
     font-family: 'Poppins';
@@ -56,5 +56,84 @@ export const Form = styled.form`
 
     input {
         text-align: left;
+    }
+
+    .info01 {
+        display: flex;
+        flex-direction: row;
+        gap: 32px;
+
+        > div {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            div {
+                background-color: ${({ theme }) => theme.colors.bgIpt02};
+            }
+        }
+    }
+
+    .info02 {
+        display: flex;
+        flex-direction: row;
+        gap: 32px;
+
+        > div {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            div {
+                background-color: ${({ theme }) => theme.colors.bgIpt02};
+            }
+        }
+
+        :nth-child(1) {
+            width: 100%;
+        }
+    }
+    
+    .info03 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        max-width: 1270px;
+    }
+`;
+
+export const Avatar = styled.div`
+    width: 100%;
+        
+    border: none;
+    background-color: ${({ theme }) => theme.colors.bgIpt01};
+    border-radius: 5px;
+
+    color: ${({ theme }) => theme.colors.txtPlaceholder};
+
+    padding: 14px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    cursor: pointer;
+
+    label {
+        cursor: pointer;
+    }
+
+    input {
+        display: none;
+    }
+
+    svg > path{
+        width: 20px;
+        height: 20px;
+        fill: ${({ theme }) => theme.colors.white};
     }
 `;

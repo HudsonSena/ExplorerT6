@@ -14,7 +14,7 @@ export const Container = styled.header`
 
     .adminOn {
         display: none;
-    }
+    }    
 
     > div {
         display: flex;

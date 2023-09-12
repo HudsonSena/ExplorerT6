@@ -17,7 +17,7 @@ export function Header() {
                 </div>
             </div>
             
-            <Input type="input-text" placeholder="Busque por pratos ou ingredientes" icon={FiSearch}/>
+            <Input placeholder="Busque por pratos ou ingredientes" icon={FiSearch} type="text"/>
             <Button title="Pedidos"></Button>
             <ButtonText icon={FiLogOut} size={50}/>
         </Container>

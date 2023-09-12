@@ -50,4 +50,8 @@ export const Form = styled.form`
     input {
         text-align: left;
     }
+
+    button {
+        width: 100%;
+    }
 `;

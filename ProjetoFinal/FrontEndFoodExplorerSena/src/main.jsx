@@ -13,5 +13,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <GlobalStyles />
       <CreateFood />
     </ThemeProvider>    
-  </React.StrictMode>,
+  </React.StrictMode>
 )
