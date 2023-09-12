@@ -5,6 +5,8 @@ export const Container = styled.button`
 
     background-color: transparent;
     color: ${({ theme }) => theme.colors.txtDescription};
+
+    font-family: 'Poppins';
     
     &:disabled {
         opacity: 0.5
