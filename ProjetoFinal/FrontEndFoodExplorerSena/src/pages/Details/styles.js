@@ -10,10 +10,6 @@ export const Container = styled.div`
     "content"
     "footer"
     ;
-
-    > main {
-        grid-area: "content";
-    }
 `;
 
 export const Content = styled.main`
@@ -93,14 +89,20 @@ export const Content = styled.main`
         }
     }
 
-    > a, svg > path {
+    .voltar {
         display: flex;
         flex-direction: row;
         align-items: center;
         gap: 10px;
-        
-        color: ${({ theme }) => theme.colors.txtDescription};
+    }
+
+    > svg > path {
         fill: ${({ theme }) => theme.colors.txtDescription};
+        font-size: 24px;
+    }
+
+    > div > button {        
+        color: ${({ theme }) => theme.colors.txtDescription};
         font-weight: bold;
         font-size: 24px;
         letter-spacing: 1px;
