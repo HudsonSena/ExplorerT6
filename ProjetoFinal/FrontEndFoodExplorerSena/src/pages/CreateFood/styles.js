@@ -16,11 +16,11 @@ export const Content = styled.main`
     grid-area: content;
     width: 100%;
     height: 100%;
-    padding: 24px 123px;
+    padding: 24px 123px 24px 123px;
 
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
 
     color: ${({ theme }) => theme.colors.txtDescription};
     font-family: 'Poppins';
@@ -101,6 +101,12 @@ export const Form = styled.form`
         gap: 10px;
 
         max-width: 1270px;
+    }
+
+    button {
+        width: 300px;
+        margin-right: 0;
+        margin-left: auto;
     }
 `;
 

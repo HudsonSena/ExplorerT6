@@ -1,7 +1,8 @@
 import { styled } from 'styled-components';
 
 export const Container = styled.header`
-    width: 100%;   
+    width: 100%;
+    height: 104px;
     background-color: ${({ theme }) => theme.colors.bgHeader};
 
     display: flex;
@@ -11,6 +12,8 @@ export const Container = styled.header`
     gap: 32px;
 
     padding: 10px 123px;
+    
+    position: fixed;
 
     .adminOn {
         display: none;

@@ -55,6 +55,7 @@ export function CreateFood() {
             <label htmlFor="inputDescription">Descrição</label>
             <Textarea id="inputDescription" placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"/>
           </div>
+          <Button title="Salvar Alterações"/>
         </Form>
       </Content>
       <Footer />
