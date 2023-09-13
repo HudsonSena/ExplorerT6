@@ -5,13 +5,13 @@ import GlobalStyles from './styles/global';
 
 import theme from './styles/theme';
 
-import { CreateFood } from './pages/CreateFood/index';
+import { Home } from './pages/Home/index';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <CreateFood />
+      <Home />
     </ThemeProvider>    
   </React.StrictMode>
 )

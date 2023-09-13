@@ -5,6 +5,7 @@ import { Button } from '../../components/Button';
 import { ButtonText } from '../../components/ButtonText';
 import { Input } from '../../components/Input';
 import { Textarea } from '../../components/Textarea';
+import { NoteItem } from '../../components/Noteitem';
 
 export function CreateFood() {
   return(
@@ -40,7 +41,7 @@ export function CreateFood() {
               <label htmlFor="inputCategory">Categoria</label>
               <Input id="inputCategory" type="search" list='category'/>
               <datalist id='category'>
-                <option value="refeicoes"/>
+                <option value="refeições"/>
                 <option value="sobremesas"/>
                 <option value="bebidas"/>
               </datalist>
@@ -48,20 +49,32 @@ export function CreateFood() {
             </div>
           </div>
           <div className="info02">
-          <div>
+            <div>
               <label htmlFor="inputIngred">Ingredientes</label>
-              <Input id="inputIngred" type="text"/>
+              <div className='newTags'>
+                <NoteItem
+                  placeholder="Fruta"
+                  value="Fruta"
+                />
+                <NoteItem
+                  isNew
+                  placeholder="Adicionar"
+                />
+              </div>
             </div>
             <div>
               <label htmlFor="inputCost">Preço</label>
-              <Input id="inputCost" type="number" placeholder="R$ 00,00"/>
+              <Input id="inputCost" type="number" placeholder="R$ 00,00" step="0.00" min="0.00" max="10000.00"/>
             </div>
           </div>
           <div className='info03'>
             <label htmlFor="inputDescription">Descrição</label>
             <Textarea id="inputDescription" placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"/>
           </div>
-          <Button title="Salvar Alterações" disabled={true}/>
+          <div className='deleteUpdate'>
+            <Button title="Excluir prato" id="deleteFood"/>
+            <Button title="Salvar Alterações" disabled={true} id="addFood"/>
+          </div>
         </Form>
       </Content>
       <Footer />

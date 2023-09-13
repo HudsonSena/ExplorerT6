@@ -46,7 +46,6 @@ export const Content = styled.main`
 `;
 
 export const Form = styled.form`
-
     display: flex;
     flex-direction: column;
 
@@ -56,6 +55,20 @@ export const Form = styled.form`
 
     input {
         text-align: left;
+    }
+
+    .newTags {
+        width: 100%;
+        padding: 8px;
+
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        
+        border: none;
+        border-radius: 5px;
+
+        background-color: ${({ theme }) => theme.colors.bgIpt02};
     }
 
     .info01 {
@@ -103,10 +116,18 @@ export const Form = styled.form`
         max-width: 1270px;
     }
 
-    button {
-        width: 300px;
+    .deleteUpdate {
+        display: flex;
+        flex-direction: row;
+        gap: 32px;
         margin-right: 0;
-        margin-left: auto;    
+        margin-left: auto;
+    }
+
+    #deleteFood {
+        width: fit-content;
+        background-color: ${({ theme }) => theme.colors.bgIpt01};
+        display: block;
     }
 `;
 
