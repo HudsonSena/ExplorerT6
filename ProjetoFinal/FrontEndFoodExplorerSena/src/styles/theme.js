@@ -10,7 +10,7 @@ export default {
         bgIpt02: "#0D161B",
         bgBtn: "#750310",
         bgBtnHover: "#92000E",
-        bgBtnInert: "#AB4D55",
+        bgBtnDisabled: "#AB4D55",
         bgSvgIconLogo: "#065E7C",
         bgTagsAdd: "#76797B",
         bgTags:"#192227",

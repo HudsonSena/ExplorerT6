@@ -21,6 +21,7 @@ export const Container =  styled.div`
         height: 100%;
         background: transparent;
         border: none;
+        color: white;
 
         font-family: 'Roboto';
         font-size: 16px;

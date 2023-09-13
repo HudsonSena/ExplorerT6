@@ -34,11 +34,17 @@ export function CreateFood() {
             </div>
             <div>
               <label htmlFor="inputName">Nome</label>
-              <Input id="inputName" type="text"/>
+              <Input id="inputName" type="text" placeholder="Ex.: Salada Ceasar"/>
             </div>
             <div>
               <label htmlFor="inputCategory">Categoria</label>
-              <Input id="inputCategory" type="text"/>
+              <Input id="inputCategory" type="search" list='category'/>
+              <datalist id='category'>
+                <option value="refeicoes"/>
+                <option value="sobremesas"/>
+                <option value="bebidas"/>
+              </datalist>
+              
             </div>
           </div>
           <div className="info02">
@@ -48,14 +54,14 @@ export function CreateFood() {
             </div>
             <div>
               <label htmlFor="inputCost">Preço</label>
-              <Input id="inputCost" type="text"/>
+              <Input id="inputCost" type="number" placeholder="R$ 00,00"/>
             </div>
           </div>
           <div className='info03'>
             <label htmlFor="inputDescription">Descrição</label>
             <Textarea id="inputDescription" placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"/>
           </div>
-          <Button title="Salvar Alterações"/>
+          <Button title="Salvar Alterações" disabled={true}/>
         </Form>
       </Content>
       <Footer />

@@ -106,7 +106,7 @@ export const Form = styled.form`
     button {
         width: 300px;
         margin-right: 0;
-        margin-left: auto;
+        margin-left: auto;    
     }
 `;
 
