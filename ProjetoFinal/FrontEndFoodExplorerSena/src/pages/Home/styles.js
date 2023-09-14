@@ -25,4 +25,90 @@ export const Content = styled.main`
 
     color: ${({ theme }) => theme.colors.txtBtn1};
     font-family: 'Poppins';
+
+    > img {
+        width: 632px;
+        position: absolute;
+        left: 73px;
+    }
+
+    > .intro {
+        height: 260px;
+        background-color: ${({ theme }) => theme.colors.bgIpt01};
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+
+        margin-top: 145px;
+        padding: 100px;
+
+        h1 {
+            font-size: 40px;
+        }
+
+        p {
+            font-size: 14px;
+        }        
+    }
+
+    .listFood {
+        width: 1100px;
+
+        display: flex;
+        flex-direction: row;
+        gap: 27px;
+
+        overflow: auto;
+    }
+`;
+
+export const Card = styled.div`
+    width: fit-content;
+    height: 462px;
+    background-color: ${({ theme }) => theme.colors.bgCard};
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    padding: 24px;
+
+    img {
+        width: 176px;
+        height: 176px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+        width: 265px;
+    }
+
+    span {
+        font-size: 32px;
+        color: ${({ theme }) => theme.colors.txtCostAdm};
+    }
+
+    > div {
+        display: flex;
+        flex-direction: row;
+        height: 48px;
+        gap: 16px;
+
+        align-items: center;        
+
+        h4 {
+            font-size: 20px;
+        }
+
+        .buttonIncluir{
+            padding: 12px 24px;
+        }
+    }
 `;
