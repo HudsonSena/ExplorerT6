@@ -6,6 +6,7 @@ import { Button } from '../../components/Button';
 import { ButtonText } from '../../components/ButtonText';
 import { AiOutlineMinus, AiOutlinePlus} from 'react-icons/ai';
 import imgFood2 from '../../assets/Mask group-2.png';
+import imgHeart from '../../assets/heart.svg';
 
 export function Home() {
     return(
@@ -21,7 +22,9 @@ export function Home() {
                     <h2>Refeições</h2>
                     <div className='listFood'>
                         <Card>
-                            <img src={imgFood2} alt="" />
+                            <img src={imgHeart} alt="" className='imgHeart'/>
+
+                            <img src={imgFood2} alt="" className='imgFood'/>
                             <h3>Spaguetti Gambe</h3>
                             <p>Massa fresca com camarões e pesto</p>
                             <span>R$ 79,97</span>
@@ -29,159 +32,9 @@ export function Home() {
                                 <ButtonText icon={AiOutlineMinus}/><h4>01</h4><ButtonText icon={AiOutlinePlus}/>
                                 <Button title="Incluir" className='buttonIncluir'/>
                             </div>
-                        </Card>
-                        <Card>
-                            <img src={imgFood2} alt="" />
-                            <h3>Spaguetti Gambe</h3>
-                            <p>Massa fresca com camarões e pesto</p>
-                            <span>R$ 79,97</span>
-                            <div>
-                                <ButtonText icon={AiOutlineMinus}/><h4>01</h4><ButtonText icon={AiOutlinePlus}/>
-                                <Button title="Incluir" className='buttonIncluir'/>
-                            </div>
-                        </Card>
-                        <Card>
-                            <img src={imgFood2} alt="" />
-                            <h3>Spaguetti Gambe</h3>
-                            <p>Massa fresca com camarões e pesto</p>
-                            <span>R$ 79,97</span>
-                            <div>
-                                <ButtonText icon={AiOutlineMinus}/><h4>01</h4><ButtonText icon={AiOutlinePlus}/>
-                                <Button title="Incluir" className='buttonIncluir'/>
-                            </div>
-                        </Card>
-                        <Card>
-                            <img src={imgFood2} alt="" />
-                            <h3>Spaguetti Gambe</h3>
-                            <p>Massa fresca com camarões e pesto</p>
-                            <span>R$ 79,97</span>
-                            <div>
-                                <ButtonText icon={AiOutlineMinus}/><h4>01</h4><ButtonText icon={AiOutlinePlus}/>
-                                <Button title="Incluir" className='buttonIncluir'/>
-                            </div>
-                        </Card>
-                        <Card>
-                            <img src={imgFood2} alt="" />
-                            <h3>Spaguetti Gambe</h3>
-                            <p>Massa fresca com camarões e pesto</p>
-                            <span>R$ 79,97</span>
-                            <div>
-                                <ButtonText icon={AiOutlineMinus}/><h4>01</h4><ButtonText icon={AiOutlinePlus}/>
-                                <Button title="Incluir" className='buttonIncluir'/>
-                            </div>
-                        </Card>
+                        </Card>                        
                     </div>                    
-                </div>
-                <div>
-                    <h2>Refeições</h2>
-                    <div className='listFood'>
-                        <Card>
-                            <img src={imgFood2} alt="" />
-                            <h3>Spaguetti Gambe</h3>
-                            <p>Massa fresca com camarões e pesto</p>
-                            <span>R$ 79,97</span>
-                            <div>
-                                <ButtonText icon={AiOutlineMinus}/><h4>01</h4><ButtonText icon={AiOutlinePlus}/>
-                                <Button title="Incluir" className='buttonIncluir'/>
-                            </div>
-                        </Card>
-                        <Card>
-                            <img src={imgFood2} alt="" />
-                            <h3>Spaguetti Gambe</h3>
-                            <p>Massa fresca com camarões e pesto</p>
-                            <span>R$ 79,97</span>
-                            <div>
-                                <ButtonText icon={AiOutlineMinus}/><h4>01</h4><ButtonText icon={AiOutlinePlus}/>
-                                <Button title="Incluir" className='buttonIncluir'/>
-                            </div>
-                        </Card>
-                        <Card>
-                            <img src={imgFood2} alt="" />
-                            <h3>Spaguetti Gambe</h3>
-                            <p>Massa fresca com camarões e pesto</p>
-                            <span>R$ 79,97</span>
-                            <div>
-                                <ButtonText icon={AiOutlineMinus}/><h4>01</h4><ButtonText icon={AiOutlinePlus}/>
-                                <Button title="Incluir" className='buttonIncluir'/>
-                            </div>
-                        </Card>
-                        <Card>
-                            <img src={imgFood2} alt="" />
-                            <h3>Spaguetti Gambe</h3>
-                            <p>Massa fresca com camarões e pesto</p>
-                            <span>R$ 79,97</span>
-                            <div>
-                                <ButtonText icon={AiOutlineMinus}/><h4>01</h4><ButtonText icon={AiOutlinePlus}/>
-                                <Button title="Incluir" className='buttonIncluir'/>
-                            </div>
-                        </Card>
-                        <Card>
-                            <img src={imgFood2} alt="" />
-                            <h3>Spaguetti Gambe</h3>
-                            <p>Massa fresca com camarões e pesto</p>
-                            <span>R$ 79,97</span>
-                            <div>
-                                <ButtonText icon={AiOutlineMinus}/><h4>01</h4><ButtonText icon={AiOutlinePlus}/>
-                                <Button title="Incluir" className='buttonIncluir'/>
-                            </div>
-                        </Card>
-                    </div>                    
-                </div>
-                <div>
-                    <h2>Refeições</h2>
-                    <div className='listFood'>
-                        <Card>
-                            <img src={imgFood2} alt="" />
-                            <h3>Spaguetti Gambe</h3>
-                            <p>Massa fresca com camarões e pesto</p>
-                            <span>R$ 79,97</span>
-                            <div>
-                                <ButtonText icon={AiOutlineMinus}/><h4>01</h4><ButtonText icon={AiOutlinePlus}/>
-                                <Button title="Incluir" className='buttonIncluir'/>
-                            </div>
-                        </Card>
-                        <Card>
-                            <img src={imgFood2} alt="" />
-                            <h3>Spaguetti Gambe</h3>
-                            <p>Massa fresca com camarões e pesto</p>
-                            <span>R$ 79,97</span>
-                            <div>
-                                <ButtonText icon={AiOutlineMinus}/><h4>01</h4><ButtonText icon={AiOutlinePlus}/>
-                                <Button title="Incluir" className='buttonIncluir'/>
-                            </div>
-                        </Card>
-                        <Card>
-                            <img src={imgFood2} alt="" />
-                            <h3>Spaguetti Gambe</h3>
-                            <p>Massa fresca com camarões e pesto</p>
-                            <span>R$ 79,97</span>
-                            <div>
-                                <ButtonText icon={AiOutlineMinus}/><h4>01</h4><ButtonText icon={AiOutlinePlus}/>
-                                <Button title="Incluir" className='buttonIncluir'/>
-                            </div>
-                        </Card>
-                        <Card>
-                            <img src={imgFood2} alt="" />
-                            <h3>Spaguetti Gambe</h3>
-                            <p>Massa fresca com camarões e pesto</p>
-                            <span>R$ 79,97</span>
-                            <div>
-                                <ButtonText icon={AiOutlineMinus}/><h4>01</h4><ButtonText icon={AiOutlinePlus}/>
-                                <Button title="Incluir" className='buttonIncluir'/>
-                            </div>
-                        </Card>
-                        <Card>
-                            <img src={imgFood2} alt="" />
-                            <h3>Spaguetti Gambe</h3>
-                            <p>Massa fresca com camarões e pesto</p>
-                            <span>R$ 79,97</span>
-                            <div>
-                                <ButtonText icon={AiOutlineMinus}/><h4>01</h4><ButtonText icon={AiOutlinePlus}/>
-                                <Button title="Incluir" className='buttonIncluir'/>
-                            </div>
-                        </Card>
-                    </div>                    
-                </div>
+                </div>                
             </Content>
             <Footer />
         </Container>

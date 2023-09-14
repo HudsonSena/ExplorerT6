@@ -56,12 +56,20 @@ export const Content = styled.main`
     .listFood {
         width: 1100px;
 
+        padding: 16px 0px;
+
         display: flex;
         flex-direction: row;
         gap: 27px;
 
         overflow: auto;
+
+        box-shadow: -30px 0px 0px  0px black;
     }
+
+    .listFood::-webkit-scrollbar {
+            display: none;
+        }
 `;
 
 export const Card = styled.div`
@@ -76,7 +84,12 @@ export const Card = styled.div`
 
     padding: 24px;
 
-    img {
+    .imgHeart {
+        width: 24px;
+        position: relative;
+    }
+
+    .imgFood {
         width: 176px;
         height: 176px;
     }
