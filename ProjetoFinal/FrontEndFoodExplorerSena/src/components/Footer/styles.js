@@ -9,9 +9,9 @@ export const Container = styled.footer`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding-left: 123px;
-    padding-right: 123px;
 
+    padding: 24px 123px;
+    
     color: ${({ theme }) => theme.colors.txtPlaceholder};
     
     > h2 {

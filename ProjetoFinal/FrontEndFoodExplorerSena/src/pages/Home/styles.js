@@ -11,13 +11,17 @@ export const Container = styled.div`
     "content"
     "footer"
     ;
+    main {
+        grid-area: content;
+        width: 100%;
+        padding: 32px 123px;
+    }
 `;
 
 export const Content = styled.main`
-    grid-area: content;
-    width: 100%;
     height: 100%;
-    padding: 24px 123px 24px 123px;
+
+    margin: auto;
 
     display: flex;
     flex-direction: column;
@@ -34,7 +38,10 @@ export const Content = styled.main`
 
     > .intro {
         height: 260px;
-        background-color: ${({ theme }) => theme.colors.bgIpt01};
+        width: 100%;
+        margin: auto;
+        border-radius: 8px;
+        background: var(--gradients-200, linear-gradient(180deg, #091E26 0%, #00131C 100%));
 
         display: flex;
         flex-direction: column;
@@ -54,7 +61,7 @@ export const Content = styled.main`
     }
 
     .listFood {
-        width: 1100px;
+        width: 100%;
 
         padding: 16px 0px;
 
@@ -62,9 +69,7 @@ export const Content = styled.main`
         flex-direction: row;
         gap: 27px;
 
-        overflow: auto;
-
-        box-shadow: -30px 0px 0px  0px black;
+        overflow: auto;        
     }
 
     .listFood::-webkit-scrollbar {
@@ -83,10 +88,19 @@ export const Card = styled.div`
     gap: 15px;
 
     padding: 24px;
+    padding-top: 0px;
+
+    margin: auto;
+
+    .heart {
+        position: relative;
+        right: -120px;
+        top: 16px;
+    }
+    
 
     .imgHeart {
         width: 24px;
-        position: relative;
     }
 
     .imgFood {
