@@ -17,7 +17,7 @@ export const Container = styled.header`
     
     position: fixed;
 
-    z-index: 1;
+    z-index: 2;
 
     .adminOn {
         display: none;

@@ -60,10 +60,47 @@ export const Content = styled.main`
         }        
     }
 
-    .listFood {
-        width: 100%;
+    section {
+        display: flex;
+        flex-direction: row;
+        max-width: 1090px;
 
-        padding: 16px 0px;
+        position: relative;
+
+        .shadowleft {
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            width: 80px;
+            height: 480px;
+            background-color: ${({ theme }) => theme.colors.bgCard};
+            box-shadow: 100px 0px 10px green;
+
+            button {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0px;
+            }
+        }
+        
+        .shadowright {
+            position: absolute;
+            display: flex;
+            justify-content: flex-end;
+            z-index: 1;
+            right: 0px;
+            width: 300px;
+            height: 480px;
+            padding-right: 28px;
+            box-shadow: inset -150px 0px 150px -50px black;   
+        }
+    }
+
+    .listFood {
+        padding: 16px 300px;
 
         display: flex;
         flex-direction: row;
@@ -92,9 +129,9 @@ export const Card = styled.div`
 
     margin: auto;
 
-    .heart {
+    a {
         position: relative;
-        right: -120px;
+        right: -124px;
         top: 16px;
     }
     
