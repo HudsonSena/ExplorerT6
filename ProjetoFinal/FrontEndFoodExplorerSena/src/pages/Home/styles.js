@@ -18,7 +18,7 @@ export const Content = styled.main`
     max-width: 98vw;
     height: 100%;
 
-    padding: 0px 123px;    
+    padding: 20px 123px;    
 
     display: flex;
     flex-direction: column;
@@ -60,7 +60,7 @@ export const Content = styled.main`
         }        
     }
 
-    section {
+    > section {
         display: flex;
         flex-direction: row;
 
@@ -71,7 +71,7 @@ export const Content = styled.main`
         .shadowleft {
             position: absolute;
             left: 0;
-            width: 20%;
+            width: 250px;
             height: 100%;
             box-shadow: inset 150px 0px 150px -50px ${({theme }) => theme.colors.bgPages};
 
@@ -87,7 +87,7 @@ export const Content = styled.main`
         .shadowright {
             position: absolute;
             right: 0px;
-            width: 20%;
+            width: 250px;
             height: 100%;
             box-shadow: inset -150px 0px 15020px -50px  ${({theme }) => theme.colors.bgPages};
 
@@ -114,7 +114,6 @@ export const Content = styled.main`
             display: none;
         }
     }
-
     
 `;
 
@@ -132,6 +131,9 @@ export const Card = styled.div`
     padding-top: 0px;
 
     margin: auto;
+
+    cursor: pointer;
+    
 
     a {
         position: relative;
