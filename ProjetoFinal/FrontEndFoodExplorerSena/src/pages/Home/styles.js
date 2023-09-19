@@ -11,17 +11,14 @@ export const Container = styled.div`
     "content"
     "footer"
     ;
-    main {
-        grid-area: content;
-        width: 100%;
-        padding: 32px 123px;
-    }
 `;
 
 export const Content = styled.main`
+    grid-area: content;
+    max-width: 98vw;
     height: 100%;
 
-    margin: auto;
+    padding: 0px 123px;    
 
     display: flex;
     flex-direction: column;
@@ -30,26 +27,29 @@ export const Content = styled.main`
     color: ${({ theme }) => theme.colors.txtBtn1};
     font-family: 'Poppins';
 
-    > img {
-        width: 632px;
-        position: absolute;
-        left: 73px;
-    }
+    
 
     > .intro {
         height: 260px;
-        width: 100%;
-        margin: auto;
         border-radius: 8px;
         background: var(--gradients-200, linear-gradient(180deg, #091E26 0%, #00131C 100%));
 
         display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: center;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
 
-        margin-top: 145px;
+        margin-top: 175px;
         padding: 100px;
+
+        position: relative;
+        
+        > img {
+            width: 632px;
+            position: absolute;
+            bottom: 0px;
+            left: -53px;
+        }
 
         h1 {
             font-size: 40px;
@@ -63,55 +63,59 @@ export const Content = styled.main`
     section {
         display: flex;
         flex-direction: row;
-        max-width: 1090px;
 
         position: relative;
 
+        background: transparent;
+        
         .shadowleft {
             position: absolute;
-            z-index: 1;
             left: 0;
-            width: 80px;
-            height: 480px;
-            background-color: ${({ theme }) => theme.colors.bgCard};
-            box-shadow: 100px 0px 10px green;
+            width: 20%;
+            height: 100%;
+            box-shadow: inset 150px 0px 150px -50px ${({theme }) => theme.colors.bgPages};
 
             button {
-                width: 100%;
+                width: 30%;
                 height: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                margin: 0px;
             }
         }
         
         .shadowright {
             position: absolute;
+            right: 0px;
+            width: 20%;
+            height: 100%;
+            box-shadow: inset -150px 0px 15020px -50px  ${({theme }) => theme.colors.bgPages};
+
             display: flex;
             justify-content: flex-end;
-            z-index: 1;
-            right: 0px;
-            width: 300px;
-            height: 480px;
-            padding-right: 28px;
-            box-shadow: inset -150px 0px 150px -50px black;   
+
+            button {
+                width: 30%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }   
         }
-    }
 
-    .listFood {
-        padding: 16px 300px;
+        .listFood {
+            display: flex;
+            flex-direction: row;
+            gap: 27px;
+            overflow-y: auto;
+        }
 
-        display: flex;
-        flex-direction: row;
-        gap: 27px;
-
-        overflow: auto;        
-    }
-
-    .listFood::-webkit-scrollbar {
+        .listFood::-webkit-scrollbar {
             display: none;
         }
+    }
+
+    
 `;
 
 export const Card = styled.div`
