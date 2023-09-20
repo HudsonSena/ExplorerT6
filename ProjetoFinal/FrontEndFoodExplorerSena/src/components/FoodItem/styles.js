@@ -16,9 +16,11 @@ export const Container = styled.div`
 
     padding: 8px;
     padding-left: 16px;
-    padding-right: 0;
 
-    > button {
+    > button {        
+        width: 0;
+        margin-right: -20px;
+        font-size: 16px;
         border: none;
         background: none;
     }
