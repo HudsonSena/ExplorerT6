@@ -1,21 +1,38 @@
 import { Container } from './styles';
 import { Button } from '../Button';
 import { ButtonText } from '../ButtonText';
-import imgFood2 from '../../assets/Mask group-2.png';
 import { AiOutlineMinus, AiOutlinePlus} from 'react-icons/ai';
 import { BiHeart } from 'react-icons/bi';
+import { useState } from 'react';
+import imgFood from '../../assets/Mask group.png'
 
-export function CardFood() {
+export function CardFood({ data, ...rest }) {
+    let [count, setCount] = useState(0);
+
+    if(count < 0) {
+        count = 0;
+    }
+
     return(
-        <Container>
+        <Container {...rest}>
             <ButtonText icon={BiHeart} className='buttonText'/>
 
-            <img src={imgFood2} alt="" className='imgFood'/>
-            <h3>Spaguetti Gambe</h3>
-            <p>Massa fresca com camarões e pesto</p>
-            <span>R$ 79,97</span>
+            <img src={imgFood} className='imgFood'/>
+            <h3>{data.title}</h3>
+            <p>{data.description}</p>
+            <span>R${data.cost}</span>
             <div>
-                <ButtonText icon={AiOutlineMinus}/><h4>01</h4><ButtonText icon={AiOutlinePlus}/>
+                <ButtonText
+                    icon={AiOutlineMinus}
+                    onClick={() => setCount(count - 1)}
+                />
+
+                <h4>{count}</h4>
+
+                <ButtonText
+                    icon={AiOutlinePlus}
+                    onClick={() => setCount(count + 1)}
+                />
                 <Button title="Incluir" className='buttonIncluir'/>
             </div>
         </Container>

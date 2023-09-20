@@ -58,13 +58,6 @@ export const Content = styled.main`
             flex-wrap: wrap;
             gap: 12px;
             width: 100%;
-
-            .tags {
-                background-color: ${({ theme }) => theme.colors.bgTags};
-                border-radius: 5px;
-                padding: 4px 5px;
-                white-space: nowrap;
-            }
         }
     }
     .user {

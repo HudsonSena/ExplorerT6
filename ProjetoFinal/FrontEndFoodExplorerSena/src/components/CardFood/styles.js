@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    width: fit-content;
+    width: 300px;
     height: auto;
     background-color: ${({ theme }) => theme.colors.bgCard};
 
@@ -34,8 +34,13 @@ export const Container = styled.div`
     }
 
     p {
-        font-size: 14px;
-        width: 265px;
+        margin: auto;
+        height: 45px;
+
+        text-align: center;
+        overflow: hidden;
+        
+        font-size: 14px;        
     }
 
     span {

@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    background-color: grey;
-    color: white;
-
+    background-color: ${({ theme }) => theme.colors.bgTags};
     border-radius: 5px;
-    border: 1px solid grey;
-    padding: 12px 10px;
+    padding: 4px 5px;
+    white-space: nowrap;
 `;
