@@ -4,14 +4,13 @@ import { ThemeProvider} from 'styled-components';
 import GlobalStyles from './styles/global';
 
 import theme from './styles/theme';
-
-import { Home } from './pages/Home/Index';
+import { CreateFood } from './pages/CreateFood/Index';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Home />
+      <CreateFood />
     </ThemeProvider>    
   </React.StrictMode>
 )

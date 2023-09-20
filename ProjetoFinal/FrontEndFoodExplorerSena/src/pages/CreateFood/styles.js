@@ -57,6 +57,11 @@ export const Form = styled.form`
         text-align: left;
     }
 
+    input:focus {
+        box-shadow: 0 0 0 0;
+        outline: 0;
+    }
+
     .newTags {
         width: 100%;
         padding: 8px;
@@ -104,7 +109,11 @@ export const Form = styled.form`
         }
 
         :nth-child(1) {
-            width: 100%;
+            width: 75%;
+        }
+
+        :nth-child(2) {
+            min-width: 25%;
         }
     }
     

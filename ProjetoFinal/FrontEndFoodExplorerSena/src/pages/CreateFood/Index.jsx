@@ -5,7 +5,7 @@ import { Button } from '../../components/Button';
 import { ButtonText } from '../../components/ButtonText';
 import { Input } from '../../components/Input';
 import { Textarea } from '../../components/Textarea';
-import { NoteItem } from '../../components/Noteitem';
+import { FoodItem } from '../../components/FoodItem';
 
 export function CreateFood() {
   return(
@@ -52,11 +52,11 @@ export function CreateFood() {
             <div>
               <label htmlFor="inputIngred">Ingredientes</label>
               <div className='newTags'>
-                <NoteItem
+                <FoodItem
                   placeholder="Fruta"
                   value="Fruta"
                 />
-                <NoteItem
+                <FoodItem
                   isNew
                   placeholder="Adicionar"
                 />

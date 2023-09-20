@@ -2,12 +2,13 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     max-width: fit-content;
+
     display: flex;
     align-items: center;
     justify-content: center;
 
     background: ${({ theme, isNew }) => isNew ? `1px solid ${({ theme }) => theme.colors.txtPlaceholder}` : theme.colors.txtPlaceholder};
-
+    
     color: ${({ theme }) => theme.colors.txtBtn1};
 
     border: ${({ theme, isNew }) => isNew ? `1px dashed ${ theme.colors.txtPlaceholder}` : `1px solid ${ theme.colors.txtPlaceholder}`};
@@ -15,11 +16,11 @@ export const Container = styled.div`
 
     padding: 8px;
     padding-left: 16px;
+    padding-right: 0;
 
     > button {
         border: none;
         background: none;
-        width:  auto;
     }
 
     .button-delete {
@@ -44,5 +45,5 @@ export const Container = styled.div`
         &::placeholder {
             color: ${({ theme }) => theme.colors.txtPlaceholder};
         }
-    }
+    }    
 `;
