@@ -4,7 +4,7 @@ import { FiLogOut, FiSearch } from 'react-icons/fi';
 import { Input } from '../Input';
 import { ButtonText } from '../ButtonText';
 
-export function Header() {
+export function HeaderAdmin() {
     return(
         <Container>
             <div>
@@ -13,6 +13,7 @@ export function Header() {
                 </svg>
                 <div>
                     <h1>food explorer</h1>
+                    <span className='admin'>admin</span>
                 </div>
             </div>
             

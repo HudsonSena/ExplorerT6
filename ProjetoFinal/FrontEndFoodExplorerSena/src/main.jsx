@@ -5,7 +5,7 @@ import GlobalStyles from './styles/global';
 
 import theme from './styles/theme';
 
-import { Home } from './pages/Home/index';
+import { Home } from './pages/Home/Index';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

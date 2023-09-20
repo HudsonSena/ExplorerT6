@@ -13,6 +13,8 @@ export const Container = styled.button`
     font-family: 'Roboto';
     font-size: larger;
 
+    white-space: nowrap;
+
     &:disabled {
         opacity: 0.5
     }

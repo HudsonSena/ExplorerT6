@@ -67,20 +67,6 @@ export const Content = styled.main`
             }
         }
     }
-    .user {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 33px;
-
-        div {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 17px;
-            letter-spacing: 3px;
-        }        
-    }
 
     .voltar {
         display: flex;

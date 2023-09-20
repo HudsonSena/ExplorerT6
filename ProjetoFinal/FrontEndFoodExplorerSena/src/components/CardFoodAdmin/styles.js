@@ -11,17 +11,12 @@ export const Container = styled.div`
     gap: 15px;
 
     padding: 24px;
-    padding-top: 0px;  
+    padding-top: 0px;   
 
-    .buttonText {
+    button {
         position: relative;
         right: -124px;
         top: 16px;
-    }
-    
-
-    .imgHeart {
-        width: 24px;
     }
 
     .imgFood {
