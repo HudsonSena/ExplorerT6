@@ -5,32 +5,10 @@ import imgHome from '../../assets/home.svg';
 import { ButtonText } from '../../components/ButtonText';
 import { MdOutlineNavigateNext, MdOutlineNavigateBefore } from 'react-icons/md';
 import { CardFood } from '../../components/CardFood';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
+//import { Swiper, SwiperSlide } from 'swiper/react';
 
 export function Home() {
-    const sectionRef = useRef(null);
-    let scrollInterval = null;
-
-    const startScrollLeft = () => {
-        scrollInterval = setInterval(() => {
-        if (sectionRef.current) {
-            sectionRef.current.scrollLeft -= 50; // Ajuste a velocidade da rolagem aqui
-        }
-        }, 100); // Ajuste o intervalo da rolagem aqui
-    };
-
-    const startScrollRight = () => {
-        scrollInterval = setInterval(() => {
-        if (sectionRef.current) {
-            sectionRef.current.scrollLeft += 50; // Ajuste a velocidade da rolagem aqui
-        }
-        }, 100); // Ajuste o intervalo da rolagem aqui
-    };
-
-    const stopScroll = () => {
-        clearInterval(scrollInterval);
-    };
-
     return(
         <Container>
             <Header />
@@ -46,13 +24,13 @@ export function Home() {
                 <h2>Refeições</h2>
 
                 <section>
-                    <div className='shadowleft'>
+                    <div className='shadowleft'
+                    >
                         <ButtonText
-                            icon={MdOutlineNavigateBefore}
-                            onMouseDown={startScrollLeft} onMouseUp={stopScroll}                            
+                            icon={MdOutlineNavigateBefore}                            
                         />
                     </div>
-                    <div className='listFood' ref={sectionRef} >
+                    <div className='listFood'>
                         <CardFood 
                             data={{
                                 title: 'Farofa',
@@ -121,7 +99,6 @@ export function Home() {
                     <div className='shadowright'>
                         <ButtonText 
                             icon={MdOutlineNavigateNext}
-                            onMouseDown={startScrollRight} onMouseUp={stopScroll}
                         />
                     </div>                    
                 </section>
