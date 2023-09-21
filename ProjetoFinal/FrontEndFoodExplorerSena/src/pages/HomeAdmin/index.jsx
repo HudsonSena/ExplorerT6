@@ -27,15 +27,6 @@ export function HomeAdmin() {
                     </div>
                     <div className='listFood'>
                         <CardFoodAdmin />
-                        <CardFoodAdmin />
-                        <CardFoodAdmin />
-                        <CardFoodAdmin />
-                        <CardFoodAdmin />
-                        <CardFoodAdmin />
-                        <CardFoodAdmin />
-                        <CardFoodAdmin />
-                        <CardFoodAdmin />
-                        <CardFoodAdmin />
                     </div>
                     <div className='shadowright'>
                         <ButtonText icon={MdOutlineNavigateNext}/>
@@ -50,15 +41,6 @@ export function HomeAdmin() {
                     </div>
                     <div className='listFood'>
                         <CardFoodAdmin />
-                        <CardFoodAdmin />
-                        <CardFoodAdmin />
-                        <CardFoodAdmin />
-                        <CardFoodAdmin />
-                        <CardFoodAdmin />
-                        <CardFoodAdmin />
-                        <CardFoodAdmin />
-                        <CardFoodAdmin />
-                        <CardFoodAdmin />
                     </div>
                     <div className='shadowright'>
                         <ButtonText icon={MdOutlineNavigateNext}/>
@@ -72,15 +54,6 @@ export function HomeAdmin() {
                         <ButtonText icon={MdOutlineNavigateBefore}/>
                     </div>
                     <div className='listFood'>
-                        <CardFoodAdmin />
-                        <CardFoodAdmin />
-                        <CardFoodAdmin />
-                        <CardFoodAdmin />
-                        <CardFoodAdmin />
-                        <CardFoodAdmin />
-                        <CardFoodAdmin />
-                        <CardFoodAdmin />
-                        <CardFoodAdmin />
                         <CardFoodAdmin />
                     </div>
                     <div className='shadowright'>

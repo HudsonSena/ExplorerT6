@@ -63,6 +63,9 @@ export const Content = styled.main`
     > section {
         display: flex;
         flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
 
         position: relative;
 
@@ -106,7 +109,7 @@ export const Content = styled.main`
         .listFood {
             display: flex;
             flex-direction: row;
-            gap: 27px;
+            gap: 30px;
             overflow-y: auto;
         }
 

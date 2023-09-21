@@ -27,71 +27,63 @@ export function Home() {
                     <div className='shadowleft'
                     >
                         <ButtonText
-                            icon={MdOutlineNavigateBefore}                            
+                            icon={MdOutlineNavigateBefore}
                         />
                     </div>
                     <div className='listFood'>
                         <CardFood 
                             data={{
                                 title: 'Farofa',
-                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais sgafgfgfdgfgdf hhhhhhhhhhhhhhhhhhhhhhhhhh',
-                                cost: '10,00'
-                            }}
-                        />
-
-                        <CardFood 
-                            data={{
-                                title: 'Farofa',
-                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais sgafgfgfdgfgdf hhhhhhhhhhhhhhhhhhhhhhhhhh',
+                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
                                 cost: '10,00'
                             }}
                         />
                         <CardFood 
                             data={{
                                 title: 'Farofa',
-                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais sgafgfgfdgfgdf hhhhhhhhhhhhhhhhhhhhhhhhhh',
+                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
                                 cost: '10,00'
                             }}
                         />
                         <CardFood 
                             data={{
                                 title: 'Farofa',
-                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais sgafgfgfdgfgdf hhhhhhhhhhhhhhhhhhhhhhhhhh',
+                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
                                 cost: '10,00'
                             }}
                         />
                         <CardFood 
                             data={{
                                 title: 'Farofa',
-                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais sgafgfgfdgfgdf hhhhhhhhhhhhhhhhhhhhhhhhhh',
+                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
                                 cost: '10,00'
                             }}
                         />
                         <CardFood 
                             data={{
                                 title: 'Farofa',
-                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais sgafgfgfdgfgdf hhhhhhhhhhhhhhhhhhhhhhhhhh',
+                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
                                 cost: '10,00'
                             }}
                         />
                         <CardFood 
                             data={{
                                 title: 'Farofa',
-                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais sgafgfgfdgfgdf hhhhhhhhhhhhhhhhhhhhhhhhhh',
+                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
                                 cost: '10,00'
                             }}
                         />
                         <CardFood 
                             data={{
                                 title: 'Farofa',
-                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais sgafgfgfdgfgdf hhhhhhhhhhhhhhhhhhhhhhhhhh',
+                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
                                 cost: '10,00'
                             }}
                         />
                         <CardFood 
                             data={{
                                 title: 'Farofa',
-                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais sgafgfgfdgfgdf hhhhhhhhhhhhhhhhhhhhhhhhhh',
+                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
                                 cost: '10,00'
                             }}
                         />

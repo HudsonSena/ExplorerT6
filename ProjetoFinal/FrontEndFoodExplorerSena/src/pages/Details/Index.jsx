@@ -5,6 +5,7 @@ import { Button } from '../../components/Button';
 import { ButtonText } from '../../components/ButtonText';
 import { Tag } from '../../components/Tag';
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
+import imgFood from '../../assets/Mask group-2.png';
 
 export function Details({ data, ...rest }) {
   return(
@@ -18,7 +19,7 @@ export function Details({ data, ...rest }) {
           <ButtonText title="voltar"/>
         </div> 
         <div className='details'>
-          <img src={data.avatar} alt="" />
+          <img src={imgFood} alt="" />
           <div className='order'>
             <div className='infoFood'>
               <h1>{data.title}</h1>

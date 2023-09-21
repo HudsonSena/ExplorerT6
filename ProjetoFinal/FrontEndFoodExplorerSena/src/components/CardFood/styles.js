@@ -11,7 +11,8 @@ export const Container = styled.div`
     gap: 15px;
 
     padding: 24px;
-    padding-top: 0px;  
+    padding-top: 0px;
+    margin: auto;
 
     .buttonText {
         position: relative;
@@ -35,6 +36,7 @@ export const Container = styled.div`
 
     p {
         margin: auto;
+        width: 256px;
         height: 45px;
 
         text-align: center;
