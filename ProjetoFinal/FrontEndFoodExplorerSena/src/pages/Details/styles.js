@@ -25,56 +25,6 @@ export const Content = styled.main`
     color: ${({ theme }) => theme.colors.txtDescription};
     font-family: 'Poppins';
 
-    > .details {
-        display: flex;
-        flex-direction: row;
-        gap: 48px;
-
-        align-items: center;
-
-        img {
-            max-width: 390px;
-            max-height: 390px;
-        }
-
-        .infoFood {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-            margin-bottom: 48px;
-
-            h1 {
-                font-size: 40px;
-            }
-
-            p {
-                font-size: 24px
-            }
-        }
-        
-        section {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            width: 100%;
-        }
-    }
-    .user {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 33px;
-
-        div {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 17px;
-            letter-spacing: 3px;
-        }        
-    }
-
     .voltar {
         display: flex;
         flex-direction: row;

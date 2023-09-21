@@ -26,7 +26,62 @@ export function HomeAdmin() {
                         <ButtonText icon={MdOutlineNavigateBefore}/>
                     </div>
                     <div className='listFood'>
-                        <CardFoodAdmin />
+                        <CardFoodAdmin 
+                            data={{
+                                title: 'Farofa',
+                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                cost: '10,00'
+                            }}
+                        />
+                        <CardFoodAdmin 
+                            data={{
+                                title: 'Farofa',
+                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                cost: '10,00'
+                            }}
+                        />
+                        <CardFoodAdmin 
+                            data={{
+                                title: 'Farofa',
+                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                cost: '10,00'
+                            }}
+                        />
+                        <CardFoodAdmin 
+                            data={{
+                                title: 'Farofa',
+                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                cost: '10,00'
+                            }}
+                        />
+                        <CardFoodAdmin 
+                            data={{
+                                title: 'Farofa',
+                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                cost: '10,00'
+                            }}
+                        />
+                        <CardFoodAdmin 
+                            data={{
+                                title: 'Farofa',
+                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                cost: '10,00'
+                            }}
+                        />
+                        <CardFoodAdmin 
+                            data={{
+                                title: 'Farofa',
+                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                cost: '10,00'
+                            }}
+                        />
+                        <CardFoodAdmin 
+                            data={{
+                                title: 'Farofa',
+                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                cost: '10,00'
+                            }}
+                        />
                     </div>
                     <div className='shadowright'>
                         <ButtonText icon={MdOutlineNavigateNext}/>
@@ -40,7 +95,6 @@ export function HomeAdmin() {
                         <ButtonText icon={MdOutlineNavigateBefore}/>
                     </div>
                     <div className='listFood'>
-                        <CardFoodAdmin />
                     </div>
                     <div className='shadowright'>
                         <ButtonText icon={MdOutlineNavigateNext}/>
@@ -54,7 +108,6 @@ export function HomeAdmin() {
                         <ButtonText icon={MdOutlineNavigateBefore}/>
                     </div>
                     <div className='listFood'>
-                        <CardFoodAdmin />
                     </div>
                     <div className='shadowright'>
                         <ButtonText icon={MdOutlineNavigateNext}/>
