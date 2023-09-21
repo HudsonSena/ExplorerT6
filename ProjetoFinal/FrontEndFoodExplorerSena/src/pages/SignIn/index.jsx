@@ -1,7 +1,7 @@
 import { Container, Form } from './styles';
 import { Button } from '../../components/Button';
-import { ButtonText } from '../../components/ButtonText';
 import { Input } from '../../components/Input';
+import { Link } from 'react-router-dom';
 
 export function SignIn() {
     return(
@@ -17,7 +17,7 @@ export function SignIn() {
 
                 <div>
                     <label htmlFor="inputPassword">Email</label>
-                    <Input id="inputPassword" placeholder="Exemplo: exemplo@exemplo.com.br" size="40"/>
+                    <Input id="inputPassword" placeholder="Exemplo: exemplo@exemplo.com.br" size="40" classname='input'/>
                 </div>
                 <div>
                     <label htmlFor="inputMail">Senha</label>
@@ -26,7 +26,7 @@ export function SignIn() {
 
                 <Button title="Entrar"/>
 
-                <ButtonText title="Criar uma conta"/>
+                <Link to="/register">Criar uma conta</Link>
             </Form>
         </Container>
     )

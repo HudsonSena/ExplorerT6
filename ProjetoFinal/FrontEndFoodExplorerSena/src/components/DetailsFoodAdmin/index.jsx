@@ -7,24 +7,24 @@ export function DetailsFoodAdmin({data, ...rest}) {
     return(
         <Container { ...rest }>
             <img src={imageFood} alt="" />
-            <div className='order'>
-                <div className='infoFood'>
-                    <h1>{data.title}</h1>
-                    <p>{data.description}</p>
-                    {
-                        data.tags &&
+            <div className='infoFood'>
+                <h1>{data.title}</h1>
+                <p>{data.description}</p>
+                {
+                    data.tags &&
 
-                        <section className='tagsline'>
-                            {
-                                data.tags.map(tag => <Tag key={tag.id} title={tag.name} />)
-                            }
-                        </section>
-                    }
-                </div>
+                    <section className='tagsline'>
+                        {
+                            data.tags.map(tag => <Tag key={tag.id} title={tag.name} />)
+                        }
+                    </section>
+                }
+
                 <div>
                     <Button title="Editar prato"/>
-                </div>            
+                </div>
             </div>
+            
         </Container>
     )
 }

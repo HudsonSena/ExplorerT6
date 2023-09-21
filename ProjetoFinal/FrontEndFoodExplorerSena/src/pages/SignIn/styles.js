@@ -45,7 +45,18 @@ export const Form = styled.form`
 
     font-family: 'Poppins';
 
-    background-color: ${({ theme }) => theme.colors.bgForm};
+    background-color: ${({ theme }) => theme.colors.bgForm};    
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    input:focus {
+        box-shadow: 0 0 0 0;
+        outline: 0;
+    }
 
     input {
         text-align: left;
@@ -53,5 +64,9 @@ export const Form = styled.form`
 
     button {
         width: 100%;
+    }
+
+    a {
+        color: ${({ theme }) => theme.colors.txtLogo};
     }
 `;

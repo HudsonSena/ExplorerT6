@@ -1,7 +1,7 @@
 import { Container, Form } from './styles';
 import { Button } from '../../components/Button';
-import { ButtonText } from '../../components/ButtonText';
 import { Input } from '../../components/Input';
+import { Link } from 'react-router-dom';
 
 export function SignUp() {
     return(
@@ -30,7 +30,7 @@ export function SignUp() {
 
                 <Button title="Cria conta"/>
 
-                <ButtonText title="Ja tenho uma conta"/>
+                <Link to="/login">Ja tenho uma conta</Link>
             </Form>
         </Container>
     )

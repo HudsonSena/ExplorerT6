@@ -18,9 +18,14 @@ export function DetailsAdmin({ data, ...rest }) {
         <DetailsFoodAdmin
           data={
             {
-              title: 'Farofa',
-              description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
-              tags: ["farinha", "carne", "sal", "oleo"] 
+              title: 'Cuscuz Gourmet',
+              description: 'Um Cuscuz da hora, com muito queijo e calabresa, quem sabe algo mais...',
+              tags: [
+                {id:'1', name:"cuscuz"},
+                {id:'2', name:"queijo"},
+                {id:'3', name:"calabresa"},
+                {id:'4', name:"tomate"}
+              ] 
             }
           }
         />

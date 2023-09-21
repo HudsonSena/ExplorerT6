@@ -5,7 +5,7 @@ import imgHome from '../../assets/home.svg';
 import { ButtonText } from '../../components/ButtonText';
 import { MdOutlineNavigateNext, MdOutlineNavigateBefore } from 'react-icons/md';
 import { CardFood } from '../../components/CardFood';
-import React, { useRef, useState } from 'react';
+//import React, { useRef, useState } from 'react';
 //import { Swiper, SwiperSlide } from 'swiper/react';
 
 export function Home() {

@@ -14,7 +14,7 @@ export const Container =  styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;
 
     > input {
         width: 100%;
@@ -25,6 +25,5 @@ export const Container =  styled.div`
 
         font-family: 'Roboto';
         font-size: 16px;
-        text-align: center;
     }
 `;

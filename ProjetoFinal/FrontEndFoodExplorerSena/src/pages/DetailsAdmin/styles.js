@@ -19,7 +19,7 @@ export const Content = styled.main`
     padding: 24px 123px;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
     gap: 42px;
 
     color: ${({ theme }) => theme.colors.txtDescription};
