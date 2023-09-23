@@ -4,7 +4,7 @@ export const Container = styled.div`
     width: 100%;
     height: 100vh;
     display: grid;
-    grid-template-rows: 104px auto 77px;
+    grid-template-rows: 10.4rem auto 7.7rem;
     grid-template-areas: 
     "header"
     "content"
@@ -16,32 +16,41 @@ export const Content = styled.main`
     grid-area: content;
     width: 100%;
     height: 100%;
-    padding: 24px 123px 24px 123px;
+    padding: 2.4rem 12.3rem 2.4rem 12.3rem;
 
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 2rem;
 
     color: ${({ theme }) => theme.colors.txtDescription};
     font-family: 'Poppins';
 
-    .voltar {
+    a {
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 10px;
+        gap: 1rem;
+
+        font-size: 2.4rem;
+        font-weight: bold;
+
+        color: ${({ theme }) => theme.colors.txtBtn1}
     }
 
     > svg > path {
         fill: ${({ theme }) => theme.colors.txtDescription};
-        font-size: 24px;
+        font-size: 2.4rem;
     }
 
     > div > button {        
         color: ${({ theme }) => theme.colors.txtDescription};
         font-weight: bold;
-        font-size: 24px;
-        letter-spacing: 1px;
+        font-size: 2.4rem;
+        letter-spacing: .1rem;
+    }
+
+    @media (max-width: 920px) {
+        padding: 3.2rem;
     }
 `;
 
@@ -49,9 +58,13 @@ export const Form = styled.form`
     display: flex;
     flex-direction: column;
 
-    gap: 32px;
+    gap: 3.2rem;
 
     font-family: 'Poppins';
+
+    label {
+        font-size: 1.6rem;
+    }
 
     input {
         text-align: left;
@@ -64,14 +77,14 @@ export const Form = styled.form`
 
     .newTags {
         width: 100%;
-        padding: 8px;
+        padding: .8rem;
 
         display: flex;
         flex-direction: row;
-        gap: 16px;
+        gap: 1.6rem;
         
         border: none;
-        border-radius: 5px;
+        border-radius: .5rem;
 
         background-color: ${({ theme }) => theme.colors.bgIpt02};
     }
@@ -79,13 +92,13 @@ export const Form = styled.form`
     .info01 {
         display: flex;
         flex-direction: row;
-        gap: 32px;
+        gap: 3.2rem;
 
         > div {
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 1rem;
 
             div {
                 background-color: ${({ theme }) => theme.colors.bgIpt02};
@@ -96,12 +109,12 @@ export const Form = styled.form`
     .info02 {
         display: flex;
         flex-direction: row;
-        gap: 32px;
+        gap: 3.2rem;
 
         > div {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 1rem;
 
             div {
                 background-color: ${({ theme }) => theme.colors.bgIpt02};
@@ -120,15 +133,15 @@ export const Form = styled.form`
     .info03 {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 1rem;
 
-        max-width: 1270px;
+        max-width: 127rem;
     }
 
     .deleteUpdate {
         display: flex;
         flex-direction: row;
-        gap: 32px;
+        gap: 3.2rem;
         margin-right: 0;
         margin-left: auto;
     }
@@ -145,17 +158,17 @@ export const Avatar = styled.div`
         
     border: none;
     background-color: ${({ theme }) => theme.colors.bgIpt01};
-    border-radius: 5px;
+    border-radius: .5rem;
 
     color: ${({ theme }) => theme.colors.txtPlaceholder};
 
-    padding: 14px;
+    padding: 1.4rem;
 
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 1rem;
 
     cursor: pointer;
 
@@ -168,8 +181,8 @@ export const Avatar = styled.div`
     }
 
     svg > path{
-        width: 20px;
-        height: 20px;
+        width: 2rem;
+        height: 2rem;
         fill: ${({ theme }) => theme.colors.white};
     }
 `;

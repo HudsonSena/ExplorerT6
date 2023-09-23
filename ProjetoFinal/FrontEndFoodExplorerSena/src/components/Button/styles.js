@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 
 export const Container = styled.button`
-    width: auto;
-    padding: 12px 68px 12px 68px;
+    width: 100%;
+    padding: 1.2rem 6.8rem 1.2rem 6.8rem;
 
-    border-radius: 5px;
+    border-radius: .5rem;
     border: none;
 
     background-color: ${({ theme }) => theme.colors.bgBtn};
     color: ${({ theme }) => theme.colors.txtBtn1};
 
     font-family: 'Roboto';
-    font-size: larger;
+    font-size: 1.4rem;
 
     white-space: nowrap;
 

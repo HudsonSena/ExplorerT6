@@ -7,8 +7,8 @@ export const Container = styled.div`
     gap: 36px;
 
     img {
-        max-width: 390px;
-        max-height: 390px;
+        max-width: 39rem;
+        max-height: 39rem;
     }
 
     .infoFood {
@@ -16,27 +16,64 @@ export const Container = styled.div`
         display: flex;
         flex-direction: column;
 
-        gap: 24px;
+        gap: 2.4rem;
 
         h1 {
-            font-size: 40px;
+            font-size: 4rem;
         }
 
         p {
-            font-size: 24px
+            font-size: 2.4rem;
         }
 
         .tagsline {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 1.2rem;
             width: 100%;
         }
 
         > div {
             display: flex;
             align-items: center;
-            margin-top: 24px;
+            margin-top: 2.4rem;
         }
-    }    
+
+        button {
+            width: auto;
+        }
+    }
+
+    @media (max-width: 920px){
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 26rem;
+            height: 26rem;
+        }
+
+        .infoFood {
+            align-items: center;
+
+            p {
+                text-align: center;
+            }
+            .tagsline {
+                flex-wrap: wrap;
+                gap: none;
+                justify-content: space-evenly;
+            }            
+        }
+
+        .btnEdit {
+            width: 100%;
+
+            button {
+                width: 100%
+            }
+        }
+    }
 `;

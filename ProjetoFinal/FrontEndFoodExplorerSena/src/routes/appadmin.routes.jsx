@@ -8,7 +8,7 @@ import { HomeAdmin } from '../pages/HomeAdmin';
 export function AppAdminRoutes() {
     return (
         <Routes>
-            <Route path="/createFood" element={<CreateFood />} />
+            <Route path="/createfood" element={<CreateFood />} />
             <Route path="/detailsadmin" element={<DetailsAdmin />} />
             <Route path="/homeadmin" element={<HomeAdmin />} />
         </Routes>

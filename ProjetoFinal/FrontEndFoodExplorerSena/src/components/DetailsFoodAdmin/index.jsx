@@ -20,7 +20,7 @@ export function DetailsFoodAdmin({data, ...rest}) {
                     </section>
                 }
 
-                <div>
+                <div className="btnEdit">
                     <Button title="Editar prato"/>
                 </div>
             </div>

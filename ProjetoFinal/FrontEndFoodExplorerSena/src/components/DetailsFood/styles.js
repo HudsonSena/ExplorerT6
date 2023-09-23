@@ -46,7 +46,5 @@ export const Container = styled.div`
                 gap: 14px;
             }
         }
-    }
-    
-        
+    }        
 `;

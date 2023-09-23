@@ -5,11 +5,11 @@ export const Container =  styled.div`
     
     border: none;
     background-color: ${({ theme }) => theme.colors.bgIpt01};
-    border-radius: 5px;
+    border-radius: .5rem;
 
     color: ${({ theme }) => theme.colors.txtPlaceholder};
 
-    padding: 14px;
+    padding: 1.4rem;
 
     display: flex;
     flex-direction: row;
@@ -24,6 +24,6 @@ export const Container =  styled.div`
         color: white;
 
         font-family: 'Roboto';
-        font-size: 16px;
+        font-size: 1.6rem;
     }
 `;

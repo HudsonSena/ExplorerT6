@@ -7,34 +7,41 @@ export const Container = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
-    padding: 123px;
+    padding: 12.3rem;
 
     background-color: ${({ theme }) => theme.colors.bgPages};
 
     > div {
         display: flex;
         flex-direction: row;
-        gap: 20px;
+        gap: 2.0rem;
 
         align-items: center;
 
         font-family: 'Roboto';
 
         h1 {
-            font-size: 42px;
+            font-size: 4.2rem;
         }
 
         svg {
-            width: 50px;
-            height: 50px;
+            width: 5.0rem;
+            height: 5.0rem;
         }
+    }
+
+    @media (max-width: 920px){
+        display: flex;
+        flex-direction: column;
+        align-content: space-evenly;
+        padding: 5.0rem;
     }
 `;
 
 export const Form = styled.form`
-    padding: 64px;
+    padding: 3.2rem 6.4rem;
 
     display: flex;
     flex-direction: column;
@@ -47,11 +54,19 @@ export const Form = styled.form`
 
     background-color: ${({ theme }) => theme.colors.bgForm};
 
+    h2 {
+        font-size: 3.2rem;
+    }
+
     div {
         display: flex;
         flex-direction: column;
-        gap: 5px;
-    }    
+        gap: .5rem;
+    }
+
+    label {
+        font-size: 1.6rem;
+    }
 
     input:focus {
         box-shadow: 0 0 0 0;
@@ -68,5 +83,15 @@ export const Form = styled.form`
 
     a {
         color: ${({ theme }) => theme.colors.txtLogo};
+        font-size: 1.6rem;
+    }
+
+    @media (max-width: 920px){
+        background: none;
+        padding: 0;
+        
+        h2{
+            display: none;
+        }
     }
 `;

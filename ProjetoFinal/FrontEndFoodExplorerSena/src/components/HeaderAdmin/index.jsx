@@ -2,7 +2,7 @@ import { Container } from './styles';
 import { Button } from '../Button';
 import { FiLogOut, FiSearch } from 'react-icons/fi';
 import { Input } from '../Input';
-import { ButtonText } from '../ButtonText';
+import { Link } from 'react-router-dom';
 
 export function HeaderAdmin() {
     return(
@@ -18,8 +18,10 @@ export function HeaderAdmin() {
             </div>
             
             <Input placeholder="Busque por pratos ou ingredientes" icon={FiSearch} type="text"/>
-            <Button title="Pedidos"></Button>
-            <ButtonText icon={FiLogOut} size={50}/>
+            
+            <Button title="Novo prato"></Button>
+
+            <Link><FiLogOut /></Link>
         </Container>
     )
 }

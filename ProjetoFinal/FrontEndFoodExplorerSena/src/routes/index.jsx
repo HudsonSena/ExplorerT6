@@ -7,7 +7,7 @@ import { AppUserRoutes } from './appuser.routes';
 export function Routes() {
     return (
         <BrowserRouter>
-            <AuthRoutes />
+            <AppAdminRoutes />
         </BrowserRouter>
     )
 }
