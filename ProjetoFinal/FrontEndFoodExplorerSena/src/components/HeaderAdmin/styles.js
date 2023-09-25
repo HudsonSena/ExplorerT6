@@ -66,45 +66,69 @@ export const Container = styled.header`
     
     .menuburguer {
         width: 100%;
-        height: 11.4rem;
+        height: 10.4rem;
         background-color: ${({ theme }) => theme.colors.bgHeader};
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+
+        padding: 2.4rem 2.8rem;
+        
+        position: fixed;
+
+        .btnmenu {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 5rem;
+        }
 
         a {
             color: ${({ theme }) => theme.colors.txtBtn1};
             font-family: 'Roboto';
             font-size: 2.1rem;
+
+            display: flex;
+            align-items: center;
+            gap: 1.6rem;
         }
 
-        div {
+        .foodexplorer {
             display: flex;
-            flex-direction: column;
+            gap: .8rem;
+            align-items: center;
+            justify-content: center;
 
-            input {
-                width: 100%;
+            span {
+                color: ${({ theme }) => theme.colors.txtCostAdm};
+                font-size: 1.2rem;
             }
+        }
+
+        .displayon {
+            display: flex;
+        }
+
+        .svgmenu {
+            display: none;
+        }
+
+        .menu {
+            display: flex;
         }
 
         .menulist {
-            width: 100%;
-            height: auto;
-            margin-top: .8rem;
-            padding: 2.8rem;
-
-            position: absolute;
-
             display: flex;
             flex-direction: column;
-            gap: 3.6rem;
+            gap: 2rem;
 
             background-color: ${({ theme }) => theme.colors.bgPages};
 
-            div {
-                display: flex;
-                flex-direction: row;
-
-                margin: auto;
-                gap: 1rem;
-            }
+            position: absolute;
+            top: 11rem;
+            width: 30rem;
 
             a {
                 font-family: 'Poppins';
@@ -115,13 +139,15 @@ export const Container = styled.header`
 
                 padding: 1rem;
             }
-            
-            
+
+            .menu {
+                font-family: 'Roboto';
+
+            }
+
+            @media (min-width: 920px) {
+                display: none;
+            }
         }
-    }
-    
-
-    @media (max-width: 920px) {
-
-    }
+    }    
 `;

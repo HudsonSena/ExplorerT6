@@ -26,6 +26,7 @@ export const Content = styled.main`
     font-family: 'Poppins';
 
     a {
+        width: fit-content;
         display: flex;
         flex-direction: row;
         align-items: center;
