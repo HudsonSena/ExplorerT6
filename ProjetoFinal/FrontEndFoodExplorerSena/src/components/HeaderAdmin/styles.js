@@ -58,13 +58,9 @@ export const Container = styled.header`
             display: flex;
             align-items: center;
         }
-
-        @media (max-width: 920px) {
-            display: none;
-        }
     }
     
-    .menuburguer {
+    .btnmenu {
         width: 100%;
         height: 10.4rem;
         background-color: ${({ theme }) => theme.colors.bgHeader};
@@ -72,9 +68,11 @@ export const Container = styled.header`
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 1rem;
+        gap: 4.5rem;
 
-        padding: 2.4rem 2.8rem;
+        z-index: 1;
+        
+        padding: 2.8rem;
         
         position: fixed;
 
@@ -107,47 +105,53 @@ export const Container = styled.header`
             }
         }
 
-        .displayon {
-            display: flex;
+        .menu {
+            display: none;
+            flex-direction: row;
+            gap: 1rem;
         }
 
         .svgmenu {
-            display: none;
-        }
-
-        .menu {
             display: flex;
         }
+    }
 
-        .menulist {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
+    .menulist {
+        grid-area: header;
 
-            background-color: ${({ theme }) => theme.colors.bgPages};
+        width: 100%;
+        height: 30rem;
 
-            position: absolute;
-            top: 11rem;
-            width: 30rem;
+        padding: 1rem 2.8rem;
+        margin-top: 10rem;
 
-            a {
-                font-family: 'Poppins';
-                font-size: 2.4rem;
-                font-weight: 200;
+        display: none;
+        flex-direction: column;
 
-                border-bottom: .05rem solid ${({ theme}) => theme.colors.bgIpt01};
+        gap: 3rem;
 
-                padding: 1rem;
-            }
+        background-color: ${({ theme }) => theme.colors.bgPages};
 
-            .menu {
-                font-family: 'Roboto';
+        a {
+            color: ${({ theme }) => theme.colors.txtBtn1};
+            font-size: 2.4rem;
+            font-weight: 200;
 
-            }
+            border-bottom: .1rem solid ${({ theme }) => theme.colors.bgIpt01};
 
-            @media (min-width: 920px) {
-                display: none;
-            }
+            padding-bottom: 1rem;
         }
     }    
+
+    @media (max-width: 920px) {
+        .menuclassic {
+            display: none;
+        }        
+    }
+
+    @media (min-width: 920px) {
+        .btnmenu, .menulist {
+            display: none;
+        }        
+    }
 `;
