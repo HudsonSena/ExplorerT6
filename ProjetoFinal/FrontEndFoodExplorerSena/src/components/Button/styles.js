@@ -15,6 +15,10 @@ export const Container = styled.button`
 
     white-space: nowrap;
 
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+
     &:disabled {
         opacity: 0.5
     }

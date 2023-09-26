@@ -40,11 +40,50 @@ export const Container = styled.div`
             margin-top: 24px;
             gap: 33px;
 
+            font-size: 1.6rem;
+
             div {
                 display: flex;
                 flex-direction: row;
                 gap: 14px;
             }
         }
-    }        
+        
+        button {
+            width: auto;
+        }
+    }
+    
+    @media (max-width: 920px){
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 26rem;
+            height: 26rem;
+        }
+
+        .infoFood {
+            align-items: center;
+
+            p {
+                text-align: center;
+            }
+            .tagsline {
+                flex-wrap: wrap;
+                gap: none;
+                justify-content: space-evenly;
+            }            
+        }
+
+        .btnEdit {
+            width: 100%;
+
+            button {
+                width: 100%
+            }
+        }
+    }
 `;

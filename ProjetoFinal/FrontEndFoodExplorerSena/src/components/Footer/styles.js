@@ -24,7 +24,7 @@ export const Container = styled.footer`
         align-items: center;
 
         h1 {
-            font-size: 2.8rem;
+            font-size: 2.4rem;
         }
         
         svg > path {

@@ -9,6 +9,8 @@ export const Container = styled.button`
     font-family: 'Poppins';
 
     white-space: nowrap;
+
+    display: flex;
     
     &:disabled {
         opacity: 0.5

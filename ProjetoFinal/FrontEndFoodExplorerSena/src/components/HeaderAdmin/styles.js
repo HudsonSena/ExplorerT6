@@ -76,13 +76,6 @@ export const Container = styled.header`
         
         position: fixed;
 
-        .btnmenu {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            gap: 5rem;
-        }
-
         a {
             color: ${({ theme }) => theme.colors.txtBtn1};
             font-family: 'Roboto';
@@ -91,19 +84,7 @@ export const Container = styled.header`
             display: flex;
             align-items: center;
             gap: 1.6rem;
-        }
-
-        .foodexplorer {
-            display: flex;
-            gap: .8rem;
-            align-items: center;
-            justify-content: center;
-
-            span {
-                color: ${({ theme }) => theme.colors.txtCostAdm};
-                font-size: 1.2rem;
-            }
-        }
+        }       
 
         .menu {
             display: none;
@@ -116,13 +97,29 @@ export const Container = styled.header`
         }
     }
 
+    .foodexplorer {
+        display: flex;
+        gap: .8rem;
+        align-items: center;
+        justify-content: center;
+
+        span {
+            color: ${({ theme }) => theme.colors.txtCostAdm};
+            font-size: 1.2rem;
+        }
+    }
+
     .menulist {
-        grid-area: header;
+        position: absolute;
+        top: 0rem;
+        left: 0;
 
         width: 100%;
-        height: 30rem;
+        height: 55rem;
 
-        padding: 1rem 2.8rem;
+        z-index: 1;
+
+        padding: 2rem 2.8rem;
         margin-top: 10rem;
 
         display: none;
@@ -146,12 +143,12 @@ export const Container = styled.header`
     @media (max-width: 920px) {
         .menuclassic {
             display: none;
-        }        
+        }
     }
 
     @media (min-width: 920px) {
-        .btnmenu, .menulist {
+        #foodexplorer, #btnmenu {
             display: none;
-        }        
+        }
     }
 `;
