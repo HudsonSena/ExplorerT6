@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.button`
     width: 100%;
-    padding: 1.2rem 6.8rem 1.2rem 6.8rem;
+    padding: 1.2rem 2.4rem 1.2rem 2.4rem;
 
     border-radius: .5rem;
     border: none;
@@ -17,6 +17,7 @@ export const Container = styled.button`
 
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: .8rem;
 
     &:disabled {

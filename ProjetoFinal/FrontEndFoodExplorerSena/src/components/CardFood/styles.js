@@ -14,6 +14,8 @@ export const Container = styled.div`
     padding-top: 0px;
     margin: auto;
 
+    border-radius: .8rem;
+
     .buttonText {
         position: relative;
         right: -124px;

@@ -5,7 +5,7 @@ export const Container = styled.div`
     height: 100vh;
 
     display: grid;
-    grid-template-rows: 104px auto 77px;
+    grid-template-rows: 10.4rem auto 7.7rem;
     grid-template-areas: 
     "header"
     "content"
@@ -18,20 +18,24 @@ export const Content = styled.main`
     max-width: 98vw;
     height: 100%;
 
-    padding: 20px 123px;    
+    padding: 2rem 12.3rem;    
 
     display: flex;
     flex-direction: column;
-    gap: 62px;
+    gap: 6.2rem;
 
     color: ${({ theme }) => theme.colors.txtBtn1};
     font-family: 'Poppins';
 
+    h2 {
+        font-size: 3.2rem;
+        font-weight: 400;
+    }
     
 
     > .intro {
-        height: 260px;
-        border-radius: 8px;
+        height: 26rem;
+        border-radius: .8rem;
         background: var(--gradients-200, linear-gradient(180deg, #091E26 0%, #00131C 100%));
 
         display: flex;
@@ -39,24 +43,28 @@ export const Content = styled.main`
         justify-content: flex-end;
         align-items: center;
 
-        margin-top: 175px;
-        padding: 100px;
+        margin-top: 17.5rem;
+        padding: 10rem;
 
         position: relative;
         
         > img {
-            width: 632px;
+            width: 63.2rem;
             position: absolute;
-            bottom: 0px;
-            left: -53px;
+            bottom: 0rem;
+            left: -5.3rem;
+        }
+
+        .infointro {
+            width: 50%;
         }
 
         h1 {
-            font-size: 40px;
+            font-size: 4rem;
         }
 
         p {
-            font-size: 14px;
+            font-size: 1.4rem;
         }        
     }
 
@@ -64,54 +72,59 @@ export const Content = styled.main`
         display: flex;
         flex-direction: row;
 
-        position: relative;
-
-        background: transparent;
-        
-        .shadowleft {
-            position: absolute;
-            left: 0;
-            width: 250px;
-            height: 100%;
-            box-shadow: inset 150px 0px 150px -50px ${({theme }) => theme.colors.bgPages};
-
-            button {
-                width: 30%;
-                height: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-        }
-        
-        .shadowright {
-            position: absolute;
-            right: 0px;
-            width: 250px;
-            height: 100%;
-            box-shadow: inset -150px 0px 15020px -50px  ${({theme }) => theme.colors.bgPages};
-
-            display: flex;
-            justify-content: flex-end;
-
-            button {
-                width: 30%;
-                height: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }   
-        }
-
         .listFood {
             display: flex;
             flex-direction: row;
-            gap: 27px;
+            gap: 2.7rem;
             overflow-y: auto;
         }
 
         .listFood::-webkit-scrollbar {
             display: none;
+        }
+    }
+
+    @media (max-width: 1350px) {
+        .intro {
+            img {
+                width: 40rem;
+            }
+        }
+    }
+    
+    @media (max-width: 920px) {
+        width: 96vw;
+        padding: 2.4rem;        
+
+        .intro {
+            height: 12rem;
+            margin-top: 4.4rem;
+
+            padding: 2rem;
+
+            .infointro {
+                width: 50%;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+            
+            img {
+                width: 19.1rem;
+                height: 14.9rem;
+
+                left: -1.5rem;
+                bottom: -1.3rem;
+            }
+        }
+        
+        h2 {
+            font-size: 1.8rem;
         }
     }
     

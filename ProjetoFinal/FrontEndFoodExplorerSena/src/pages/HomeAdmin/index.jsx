@@ -13,7 +13,7 @@ export function HomeAdmin() {
             <Content>                
                 <div className='intro'>
                     <img src={imgHome} alt="" />
-                    <div>
+                    <div className='infointro'>
                         <h1>Sabores inigualáveis</h1>
                         <p>Sinta o cuidado do preparo com ingredientes selecionados</p>
                     </div>
@@ -22,9 +22,6 @@ export function HomeAdmin() {
                 <h2>Refeições</h2>
 
                 <section>
-                    <div className='shadowleft'>
-                        <ButtonText icon={MdOutlineNavigateBefore}/>
-                    </div>
                     <div className='listFood'>
                         <CardFoodAdmin 
                             data={{
@@ -82,36 +79,21 @@ export function HomeAdmin() {
                                 cost: '10,00'
                             }}
                         />
-                    </div>
-                    <div className='shadowright'>
-                        <ButtonText icon={MdOutlineNavigateNext}/>
                     </div>                    
                 </section>
 
                 <h2>Sobremesas</h2>
 
                 <section>
-                    <div className='shadowleft'>
-                        <ButtonText icon={MdOutlineNavigateBefore}/>
-                    </div>
                     <div className='listFood'>
-                    </div>
-                    <div className='shadowright'>
-                        <ButtonText icon={MdOutlineNavigateNext}/>
-                    </div>                    
+                    </div>                   
                 </section>
 
                 <h2>Bebidas</h2>
 
                 <section>
-                    <div className='shadowleft'>
-                        <ButtonText icon={MdOutlineNavigateBefore}/>
-                    </div>
                     <div className='listFood'>
-                    </div>
-                    <div className='shadowright'>
-                        <ButtonText icon={MdOutlineNavigateNext}/>
-                    </div>                    
+                    </div>                  
                 </section>
             </Content>
             <Footer />
