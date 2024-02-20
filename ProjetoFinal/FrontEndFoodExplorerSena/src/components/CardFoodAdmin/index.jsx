@@ -7,7 +7,7 @@ export function CardFoodAdmin({ data, ...rest }) {
     return(
         <Container>
             <ButtonText icon={PiPencilSimpleBold}/>
-            <img src={imgFood} className='imgFood'/>
+            <img src={data.image} className='imgFood'/>
             <h3>{data.title}</h3>
             <p>{data.description}</p>
             <span>R${data.cost}</span>

@@ -1,5 +1,4 @@
 import { Container } from "./styles";
-import imageFood from '../../assets/Mask group-2.png';
 import { Tag } from '../Tag';
 import { Button } from '../Button';
 import { ButtonText } from  '../../components/ButtonText';
@@ -14,7 +13,7 @@ export function DetailsFood({data, ...rest}) {
     }
     return(
         <Container { ...rest }>
-            <img src={imageFood} alt="" />
+            <img src={data.image} alt="" />
             <div className='infoFood'>
                 <h1>{data.title}</h1>
                 <p>{data.description}</p>

@@ -39,9 +39,9 @@ export function CreateFood() {
               <label htmlFor="inputCategory">Categoria</label>
               <Input id="inputCategory" type="search" list='category'/>
               <datalist id='category'>
-                <option value="refeições"/>
-                <option value="sobremesas"/>
-                <option value="bebidas"/>
+                <option value="Refeições"/>
+                <option value="Sobremesas"/>
+                <option value="Bebidas"/>
               </datalist>
               
             </div>
@@ -67,7 +67,7 @@ export function CreateFood() {
           </div>
           <div className='info03'>
             <label htmlFor="inputDescription">Descrição</label>
-            <Textarea id="inputDescription" placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"/>
+            <Textarea id="inputDescription" placeholder="Fale brevemente sobre o prato, seus ingredientes e composição."/>
           </div>
           <div className='deleteUpdate'>
             <Button title="Excluir prato" id="deleteFood"/>

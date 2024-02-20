@@ -20,8 +20,9 @@ export const Container =  styled.div`
         width: 100%;
         height: 100%;
         background: transparent;
+        color: ${({ theme }) => theme.colors.txtPlaceholder};
+
         border: none;
-        color: white;
 
         font-family: 'Roboto';
         font-size: 1.6rem;

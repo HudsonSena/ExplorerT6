@@ -4,6 +4,8 @@ import { Footer } from '../../components/Footer';
 import imgHome from '../../assets/home.svg';
 import { MdOutlineNavigateNext, MdOutlineNavigateBefore } from 'react-icons/md';
 import { CardFood } from '../../components/CardFood';
+import imageFood from '../../assets/Mask group-2.png';
+
 //import React, { useRef, useState } from 'react';
 //import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -26,6 +28,7 @@ export function Home() {
                     <div className='listFood'>
                         <CardFood 
                             data={{
+                                image: imageFood,
                                 title: 'Farofa',
                                 description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
                                 cost: '10,00'
@@ -33,6 +36,7 @@ export function Home() {
                         />
                         <CardFood 
                             data={{
+                                image: imageFood,
                                 title: 'Farofa',
                                 description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
                                 cost: '10,00'
@@ -40,6 +44,7 @@ export function Home() {
                         />
                         <CardFood 
                             data={{
+                                image: imageFood,
                                 title: 'Farofa',
                                 description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
                                 cost: '10,00'
@@ -47,6 +52,7 @@ export function Home() {
                         />
                         <CardFood 
                             data={{
+                                image: imageFood,
                                 title: 'Farofa',
                                 description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
                                 cost: '10,00'
@@ -54,6 +60,7 @@ export function Home() {
                         />
                         <CardFood 
                             data={{
+                                image: imageFood,
                                 title: 'Farofa',
                                 description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
                                 cost: '10,00'
@@ -61,6 +68,7 @@ export function Home() {
                         />
                         <CardFood 
                             data={{
+                                image: imageFood,
                                 title: 'Farofa',
                                 description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
                                 cost: '10,00'
@@ -68,6 +76,7 @@ export function Home() {
                         />
                         <CardFood 
                             data={{
+                                image: imageFood,
                                 title: 'Farofa',
                                 description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
                                 cost: '10,00'
@@ -75,6 +84,7 @@ export function Home() {
                         />
                         <CardFood 
                             data={{
+                                image: imageFood,
                                 title: 'Farofa',
                                 description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
                                 cost: '10,00'

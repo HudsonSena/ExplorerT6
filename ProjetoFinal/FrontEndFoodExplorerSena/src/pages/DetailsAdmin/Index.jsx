@@ -4,6 +4,7 @@ import { Footer } from '../../components/Footer';
 import { DetailsFoodAdmin } from '../../components/DetailsFoodAdmin';
 import { Link } from 'react-router-dom';
 import { IoIosArrowBack } from 'react-icons/io';
+import imageFood from '../../assets/Mask group-2.png';
 
 export function DetailsAdmin({ data, ...rest }) {
   return(
@@ -14,6 +15,7 @@ export function DetailsAdmin({ data, ...rest }) {
         <DetailsFoodAdmin
           data={
             {
+              image: imageFood,
               title: 'Cuscuz Gourmet',
               description: 'Um Cuscuz da hora, com muito queijo e calabresa, quem sabe algo mais...',
               tags: [

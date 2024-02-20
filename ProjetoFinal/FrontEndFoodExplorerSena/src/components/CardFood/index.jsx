@@ -17,7 +17,7 @@ export function CardFood({ data, ...rest }) {
         <Container {...rest}>
             <ButtonText icon={BiHeart} className='buttonText'/>
 
-            <img src={imgFood} className='imgFood'/>
+            <img src={data.image} className='imgFood'/>
             <h3>{data.title}</h3>
             <p>{data.description}</p>
             <span>R${data.cost}</span>

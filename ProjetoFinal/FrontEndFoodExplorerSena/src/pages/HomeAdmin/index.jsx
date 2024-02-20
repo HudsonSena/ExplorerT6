@@ -5,6 +5,7 @@ import imgHome from '../../assets/home.svg';
 import { ButtonText } from '../../components/ButtonText';
 import { MdOutlineNavigateNext, MdOutlineNavigateBefore } from 'react-icons/md';
 import { CardFoodAdmin } from '../../components/CardFoodAdmin';
+import imageFood from '../../assets/Mask group-2.png';
 
 export function HomeAdmin() {
     return(
@@ -25,6 +26,7 @@ export function HomeAdmin() {
                     <div className='listFood'>
                         <CardFoodAdmin 
                             data={{
+                                image: imageFood,
                                 title: 'Farofa',
                                 description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
                                 cost: '10,00'
@@ -32,6 +34,7 @@ export function HomeAdmin() {
                         />
                         <CardFoodAdmin 
                             data={{
+                                image: imageFood,
                                 title: 'Farofa',
                                 description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
                                 cost: '10,00'
@@ -39,6 +42,7 @@ export function HomeAdmin() {
                         />
                         <CardFoodAdmin 
                             data={{
+                                image: imageFood,
                                 title: 'Farofa',
                                 description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
                                 cost: '10,00'
@@ -46,6 +50,7 @@ export function HomeAdmin() {
                         />
                         <CardFoodAdmin 
                             data={{
+                                image: imageFood,
                                 title: 'Farofa',
                                 description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
                                 cost: '10,00'
@@ -53,6 +58,7 @@ export function HomeAdmin() {
                         />
                         <CardFoodAdmin 
                             data={{
+                                image: imageFood,
                                 title: 'Farofa',
                                 description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
                                 cost: '10,00'
@@ -60,6 +66,7 @@ export function HomeAdmin() {
                         />
                         <CardFoodAdmin 
                             data={{
+                                image: imageFood,
                                 title: 'Farofa',
                                 description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
                                 cost: '10,00'
@@ -67,6 +74,7 @@ export function HomeAdmin() {
                         />
                         <CardFoodAdmin 
                             data={{
+                                image: imageFood,
                                 title: 'Farofa',
                                 description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
                                 cost: '10,00'
@@ -74,6 +82,7 @@ export function HomeAdmin() {
                         />
                         <CardFoodAdmin 
                             data={{
+                                image: imageFood,
                                 title: 'Farofa',
                                 description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
                                 cost: '10,00'
