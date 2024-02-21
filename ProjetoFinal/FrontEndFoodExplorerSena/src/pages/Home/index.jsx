@@ -4,7 +4,7 @@ import { Footer } from '../../components/Footer';
 import imgHome from '../../assets/home.svg';
 import { CardFood } from '../../components/CardFood';
 import imageFood from '../../assets/Mask group-2.png';
-import { Navigation, A11y, Keyboard } from 'swiper/modules';
+import { Navigation, A11y, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -28,9 +28,15 @@ export function Home() {
 
                 <section>
                     <Swiper
-                        modules={[Navigation, A11y]}
-                        spaceBetween={'1'}
-                        slidesPerView= {'auto'}
+                        className='wiperId'
+                        modules={[Navigation, A11y, Pagination]}
+                        spaceBetween={'330'}
+                        slidesPerView={5.5}
+
+                        loop={true}
+                        pagination={{
+                            clickable: true,
+                        }}
                         navigation
                         onSwiper={(swiper) => console.log(swiper)}
                         onSlideChange={() => console.log('slide change')}
@@ -122,12 +128,18 @@ export function Home() {
 
                 <section>
                     <Swiper
-                        modules={[Navigation, A11y]}
-                        spaceBetween={'1'}
-                        slidesPerView= {'auto'}
+                        className='wiperId'
+                        modules={[Navigation, A11y, Pagination]}
+                        spaceBetween={'330'}
+                        slidesPerView={5.5}
+
+                        loop={true}
+                        pagination={{
+                            clickable: true,
+                        }}
                         navigation
                         onSwiper={(swiper) => console.log(swiper)}
-                        onSlideChange={() => console.log('slide change')}
+                        onSlideChange={() => console.log('slide change')} 
                         >
                         <SwiperSlide>
                             <CardFood 
@@ -216,12 +228,18 @@ export function Home() {
 
                 <section>
                     <Swiper
-                        modules={[Navigation, A11y]}
-                        spaceBetween={'1'}
-                        slidesPerView= {'auto'}
+                        className='wiperId'
+                        modules={[Navigation, A11y, Pagination]}
+                        spaceBetween={'330'}
+                        slidesPerView={5.5}
+
+                        loop={true}
+                        pagination={{
+                            clickable: true,
+                        }}
                         navigation
                         onSwiper={(swiper) => console.log(swiper)}
-                        onSlideChange={() => console.log('slide change')}
+                        onSlideChange={() => console.log('slide change')} 
                         >
                         <SwiperSlide>
                             <CardFood 

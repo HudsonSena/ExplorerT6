@@ -16,11 +16,12 @@ export const Container = styled.div`
 
     border-radius: .8rem;
 
+    cursor: pointer;
+
     .buttonText {
         position: relative;
         right: -124px;
         top: 16px;
-        z-index: 1;
     }
 
     .imgHeart {

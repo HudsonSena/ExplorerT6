@@ -32,6 +32,10 @@ export const Content = styled.main`
         font-weight: 400;
     }
 
+    .wiperId {
+        z-index: 0;
+    }
+    
     > .intro {
         height: 26rem;
         border-radius: .8rem;

@@ -6,11 +6,11 @@ import { GoHeartFill } from 'react-icons/go';
 import { useState } from 'react';
 
 export function CardFood({ data, ...rest }) {
-    const [count, setCount] = useState(0);
+    let [count, setCount] = useState(0);
     const [isFavorite, setIsFavorite] = useState(false); // Novo estado para marcar o card como favorito
 
     if (count < 0) {
-    count = 0;
+        count = 0
     }
 
     return (

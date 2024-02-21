@@ -18,6 +18,7 @@ export function DetailsAdmin({ data, ...rest }) {
               image: imageFood,
               title: 'Cuscuz Gourmet',
               description: 'Um Cuscuz da hora, com muito queijo e calabresa, quem sabe algo mais...',
+              cost: 25.99,
               tags: [
                 {id:'1', name:"cuscuz"},
                 {id:'2', name:"queijo"},

@@ -2,10 +2,12 @@ import  { Container, Content }  from './styles';
 import { HeaderAdmin } from '../../components/HeaderAdmin';
 import { Footer } from '../../components/Footer';
 import imgHome from '../../assets/home.svg';
-import { ButtonText } from '../../components/ButtonText';
-import { MdOutlineNavigateNext, MdOutlineNavigateBefore } from 'react-icons/md';
 import { CardFoodAdmin } from '../../components/CardFoodAdmin';
 import imageFood from '../../assets/Mask group-2.png';
+import { Navigation, A11y, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 export function HomeAdmin() {
     return(
@@ -23,87 +25,302 @@ export function HomeAdmin() {
                 <h2>Refeições</h2>
 
                 <section>
-                    <div className='listFood'>
-                        <CardFoodAdmin 
-                            data={{
-                                image: imageFood,
-                                title: 'Farofa',
-                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
-                                cost: '10,00'
-                            }}
-                        />
-                        <CardFoodAdmin 
-                            data={{
-                                image: imageFood,
-                                title: 'Farofa',
-                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
-                                cost: '10,00'
-                            }}
-                        />
-                        <CardFoodAdmin 
-                            data={{
-                                image: imageFood,
-                                title: 'Farofa',
-                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
-                                cost: '10,00'
-                            }}
-                        />
-                        <CardFoodAdmin 
-                            data={{
-                                image: imageFood,
-                                title: 'Farofa',
-                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
-                                cost: '10,00'
-                            }}
-                        />
-                        <CardFoodAdmin 
-                            data={{
-                                image: imageFood,
-                                title: 'Farofa',
-                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
-                                cost: '10,00'
-                            }}
-                        />
-                        <CardFoodAdmin 
-                            data={{
-                                image: imageFood,
-                                title: 'Farofa',
-                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
-                                cost: '10,00'
-                            }}
-                        />
-                        <CardFoodAdmin 
-                            data={{
-                                image: imageFood,
-                                title: 'Farofa',
-                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
-                                cost: '10,00'
-                            }}
-                        />
-                        <CardFoodAdmin 
-                            data={{
-                                image: imageFood,
-                                title: 'Farofa',
-                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
-                                cost: '10,00'
-                            }}
-                        />
-                    </div>                    
+                    <Swiper
+                        className='wiperId'
+                        modules={[Navigation, A11y, Pagination]}
+                        spaceBetween={'330'}
+                        slidesPerView={5.5}
+
+                        loop={true}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        navigation
+                        onSwiper={(swiper) => console.log(swiper)}
+                        onSlideChange={() => console.log('slide change')}
+                        >
+                        <SwiperSlide>
+                            <CardFoodAdmin 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '11,01'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFoodAdmin 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '12,01'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFoodAdmin 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '13,01'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFoodAdmin 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '14,01'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFoodAdmin 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '15,01'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFoodAdmin 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '16,01'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFoodAdmin 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '17,01'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFoodAdmin 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '18,01'
+                                }}
+                            />
+                        </SwiperSlide>
+                    </Swiper>
                 </section>
 
                 <h2>Sobremesas</h2>
 
                 <section>
-                    <div className='listFood'>
-                    </div>                   
+                    <Swiper
+                        className='wiperId'
+                        modules={[Navigation, A11y, Pagination]}
+                        spaceBetween={'330'}
+                        slidesPerView={5.5}
+
+                        loop={true}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        navigation
+                        onSwiper={(swiper) => console.log(swiper)}
+                        onSlideChange={() => console.log('slide change')} 
+                        >
+                        <SwiperSlide>
+                            <CardFoodAdmin 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '11,01'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFoodAdmin 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '12,01'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFoodAdmin 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '13,01'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFoodAdmin 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '14,01'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFoodAdmin 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '15,01'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFoodAdmin 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '16,01'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFoodAdmin 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '17,01'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFoodAdmin 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '18,01'
+                                }}
+                            />
+                        </SwiperSlide>
+                    </Swiper>
                 </section>
 
                 <h2>Bebidas</h2>
 
                 <section>
-                    <div className='listFood'>
-                    </div>                  
-                </section>
+                    <Swiper
+                        className='wiperId'
+                        modules={[Navigation, A11y, Pagination]}
+                        spaceBetween={'330'}
+                        slidesPerView={5.5}
+
+                        loop={true}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        navigation
+                        onSwiper={(swiper) => console.log(swiper)}
+                        onSlideChange={() => console.log('slide change')} 
+                        >
+                        <SwiperSlide>
+                            <CardFoodAdmin 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '11,01'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFoodAdmin 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '12,01'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFoodAdmin 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '13,01'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFoodAdmin 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '14,01'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFoodAdmin 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '15,01'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFoodAdmin 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '16,01'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFoodAdmin 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '17,01'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFoodAdmin 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '18,01'
+                                }}
+                            />
+                        </SwiperSlide>
+                    </Swiper>
+                </section>                    
             </Content>
             <Footer />
         </Container>

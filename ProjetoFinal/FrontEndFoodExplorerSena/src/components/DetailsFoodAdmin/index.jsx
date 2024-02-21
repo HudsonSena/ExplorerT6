@@ -20,7 +20,7 @@ export function DetailsFoodAdmin({data, ...rest}) {
                 }
 
                 <div className="btnEdit">
-                    <Button title="Editar prato"/>
+                    <Button title={"Editar Prato : Valor R$" + data.cost}/>
                 </div>
             </div>
             
