@@ -4,7 +4,7 @@ import { Footer } from '../../components/Footer';
 import imgHome from '../../assets/home.svg';
 import { CardFood } from '../../components/CardFood';
 import imageFood from '../../assets/Mask group-2.png';
-import { Navigation, A11y } from 'swiper/modules';
+import { Navigation, A11y, Keyboard } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -29,8 +29,8 @@ export function Home() {
                 <section>
                     <Swiper
                         modules={[Navigation, A11y]}
-                        spaceBetween={10}
-                        slidesPerView={4.5}
+                        spaceBetween={'1'}
+                        slidesPerView= {'auto'}
                         navigation
                         onSwiper={(swiper) => console.log(swiper)}
                         onSlideChange={() => console.log('slide change')}
@@ -123,8 +123,8 @@ export function Home() {
                 <section>
                     <Swiper
                         modules={[Navigation, A11y]}
-                        spaceBetween={10}
-                        slidesPerView={4.5}
+                        spaceBetween={'1'}
+                        slidesPerView= {'auto'}
                         navigation
                         onSwiper={(swiper) => console.log(swiper)}
                         onSlideChange={() => console.log('slide change')}
@@ -217,8 +217,8 @@ export function Home() {
                 <section>
                     <Swiper
                         modules={[Navigation, A11y]}
-                        spaceBetween={10}
-                        slidesPerView={4.5}
+                        spaceBetween={'1'}
+                        slidesPerView= {'auto'}
                         navigation
                         onSwiper={(swiper) => console.log(swiper)}
                         onSlideChange={() => console.log('slide change')}
