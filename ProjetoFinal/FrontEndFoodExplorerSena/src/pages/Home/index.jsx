@@ -2,12 +2,14 @@ import  { Container, Content }  from './styles';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import imgHome from '../../assets/home.svg';
-import { MdOutlineNavigateNext, MdOutlineNavigateBefore } from 'react-icons/md';
 import { CardFood } from '../../components/CardFood';
 import imageFood from '../../assets/Mask group-2.png';
+import { Navigation, A11y } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 //import React, { useRef, useState } from 'react';
-//import { Swiper, SwiperSlide } from 'swiper/react';
 
 export function Home() {
     return(
@@ -25,86 +27,283 @@ export function Home() {
                 <h2>Refeições</h2>
 
                 <section>
-                    <div className='listFood'>
-                        <CardFood 
-                            data={{
-                                image: imageFood,
-                                title: 'Farofa',
-                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
-                                cost: '10,00'
-                            }}
-                        />
-                        <CardFood 
-                            data={{
-                                image: imageFood,
-                                title: 'Farofa',
-                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
-                                cost: '10,00'
-                            }}
-                        />
-                        <CardFood 
-                            data={{
-                                image: imageFood,
-                                title: 'Farofa',
-                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
-                                cost: '10,00'
-                            }}
-                        />
-                        <CardFood 
-                            data={{
-                                image: imageFood,
-                                title: 'Farofa',
-                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
-                                cost: '10,00'
-                            }}
-                        />
-                        <CardFood 
-                            data={{
-                                image: imageFood,
-                                title: 'Farofa',
-                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
-                                cost: '10,00'
-                            }}
-                        />
-                        <CardFood 
-                            data={{
-                                image: imageFood,
-                                title: 'Farofa',
-                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
-                                cost: '10,00'
-                            }}
-                        />
-                        <CardFood 
-                            data={{
-                                image: imageFood,
-                                title: 'Farofa',
-                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
-                                cost: '10,00'
-                            }}
-                        />
-                        <CardFood 
-                            data={{
-                                image: imageFood,
-                                title: 'Farofa',
-                                description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
-                                cost: '10,00'
-                            }}
-                        />
-                    </div>                   
+                    <Swiper
+                        modules={[Navigation, A11y]}
+                        spaceBetween={10}
+                        slidesPerView={4.5}
+                        navigation
+                        onSwiper={(swiper) => console.log(swiper)}
+                        onSlideChange={() => console.log('slide change')}
+                        >
+                        <SwiperSlide>
+                            <CardFood 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '11,00'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFood 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '12,00'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFood 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '13,00'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFood 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '14,00'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFood 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '15,00'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFood 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '16,00'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFood 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '17,00'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFood 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '18,00'
+                                }}
+                            />
+                        </SwiperSlide>
+                    </Swiper>
                 </section>
 
                 <h2>Sobremesas</h2>
 
                 <section>
-                    <div className='listFood'>
-                    </div>                    
+                    <Swiper
+                        modules={[Navigation, A11y]}
+                        spaceBetween={10}
+                        slidesPerView={4.5}
+                        navigation
+                        onSwiper={(swiper) => console.log(swiper)}
+                        onSlideChange={() => console.log('slide change')}
+                        >
+                        <SwiperSlide>
+                            <CardFood 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '11,00'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFood 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '12,00'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFood 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '13,00'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFood 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '14,00'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFood 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '15,00'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFood 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '16,00'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFood 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '17,00'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFood 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '18,00'
+                                }}
+                            />
+                        </SwiperSlide>
+                    </Swiper>
                 </section>
 
                 <h2>Bebidas</h2>
 
                 <section>
-                    <div className='listFood'>
-                    </div>                    
+                    <Swiper
+                        modules={[Navigation, A11y]}
+                        spaceBetween={10}
+                        slidesPerView={4.5}
+                        navigation
+                        onSwiper={(swiper) => console.log(swiper)}
+                        onSlideChange={() => console.log('slide change')}
+                        >
+                        <SwiperSlide>
+                            <CardFood 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '11,00'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFood 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '12,00'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFood 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '13,00'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFood 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '14,00'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFood 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '15,00'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFood 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '16,00'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFood 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '17,00'
+                                }}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardFood 
+                                data={{
+                                    image: imageFood,
+                                    title: 'Farofa',
+                                    description: 'Uma farofa da hora, com muita carne e farinha, quem sabe algo mais',
+                                    cost: '18,00'
+                                }}
+                            />
+                        </SwiperSlide>
+                    </Swiper>
                 </section>
             </Content>
             <Footer />

@@ -20,8 +20,8 @@ export const Container = styled.div`
         position: relative;
         right: -124px;
         top: 16px;
+        z-index: 1;
     }
-    
 
     .imgHeart {
         width: 24px;
