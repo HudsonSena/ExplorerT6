@@ -4,7 +4,7 @@ const AppError = require("../utils/AppError");
 
 class FoodsController{
     async create(request, response){
-        const { title, description, cost, tags } = request.body;
+        const { title, description, category, cost, tags } = request.body;
         const { user_id } = request.params;
         const database = await sqliteConnection();
 
@@ -17,6 +17,7 @@ class FoodsController{
         const [ food_id ] = await knex("foods").insert({
             title,
             description,
+            category,
             cost,
             user_id,
         });
@@ -55,7 +56,7 @@ class FoodsController{
     }
 
     async index(request, response) {
-        const { title, tags } = request.query;
+        const { title, category, tags } = request.query;
     
         if (tags) {
             const filterTags = tags.split(",").map(tag => tag.trim());
@@ -64,12 +65,13 @@ class FoodsController{
                 .select([
                     "foods.id",
                     "foods.title",
+                    "foods.category",
                     "foods.description",
                     "foods.cost"
                 ])
                 .leftJoin("tags", "foods.id", "tags.food_id")
                 .whereLike("tags.name", `%${filterTags}%`)
-                .orderBy("foods.title");
+                .orderBy("foods.title").groupBy("foods.title");
     
             const foodIds = foods.map(food => food.id);
     
@@ -89,7 +91,47 @@ class FoodsController{
                 return {
                     id: food.id,
                     title: food.title,
+                    category: food.category,
                     description: food.description,
+                    cost: food.cost,
+                    tags: foodTags
+                };
+            });
+    
+            return response.json(foodsWithTags);
+        } if(category) {
+            const foods = await knex("foods")
+                .select([
+                    "foods.id",
+                    "foods.title",
+                    "foods.category",
+                    "foods.description",
+                    "foods.cost"
+                ])
+                .where("foods.category", "like", `%${category}%`)
+                .leftJoin("tags", "foods.id", "tags.food_id")
+                .orderBy("foods.title").groupBy("foods.category");
+    
+            const foodIds = foods.map(food => food.id);
+    
+            const tagsFood = await knex("tags")
+                .select([
+                    "tags.food_id",
+                    "tags.name"
+                ])
+                .whereIn("tags.food_id", foodIds)
+                .orderBy("tags.name");
+    
+            const foodsWithTags = foods.map(food => {
+                const foodTags = tagsFood
+                    .filter(tag => tag.food_id === food.id)
+                    .map(tag => tag.name);
+    
+                return {
+                    id: food.id,
+                    title: food.title,
+                    category: food.category,
+                    description: food.description,                    
                     cost: food.cost,
                     tags: foodTags
                 };
@@ -101,6 +143,7 @@ class FoodsController{
                 .select([
                     "foods.id",
                     "foods.title",
+                    "foods.category",
                     "foods.description",
                     "foods.cost"
                 ])
@@ -126,7 +169,8 @@ class FoodsController{
                 return {
                     id: food.id,
                     title: food.title,
-                    description: food.description,
+                    category: food.category,
+                    description: food.description,                    
                     cost: food.cost,
                     tags: foodTags
                 };
