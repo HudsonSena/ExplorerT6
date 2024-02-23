@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    max-width: fit-content;
+    width: 100%;
+    max-width: 25rem;
 
     display: flex;
     align-items: center;
@@ -14,25 +15,15 @@ export const Container = styled.div`
     border: ${({ theme, isNew }) => isNew ? `1px dashed ${ theme.colors.txtPlaceholder}` : `1px solid ${ theme.colors.txtPlaceholder}`};
     border-radius: 8px;
 
-    padding: 8px;
-    padding-left: 16px;
+    padding-right: .8rem;
 
-    > button {        
-        width: 0;
-        margin-right: -20px;
+    > button {
+        width: 5px;
         font-size: 16px;
-        border: none;
         background: none;
-    }
 
-    .button-delete {
-        color: ${({ theme }) => theme.colors.txtBtn1};
         display: flex;
-    }
-
-    .button-add {
-        color: ${({ theme }) => theme.colors.txtPlaceholder};
-        display: flex;
+        align-items: center;
     }
 
     input {
@@ -40,6 +31,8 @@ export const Container = styled.div`
         background: transparent;
 
         border: none;
+
+        padding: .8rem 1.6rem;
 
         font-size: 16px;
         font-family: 'Roboto';

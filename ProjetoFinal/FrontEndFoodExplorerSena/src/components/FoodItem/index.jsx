@@ -1,6 +1,5 @@
-import { FiPlus, FiX } from 'react-icons/fi';
-
 import { Container } from './styles';
+import { Button }  from '../Button';
 
 export function FoodItem({ isNew, value, onClick, ...rest}){
     return (
@@ -12,13 +11,13 @@ export function FoodItem({ isNew, value, onClick, ...rest}){
                 {...rest}
             />
 
-            <button 
+            <Button 
                 type="button"
                 onClick={onClick}
                 className={isNew ? 'button-add' : 'button-delete'}
+                value={isNew ? '+' : 'x'}
             >
-                {isNew ? <FiPlus /> : <FiX />}
-            </button>
+            </Button>
         </Container>
     )
 }
