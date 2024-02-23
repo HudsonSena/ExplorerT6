@@ -22,7 +22,7 @@ export function SignIn(){
                 <h1>Rocket Notes</h1>
                 <p>Aplicação para salvar e gerenciar seus links úteis</p>
 
-                <h2>Faça seu login</h2>
+                <h2>Faça seu login</h2>            
 
                 <Input
                     placeholder="E-mail"
@@ -31,12 +31,16 @@ export function SignIn(){
                     onChange={e => setEmail(e.target.value)}
                 />
 
+                <p>E-mail: hudson@gmail.com</p>
+
                 <Input
                     placeholder="Senha"
                     type="password"
                     icon={FiLock}
                     onChange={e => setPassword(e.target.value)}
                 />
+
+                <p>Senha: 123h</p>
 
                 <Button title="Entrar" onClick={handleSignIn} />
 
