@@ -80,9 +80,8 @@ export const Form = styled.form`
         padding: .8rem;
 
         display: flex;
-        flex-direction: row;
         gap: 1.6rem;
-        
+        flex-wrap: wrap;
         border-radius: .5rem;
 
         background-color: ${({ theme }) => theme.colors.bgIpt02};

@@ -1,29 +1,30 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    width: 100%;
     max-width: 25rem;
+    min-width: 20rem;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background: ${({ theme, isNew }) => isNew ? `1px solid ${({ theme }) => theme.colors.txtPlaceholder}` : theme.colors.txtPlaceholder};
+    background: ${({ theme, isNew }) => isNew ? `.1rem solid ${({ theme }) => theme.colors.txtPlaceholder}` : theme.colors.txtPlaceholder};
     
     color: ${({ theme }) => theme.colors.txtBtn1};
 
-    border: ${({ theme, isNew }) => isNew ? `1px dashed ${ theme.colors.txtPlaceholder}` : `1px solid ${ theme.colors.txtPlaceholder}`};
-    border-radius: 8px;
+    border: ${({ theme, isNew }) => isNew ? `.1rem dashed ${ theme.colors.txtPlaceholder}` : `1px solid ${ theme.colors.txtPlaceholder}`};
+    border-radius: .5rem;
 
     padding-right: .8rem;
 
     > button {
-        width: 5px;
-        font-size: 16px;
+        max-width: .1rem;
+        font-size: 1.6rem;
         background: none;
 
         display: flex;
         align-items: center;
+        justify-content: center;
     }
 
     input {
@@ -32,9 +33,9 @@ export const Container = styled.div`
 
         border: none;
 
-        padding: .8rem 1.6rem;
+        padding: 1.2rem;
 
-        font-size: 16px;
+        font-size: 1.6rem;
         font-family: 'Roboto';
 
         &::placeholder {
