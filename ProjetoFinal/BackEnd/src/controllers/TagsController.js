@@ -6,7 +6,7 @@ class TagsController {
         const tags = await knex("tags").where({ user_id }).orderBy("tags.name").groupBy("tags.name");
         
         return response.json(tags)
-    }    
+    }
 };
 
 module.exports = TagsController;

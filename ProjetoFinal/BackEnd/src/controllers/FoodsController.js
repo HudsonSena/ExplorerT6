@@ -36,15 +36,43 @@ class FoodsController{
     }
 
     async show(request, response){
-        const { id } = request.params;
-
-        const food = await knex("foods").where({ id }).first();
-        const tags = await knex("tags").where({ food_id: id }).orderBy("name");
-
-        return response.json({
-            ...food,
-            tags
-        });
+        const foods = await knex("foods")
+                .select([
+                    "foods.id",
+                    "foods.title",
+                    "foods.category",
+                    "foods.description",
+                    "foods.cost",
+                    "foods.user_id"
+                ]).orderBy("foods.title").groupBy("foods.title");
+    
+            const foodIds = foods.map(food => food.id);
+    
+            const tagsFood = await knex("tags")
+                .select([
+                    "tags.food_id",
+                    "tags.name"
+                ])
+                .whereIn("tags.food_id", foodIds)
+                .orderBy("tags.name");
+    
+            const foodsWithTags = foods.map(food => {
+                const foodTags = tagsFood
+                    .filter(tag => tag.food_id === food.id)
+                    .map(tag => tag.name);
+    
+                return {
+                    id: food.id,
+                    user_id: food.user_id,
+                    title: food.title,
+                    category: food.category,
+                    description: food.description,                    
+                    cost: food.cost,
+                    tags: foodTags                    
+                };
+            });
+    
+            return response.json(foodsWithTags);
     }
 
     async delete(request, response){
@@ -110,7 +138,7 @@ class FoodsController{
                 ])
                 .where("foods.category", "like", `%${category}%`)
                 .leftJoin("tags", "foods.id", "tags.food_id")
-                .orderBy("foods.title").groupBy("foods.category");
+                .orderBy("foods.title").groupBy("foods.title");
     
             const foodIds = foods.map(food => food.id);
     
