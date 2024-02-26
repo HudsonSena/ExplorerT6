@@ -19,8 +19,8 @@ export function DetailsFoodAdmin({data, ...rest}) {
                     </section>
                 }
 
-                <div className="btnEdit">
-                    <Button title={"Editar Prato : Valor R$" + data.cost}/>
+                <div className="btnEditdiv">
+                    <Button title={"Editar Prato : Valor R$" + data.cost} to="/createfood" className='btnEdit'/>
                 </div>
             </div>
             

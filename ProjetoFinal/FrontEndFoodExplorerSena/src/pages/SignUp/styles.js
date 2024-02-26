@@ -89,9 +89,5 @@ export const Form = styled.form`
     @media (max-width: 920px){
         background: none;
         padding: 0;
-        
-        h2{
-            display: none;
-        }
     }
 `;

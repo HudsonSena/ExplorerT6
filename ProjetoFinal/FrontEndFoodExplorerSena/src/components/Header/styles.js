@@ -20,8 +20,12 @@ export const Container = styled.header`
 
         z-index: 2;
 
-        button {
+        .pedidos {
             width: auto;
+            font-family: 'Roboto';
+            font-size: 1.4rem;
+
+            white-space: nowrap;
         }
 
         > div {
@@ -129,7 +133,7 @@ export const Container = styled.header`
 
         background-color: ${({ theme }) => theme.colors.bgPages};
 
-        a, button {
+        a {
             color: ${({ theme }) => theme.colors.txtBtn1};
             font-size: 2.4rem;
             font-weight: 200;
@@ -138,7 +142,11 @@ export const Container = styled.header`
 
             padding-bottom: 1rem;
         }
-    }    
+
+        .pedidos {
+            width: 20rem;
+        }
+    }
 
     @media (max-width: 920px) {
         .menuclassic {

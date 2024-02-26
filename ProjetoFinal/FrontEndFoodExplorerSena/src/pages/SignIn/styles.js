@@ -77,11 +77,7 @@ export const Form = styled.form`
     input {
         text-align: left;
     }
-
-    button {
-        width: 100%;
-    }
-
+    
     a {
         color: ${({ theme }) => theme.colors.txtLogo};
         font-size: 1.6rem;
@@ -90,9 +86,5 @@ export const Form = styled.form`
     @media (max-width: 920px){
         background: none;
         padding: 0;
-        
-        h2{
-            display: none;
-        }
     }
 `;

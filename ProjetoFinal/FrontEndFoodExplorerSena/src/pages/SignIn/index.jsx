@@ -24,7 +24,7 @@ export function SignIn() {
                     <Input id="inputMail" placeholder="No mínimo 6 caracteres" size="40"/>
                 </div>
 
-                <Button title="Entrar"/>
+                <Button title="Entrar" classname="enter" to="/homeadmin"/>
 
                 <Link to="/register">Criar uma conta</Link>
             </Form>

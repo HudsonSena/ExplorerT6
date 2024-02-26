@@ -20,8 +20,12 @@ export const Container = styled.header`
 
         z-index: 2;
 
-        button {
+        .newFood {
             width: auto;
+            font-family: 'Roboto';
+            font-size: 1.4rem;
+
+            white-space: nowrap;
         }
 
         > div {

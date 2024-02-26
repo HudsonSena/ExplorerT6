@@ -11,7 +11,7 @@ export function DetailsAdmin({ data, ...rest }) {
     <Container>
       <HeaderAdmin />
       <Content {...rest}>
-        <Link><IoIosArrowBack />voltar</Link>
+        <Link to="/homeadmin"><IoIosArrowBack />voltar</Link>
         <DetailsFoodAdmin
           data={
             {

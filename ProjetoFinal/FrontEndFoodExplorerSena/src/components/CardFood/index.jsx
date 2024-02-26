@@ -14,31 +14,31 @@ export function CardFood({ data, ...rest }) {
     }
 
     return (
-        <Container {...rest}>
+        <Container {...rest} to="/details">
             <ButtonText
             icon={GoHeartFill}
-            className='buttonText'
+            className='btnfavority'
             onClick={() => setIsFavorite(!isFavorite)} // Toggle para marcar/desmarcar como favorito
             style={{ color: isFavorite ? 'red' : 'white' }} // Altera a cor do ícone com base no estado de favorito
             />
 
             <img src={data.image} className='imgFood' />
-            <h3>{data.title}</h3>
+            <ButtonText value={data.title} className='btnDetails' to="/details"/>
             <p>{data.description}</p>
             <span>R${data.cost}</span>
             <div>
-            <ButtonText
-                icon={AiOutlineMinus}
-                onClick={() => setCount(count - 1)}
-            />
+                <ButtonText
+                    icon={AiOutlineMinus}
+                    onClick={() => setCount(count - 1)}
+                />
 
-            <h4>{count}</h4>
+                <h4>{count}</h4>
 
-            <ButtonText
-                icon={AiOutlinePlus}
-                onClick={() => setCount(count + 1)}
-            />
-            <Button title='Incluir' className='buttonIncluir' />
+                <ButtonText
+                    icon={AiOutlinePlus}
+                    onClick={() => setCount(count + 1)}
+                />
+                <Button title='Incluir' className='buttonIncluir' />
             </div>
         </Container>
     );

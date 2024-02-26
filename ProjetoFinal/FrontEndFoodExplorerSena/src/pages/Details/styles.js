@@ -50,7 +50,8 @@ export const Content = styled.main`
     }
 
     @media (max-width: 920px){
-        padding: 5.6rem;
+        padding: 5.6rem;        
+        padding-top: 3rem;
         align-content: space-evenly;
     }
 `;

@@ -137,6 +137,7 @@ export const Form = styled.form`
     }
 
     .deleteUpdate {
+        width: auto;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -147,6 +148,20 @@ export const Form = styled.form`
 
     #deleteFood {
         background-color: ${({ theme }) => theme.colors.bgIpt01};
+
+        width: 100%;
+        font-family: 'Roboto';
+        font-size: 1.4rem;
+
+        white-space: nowrap;
+    }
+
+    #addFood {
+        width: auto;
+        font-family: 'Roboto';
+        font-size: 1.4rem;
+
+        white-space: nowrap;
     }
 
     @media (max-width: 920px) {

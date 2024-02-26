@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
     width: 300px;
@@ -16,12 +17,14 @@ export const Container = styled.div`
 
     border-radius: .8rem;
 
-    cursor: pointer;
-
-    .buttonText {
+    .btnfavority {
         position: relative;
         right: -124px;
         top: 16px;
+    }
+
+    .btnfavority:hover {
+        scale: 1.1;
     }
 
     .imgHeart {
@@ -33,8 +36,12 @@ export const Container = styled.div`
         height: 176px;
     }
 
-    h3 {
-        font-size: 24px;
+    .btnDetails {
+        font-size: 24px;      
+    }
+
+    .btnDetails:hover {
+        scale: 1.1;
     }
 
     p {
@@ -53,7 +60,7 @@ export const Container = styled.div`
         color: ${({ theme }) => theme.colors.txtCostAdm};
     }
 
-    > div {
+    div {
         display: flex;
         flex-direction: row;
         height: 48px;

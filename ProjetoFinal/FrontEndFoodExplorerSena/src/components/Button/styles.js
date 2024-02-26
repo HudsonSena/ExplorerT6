@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-export const Container = styled.button`
+export const Container = styled(Link)`
     width: 100%;
     padding: 1.2rem 2.4rem 1.2rem 2.4rem;
 
@@ -19,6 +20,8 @@ export const Container = styled.button`
     align-items: center;
     justify-content: center;
     gap: .8rem;
+
+    cursor: pointer;
 
     &:disabled {
         opacity: 0.5

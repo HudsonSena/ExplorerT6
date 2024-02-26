@@ -17,14 +17,13 @@ export const Container = styled.div`
 
     padding-right: .8rem;
 
-    > button {
-        max-width: .1rem;
-        font-size: 1.6rem;
-        background: none;
+    .button-add, .button-delete {
+        width: auto;
+        background-color: transparent;
+        font-family: 'Roboto';
+        font-size: 1.4rem;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        white-space: nowrap;
     }
 
     input {

@@ -36,8 +36,8 @@ export function HeaderAdmin() {
                 
                 <Input placeholder="Busque por pratos ou ingredientes" icon={FiSearch} type="text"/>
                 
-                <Button title="Novo prato"></Button>
-                <Link><FiLogOut /></Link>
+                <Button title="Novo prato" to="/createfood" className="newFood"></Button>
+                <Link to="/"><FiLogOut /></Link>
             </div>
             <div id='btnmenu' className='btnmenu'>
                 <Link id='svgmenu' className='svgmenu' onClick={clickMenu}><AiOutlineMenu /></Link>
@@ -52,8 +52,8 @@ export function HeaderAdmin() {
                 <div id='menulist' className='menulist'>
                     <Input placeholder="Busque por pratos ou ingredientes" icon={FiSearch} type="text"/>
 
-                    <Link>Novo prato</Link>
-                    <Link>Sair</Link>
+                    <Link to="/createfood">Novo prato</Link>
+                    <Link to="/">Sair</Link>
                 </div>
             </div>
             

@@ -38,11 +38,6 @@ export const Content = styled.main`
         color: ${({ theme }) => theme.colors.txtBtn1}
     }
 
-    > svg > path {
-        fill: ${({ theme }) => theme.colors.txtDescription};
-        font-size: 2.4rem;
-    }
-
     > div > button {        
         color: ${({ theme }) => theme.colors.txtDescription};
         font-weight: bold;
@@ -52,6 +47,7 @@ export const Content = styled.main`
 
     @media (max-width: 920px){
         padding: 5.6rem;
+        padding-top: 3rem;
         align-content: space-evenly;
     }
 `;

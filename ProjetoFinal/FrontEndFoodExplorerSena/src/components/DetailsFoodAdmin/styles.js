@@ -39,8 +39,13 @@ export const Container = styled.div`
             margin-top: 2.4rem;
         }
 
-        button {
+        .btnEdit {
             width: auto;
+
+            font-family: 'Roboto';
+            font-size: 1.4rem;
+
+            white-space: nowrap;
         }
     }
 
@@ -66,14 +71,6 @@ export const Container = styled.div`
                 gap: none;
                 justify-content: space-evenly;
             }            
-        }
-
-        .btnEdit {
-            width: 100%;
-
-            button {
-                width: 100%
-            }
         }
     }
 `;

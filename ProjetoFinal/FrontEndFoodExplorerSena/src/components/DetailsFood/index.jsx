@@ -41,7 +41,7 @@ export function DetailsFood({data, ...rest}) {
                             onClick={() => setCount(count + 1)}
                         />
                     </div>
-                    <Button title={"Incluir : " + data.cost}/>
+                    <Button title={"Incluir : " + data.cost} className='incluir'/>
                 </div>
             </div>
         </Container>

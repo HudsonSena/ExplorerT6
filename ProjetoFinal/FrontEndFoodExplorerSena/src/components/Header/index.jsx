@@ -37,8 +37,8 @@ export function Header() {
                 
                 <Input placeholder="Busque por pratos ou ingredientes" icon={FiSearch} type="text"/>
                 
-                <Button icon={PiNewspaperClipping} title='Pedidos' value='(0)'/>
-                <Link><FiLogOut /></Link>
+                <Button icon={PiNewspaperClipping} title='Pedidos: ' value={11} className="pedidos"/>
+                <Link to="/"><FiLogOut /></Link>
             </div>
             <div id='btnmenu' className='btnmenu'>
                 <Link id='svgmenu' className='svgmenu' onClick={clickMenu}><AiOutlineMenu /></Link>
@@ -54,8 +54,8 @@ export function Header() {
                 </div>
                 <div id='menulist' className='menulist'>
                     <Input placeholder="Busque por pratos ou ingredientes" icon={FiSearch} type="text"/>
-                    <ButtonText title='Pedidos: ' value='10'/>
-                    <Link>Sair</Link>
+                    <ButtonText title='Pedidos: ' value={10} />
+                    <Link to="/">Sair</Link>
                 </div>
             </div>
             

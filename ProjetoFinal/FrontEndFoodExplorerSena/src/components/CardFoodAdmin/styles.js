@@ -14,10 +14,14 @@ export const Container = styled.div`
     padding-top: 0px;
     margin: auto;
 
-    button {
+    .btnEdit {
         position: relative;
         right: -124px;
         top: 16px;
+    }
+
+    .btnEdit:hover {
+        scale: 1.1;
     }
 
     .imgFood {
@@ -25,8 +29,12 @@ export const Container = styled.div`
         height: 176px;
     }
 
-    h3 {
+    .btnDetails {
         font-size: 24px;
+    }
+
+    .btnDetails:hover {
+        scale: 1.1;
     }
 
     p {
@@ -45,7 +53,7 @@ export const Container = styled.div`
         color: ${({ theme }) => theme.colors.txtCostAdm};
     }
 
-    > div {
+    div {
         display: flex;
         flex-direction: row;
         height: 48px;
@@ -55,10 +63,6 @@ export const Container = styled.div`
 
         h4 {
             font-size: 20px;
-        }
-
-        .buttonIncluir{
-            padding: 12px 24px;
         }
     }
 `;

@@ -30,7 +30,7 @@ export function SignUp() {
 
                 <Button title="Cria conta"/>
 
-                <Link to="/login">Ja tenho uma conta</Link>
+                <Link to="/">Ja tenho uma conta</Link>
             </Form>
         </Container>
     )

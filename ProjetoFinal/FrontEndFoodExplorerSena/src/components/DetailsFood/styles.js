@@ -37,7 +37,7 @@ export const Container = styled.div`
             display: flex;
             flex-direction: row;
             align-items: center;
-            margin-top: 24px;
+            margin-top: 2.4rem;
             gap: 33px;
 
             font-size: 1.6rem;
@@ -47,10 +47,15 @@ export const Container = styled.div`
                 flex-direction: row;
                 gap: 14px;
             }
-        }
-        
-        button {
-            width: auto;
+
+            .incluir {
+                width: auto;
+
+                font-family: 'Roboto';
+                font-size: 1.4rem;
+
+                white-space: nowrap;
+            }
         }
     }
     
@@ -76,14 +81,6 @@ export const Container = styled.div`
                 gap: none;
                 justify-content: space-evenly;
             }            
-        }
-
-        .btnEdit {
-            width: 100%;
-
-            button {
-                width: 100%
-            }
         }
     }
 `;

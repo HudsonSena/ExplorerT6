@@ -16,7 +16,7 @@ export function AppUserRoutes() {
             <Route path="/home" element={<Home />} />
             <Route path="/details" element={<Details />} />
 
-            <Route path="/login" element={<SignIn />} />
+            <Route path="/" element={<SignIn />} />
             <Route path="/register" element={<SignUp />} />
 
             <Route path="/homeadmin" element={<HomeAdmin />} />
