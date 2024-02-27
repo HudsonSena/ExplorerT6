@@ -7,6 +7,7 @@ import { SignIn } from '../pages/SignIn';
 import { SignUp } from '../pages/SignUp';
 
 import { CreateFood } from '../pages/CreateFood';
+import { UpdateFood } from '../pages/UpdateFood';
 import { DetailsAdmin } from '../pages/DetailsAdmin';
 import { HomeAdmin } from '../pages/HomeAdmin';
 
@@ -22,6 +23,7 @@ export function AppUserRoutes() {
             <Route path="/homeadmin" element={<HomeAdmin />} />
             <Route path="/detailsadmin" element={<DetailsAdmin />} />
             <Route path="/createfood" element={<CreateFood />} />
+            <Route path="/updatefood" element={<UpdateFood />} />
         </Routes>
     )
 }

@@ -125,7 +125,6 @@ export const Form = styled.form`
 
         :nth-child(2) {
             min-width: 25%;
-            height: 100%;
         }
     }
     
@@ -147,8 +146,18 @@ export const Form = styled.form`
         margin-left: auto;
     }
 
-    #addFood {
+    #deleteFood {
+        background-color: ${({ theme }) => theme.colors.bgIpt01};
+
         width: 100%;
+        font-family: 'Roboto';
+        font-size: 1.4rem;
+
+        white-space: nowrap;
+    }
+
+    #addFood {
+        width: auto;
         font-family: 'Roboto';
         font-size: 1.4rem;
 

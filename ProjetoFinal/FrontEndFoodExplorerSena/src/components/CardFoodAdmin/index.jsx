@@ -5,7 +5,7 @@ import { PiPencilSimpleBold } from 'react-icons/pi';
 export function CardFoodAdmin({ data, ...rest }) {
     return(
         <Container>
-            <ButtonText icon={PiPencilSimpleBold} className='btnEdit' to="/createfood"/>
+            <ButtonText icon={PiPencilSimpleBold} className='btnEdit' to="/updatefood"/>
             <img src={data.image} className='imgFood'/>
             <ButtonText value={data.title} className='btnDetails' to="/detailsadmin" />
             <p>{data.description}</p>

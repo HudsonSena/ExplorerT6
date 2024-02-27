@@ -8,14 +8,14 @@ import { Link } from 'react-router-dom';
 import { IoIosArrowBack } from 'react-icons/io';
 import { HeaderAdmin } from '../../components/HeaderAdmin';
 
-export function CreateFood() {
+export function UpdateFood() {
   return(
     <Container>
       <HeaderAdmin />
       <Content>
         <Link to={-1}><IoIosArrowBack />voltar</Link>
 
-        <h1>Adicionar prato</h1>
+        <h1>Editar prato</h1>
         
         <Form>
           <div className="info01">
@@ -70,6 +70,7 @@ export function CreateFood() {
             <Textarea id="inputDescription" placeholder="Fale brevemente sobre o prato, seus ingredientes e composição."/>
           </div>
           <div className='deleteUpdate'>
+            <Button title="Excluir prato" id="deleteFood"/>
             <Button title="Salvar Alterações" disabled={true} id="addFood"/>
           </div>
         </Form>
