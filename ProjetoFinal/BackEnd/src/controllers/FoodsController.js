@@ -5,7 +5,7 @@ const AppError = require("../utils/AppError");
 class FoodsController{
     async create(request, response){
         const { title, description, category, cost, tags } = request.body;
-        const { user_id } = request.params;
+        const  user_id  = request.user.id;
         const database = await sqliteConnection();
 
         const checkFoodExists = await database.get("SELECT * FROM foods  WHERE title = (?)", [title])
@@ -36,47 +36,24 @@ class FoodsController{
     }
 
     async show(request, response){
-        const foods = await knex("foods")
-                .select([
-                    "foods.id",
-                    "foods.title",
-                    "foods.category",
-                    "foods.description",
-                    "foods.cost",
-                    "foods.user_id"
-                ]).orderBy("foods.title").groupBy("foods.title");
-    
-            const foodIds = foods.map(food => food.id);
-    
-            const tagsFood = await knex("tags")
-                .select([
-                    "tags.food_id",
-                    "tags.name"
-                ])
-                .whereIn("tags.food_id", foodIds)
-                .orderBy("tags.name");
-    
-            const foodsWithTags = foods.map(food => {
-                const foodTags = tagsFood
-                    .filter(tag => tag.food_id === food.id)
-                    .map(tag => tag.name);
-    
-                return {
-                    id: food.id,
-                    user_id: food.user_id,
-                    title: food.title,
-                    category: food.category,
-                    description: food.description,                    
-                    cost: food.cost,
-                    tags: foodTags                    
-                };
-            });
-    
-            return response.json(foodsWithTags);
+        const { id } = request.params;
+
+        const food = await knex("foods").where({ id }).first();
+        const tags = await knex("tags").where({ food_id: id}).orderBy("name");
+
+        return response.json({
+            ...food,
+            tags
+        });
     }
 
     async delete(request, response){
+        const user_id = request.user.id;
         const { id } = request.params;
+
+        if(!user_id) {
+            throw new AppError("usuário inválido")                        
+        }
 
         await knex("foods").where({ id }).delete();
 
@@ -209,6 +186,7 @@ class FoodsController{
     }     
 
     async update(request, response){
+        const user_id = request.user.id;
         const { title, description, cost } = request.body;
         const { id } = request.params;
 
@@ -217,6 +195,10 @@ class FoodsController{
 
         if(!food) {
             throw new AppError("Prato não encontrado no menu");
+        }
+
+        if(!user_id) {
+            throw new AppError("usuário inválido")
         }
 
         const foodWithUpdatedTitle = await database.get("SELECT * FROM foods WHERE title = (?)", [title]);

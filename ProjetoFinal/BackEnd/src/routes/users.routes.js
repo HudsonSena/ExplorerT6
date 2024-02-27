@@ -1,15 +1,13 @@
-const { Router, response } = require("express");
+const { Router } = require("express");
 
 const UserController = require("../controllers/UserController");
+const ensureAuthenticated = require("../middlewares/ensureAuthenticated");
+
 const userController = new UserController();
 
 const usersRoutes = Router();
 
-function myMiddleware(request, response, next){
-    next();
-};
-
 usersRoutes.post("/", userController.create);
-usersRoutes.put("/:id", userController.update);
+usersRoutes.put("/", ensureAuthenticated, userController.update);
 
 module.exports = usersRoutes;
