@@ -57,7 +57,7 @@ export function SignUp() {
                         id="inputMail" 
                         placeholder="Exemplo: exemplo@exemplo.com.br" size="40"
                         type="email"
-                        autoComplete="off"
+                        autoComplete="email"
                         onChange={e => setEmail(e.target.value)}
                     />
                 </div>
