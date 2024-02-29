@@ -1,13 +1,33 @@
+import { api } from '../../services/api';
 import { Container, Form } from './styles';
 import { Button } from '../../components/Button';
 import { Input } from '../../components/Input';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 export function SignUp() {
-    const [name, setName] = useState();
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+
+    function handleSingUp() {
+        if(!name || !email || !password) {
+            alert("Preencha todos os campos!");
+        } else {
+            api.post("/users", { name, email, password }).then(() => {
+                alert("Usuário cadastrado com sucesso!");
+                navigate("/");
+            
+            }).catch(error => {
+                if(error.response) {
+                    alert(error.response.data.message);
+                } else {
+                    alert("Não foi possível cadastrar");
+                }
+            }) 
+        }        
+    }
 
     return(
         <Container>
@@ -26,6 +46,8 @@ export function SignUp() {
                         id="inputName"
                         placeholder="Exemplo: Maria da Silva"
                         size="40"
+                        type="name"
+                        autoComplete="off"
                         onChange={e => setName(e.target.value)}
                     />
                 </div>
@@ -34,6 +56,8 @@ export function SignUp() {
                     <Input
                         id="inputMail" 
                         placeholder="Exemplo: exemplo@exemplo.com.br" size="40"
+                        type="email"
+                        autoComplete="off"
                         onChange={e => setEmail(e.target.value)}
                     />
                 </div>
@@ -43,11 +67,15 @@ export function SignUp() {
                         id="inputPassword" 
                         placeholder="No mínimo 6 caracteres" 
                         size="40"
+                        autoComplete="new-password"
                         onChange={e => setPassword(e.target.value)}
                     />
                 </div>
 
-                <Button title="Cria conta"/>
+                <Button 
+                    title="Cria conta"
+                    onClick={handleSingUp}
+                />
 
                 <Link to="/">Ja tenho uma conta</Link>
             </Form>
