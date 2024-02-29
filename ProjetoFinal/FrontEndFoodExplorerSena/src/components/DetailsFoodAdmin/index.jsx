@@ -3,6 +3,9 @@ import { Tag } from '../../components/Tag';
 import { Button } from '../../components/Button';
 
 export function DetailsFoodAdmin({data, ...rest}) {
+    const formatValue = (value) => {
+        return value < 10 ? `0${value}` : value;}
+
     return(
         <Container { ...rest }>
             <img src={data.image} alt="" />
@@ -20,7 +23,7 @@ export function DetailsFoodAdmin({data, ...rest}) {
                 }
 
                 <div className="btnEditdiv">
-                    <Button title={"Editar Prato : Valor R$" + data.cost} to="/createfood" className='btnEdit'/>
+                    <Button title={"Editar Prato - Valor: R$ " + (formatValue(data.cost)).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} to="/createfood" className='btnEdit'/>
                 </div>
             </div>
             

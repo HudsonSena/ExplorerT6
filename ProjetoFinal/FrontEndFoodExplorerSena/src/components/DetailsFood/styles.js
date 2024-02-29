@@ -77,6 +77,7 @@ export const Container = styled.div`
                 text-align: center;
             }
             .tagsline {
+                width: 90%;
                 flex-wrap: wrap;
                 gap: none;
                 justify-content: space-evenly;

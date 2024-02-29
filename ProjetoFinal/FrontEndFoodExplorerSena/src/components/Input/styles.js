@@ -21,6 +21,7 @@ export const Container =  styled.div`
         height: 100%;
         background: transparent;
         color: ${({ theme }) => theme.colors.txtPlaceholder};
+        padding-left: 1rem;
 
         border: none;
 

@@ -113,6 +113,39 @@ export const Container = styled.header`
         }
     }
 
+    .menuResponsive {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .pedidosResponsive {
+        position: relative;
+
+        span {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: ${({ theme }) => theme.colors.bgBtn};
+            color: ${({ theme }) => theme.colors.txtBtn1};
+
+            position: absolute;
+            top: -5px;
+            right: -10px;
+
+            font-size: 1.4rem;
+            font-weight: 600;
+            font-family: 'Roboto';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            
+        }
+    }
+
     .menulist {
         position: absolute;
         top: 0rem;
