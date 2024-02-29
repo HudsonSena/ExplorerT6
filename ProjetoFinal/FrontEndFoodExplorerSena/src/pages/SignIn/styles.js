@@ -56,7 +56,8 @@ export const Form = styled.form`
     background-color: ${({ theme }) => theme.colors.bgForm};
 
     h2 {
-        font-size: 3.2rem;
+        font-size: 2.8rem;
+        font-weight: 500;
     }
 
     div {

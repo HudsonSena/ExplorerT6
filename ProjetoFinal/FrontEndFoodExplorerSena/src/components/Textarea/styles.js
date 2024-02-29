@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.textarea`
-    width: 100%;
+    max-width: 85vw;
+    min-width: 50rem;
 
-    height: 100px;
-    
+    min-height: 10rem;
+
     border: none;
     background-color: ${({ theme }) => theme.colors.bgIpt02};
     border-radius: 5px;

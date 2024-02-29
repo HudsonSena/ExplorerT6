@@ -26,15 +26,20 @@ export const Content = styled.main`
     font-family: 'Poppins';
 
     a {
+        width: fit-content;
         display: flex;
         flex-direction: row;
         align-items: center;
         gap: 1rem;
 
         font-size: 2.4rem;
-        font-weight: bold;
+        font-weight: 500;
 
         color: ${({ theme }) => theme.colors.txtBtn1}
+    }
+
+    h1 {
+        font-weight: 500;
     }
 
     > svg > path {

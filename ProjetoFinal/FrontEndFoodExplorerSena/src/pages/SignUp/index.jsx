@@ -2,8 +2,13 @@ import { Container, Form } from './styles';
 import { Button } from '../../components/Button';
 import { Input } from '../../components/Input';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 export function SignUp() {
+    const [name, setName] = useState();
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+
     return(
         <Container>
             <div>
@@ -17,15 +22,29 @@ export function SignUp() {
 
                 <div>
                     <label htmlFor="inputName">Nome</label>
-                    <Input id="inputName" placeholder="Exemplo: Maria da Silva" size="40"/>
+                    <Input
+                        id="inputName"
+                        placeholder="Exemplo: Maria da Silva"
+                        size="40"
+                        onChange={e => setName(e.target.value)}
+                    />
                 </div>
                 <div>
-                    <label htmlFor="inputPassword">Email</label>
-                    <Input id="inputPassword" placeholder="Exemplo: exemplo@exemplo.com.br" size="40"/>
+                    <label htmlFor="inputMail">Email</label>
+                    <Input
+                        id="inputMail" 
+                        placeholder="Exemplo: exemplo@exemplo.com.br" size="40"
+                        onChange={e => setEmail(e.target.value)}
+                    />
                 </div>
                 <div>
-                    <label htmlFor="inputMail">Senha</label>
-                    <Input id="inputMail" placeholder="No mínimo 6 caracteres" size="40"/>
+                    <label htmlFor="inputPassword">Senha</label>
+                    <Input 
+                        id="inputPassword" 
+                        placeholder="No mínimo 6 caracteres" 
+                        size="40"
+                        onChange={e => setPassword(e.target.value)}
+                    />
                 </div>
 
                 <Button title="Cria conta"/>

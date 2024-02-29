@@ -16,12 +16,20 @@ export function SignIn() {
                 <h2>Faça login</h2>
 
                 <div>
-                    <label htmlFor="inputPassword">Email</label>
-                    <Input id="inputPassword" placeholder="Exemplo: exemplo@exemplo.com.br" size="40" classname='input'/>
+                    <label htmlFor="inputMail">Email</label>
+                    <Input 
+                        id="inputMail"
+                        placeholder="Exemplo: exemplo@exemplo.com.br"
+                        type="email"
+                        size="40"/>
                 </div>
                 <div>
-                    <label htmlFor="inputMail">Senha</label>
-                    <Input id="inputMail" placeholder="No mínimo 6 caracteres" size="40"/>
+                    <label htmlFor="inputPassword">Senha</label>
+                    <Input 
+                        id="inputPassword" 
+                        placeholder="No mínimo 6 caracteres"
+                        type="password"
+                        size="40"/>
                 </div>
 
                 <Button title="Entrar" classname="enter" to="/homeadmin"/>

@@ -26,15 +26,20 @@ export const Content = styled.main`
     font-family: 'Poppins';
 
     a {
+        width: fit-content;
         display: flex;
         flex-direction: row;
         align-items: center;
         gap: 1rem;
 
         font-size: 2.4rem;
-        font-weight: bold;
+        font-weight: 500;
 
         color: ${({ theme }) => theme.colors.txtBtn1}
+    }
+
+    h1 {
+        font-weight: 500;
     }
 
     > svg > path {
@@ -133,7 +138,7 @@ export const Form = styled.form`
         flex-direction: column;
         gap: 1rem;
 
-        max-width: 127rem;
+        max-width: 100%;
     }
 
     .deleteUpdate {
@@ -157,7 +162,7 @@ export const Form = styled.form`
     }
 
     #addFood {
-        width: auto;
+        width: 100%;
         font-family: 'Roboto';
         font-size: 1.4rem;
 
