@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container =  styled.div`
     width: 100%;
-    
+
     border: none;
     background-color: ${({ theme }) => theme.colors.bgIpt01};
     border-radius: .5rem;
