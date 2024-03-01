@@ -69,11 +69,6 @@ export const Form = styled.form`
     label {
         font-size: 1.6rem;
     }
-    
-    input:focus {
-        box-shadow: 0 0 0 0;
-        outline: 0;
-    }
 
     input {
         text-align: left;
@@ -82,6 +77,11 @@ export const Form = styled.form`
     a {
         color: ${({ theme }) => theme.colors.txtLogo};
         font-size: 1.6rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+        color: grey;
     }
 
     @media (max-width: 920px){

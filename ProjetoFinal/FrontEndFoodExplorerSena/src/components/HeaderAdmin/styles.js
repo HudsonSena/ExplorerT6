@@ -62,6 +62,8 @@ export const Container = styled.header`
             display: flex;
             align-items: center;
         }
+        
+        
     }
     
     .btnmenu {

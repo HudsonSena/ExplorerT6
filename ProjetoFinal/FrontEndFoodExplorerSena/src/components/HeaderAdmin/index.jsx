@@ -34,7 +34,7 @@ export function HeaderAdmin() {
                     </div>
                 </div>
                 
-                <Input placeholder="Busque por pratos ou ingredientes" icon={FiSearch} type="text"/>
+                <Input placeholder="Busque por pratos ou ingredientes" type="text" icon={FiSearch} className='inputSearch' id="inputSearch" />
                 
                 <Button title="Novo prato" to="/createfood" className="newFood"></Button>
                 <Link to="/"><FiLogOut /></Link>

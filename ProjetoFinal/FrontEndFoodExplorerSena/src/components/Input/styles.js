@@ -6,26 +6,30 @@ export const Container =  styled.div`
     border: none;
     background-color: ${({ theme }) => theme.colors.bgIpt01};
     border-radius: .5rem;
+    padding: 1.4rem;
 
     color: ${({ theme }) => theme.colors.txtPlaceholder};
-
-    padding: 1.4rem;
 
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 
-    > input {
+    input {
         width: 100%;
         height: 100%;
         background: transparent;
         color: ${({ theme }) => theme.colors.txtPlaceholder};
-        padding-left: 1rem;
 
         border: none;
+        border-radius: .5rem;
 
         font-family: 'Roboto';
         font-size: 1.6rem;
+    }
+
+    input:focus {
+        box-shadow: 0 0 0 0;
+        outline: 0;
     }
 `;
