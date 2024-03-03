@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 
 import { CreateFood } from '../pages/CreateFood';
+import { UpdateFood } from '../pages/UpdateFood';
 import { DetailsAdmin } from '../pages/DetailsAdmin';
 import { HomeAdmin } from '../pages/HomeAdmin';
 
@@ -8,9 +9,10 @@ import { HomeAdmin } from '../pages/HomeAdmin';
 export function AppAdminRoutes() {
     return (
         <Routes>
+            <Route path="/" element={<HomeAdmin />} />
             <Route path="/createfood" element={<CreateFood />} />
-            <Route path="/detailsadmin" element={<DetailsAdmin />} />
-            <Route path="/homeadmin" element={<HomeAdmin />} />
+            <Route path="/upadefood" element={<UpdateFood />} />
+            <Route path="/detailsadmin" element={<DetailsAdmin />} />            
         </Routes>
     )
 }

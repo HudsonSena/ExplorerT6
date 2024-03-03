@@ -9,9 +9,10 @@ function AuthProvider({ children }) {
     async function signIn({ email, password }) {
         try {
            const response = await api.post("/sessions", { email, password });
-           const { user, admin, token } = response.data;
+           const { user, token, admin } = response.data;
 
            api.defaults.headers.authorization = `Bearer ${token}`;
+           setData({ user, token, admin })
 
         } catch(error) {
             if(error.response) {
@@ -36,4 +37,4 @@ function useAuth() {
     return context;
 }
 
-export { AuthContext, AuthProvider, useAuth };
+export { AuthProvider, useAuth };

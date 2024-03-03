@@ -12,7 +12,7 @@ export function SignIn() {
     const { signIn } = useAuth();
 
     function handleSignIn() {
-        signIn({ email, password })
+        signIn({ email, password });
     }
     
     return(
@@ -49,7 +49,10 @@ export function SignIn() {
                     <p>Senha: 12345h</p>
                 </div>
 
-                <Button title="Entrar" className="enter" onClick={handleSignIn}
+                <Button 
+                    title="Entrar" 
+                    className="enter" 
+                    onClick={handleSignIn}
                 />
 
                 <Link to="/register">Criar uma conta</Link>
