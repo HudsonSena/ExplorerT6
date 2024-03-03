@@ -11,9 +11,10 @@ export function Routes() {
     return (
         <BrowserRouter>
             {
-                <AuthRoutes />
-            }
-                
+                !user ? <AuthRoutes /> 
+                : admin ? <AppAdminRoutes />
+                : <AppUserRoutes />
+            }                
         </BrowserRouter>
     )
 }
