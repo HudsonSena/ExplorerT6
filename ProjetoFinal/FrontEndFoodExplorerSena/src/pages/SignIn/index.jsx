@@ -1,9 +1,20 @@
+import { useState } from 'react';
 import { Container, Form } from './styles';
 import { Button } from '../../components/Button';
 import { Input } from '../../components/Input';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../hooks/auth';
 
-export function SignIn() {    
+export function SignIn() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const { signIn } = useAuth();
+
+    function handleSignIn() {
+        signIn({ email, password })
+    }
+    
     return(
         <Container>
             <div>
@@ -22,6 +33,7 @@ export function SignIn() {
                         placeholder="Exemplo: exemplo@exemplo.com.br"
                         type="email"
                         size="40"
+                        onChange={e => setEmail(e.target.value)}
                     />
                     <p>Use: hudson@gmail.com</p>
                 </div>
@@ -32,11 +44,13 @@ export function SignIn() {
                         placeholder="No mínimo 6 caracteres"
                         type="password"
                         size="40"
+                        onChange={e => setPassword(e.target.value)}
                     />
                     <p>Senha: 12345h</p>
                 </div>
 
-                <Button title="Entrar" classname="enter" to="/homeadmin"/>
+                <Button title="Entrar" className="enter" onClick={handleSignIn}
+                />
 
                 <Link to="/register">Criar uma conta</Link>
             </Form>
