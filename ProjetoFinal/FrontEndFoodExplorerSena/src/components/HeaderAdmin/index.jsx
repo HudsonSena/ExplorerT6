@@ -4,8 +4,10 @@ import { FiLogOut, FiSearch } from 'react-icons/fi';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { Input } from '../Input';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../hooks/auth';
 
 export function HeaderAdmin() {
+    const { signOut } = useAuth();
 
     function clickMenu() {
         svgmenu.style.display = 'none';
@@ -36,8 +38,10 @@ export function HeaderAdmin() {
                 
                 <Input placeholder="Busque por pratos ou ingredientes" type="text" icon={FiSearch} className='inputSearch' id="inputSearch" />
                 
-                <Button title="Novo prato" to="/createfood" className="newFood"></Button>
-                <Link to="/"><FiLogOut /></Link>
+                <div className='newplateSignOut'>
+                    <Button title="Novo prato" to="/createfood" className="newFood"></Button>
+                    <Link onClick={signOut}><FiLogOut /></Link>
+                </div>
             </div>
             <div id='btnmenu' className='btnmenu'>
                 <Link id='svgmenu' className='svgmenu' onClick={clickMenu}><AiOutlineMenu /></Link>
@@ -53,7 +57,7 @@ export function HeaderAdmin() {
                     <Input placeholder="Busque por pratos ou ingredientes" icon={FiSearch} type="text"/>
 
                     <Link to="/createfood">Novo prato</Link>
-                    <Link to="/">Sair</Link>
+                    <Link onClick={signOut}>Sair</Link>
                 </div>
             </div>
             

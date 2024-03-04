@@ -23,7 +23,7 @@ export function DetailsFoodAdmin({data, ...rest}) {
                 }
 
                 <div className="btnEditdiv">
-                    <Button title={"Editar Prato - Valor: R$ " + (formatValue(data.cost)).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} to="/createfood" className='btnEdit'/>
+                    <Button title={"Editar Prato - Valor: R$ " + (formatValue(data.cost)).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} to="/updatefood" className='btnEdit'/>
                 </div>
             </div>
             

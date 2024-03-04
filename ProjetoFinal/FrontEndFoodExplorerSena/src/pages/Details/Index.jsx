@@ -11,7 +11,7 @@ export function Details({ data, ...rest }) {
     <Container>
       <Header />
       <Content {...rest}>
-        <Link to="/home"><IoIosArrowBack />voltar</Link>
+        <Link to="/"><IoIosArrowBack />voltar</Link>
 
         <DetailsFood
           data={

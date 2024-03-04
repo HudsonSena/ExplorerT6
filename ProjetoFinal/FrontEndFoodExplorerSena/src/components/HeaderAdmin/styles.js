@@ -11,7 +11,7 @@ export const Container = styled.header`
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         gap: 3.2rem;
 
         padding: 1rem 12.3rem;
@@ -19,6 +19,11 @@ export const Container = styled.header`
         position: fixed;
 
         z-index: 2;
+
+        .newplateSignOut {
+            display: flex;
+            gap: 4rem;
+        }
 
         .newFood {
             width: auto;
@@ -56,7 +61,7 @@ export const Container = styled.header`
             border-radius: 50%;
         }
 
-        > a {
+        a {
             color: ${({ theme }) => theme.colors.txtBtn1};
             font-size: 2.2rem;
             display: flex;

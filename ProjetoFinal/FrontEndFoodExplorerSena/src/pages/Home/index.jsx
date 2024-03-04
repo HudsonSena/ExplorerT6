@@ -30,8 +30,8 @@ export function Home() {
                     <Swiper
                         className='wiperId'
                         modules={[Navigation, A11y, Pagination]}
-                        spaceBetween={'330'}
                         slidesPerView={5.5}
+                        spaceBetween={'330'}                        
 
                         loop={true}
                         pagination={{

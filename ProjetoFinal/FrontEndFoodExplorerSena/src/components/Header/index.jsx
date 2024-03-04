@@ -6,8 +6,10 @@ import { Input } from '../Input';
 import { Link } from 'react-router-dom';
 import { PiNewspaperClipping } from 'react-icons/pi';
 import { ButtonText } from '../ButtonText';
+import { useAuth } from '../../hooks/auth';
 
 export function Header() {
+    const { signOut } = useAuth();
 
     function clickMenu() {
         svgmenu.style.display = 'none';
@@ -39,8 +41,10 @@ export function Header() {
                                 
                 <Input placeholder="Busque por pratos ou ingredientes" icon={FiSearch} type="text"/>
 
-                <Button icon={PiNewspaperClipping} title='Pedidos: ' value={11} className="pedidos"/>
-                <Link to="/"><FiLogOut /></Link>
+                <div className='pedidoSignOut'>
+                    <Button icon={PiNewspaperClipping} title='Pedidos: ' value={11} className="pedidos"/>
+                    <Link onClick={signOut}><FiLogOut /></Link>
+                </div>
             </div>
             <div id='btnmenu' className='btnmenu'>
                 <Link id='svgmenu' className='svgmenu' onClick={clickMenu}><AiOutlineMenu /></Link>
@@ -61,7 +65,7 @@ export function Header() {
                 <div id='menulist' className='menulist'>
                     <Input placeholder="Busque por pratos ou ingredientes" icon={FiSearch} type="text"/>
 
-                    <Link to="/">Sair</Link>
+                    <Link onClick={signOut}>Sair</Link>
                 </div>
             </div>
             

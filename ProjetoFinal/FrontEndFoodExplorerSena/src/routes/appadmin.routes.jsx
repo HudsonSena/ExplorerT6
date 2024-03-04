@@ -11,7 +11,7 @@ export function AppAdminRoutes() {
         <Routes>
             <Route path="/" element={<HomeAdmin />} />
             <Route path="/createfood" element={<CreateFood />} />
-            <Route path="/upadefood" element={<UpdateFood />} />
+            <Route path="/updatefood" element={<UpdateFood />} />
             <Route path="/detailsadmin" element={<DetailsAdmin />} />            
         </Routes>
     )
