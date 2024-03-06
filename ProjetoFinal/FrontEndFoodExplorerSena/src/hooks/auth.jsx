@@ -15,7 +15,8 @@ function AuthProvider({ children }) {
            localStorage.setItem("@foodexplorersena:token", token);
            localStorage.setItem("@foodexplorersena:admin", admin);
 
-           api.defaults.headers.authorization = `Bearer ${token}`;
+           api.defaults.headers.common['authorization'] = `Bearer ${token}`;
+           
            setData({ user, token, admin });
 
         } catch(error) {
