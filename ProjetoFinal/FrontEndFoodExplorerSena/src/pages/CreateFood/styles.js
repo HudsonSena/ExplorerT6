@@ -82,11 +82,13 @@ export const Form = styled.form`
 
     .newTags {
         width: 100%;
+        height: 100%;
         padding: .8rem;
 
         display: flex;
-        gap: 1.6rem;
         flex-wrap: wrap;
+
+        gap: 1.6rem;
         border-radius: .5rem;
 
         background-color: ${({ theme }) => theme.colors.bgIpt02};

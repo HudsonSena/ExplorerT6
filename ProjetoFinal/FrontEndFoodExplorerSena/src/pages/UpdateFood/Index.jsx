@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Container, Content, Form, Avatar } from './styles';
 import { Footer } from '../../components/Footer';
 import { Button } from '../../components/Button';

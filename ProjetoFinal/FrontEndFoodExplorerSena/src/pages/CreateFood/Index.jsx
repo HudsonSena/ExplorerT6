@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Container, Content, Form, Avatar } from './styles';
 import { Footer } from '../../components/Footer';
 import { Button } from '../../components/Button';
@@ -9,6 +10,13 @@ import { IoIosArrowBack } from 'react-icons/io';
 import { HeaderAdmin } from '../../components/HeaderAdmin';
 
 export function CreateFood() {
+  const [tags, setTags] = useState([]);
+  const [newTag, setNewTag] = useState("");
+
+  function handleAddTag() {
+    setTags(prevState => [...prevState, newTag]);
+    setNewTag("");
+  }
   return(
     <Container>
       <HeaderAdmin />
@@ -50,13 +58,21 @@ export function CreateFood() {
             <div>
               <label htmlFor="inputIngred">Ingredientes</label>
               <div className='newTags'>
-                <FoodItem
-                  placeholder="Fruta"
-                  value="Fruta"
-                />
+                {
+                  tags.map((tag, index) => (
+                    <FoodItem 
+                    key={String(index)}
+                    value={tag}
+                    onClick={() => {}}                    
+                  />
+                  ))
+                }
                 <FoodItem
                   isNew
                   placeholder="Adicionar"
+                  onChange={e => setNewTag(e.target.value)}
+                  value={newTag}
+                  onClick={handleAddTag}
                 />
               </div>
             </div>

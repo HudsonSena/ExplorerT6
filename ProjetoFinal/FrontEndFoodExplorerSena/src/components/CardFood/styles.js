@@ -16,6 +16,7 @@ export const Container = styled.div`
     margin: auto;
 
     border-radius: .8rem;
+    z-index: -1;
 
     .btnfavority {
         position: relative;

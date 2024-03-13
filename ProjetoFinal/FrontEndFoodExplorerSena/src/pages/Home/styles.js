@@ -33,7 +33,15 @@ export const Content = styled.main`
     }
 
     .wiperId {
-        z-index: 0;
+        --swiper-navigation-color: white;
+
+        .swiper-button-prev {
+            box-shadow: -10px 0px 200px 150px black;
+        }
+
+        .swiper-button-next {
+            box-shadow: 10px 0px 200px 150px black;
+        }
     }
     
     > .intro {
@@ -76,17 +84,6 @@ export const Content = styled.main`
         flex-direction: row;
         justify-content: center;
         align-items: center;
-
-        .listFood {
-            display: flex;
-            flex-direction: row;
-            gap: 3rem;
-            overflow-y: auto;
-        }
-
-        .listFood::-webkit-scrollbar {
-            display: none;
-        }
     }
 
     @media (max-width: 1350px) {
@@ -99,7 +96,7 @@ export const Content = styled.main`
     
     @media (max-width: 920px) {
         width: 96vw;
-        padding: 2.4rem;        
+        padding: 2.4rem;
 
         .intro {
             height: 12rem;

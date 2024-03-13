@@ -33,7 +33,15 @@ export const Content = styled.main`
     }
     
     .wiperId {
-        z-index: 0;
+        --swiper-navigation-color: white;
+
+        .swiper-button-prev {
+            box-shadow: -10px 0px 200px 150px black;
+        }
+
+        .swiper-button-next {
+            box-shadow: 10px 0px 200px 150px black;
+        }
     }
 
     > .intro {

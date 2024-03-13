@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    max-width: 25rem;
-    min-width: 20rem;
+    max-width: 25rem;    
+    height: 4rem;
 
     display: flex;
     align-items: center;
