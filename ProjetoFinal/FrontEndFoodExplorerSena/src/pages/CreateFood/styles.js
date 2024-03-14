@@ -82,7 +82,6 @@ export const Form = styled.form`
 
     .newTags {
         width: 100%;
-        height: 100%;
         padding: .8rem;
 
         display: flex;
@@ -106,6 +105,8 @@ export const Form = styled.form`
             gap: 1rem;
 
             div {
+                width: 100%;
+                height: 6rem;
                 background-color: ${({ theme }) => theme.colors.bgIpt02};
             }
         }
@@ -116,12 +117,13 @@ export const Form = styled.form`
         flex-direction: row;
         gap: 3.2rem;
 
-        > div {
+        > div { width: 100%;
             display: flex;
             flex-direction: column;
             gap: 1rem;
 
             div {
+                width: 100%;
                 background-color: ${({ theme }) => theme.colors.bgIpt02};
             }
         }
@@ -161,9 +163,7 @@ export const Form = styled.form`
         }
 
         .info02 {
-            :nth-child(1) {
-                width: 100%;
-            }
+            width: 100%;
         }
 
         .deleteUpdate {

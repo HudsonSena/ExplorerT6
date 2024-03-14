@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    max-width: 25rem;    
-    height: 4rem;
+    max-width: 25rem;
 
     display: flex;
     align-items: center;
@@ -14,8 +13,6 @@ export const Container = styled.div`
 
     border: ${({ theme, isNew }) => isNew ? `.1rem dashed ${ theme.colors.txtPlaceholder}` : `1px solid ${ theme.colors.txtPlaceholder}`};
     border-radius: .5rem;
-
-    padding-right: .8rem;
 
     .button-add, .button-delete {
         width: auto;
@@ -32,7 +29,7 @@ export const Container = styled.div`
 
         border: none;
 
-        padding: 1.2rem;
+        padding: 0 1.2rem;
 
         font-size: 1.6rem;
         font-family: 'Roboto';
