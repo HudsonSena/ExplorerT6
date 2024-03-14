@@ -123,14 +123,6 @@ export const Form = styled.form`
                 background-color: ${({ theme }) => theme.colors.bgIpt02};
             }
         }
-
-        :nth-child(1) {
-            width: 75%;
-        }
-
-        :nth-child(2) {
-            min-width: 25%;
-        }
     }
     
     .info03 {
