@@ -1,18 +1,12 @@
 const knex = require("../database/knex");
 const sqliteConnection = require("../database/sqlite");
 const AppError = require("../utils/AppError");
-const DiskStorage = require("../provides/DiskStorage");
 
 class FoodsController{
     async create(request, response){
         const { title, description, category, cost, tags } = request.body;
         const  user_id  = request.user.id;
         const database = await sqliteConnection();
-
-        const file = request.file;
-
-        // Salve o caminho do arquivo no banco de dados
-        const imagePath = file ? file.path : null;
 
         const checkFoodExists = await database.get("SELECT * FROM foods  WHERE title = (?)", [title])
 
@@ -24,7 +18,6 @@ class FoodsController{
             title,
             description,
             category,
-            foodimage: imagePath,
             cost,
             user_id,
         });        

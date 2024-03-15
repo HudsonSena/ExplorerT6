@@ -4,6 +4,7 @@ import { ButtonText } from '../ButtonText';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import { GoHeartFill } from 'react-icons/go';
 import { useState } from 'react';
+import { api } from '../../services/api';
 
 export function CardFood({ data, ...rest }) {
     let [count, setCount] = useState(0);
@@ -12,6 +13,8 @@ export function CardFood({ data, ...rest }) {
     if (count < 0) {
         count = 0
     }
+
+    const foodimageUrl = food.imagefood ? `${api.defaults.baseURL}/file/${food.foodimage}` : null;
 
     return (
         <Container {...rest} to="/details">
@@ -22,7 +25,7 @@ export function CardFood({ data, ...rest }) {
             style={{ color: isFavorite ? 'red' : 'white' }} // Altera a cor do ícone com base no estado de favorito
             />
 
-            <img src={data.image} className='imgFood' />
+            <img src={foodimageUrl} className='imgFood' />
             <ButtonText value={data.title} className='btnDetails' to="/details"/>
             <p>{data.description}</p>
             <span>R${data.cost}</span>

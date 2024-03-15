@@ -1,14 +1,17 @@
 import { Container } from "./styles";
 import { Tag } from '../../components/Tag';
 import { Button } from '../../components/Button';
+import { api } from '../../services/api';
 
 export function DetailsFoodAdmin({data, ...rest}) {
     const formatValue = (value) => {
         return value < 10 ? `0${value}` : value;}
+    
+    const foodimageUrl = food.imagefood ? `${api.defaults.baseURL}/file/${food.foodimage}` : null;
 
     return(
         <Container { ...rest }>
-            <img src={data.image} alt="" />
+            <img src={foodimageUrl} alt="" />
             <div className='infoFood'>
                 <h1>{data.title}</h1>
                 <p>{data.description}</p>

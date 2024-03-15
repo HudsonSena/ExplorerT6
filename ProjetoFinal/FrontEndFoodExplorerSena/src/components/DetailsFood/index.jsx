@@ -5,9 +5,12 @@ import { ButtonText } from  '../../components/ButtonText';
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 import { useState } from 'react';
 import { PiNewspaperClipping } from 'react-icons/pi';
+import { api } from '../../services/api';
 
 export function DetailsFood({data, ...rest}) {
     let [count, setCount] = useState(1);
+
+    const foodimageUrl = food.imagefood ? `${api.defaults.baseURL}/file/${food.foodimage}` : null;
 
     if(count < 1) {
         count = 1;
@@ -18,7 +21,7 @@ export function DetailsFood({data, ...rest}) {
 
     return(
         <Container { ...rest }>
-            <img src={data.image} alt="" />
+            <img src={foodimageUrl} alt="" />
             <div className='infoFood'>
                 <h1>{data.title}</h1>
                 <p>{data.description}</p>

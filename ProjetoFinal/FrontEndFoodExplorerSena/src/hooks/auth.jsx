@@ -37,8 +37,16 @@ function AuthProvider({ children }) {
         setData({});
     }
 
-    async function updateFood({ food }) {
+    async function updateFood({ food, foodimageFile }) {
         try {
+            if(foodimageFile) {
+                const fileUploadForm = new FormData();
+                fileUploadForm.append("foodimage", foodimageFile);
+
+                const response = await api.patch("foods/foodimage", fileUploadForm);
+                food.foodimage = response.data.foodimage;
+            }
+            
             await api.put("/foods", food);
 
             alert("Prato Atualizado");
