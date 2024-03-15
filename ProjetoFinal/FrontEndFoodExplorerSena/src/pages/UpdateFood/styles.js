@@ -80,6 +80,11 @@ export const Form = styled.form`
         outline: 0;
     }
 
+    img {
+        width: 10rem;
+        margin: 2rem;
+    }
+
     .newTags {
         width: 100%;
         padding: .8rem;
@@ -104,6 +109,8 @@ export const Form = styled.form`
             gap: 1rem;
 
             div {
+                width: 100%;
+                height: 6rem;
                 background-color: ${({ theme }) => theme.colors.bgIpt02};
             }
         }
@@ -115,13 +122,24 @@ export const Form = styled.form`
         gap: 3.2rem;
 
         > div {
+            width: 100%;
             display: flex;
             flex-direction: column;
             gap: 1rem;
 
             div {
+                width: 100%;
                 background-color: ${({ theme }) => theme.colors.bgIpt02};
             }
+        }
+
+        #inputCost {
+            width: 100%;
+            padding: 2rem;
+        }
+
+        .sectioncost {
+            width: 30rem;
         }
     }
     
@@ -168,10 +186,8 @@ export const Form = styled.form`
             width: 100%;            
         }
 
-        .info02 {
-            :nth-child(1) {
-                width: 100%;
-            }
+        .info02 > .sectioncost {
+            width: 100%;
         }
 
         .deleteUpdate {

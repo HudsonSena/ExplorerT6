@@ -36,11 +36,13 @@ export const Content = styled.main`
         --swiper-navigation-color: white;
 
         .swiper-button-prev {
-            box-shadow: -10px 0px 200px 150px black;
+            box-shadow: -10px 0px 100px 100px ${({ theme }) => theme.colors.bgPages};
+            background-color: ${({ theme }) => theme.colors.bgPages};
         }
 
         .swiper-button-next {
-            box-shadow: 10px 0px 200px 150px black;
+            box-shadow: 10px 0px 100px 100px ${({ theme }) => theme.colors.bgPages};
+            background-color: ${({ theme }) => theme.colors.bgPages};
         }
     }
     

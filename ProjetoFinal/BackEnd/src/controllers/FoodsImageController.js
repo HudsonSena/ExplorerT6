@@ -11,7 +11,7 @@ class FoodsImageController {
         const food = await knex("foods").where({ id }).first();
 
         if(food.foodimage){
-            await diskStorage.deleteFile(user.foodimage);
+            await diskStorage.deleteFile(food.foodimage);
         }
 
         const filename = await diskStorage.saveFile(foodImageFilename)

@@ -32,7 +32,7 @@ export const Container = styled.div`
         }
     }
 
-    @media (max-width: 920px){
+    @media (max-width: 1250px){
         display: flex;
         flex-direction: column;
         align-content: space-evenly;
@@ -41,7 +41,7 @@ export const Container = styled.div`
 `;
 
 export const Form = styled.form`
-    padding: 3.2rem 6.4rem;
+    padding: 6.4rem;
 
     display: flex;
     flex-direction: column;
@@ -53,6 +53,8 @@ export const Form = styled.form`
     font-family: 'Poppins';
 
     background-color: ${({ theme }) => theme.colors.bgForm};
+
+    border-radius: 1rem;
 
     h2 {
         font-size: 2.8rem;

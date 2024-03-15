@@ -6,7 +6,8 @@ export const Container =  styled.div`
     border: none;
     background-color: ${({ theme }) => theme.colors.bgIpt01};
     border-radius: .5rem;
-    padding: 1.4rem;
+
+    padding-left: 1.4rem;
 
     color: ${({ theme }) => theme.colors.txtPlaceholder};
 
@@ -23,6 +24,7 @@ export const Container =  styled.div`
 
         border: none;
         border-radius: .5rem;
+        padding: 1.4rem;
 
         font-family: 'Roboto';
         font-size: 1.6rem;

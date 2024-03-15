@@ -22,14 +22,15 @@ export const Container = styled.div`
 
         white-space: nowrap;
     }
-
+    
     input {
         color: ${({ theme }) => theme.colors.txtBtn1};
         background: transparent;
 
         border: none;
 
-        padding: 0 1.2rem;
+        padding: 0 .4rem;
+        padding-left: 1.4rem;
 
         font-size: 1.6rem;
         font-family: 'Roboto';

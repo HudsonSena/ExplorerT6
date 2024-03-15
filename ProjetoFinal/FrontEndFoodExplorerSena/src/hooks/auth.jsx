@@ -37,6 +37,21 @@ function AuthProvider({ children }) {
         setData({});
     }
 
+    async function updateFood({ food }) {
+        try {
+            await api.put("/foods", food);
+
+            alert("Prato Atualizado");
+
+        } catch (error) {
+            if(error.response) {
+                alert(error.repsonse.data.message);
+            } else {
+                alert("Não foi possível atualizar o prato")
+            }
+        }
+    }
+
     useEffect(() => {
         const token = localStorage.getItem("@foodexplorersena:token");
         const user = localStorage.getItem("@foodexplorersena:user");
@@ -54,7 +69,7 @@ function AuthProvider({ children }) {
     }, [])
     
     return (
-        <AuthContext.Provider value={{ signIn, signOut, user: data.user, admin: data.admin }}>
+        <AuthContext.Provider value={{ signIn, signOut, updateFood, user: data.user, admin: data.admin }}>
             {children}
         </AuthContext.Provider>
     )

@@ -31,6 +31,10 @@ export function Home() {
                         className='wiperId'
                         modules={[Navigation, A11y, Pagination]}
                         breakpoints={{
+                            1800: {
+                                slidesPerView: 4.5
+                            },
+
                             1500: {
                                 slidesPerView: 4
                             },
@@ -146,6 +150,10 @@ export function Home() {
                         className='wiperId'
                         modules={[Navigation, A11y, Pagination]}
                         breakpoints={{
+                            1800: {
+                                slidesPerView: 4.5
+                            },
+
                             1500: {
                                 slidesPerView: 4
                             },
@@ -261,6 +269,10 @@ export function Home() {
                         className='wiperId'
                         modules={[Navigation, A11y, Pagination]}
                         breakpoints={{
+                            1800: {
+                                slidesPerView: 4.5
+                            },
+
                             1500: {
                                 slidesPerView: 4
                             },
