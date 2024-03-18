@@ -6,11 +6,12 @@ import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 import { useState } from 'react';
 import { PiNewspaperClipping } from 'react-icons/pi';
 import { api } from '../../services/api';
+import foodPlaceholder from '../../assets/foodimage_placeholder.svg';
 
 export function DetailsFood({data, ...rest}) {
     let [count, setCount] = useState(1);
 
-    const foodimageUrl = food.imagefood ? `${api.defaults.baseURL}/file/${food.foodimage}` : null;
+    const foodimageUrl = foodPlaceholder;
 
     if(count < 1) {
         count = 1;

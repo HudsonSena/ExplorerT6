@@ -2,12 +2,13 @@ import { Container } from "./styles";
 import { Tag } from '../../components/Tag';
 import { Button } from '../../components/Button';
 import { api } from '../../services/api';
+import foodPlaceholder from '../../assets/foodimage_placeholder.svg';
 
 export function DetailsFoodAdmin({data, ...rest}) {
     const formatValue = (value) => {
         return value < 10 ? `0${value}` : value;}
     
-    const foodimageUrl = food.imagefood ? `${api.defaults.baseURL}/file/${food.foodimage}` : null;
+        const foodimageUrl = foodPlaceholder;
 
     return(
         <Container { ...rest }>

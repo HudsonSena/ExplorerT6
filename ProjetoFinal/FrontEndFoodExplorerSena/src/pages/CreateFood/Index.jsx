@@ -18,7 +18,6 @@ export function CreateFood() {
   const [tags, setTags] = useState([]);
   const [newTag, setNewTag] = useState("");
   const [cost, setCost] = useState("");
-  const [ updateFood ] =useAuth
 
   const navigate = useNavigate();
   
@@ -32,6 +31,14 @@ export function CreateFood() {
   }
 
   async function handleNewFood() {
+    if(!title) {
+      return alert("Você deixou o título em Branco!")
+    }
+
+    if(newTag) {
+      return alert("Você deixou um ingrediente em branc0 ou não adicionou!")
+    }
+    
     await api.post("/foods", {
       title,
       category,

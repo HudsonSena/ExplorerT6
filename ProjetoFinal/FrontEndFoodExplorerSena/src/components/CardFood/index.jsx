@@ -5,6 +5,7 @@ import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import { GoHeartFill } from 'react-icons/go';
 import { useState } from 'react';
 import { api } from '../../services/api';
+import foodPlaceholder from '../../assets/foodimage_placeholder.svg';
 
 export function CardFood({ data, ...rest }) {
     let [count, setCount] = useState(0);
@@ -14,7 +15,7 @@ export function CardFood({ data, ...rest }) {
         count = 0
     }
 
-    const foodimageUrl = food.imagefood ? `${api.defaults.baseURL}/file/${food.foodimage}` : null;
+    const foodimageUrl = foodPlaceholder;
 
     return (
         <Container {...rest} to="/details">

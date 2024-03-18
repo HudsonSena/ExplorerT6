@@ -2,9 +2,10 @@ import { Container } from './styles';
 import { ButtonText } from '../ButtonText';
 import { PiPencilSimpleBold } from 'react-icons/pi';
 import { api } from '../../services/api';
+import foodPlaceholder from '../../assets/foodimage_placeholder.svg';
 
 export function CardFoodAdmin({ data, ...rest }) {
-    const foodimageUrl = food.imagefood ? `${api.defaults.baseURL}/file/${food.foodimage}` : null;
+    const foodimageUrl = foodPlaceholder;
     return(
         <Container>
             <ButtonText icon={PiPencilSimpleBold} className='btnEdit' to="/updatefood"/>

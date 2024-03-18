@@ -28,27 +28,7 @@ export function HomeAdmin() {
                     <Swiper
                         className='wiperId'
                         modules={[Navigation, A11y, Pagination]}
-                        breakpoints={{
-                            1800: {
-                                slidesPerView: 4.5
-                            },
-                            
-                            1500: {
-                                slidesPerView: 4
-                            },
-
-                            1300: {
-                                slidesPerView: 3
-                            },
-
-                            1100: {
-                                slidesPerView: 2.5
-                            },
-
-                            700: {
-                              slidesPerView: 2
-                            }
-                        }}
+                        breakpoints={{ 1800:{slidesPerView: 4.5}, 1500:{slidesPerView: 4}, 1300: {slidesPerView: 3},1100:{esPerView: 2.5}, 700:{slidesPerView: 2}}}
 
                         loop={true}
                         pagination={{
@@ -147,27 +127,7 @@ export function HomeAdmin() {
                     <Swiper
                         className='wiperId'
                         modules={[Navigation, A11y, Pagination]}
-                        breakpoints={{
-                            1800: {
-                                slidesPerView: 4.5
-                            },
-
-                            1500: {
-                                slidesPerView: 4
-                            },
-
-                            1300: {
-                                slidesPerView: 3
-                            },
-
-                            1100: {
-                                slidesPerView: 2.5
-                            },
-
-                            700: {
-                              slidesPerView: 2
-                            }
-                        }}
+                        breakpoints={{ 1800:{slidesPerView: 4.5}, 1500:{slidesPerView: 4}, 1300: {slidesPerView: 3},1100:{esPerView: 2.5}, 700:{slidesPerView: 2}}}                        
 
                         loop={true}
                         pagination={{
@@ -266,27 +226,7 @@ export function HomeAdmin() {
                     <Swiper
                         className='wiperId'
                         modules={[Navigation, A11y, Pagination]}
-                        breakpoints={{
-                            1800: {
-                                slidesPerView: 4.5
-                            },
-
-                            1500: {
-                                slidesPerView: 4
-                            },
-
-                            1300: {
-                                slidesPerView: 3
-                            },
-
-                            1100: {
-                                slidesPerView: 2.5
-                            },
-
-                            700: {
-                              slidesPerView: 2
-                            }
-                        }}
+                        breakpoints={{ 1800:{slidesPerView: 4.5}, 1500:{slidesPerView: 4}, 1300: {slidesPerView: 3},1100:{esPerView: 2.5}, 700:{slidesPerView: 2}}}
 
                         loop={true}
                         pagination={{

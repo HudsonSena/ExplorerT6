@@ -10,6 +10,7 @@ import { IoIosArrowBack } from 'react-icons/io';
 import { HeaderAdmin } from '../../components/HeaderAdmin';
 import { useAuth } from '../../hooks/auth';
 import { api } from '../../services/api';
+import foodPlaceholder from '../../assets/foodimage_placeholder.svg';
 
 export function UpdateFood() {
   const { updateFood } = useAuth();
@@ -18,7 +19,7 @@ export function UpdateFood() {
   const [newCost, setNewCost] = useState();
   const [newDescription, setNewDescription] = useState();
 
-  const foodimageUrl = food.imagefood ? `${api.defaults.baseURL}/file/${food.foodimage}` : null;
+  const foodimageUrl = food.imagefood ? `${api.defaults.baseURL}/file/${food.foodimage}` : foodPlaceholder;
   const [foodimage, setFoodImg] = useState(foodimageUrl);
   const [foodimageFile, setFoodImageFile] = useState(null);
 
