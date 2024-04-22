@@ -43,7 +43,7 @@ export function Header() {
 
                 <div className='pedidoSignOut'>
                     <Button icon={PiNewspaperClipping} title='Pedidos: ' value={11} className="pedidos"/>
-                    <Link onClick={signOut}><FiLogOut /></Link>
+                    <Link onClick={signOut} to="/"><FiLogOut /></Link>
                 </div>
             </div>
             <div id='btnmenu' className='btnmenu'>
@@ -65,7 +65,7 @@ export function Header() {
                 <div id='menulist' className='menulist'>
                     <Input placeholder="Busque por pratos ou ingredientes" icon={FiSearch} type="text"/>
 
-                    <Link onClick={signOut}>Sair</Link>
+                    <Link onClick={signOut} to="/">Sair</Link>
                 </div>
             </div>
             

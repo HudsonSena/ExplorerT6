@@ -102,6 +102,11 @@ export const Form = styled.form`
         flex-direction: row;
         gap: 3.2rem;
 
+        section {
+            display: flex;
+            flex-direction: row;
+        }
+
         > div {
             width: 100%;
             display: flex;

@@ -40,7 +40,7 @@ export function HeaderAdmin() {
                 
                 <div className='newplateSignOut'>
                     <Button title="Novo prato" to="/createfood" className="newFood"></Button>
-                    <Link onClick={signOut}><FiLogOut /></Link>
+                    <Link onClick={signOut} to="/"><FiLogOut /></Link>
                 </div>
             </div>
             <div id='btnmenu' className='btnmenu'>
@@ -57,7 +57,7 @@ export function HeaderAdmin() {
                     <Input placeholder="Busque por pratos ou ingredientes" icon={FiSearch} type="text"/>
 
                     <Link to="/createfood">Novo prato</Link>
-                    <Link onClick={signOut}>Sair</Link>
+                    <Link onClick={signOut} to="/">Sair</Link>
                 </div>
             </div>
             
