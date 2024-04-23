@@ -1,11 +1,14 @@
 const knex = require("../database/knex");
 const sqliteConnection = require("../database/sqlite");
 const AppError = require("../utils/AppError");
+const DiskStorage = require("../provides/DiskStorage");
 
 class FoodsController{
     async create(request, response){
         const { title, description, category, cost, tags } = request.body;
         const  user_id  = request.user.id;
+        const imageFilename = request.file.filename;
+        const diskStorage = new DiskStorage();
         const database = await sqliteConnection();
 
         const checkFoodExists = await database.get("SELECT * FROM foods  WHERE title = (?)", [title])
@@ -14,10 +17,14 @@ class FoodsController{
             throw new AppError("Este prato já existe no menu.");
         }
 
+        const filename = await diskStorage.saveFile(imageFilename);
+        const foodimage = filename;
+
         const [ food_id ] = await knex("foods").insert({
             title,
             description,
             category,
+            foodimage,
             cost,
             user_id,
         });        
@@ -69,6 +76,7 @@ class FoodsController{
             const foods = await knex("foods")
                 .select([
                     "foods.id",
+                    "foods.foodimage",
                     "foods.title",
                     "foods.category",
                     "foods.description",
@@ -95,6 +103,7 @@ class FoodsController{
     
                 return {
                     id: food.id,
+                    foodimage: food.foodimage,
                     title: food.title,
                     category: food.category,
                     description: food.description,
@@ -108,6 +117,7 @@ class FoodsController{
             const foods = await knex("foods")
                 .select([
                     "foods.id",
+                    "foods.foodimage",
                     "foods.title",
                     "foods.category",
                     "foods.description",
@@ -134,6 +144,7 @@ class FoodsController{
     
                 return {
                     id: food.id,
+                    foodimage: food.foodimage,
                     title: food.title,
                     category: food.category,
                     description: food.description,                    
@@ -147,6 +158,7 @@ class FoodsController{
             const foods = await knex("foods")
                 .select([
                     "foods.id",
+                    "foods.foodimage",
                     "foods.title",
                     "foods.category",
                     "foods.description",
@@ -173,6 +185,7 @@ class FoodsController{
     
                 return {
                     id: food.id,
+                    foodimage: food.foodimage,
                     title: food.title,
                     category: food.category,
                     description: food.description,                    

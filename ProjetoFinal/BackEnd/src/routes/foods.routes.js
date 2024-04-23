@@ -1,4 +1,4 @@
-const { Router } = require("express");
+const { Router, response } = require("express");
 const multer = require("multer");
 const uploadConfig = require("../configs/upload");
 
@@ -17,9 +17,9 @@ foodsRoutes.get("/:id", foodsController.show)
 
 foodsRoutes.use(ensureAuthenticated)
 
-foodsRoutes.post("/", foodsController.create);
+foodsRoutes.post("/", upload.single("foodimage"), foodsController.create);
 foodsRoutes.delete("/", foodsController.delete);
-foodsRoutes.patch("/:id", upload.single("foodimage"), foodsImageController.update);
+//foodsRoutes.patch("/:id/image", ensureAuthenticated, upload.single("image"), foodsImageController.update);
 foodsRoutes.put("/", foodsController.update);
 
 module.exports = foodsRoutes;
