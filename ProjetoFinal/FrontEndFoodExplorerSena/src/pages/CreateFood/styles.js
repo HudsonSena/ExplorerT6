@@ -102,8 +102,8 @@ export const Form = styled.form`
         display: flex;
         flex-direction: row;
         gap: 3.2rem;
-
-        .imgFile {
+        
+        section {
             display: flex;
             flex-direction: row;
         }

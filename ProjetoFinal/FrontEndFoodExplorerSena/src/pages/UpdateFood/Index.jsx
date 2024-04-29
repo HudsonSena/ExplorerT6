@@ -10,7 +10,7 @@ import { IoIosArrowBack } from 'react-icons/io';
 import { HeaderAdmin } from '../../components/HeaderAdmin';
 import { useAuth } from '../../hooks/auth';
 import { api } from '../../services/api';
-import foodPlaceholder from '../../assets/foodimage_placeholder.svg';
+//import foodPlaceholder from '../../assets/foodimage_placeholder.svg';
 
 export function UpdateFood() {
   const { updateFood } = useAuth();
@@ -18,10 +18,17 @@ export function UpdateFood() {
   const [newTag, setNewTag] = useState("");
   const [newCost, setNewCost] = useState();
   const [newDescription, setNewDescription] = useState();
+  const [foodImage, setFoodImage] = useState([]);
+  const [foodImageFile, setFoodImageFile ] = useState(null)
 
-  //const foodImageUrl = food.imagefood ? `${api.defaults.baseURL}/file/${food.foodimage}` : foodPlaceholder;
-  //const [foodimage, setFoodImg] = useState(foodimageUrl);
-  //const [foodimageFile, setFoodImageFile] = useState(null);
+  function handleChangeImgFood(event) {
+    const file = event.target.files[0];
+    setFoodImageFile(file);
+
+    const imagePreView = URL.createObjectURL(file);
+    setFoodImage(imagePreView);
+          
+  };
 
   function handleAddTag() {
     setTags(prevState => [...prevState, newTag]);
@@ -42,17 +49,8 @@ export function UpdateFood() {
       description: newDescription
     }
     
-    await updateFood({ food, foodimageFile });
-  };
-
-  function handleChangeImgFood(event) {
-    const file = event.target.file[0];
-    setFoodImg(file);
-
-    const imagePreView = URL.createObjectURL(file);
-    setFoodImageFile(imagePreView);
-          
-  };
+    await updateFood({ food, foodImageFile });
+  };  
 
   return(
     <Container>
@@ -67,9 +65,8 @@ export function UpdateFood() {
             <div>
               <label htmlFor="inputImg">Imagem do prato</label>
               <section>
-                  <img src={foodPlaceholder}/>
-                <Avatar>
-                  
+                  <img src={foodImage}/>
+                <Avatar>                  
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M11.2929 0.292893C11.6834 -0.0976311 12.3166 -0.0976311 12.7071 0.292893L17.9571 5.54289C18.3476 5.93342 18.3476 6.56658 17.9571 6.95711C17.5666 7.34763 16.9334 7.34763 16.5429 6.95711L12 2.41421L7.45711 6.95711C7.06658 7.34763 6.43342 7.34763 6.04289 6.95711C5.65237 6.56658 5.65237 5.93342 6.04289 5.54289L11.2929 0.292893Z" fill="white"/>
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1.49012e-08C12.5523 1.49012e-08 13 0.447715 13 1V15C13 15.5523 12.5523 16 12 16C11.4477 16 11 15.5523 11 15V1C11 0.447715 11.4477 1.49012e-08 12 1.49012e-08Z" fill="white"/>
