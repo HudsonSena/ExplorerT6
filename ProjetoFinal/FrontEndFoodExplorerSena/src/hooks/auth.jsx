@@ -1,92 +1,97 @@
-import { createContext, useContext , useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { api } from "../services/api";
 
 const AuthContext = createContext({});
 
 function AuthProvider({ children }) {
-    const [data, setData] = useState({});
+  const [data, setData] = useState({});
 
-    async function signIn({ email, password }) {
-        try {
-           const response = await api.post("/sessions", { email, password });
-           const { user, token, admin } = response.data;
+  async function signIn({ email, password }) {
+    try {
+      const response = await api.post("/sessions", { email, password });
+      const { user, token, admin } = response.data;
 
-           localStorage.setItem("@foodexplorersena:user", JSON.stringify(user));
-           localStorage.setItem("@foodexplorersena:token", token);
-           localStorage.setItem("@foodexplorersena:admin", admin);
+      localStorage.setItem("@foodexplorersena:user", JSON.stringify(user));
+      localStorage.setItem("@foodexplorersena:token", token);
+      localStorage.setItem("@foodexplorersena:admin", admin);
 
-           api.defaults.headers.common['authorization'] = `Bearer ${token}`;
-           
-           setData({ user, token, admin });
+      api.defaults.headers.common["authorization"] = `Bearer ${token}`;
 
-        } catch(error) {
-            if(error.response) {
-                alert(error.response.data.message)
-            } else {
-                alert("Não foi possível entrar.")
-            }
-        }
-        
+      setData({ user, token, admin });
+    } catch (error) {
+      if (error.response) {
+        alert(error.response.data.message);
+      } else {
+        alert("Não foi possível entrar.");
+      }
     }
+  }
 
-    async function signOut() {
-        localStorage.removeItem("@foodexplorersena:token");
-        localStorage.removeItem("@foodexplorersena:user");
-        localStorage.removeItem("@foodexplorersena:admin");
+  async function signOut() {
+    localStorage.removeItem("@foodexplorersena:token");
+    localStorage.removeItem("@foodexplorersena:user");
+    localStorage.removeItem("@foodexplorersena:admin");
 
-        setData({});
+    setData({});
+  }
+
+  async function updateFood({ food, foodImageFile }) {
+    try {
+      if (foodImageFile) {
+        const fileUploadForm = new FormData();
+        fileUploadForm.append("foodimage", foodImageFile);
+
+        const response = await api.patch("foods/foodimage", fileUploadForm);
+        food.foodimage = response.data.foodimage;
+      }
+
+      await api.put("/foods", food);
+
+      alert("Prato Atualizado");
+    } catch (error) {
+      if (error.response) {
+        alert(error.repsonse.data.message);
+      } else {
+        alert("Não foi possível atualizar o prato");
+      }
     }
+  }
 
-    async function updateFood({ food, foodimageFile }) {
-        try {
-            if(foodimageFile) {
-                const fileUploadForm = new FormData();
-                fileUploadForm.append("foodimage", foodimageFile);
+  useEffect(() => {
+    const token = localStorage.getItem("@foodexplorersena:token");
+    const user = localStorage.getItem("@foodexplorersena:user");
+    const admin = localStorage.getItem("@foodexplorersena:admin");
 
-                const response = await api.patch("foods/foodimage", fileUploadForm);
-                food.foodimage = response.data.foodimage;
-            }
-            
-            await api.put("/foods", food);
+    if (token && user) {
+      api.defaults.headers.authorization = `Bearer ${token}`;
 
-            alert("Prato Atualizado");
-
-        } catch (error) {
-            if(error.response) {
-                alert(error.repsonse.data.message);
-            } else {
-                alert("Não foi possível atualizar o prato")
-            }
-        }
+      setData({
+        token,
+        admin,
+        user: JSON.parse(user),
+      });
     }
+  }, []);
 
-    useEffect(() => {
-        const token = localStorage.getItem("@foodexplorersena:token");
-        const user = localStorage.getItem("@foodexplorersena:user");
-        const admin = localStorage.getItem("@foodexplorersena:admin");
-
-        if (token && user) {
-            api.defaults.headers.authorization = `Bearer ${token}`;
-
-            setData({
-                token,
-                admin,
-                user: JSON.parse(user)
-            });
-        }
-    }, [])
-    
-    return (
-        <AuthContext.Provider value={{ signIn, signOut, updateFood, user: data.user, admin: data.admin }}>
-            {children}
-        </AuthContext.Provider>
-    )
+  return (
+    <AuthContext.Provider
+      value={{
+        signIn,
+        signOut,
+        updateFood,
+        user: data.user,
+        admin: data.admin,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
 }
 
 function useAuth() {
-    const context = useContext(AuthContext);
+  const context = useContext(AuthContext);
 
-    return context;
+  return context;
 }
 
 export { AuthProvider, useAuth };

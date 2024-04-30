@@ -13,13 +13,18 @@ const foodsRoutes = Router();
 const upload = multer(uploadConfig.MULTER);
 
 foodsRoutes.get("/", foodsController.index);
-foodsRoutes.get("/:id", foodsController.show)
+foodsRoutes.get("/:id", foodsController.show);
 
-foodsRoutes.use(ensureAuthenticated)
+foodsRoutes.use(ensureAuthenticated);
 
 foodsRoutes.post("/", upload.single("foodimage"), foodsController.create);
 foodsRoutes.delete("/", foodsController.delete);
-//foodsRoutes.patch("/:id/image", ensureAuthenticated, upload.single("image"), foodsImageController.update);
-foodsRoutes.put("/", foodsController.update);
+foodsRoutes.patch(
+  "/:id",
+  ensureAuthenticated,
+  upload.single("foodimage"),
+  foodsImageController.update
+);
+foodsRoutes.put("/:id", foodsController.update);
 
 module.exports = foodsRoutes;

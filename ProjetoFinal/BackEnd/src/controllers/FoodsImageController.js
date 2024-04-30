@@ -3,29 +3,42 @@ const AppError = require("../utils/AppError");
 const DiskStorage = require("../provides/DiskStorage");
 
 class FoodsImageController {
-    async update(request, response) {
-        const food_id = request.params;
-        const foodImageFilename = request.file.filename;
-        const diskStorage = new DiskStorage();
+  async update(request, response) {
+    const { id } = request.params;
+    const user_id = request.user.id;
+    const foodImageFilename = request.file.filename;
+    const diskStorage = new DiskStorage();
 
-        const food = await knex("foods").where({ id: food_id }).first();
+    const food = await knex("foods").where({ id }).first();
 
-        //Essa função é para colocar na parte de atualização(const user_id = request.user.id;) 
-        /*if(!user) {
-            throw new AppError("Somente usuários autenticados podem atualizar a imagem", 401);
-        }*/
-
-        if(food.foodimage){
-            await diskStorage.deleteFile(food.foodimage);
-        }
-
-        const filename = await diskStorage.saveFile(foodImageFilename)
-        food.foodimage = filename;
-
-        await knex("foods").update(food).where({ id: food_id });
-
-        return response.json(food);
+    if (!food) {
+      throw new Error("Alimento não encontrado");
     }
+
+    if (food && food.foodimage !== undefined) {
+      console.log(String(food.foodimage));
+    } else {
+      console.log("foodimage não está definido para este food");
+    }
+
+    if (!user_id) {
+      throw new AppError(
+        "Somente usuários autenticados podem atualizar a imagem",
+        401
+      );
+    }
+
+    if (food.foodimage) {
+      await diskStorage.deleteFile(food.foodimage);
+    }
+
+    const filename = await diskStorage.saveFile(foodImageFilename);
+    food.foodimage = filename;
+
+    await knex("foods").update(food).where({ id });
+
+    return response.json(food);
+  }
 }
 
 module.exports = FoodsImageController;
