@@ -82,7 +82,9 @@ export const Form = styled.form`
 
     img {
         width: 10rem;
+        height: 10rem;
         margin: 2rem;
+        object-fit: contain;
     }
 
     .newTags {

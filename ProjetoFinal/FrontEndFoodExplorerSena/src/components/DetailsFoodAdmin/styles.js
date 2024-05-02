@@ -9,6 +9,7 @@ export const Container = styled.div`
     img {
         max-width: 39rem;
         max-height: 39rem;
+        object-fit: contain;
     }
 
     .infoFood {

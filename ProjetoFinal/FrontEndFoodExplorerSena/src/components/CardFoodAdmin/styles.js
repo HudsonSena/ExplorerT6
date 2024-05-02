@@ -27,6 +27,7 @@ export const Container = styled.div`
     .imgFood {
         width: 176px;
         height: 176px;
+        object-fit: contain;
     }
 
     .btnDetails {
