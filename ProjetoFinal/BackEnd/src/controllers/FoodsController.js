@@ -198,7 +198,7 @@ class FoodsController {
 
   async update(request, response) {
     const user_id = request.user.id;
-    const { title, description, cost, tags } = request.body;
+    const { title, description, category, cost, tags } = request.body;
     const { id } = request.params;
 
     const database = await sqliteConnection();
@@ -224,16 +224,18 @@ class FoodsController {
     food.title = title ?? food.title;
     food.description = description ?? food.description;
     food.cost = cost ?? food.cost;
+    food.category = category ?? food.category;
 
     await database.run(
       `
             UPDATE foods SET
             title = ?,
             description = ?,
+            category = ?,
             cost = ?,
             updated_at = DATETIME('now')
             WHERE id = ?`,
-      [food.title, food.description, food.cost, id]
+      [food.title, food.description, food.category, food.cost, id]
     );
 
     await knex("tags").where({ food_id: id }).delete();
