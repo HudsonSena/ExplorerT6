@@ -24,9 +24,12 @@ export function CreateFood() {
   function handleChangeFoodImage(event) {
     const file = event.target.files[0];
     setFoodImageFile(file);
+    console.log(file);
+    //ajustar para filename, para ver como funciona
 
     const imagePreview = URL.createObjectURL(file);
     setFoodImage(imagePreview);
+    console.log(imagePreview);
   }
 
   const navigate = useNavigate();

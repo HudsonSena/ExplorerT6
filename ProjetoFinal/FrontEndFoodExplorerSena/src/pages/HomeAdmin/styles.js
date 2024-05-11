@@ -85,6 +85,11 @@ export const Content = styled.main`
         display: flex;
         flex-direction: row;
 
+        .swiper {
+            width: 600px;
+            height: 300px;
+        }
+
         .listFood {
             display: flex;
             flex-direction: row;

@@ -24,9 +24,9 @@ export const Container = styled.div`
         scale: 1.1;
     }
 
-    .imgFood {
-        width: 176px;
-        height: 176px;
+    img {
+        width: 17.6rem;
+        height: 17.6rem;
         object-fit: contain;
     }
 
