@@ -6,7 +6,7 @@ import { Input } from '../Input';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../hooks/auth';
 
-export function HeaderAdmin() {
+export function HeaderAdmin({ onChange }) {
     const { signOut } = useAuth();
 
     function clickMenu() {
@@ -36,8 +36,7 @@ export function HeaderAdmin() {
                     </div>
                 </div>
 
-                <Input placeholder="Busque por pratos ou ingredientes" type="text" icon={FiSearch} className='inputSearch' id="inputSearch"
-                    onChange={(e) => setSearch(e.target.value)} />
+                <Input placeholder="Busque por pratos ou ingredientes" type="text" icon={FiSearch} className='inputSearch' id="inputSearch" onChange={onChange} />
 
                 <div className='newplateSignOut'>
                     <Button title="Novo prato" to="/createfood" className="newFood"></Button>

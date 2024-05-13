@@ -20,9 +20,7 @@ foodsRoutes.use(ensureAuthenticated);
 foodsRoutes.post("/", upload.single("foodimage"), foodsController.create);
 foodsRoutes.delete("/", foodsController.delete);
 foodsRoutes.patch(
-  "/:id",
-  ensureAuthenticated,
-  upload.single("foodimage"),
+  "/:id", upload.single("foodimage"),
   foodsImageController.update
 );
 foodsRoutes.put("/:id", foodsController.update);

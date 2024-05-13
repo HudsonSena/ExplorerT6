@@ -5,10 +5,10 @@ import imgHome from '../../assets/home.svg';
 import { CardFoodAdmin } from '../../components/CardFoodAdmin';
 //import imageFood from '../../assets/Mask group-2.png';
 //import { Navigation, A11y, Pagination } from 'swiper/modules';
-import Swiper from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, A11y, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 import { useEffect, useState } from 'react';
 import { api } from '../../services/api';
 
@@ -22,29 +22,9 @@ export function HomeAdmin() {
             setFoods(response.data);
         }
         fetchFoods();
-    }, [search]);
+    }, [, search]);
 
-    const swiper = new Swiper('.swiper', {
-        // Optional parameters
-        direction: 'vertical',
-        loop: false,
 
-        // If we need pagination
-        pagination: {
-            el: '.swiper-pagination',
-        },
-
-        // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-
-        // And if we need scrollbar
-        scrollbar: {
-            el: '.swiper-scrollbar',
-        },
-    });
 
     return (
         <Container>
@@ -59,37 +39,89 @@ export function HomeAdmin() {
                     </div>
                 </div>
 
-                <h2>Testando</h2>
-
-                <section>
-                    {
-                        foods.map(food => (
-                            <CardFoodAdmin
-                                key={String(food.id)}
-                                data={food}
-                            />
-                        ))
-
-                    }
-                </section>
-
                 <h2>Refeições</h2>
 
-                <section>
-
-                </section>
+                <div>
+                    <Swiper
+                        className='wiperId'
+                        modules={[Navigation, A11y, Pagination]}
+                        breakpoints={{ 1800: { slidesPerView: 4.5 }, 1500: { slidesPerView: 4 }, 1300: { slidesPerView: 3 }, 1100: { esPerView: 2.5 }, 700: { slidesPerView: 2 } }}
+                        loop={true}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        navigation
+                        onSwiper={(swiper) => console.log(swiper)}
+                        onSlideChange={() => console.log('slide change')}
+                    >
+                        {
+                            foods.filter(food => food.category === 'Refeições').map(food => (
+                                <SwiperSlide>
+                                    <CardFoodAdmin
+                                        key={String(food.id)}
+                                        data={food}
+                                    />
+                                </SwiperSlide>
+                            ))
+                        }
+                    </Swiper>
+                </div>
 
                 <h2>Sobremesas</h2>
 
-                <section>
-
-                </section>
+                <div>
+                    <Swiper
+                        className='wiperId'
+                        modules={[Navigation, A11y, Pagination]}
+                        breakpoints={{ 1800: { slidesPerView: 4.5 }, 1500: { slidesPerView: 4 }, 1300: { slidesPerView: 3 }, 1100: { esPerView: 2.5 }, 700: { slidesPerView: 2 } }}
+                        loop={true}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        navigation
+                        onSwiper={(swiper) => console.log(swiper)}
+                        onSlideChange={() => console.log('slide change')}
+                    >
+                        {
+                            foods.filter(food => food.category === 'sobremesas').map(food => (
+                                <SwiperSlide>
+                                    <CardFoodAdmin
+                                        key={String(food.id)}
+                                        data={food}
+                                    />
+                                </SwiperSlide>
+                            ))
+                        }
+                    </Swiper>
+                </div>
 
                 <h2>Bebidas</h2>
 
-                <section>
-
-                </section>
+                <div>
+                    <Swiper
+                        className='wiperId'
+                        modules={[Navigation, A11y, Pagination]}
+                        breakpoints={{ 1800: { slidesPerView: 4.5 }, 1500: { slidesPerView: 4 }, 1300: { slidesPerView: 3 }, 1100: { esPerView: 2.5 }, 700: { slidesPerView: 2 } }}
+                        loop={true}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        navigation
+                        onSwiper={(swiper) => console.log(swiper)}
+                        onSlideChange={() => console.log('slide change')}
+                    >
+                        {
+                            foods.filter(food => food.category === 'bebidas').map(food => (
+                                <SwiperSlide>
+                                    <CardFoodAdmin
+                                        key={String(food.id)}
+                                        data={food}
+                                    />
+                                </SwiperSlide>
+                            ))
+                        }
+                    </Swiper>
+                </div>
             </Content>
             <Footer />
         </Container>
