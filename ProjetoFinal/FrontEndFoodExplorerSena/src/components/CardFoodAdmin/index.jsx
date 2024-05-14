@@ -9,16 +9,12 @@ export function CardFoodAdmin({ data, ...rest }) {
     ? `${api.defaults.baseURL}/files/${data.foodimage}`
     : imgPlaceholder;
 
-  const formatValue = (value) => {
-    return value < 10 ? `0${value}` : value;
-  };
-
   return (
     <Container {...rest}>
       <ButtonText
         icon={PiPencilSimpleBold}
         className="btnEdit"
-        to="/updatefood"
+        to={`/updatefood/${data.id}`}
       />
       <img src={imgURL} className="imgFood" />
       <ButtonText

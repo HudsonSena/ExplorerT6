@@ -21,10 +21,6 @@ export function DetailsAdmin() {
     fetchNote();
   }, []);
 
-  const formatValue = (value) => {
-    return value < 10 ? `0${value}` : value;
-  };
-
   return (
     <Container>
       <HeaderAdmin />
@@ -37,7 +33,6 @@ export function DetailsAdmin() {
           <div className="sectionFood">
             <img
               src={`${api.defaults.baseURL}/files/${data.foodimage}`}
-              alt=""
             />
             <div className="infoFood">
               <h1>{data.title}</h1>
