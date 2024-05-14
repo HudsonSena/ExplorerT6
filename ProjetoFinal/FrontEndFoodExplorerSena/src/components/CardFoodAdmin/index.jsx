@@ -12,6 +12,7 @@ export function CardFoodAdmin({ data, ...rest }) {
   const formatValue = (value) => {
     return value < 10 ? `0${value}` : value;
   };
+
   return (
     <Container {...rest}>
       <ButtonText
@@ -23,7 +24,7 @@ export function CardFoodAdmin({ data, ...rest }) {
       <ButtonText
         value={data.title}
         className="btnDetails"
-        to="/detailsadmin"
+        to={`/detailsadmin/${data.id}`}
       />
       <p>{data.description}</p>
       <span>

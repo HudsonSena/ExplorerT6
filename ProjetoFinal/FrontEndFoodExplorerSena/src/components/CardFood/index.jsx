@@ -1,49 +1,59 @@
-import { Container } from './styles';
-import { Button } from '../Button';
-import { ButtonText } from '../ButtonText';
-import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
-import { GoHeartFill } from 'react-icons/go';
-import { useState } from 'react';
-import { api } from '../../services/api';
-import foodPlaceholder from '../../assets/foodimage_placeholder.svg';
+import { Container } from "./styles";
+import { Button } from "../Button";
+import { ButtonText } from "../ButtonText";
+import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+import { GoHeartFill } from "react-icons/go";
+import { useState } from "react";
+import { api } from "../../services/api";
+import imgPlaceholder from "../../assets/foodimage_placeholder.svg";
 
 export function CardFood({ data, ...rest }) {
-    let [count, setCount] = useState(0);
-    const [isFavorite, setIsFavorite] = useState(false); // Novo estado para marcar o card como favorito
+  const imgURL = data.foodimage
+    ? `${api.defaults.baseURL}/files/${data.foodimage}`
+    : imgPlaceholder;
 
-    if (count < 0) {
-        count = 0
-    }
+  const formatValue = (value) => {
+    return value < 10 ? `0${value}` : value;
+  };
 
-    const foodimageUrl = foodPlaceholder;
+  let [count, setCount] = useState(0);
+  const [isFavorite, setIsFavorite] = useState(false);
 
-    return (
-        <Container {...rest} to="/details">
-            <ButtonText
-            icon={GoHeartFill}
-            className='btnfavority'
-            onClick={() => setIsFavorite(!isFavorite)} // Toggle para marcar/desmarcar como favorito
-            style={{ color: isFavorite ? 'red' : 'white' }} // Altera a cor do ícone com base no estado de favorito
-            />
+  if (count < 0) {
+    count = 0;
+  }
 
-            <img src={foodimageUrl} className='imgFood' />
-            <ButtonText value={data.title} className='btnDetails' to="/details"/>
-            <p>{data.description}</p>
-            <span>R${data.cost}</span>
-            <div>
-                <ButtonText
-                    icon={AiOutlineMinus}
-                    onClick={() => setCount(count - 1)}
-                />
+  return (
+    <Container {...rest} to="/details">
+      <ButtonText
+        icon={GoHeartFill}
+        className="btnfavority"
+        onClick={() => setIsFavorite(!isFavorite)}
+        style={{ color: isFavorite ? "red" : "white" }}
+      />
 
-                <h4>{count}</h4>
+      <img src={imgURL} className="imgFood" />
+      <ButtonText
+        value={data.title}
+        className="btnDetails"
+        to={`/details/${data.id}`}
+      />
+      <p>{data.description}</p>
+      <span>
+        R$
+        {parseFloat(data.cost).toLocaleString("pt-BR", {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        })}
+      </span>
+      <div>
+        <ButtonText icon={AiOutlineMinus} onClick={() => setCount(count - 1)} />
 
-                <ButtonText
-                    icon={AiOutlinePlus}
-                    onClick={() => setCount(count + 1)}
-                />
-                <Button title='Incluir' className='buttonIncluir' />
-            </div>
-        </Container>
-    );
+        <h4>{count}</h4>
+
+        <ButtonText icon={AiOutlinePlus} onClick={() => setCount(count + 1)} />
+        <Button title="Incluir" className="buttonIncluir" />
+      </div>
+    </Container>
+  );
 }

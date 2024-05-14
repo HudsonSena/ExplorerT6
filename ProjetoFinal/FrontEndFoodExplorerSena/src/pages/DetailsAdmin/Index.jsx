@@ -1,35 +1,74 @@
-import { Container, Content } from './styles';
-import { HeaderAdmin } from '../../components/HeaderAdmin';
-import { Footer } from '../../components/Footer';
-import { DetailsFoodAdmin } from '../../components/DetailsFoodAdmin';
-import { Link } from 'react-router-dom';
-import { IoIosArrowBack } from 'react-icons/io';
-import imageFood from '../../assets/Mask group-2.png';
+import { Container, Content } from "./styles";
+import { HeaderAdmin } from "../../components/HeaderAdmin";
+import { Footer } from "../../components/Footer";
+import { Link, useParams } from "react-router-dom";
+import { IoIosArrowBack } from "react-icons/io";
+import { useEffect, useState } from "react";
+import { api } from "../../services/api";
+import { Tag } from "../../components/Tag";
+import { Button } from "../../components/Button";
 
-export function DetailsAdmin({ data, ...rest }) {
-  return(
+export function DetailsAdmin() {
+  const [data, setData] = useState(null);
+  const params = useParams();
+
+  useEffect(() => {
+    async function fetchNote() {
+      const response = await api.get(`/foods/${params.id}`);
+      setData(response.data);
+    }
+
+    fetchNote();
+  }, []);
+
+  const formatValue = (value) => {
+    return value < 10 ? `0${value}` : value;
+  };
+
+  return (
     <Container>
       <HeaderAdmin />
-      <Content {...rest}>
-        <Link to={-1}><IoIosArrowBack />voltar</Link>
-        <DetailsFoodAdmin
-          data={
-            {
-              image: imageFood,
-              title: 'Cuscuz Gourmet',
-              description: 'Um Cuscuz da hora, com muito queijo e calabresa, quem sabe algo mais...',
-              cost: 2.99,
-              tags: [
-                {id:'1', name:"cuscuz"},
-                {id:'2', name:"queijo"},
-                {id:'3', name:"calabresa"},
-                {id:'4', name:"tomate"}
-              ] 
-            }
-          }
-        />
+      <Content>
+        <Link to={-1}>
+          <IoIosArrowBack />
+          voltar
+        </Link>
+        {data && (
+          <div className="sectionFood">
+            <img
+              src={`${api.defaults.baseURL}/files/${data.foodimage}`}
+              alt=""
+            />
+            <div className="infoFood">
+              <h1>{data.title}</h1>
+              <p>{data.description}</p>
+
+              {data.tags && (
+                <section className="tagsline">
+                  {data.tags.map((tag) => (
+                    <Tag key={tag.id} title={tag.name} />
+                  ))}
+                </section>
+              )}
+
+              <div className="btnEditdiv">
+                <Button
+                  title={
+                    "Editar Prato - Valor: R$ " +
+                    parseFloat(data.cost).toLocaleString("pt-BR", {
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2,
+                    })
+                  }
+                  to={`/updatefood/${data.id}`}
+                  className="btnEdit"
+                />
+              </div>
+            </div>
+          </div>
+        )}
       </Content>
       <Footer />
     </Container>
-  )
-};
+  );
+}

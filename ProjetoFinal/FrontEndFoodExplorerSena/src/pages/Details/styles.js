@@ -1,57 +1,124 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
-    width: 100%;
-    height: 100vh;
-    display: grid;
-    grid-template-rows: 10.4rem auto 7.7rem;
-    grid-template-areas: 
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 10.4rem auto 7.7rem;
+  grid-template-areas:
     "header"
     "content"
-    "footer"
-    ;
+    "footer";
 `;
 
 export const Content = styled.main`
-    grid-area: content;
-    max-width: 100%;
-    height: 100%;
-    padding: 2.4rem 12.3rem;
+  grid-area: content;
+  max-width: 100%;
+  height: 100%;
+  padding: 2.4rem 12.3rem;
 
+  display: flex;
+  flex-direction: column;
+  gap: 4.2rem;
+
+  color: ${({ theme }) => theme.colors.txtDescription};
+  font-family: "Poppins";
+
+  a {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+
+    font-size: 2.4rem;
+    font-weight: bold;
+
+    color: ${({ theme }) => theme.colors.txtBtn1};
+  }
+
+  .sectionFood {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  img {
+    width: 39rem;
+    height: 39rem;
+    border-radius: 50%;
+  }
+
+  .infoFood {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 4.2rem;
 
-    color: ${({ theme }) => theme.colors.txtDescription};
-    font-family: 'Poppins';
+    gap: 2.4rem;
 
-    a {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 1rem;
-
-        font-size: 2.4rem;
-        font-weight: bold;
-
-        color: ${({ theme }) => theme.colors.txtBtn1}
+    h1 {
+      font-size: 4rem;
+      font-weight: 500;
     }
 
-    > svg > path {
-        fill: ${({ theme }) => theme.colors.txtDescription};
-        font-size: 2.4rem;
+    p {
+      font-size: 2.4rem;
     }
 
-    > div > button {        
-        color: ${({ theme }) => theme.colors.txtDescription};
-        font-weight: bold;
-        font-size: 2.4rem;
-        letter-spacing: .1rem;
+    .tagsline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      width: 100%;
     }
 
-    @media (max-width: 920px){
-        padding: 5.6rem;        
-        padding-top: 3rem;
-        align-content: space-evenly;
+    .btnEditdiv {
+      display: flex;
+      margin-top: 2.4rem;
+      gap: 2rem;
     }
+
+    .plusminus {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .btnEdit {
+      width: auto;
+
+      font-family: "Roboto";
+      font-size: 1.4rem;
+
+      white-space: nowrap;
+    }
+  }
+
+  @media (max-width: 920px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 26rem;
+      height: 26rem;
+      border-radius: 50%;
+    }
+
+    .infoFood {
+      align-items: center;
+
+      p {
+        text-align: center;
+      }
+      .tagsline {
+        width: 90%;
+        flex-wrap: wrap;
+        gap: none;
+        justify-content: space-evenly;
+      }
+    }
+  }
 `;

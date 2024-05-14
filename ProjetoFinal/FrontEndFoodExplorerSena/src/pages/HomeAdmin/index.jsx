@@ -3,8 +3,6 @@ import { HeaderAdmin } from "../../components/HeaderAdmin";
 import { Footer } from "../../components/Footer";
 import imgHome from "../../assets/home.svg";
 import { CardFoodAdmin } from "../../components/CardFoodAdmin";
-//import imageFood from '../../assets/Mask group-2.png';
-//import { Navigation, A11y, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, A11y, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -18,11 +16,11 @@ export function HomeAdmin() {
 
   useEffect(() => {
     async function fetchFoods() {
-      const response = await api.get(`/foods?title=${search}&tags=${search}`);
+      const response = await api.get(`/foods?title=${search}`);
       setFoods(response.data);
     }
     fetchFoods();
-  }, [, search]);
+  }, [search]);
 
   return (
     <Container>
@@ -54,8 +52,6 @@ export function HomeAdmin() {
               clickable: true,
             }}
             navigation
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log("slide change")}
           >
             {foods
               .filter((food) => food.category === "Refeições")
@@ -85,11 +81,9 @@ export function HomeAdmin() {
               clickable: true,
             }}
             navigation
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log("slide change")}
           >
             {foods
-              .filter((food) => food.category == "sobremesas")
+              .filter((food) => food.category == "Sobremesas")
               .map((food) => (
                 <SwiperSlide>
                   <CardFoodAdmin key={String(food.id)} data={food} />
@@ -116,11 +110,9 @@ export function HomeAdmin() {
               clickable: true,
             }}
             navigation
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log("slide change")}
           >
             {foods
-              .filter((food) => food.category === "bebidas")
+              .filter((food) => food.category === "Bebidas")
               .map((food) => (
                 <SwiperSlide>
                   <CardFoodAdmin key={String(food.id)} data={food} />
