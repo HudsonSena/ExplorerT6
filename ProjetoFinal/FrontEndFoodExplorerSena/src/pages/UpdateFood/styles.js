@@ -85,6 +85,7 @@ export const Form = styled.form`
         height: 10rem;
         margin: 2rem;
         object-fit: contain;
+        border-radius: 50%;
     }
 
     .newTags {

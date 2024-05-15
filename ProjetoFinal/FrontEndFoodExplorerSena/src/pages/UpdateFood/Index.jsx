@@ -1,31 +1,40 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Container, Content, Form, Avatar } from "./styles";
 import { Footer } from "../../components/Footer";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 import { Textarea } from "../../components/Textarea";
 import { FoodItem } from "../../components/FoodItem";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import { HeaderAdmin } from "../../components/HeaderAdmin";
-import { useAuth } from "../../hooks/auth";
 import { api } from "../../services/api";
 import foodPlaceholder from "../../assets/foodimage_placeholder.svg";
 import { FiUpload } from "react-icons/fi";
 
 export function UpdateFood() {
-  const { updateFood } = useAuth();
   const [tags, setTags] = useState([]);
   const [newTag, setNewTag] = useState("");
   const [newCost, setNewCost] = useState();
   const [newDescription, setNewDescription] = useState();
-
-  const foodimageUrl = food.foodimage
-    ? `${api.defaults.baseURL}/files/${food.foodimage}`
-    : foodPlaceholder;
-
-  const [foodImage, setFoodImage] = useState(foodimageUrl);
+  const [data, setData] = useState("");
+  const params = useParams();
+  const [foodImage, setFoodImage] = useState(foodPlaceholder);
   const [foodImageFile, setFoodImageFile] = useState(null);
+
+  useEffect(() => {
+    async function fetchNote() {
+      const response = await api.get(`/foods/${params.id}`);
+      setData(response.data);
+      if (response.data.foodimage) {
+        setFoodImage(`${api.defaults.baseURL}/files/${response.data.foodimage}`);
+      }
+    }
+
+    fetchNote();
+  }, []);
+
+
 
   function handleChangeImgFood(event) {
     const file = event.target.files[0];
@@ -74,7 +83,7 @@ export function UpdateFood() {
               <section>
                 <img src={foodImage} />
                 <Avatar>
-                <FiUpload size={30} />
+                  <FiUpload size={30} />
                   <label htmlFor="inputImg">Selecione imagem</label>
                   <input
                     id="inputImg"
