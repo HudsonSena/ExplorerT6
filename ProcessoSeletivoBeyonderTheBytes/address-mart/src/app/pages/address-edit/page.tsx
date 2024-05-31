@@ -1,12 +1,9 @@
-import Link from "next/link";
-
-export default function Home() {
+export default function addressPage() {
   return (
     <main className="flex min-h-screen flex-col gap-10 items-center justify-center">
       <h1 className="text-lg font-semibold">Correio interplanetário</h1>
       <nav className="flex flex-col gap-5 justify-center items-center">
-        <Link href="/pages/sign-up">Cadastre-se</Link>
-        <Link href="/pages/address-edit">Editar Endereço</Link>
+        <h1>Editar Endereço</h1>
       </nav>
     </main>
   );
