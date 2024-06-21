@@ -4,12 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "lite-server"
+    "dev": "lite-server"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "lite-server": "^2.6.1"
-  }
+  "license": "ISC"
 }
