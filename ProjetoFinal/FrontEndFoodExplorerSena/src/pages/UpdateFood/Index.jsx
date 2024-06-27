@@ -33,7 +33,7 @@ export function UpdateFood() {
 
       setTitle(response.data.title);
       setCategory(response.data.category);
-      setTags(response.data.tags);
+      setTags(response.data.tags.map(tag => tag.name));
       setCost(response.data.cost);
       setDescription(response.data.description);
 
@@ -168,13 +168,6 @@ export function UpdateFood() {
               <div>
                 <label htmlFor="inputIngred">Ingredientes</label>
                 <div className="newTags">
-                  {tags.map((tag, index) => (
-                    <FoodItem
-                      key={String(index)}
-                      value={tag}
-                      onClick={() => handleRemoveTag(tag)}
-                    />
-                  ))}
                   <FoodItem
                     isNew
                     placeholder="Adicionar"
@@ -182,6 +175,13 @@ export function UpdateFood() {
                     value={newTag}
                     onClick={handleAddTag}
                   />
+                  {tags.map((tag, index) => (
+                    <FoodItem
+                      key={String(index)}
+                      value={tag}
+                      onClick={() => handleRemoveTag(tag)}
+                    />
+                  ))}
                 </div>
               </div>
               <div className="sectioncost">
