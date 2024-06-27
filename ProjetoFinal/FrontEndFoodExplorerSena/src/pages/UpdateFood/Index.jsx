@@ -5,7 +5,7 @@ import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 import { Textarea } from "../../components/Textarea";
 import { FoodItem } from "../../components/FoodItem";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import { HeaderAdmin } from "../../components/HeaderAdmin";
 import { api } from "../../services/api";
@@ -13,10 +13,29 @@ import foodPlaceholder from "../../assets/foodimage_placeholder.svg";
 import { FiUpload } from "react-icons/fi";
 
 export function UpdateFood() {
+  const [data, setData] = useState(null);
+  const params = useParams();
+  const navigate = useNavigate();
+
+  const [title, setTitle] = useState("");
+  const [category, setCategory] = useState("");
+  const [description, setDescription] = useState("");
+  const [tags, setTags] = useState([]);
+  const [newTag, setNewTag] = useState("");
+  const [cost, setCost] = useState("");
+  const [foodImage, setFoodImage] = useState(foodPlaceholder);
+  const [foodImageFile, setFoodImageFile] = useState(null);
+
   useEffect(() => {
     async function fetchNote() {
       const response = await api.get(`/foods/${params.id}`);
       setData(response.data);
+
+      setTitle(response.data.title);
+      setCategory(response.data.category);
+      setTags(response.data.tags);
+      setCost(response.data.cost);
+      setDescription(response.data.description);
 
       if (response.data.foodimage) {
         setFoodImage(`${api.defaults.baseURL}/files/${response.data.foodimage}`);
@@ -24,29 +43,23 @@ export function UpdateFood() {
     }
 
     fetchNote();
-  }, []);
-
-  const [data, setData] = useState(null);
-  const params = useParams();
-
-  const [newCategory, setNewCategory] = useState("")
-  const [newTag, setNewTag] = useState("");
-  const [newCost, setNewCost] = useState("");
-  const [newDescription, setNewDescription] = useState();
-  const [foodImage, setFoodImage] = useState(foodPlaceholder);
-  const [foodImageFile, setFoodImageFile] = useState(null);
+  }, [params.id]);
 
   function handleChangeImgFood(event) {
     const file = event.target.files[0];
     setFoodImageFile(file);
 
-    const imagePreView = URL.createObjectURL(file);
-    setFoodImage(imagePreView);
+    const imagePreview = URL.createObjectURL(file);
+    setFoodImage(imagePreview);
   }
 
   function handleAddTag() {
-    setTags((prevState) => [...prevState, newTag]);
-    setNewTag("");
+    if (newTag.trim() !== "") {
+      setTags((prevState) => [...prevState, newTag]);
+      setNewTag("");
+    } else {
+      alert("Você deixou em branco!");
+    }
   }
 
   function handleRemoveTag(deleted) {
@@ -54,15 +67,47 @@ export function UpdateFood() {
   }
 
   async function handleUpdateFood() {
-    const food = {
-      title,
-      category: newCategory,
-      tags: newTag,
-      cost: newCost,
-      description: newDescription,
-    };
+    try {
+      if (!foodImageFile && !foodImage) {
+        return alert("Você deixou sem imagem!");
+      }
 
-    await updateFood({ food, foodImageFile });
+      if (!title) {
+        return alert("Você deixou o título em Branco!");
+      }
+
+      if (!category) {
+        return alert("Você não escolheu a categoria!");
+      }
+
+      if (newTag) {
+        return alert("Você deixou um ingrediente em branco ou não adicionou!");
+      }
+
+      if (!cost) {
+        return alert("Você não colocou o valor do prato!");
+      }
+
+      const fileUploadForm = new FormData();
+      if (foodImageFile) {
+        fileUploadForm.append("foodimage", foodImageFile);
+      }
+      fileUploadForm.append("title", title);
+      fileUploadForm.append("category", category);
+      fileUploadForm.append("description", description);
+      tags.forEach((tag) => fileUploadForm.append("tags[]", tag));
+      fileUploadForm.append("cost", cost);
+
+      await api.put(`/foods/${params.id}`, fileUploadForm);
+
+      alert("Prato atualizado com sucesso!");
+      navigate("/");
+    } catch (error) {
+      console.error("Erro ao atualizar prato:", error);
+      alert(
+        "Erro ao atualizar prato. Verifique os detalhes e tente novamente."
+      );
+    }
   }
 
   return (
@@ -99,13 +144,19 @@ export function UpdateFood() {
                 <Input
                   id="inputName"
                   type="text"
-                  placeholder={data.title}
-                  disabled
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
                 />
               </div>
               <div>
                 <label htmlFor="inputCategory">Categoria</label>
-                <Input id="inputCategory" type="search" list="category" placeholder={data.category} />
+                <Input
+                  id="inputCategory"
+                  type="search"
+                  list="category"
+                  onChange={(e) => setCategory(e.target.value)}
+                  value={category}
+                />
                 <datalist id="category">
                   <option value="Refeições" />
                   <option value="Sobremesas" />
@@ -117,7 +168,7 @@ export function UpdateFood() {
               <div>
                 <label htmlFor="inputIngred">Ingredientes</label>
                 <div className="newTags">
-                  {data.tags.map((tag, index) => (
+                  {tags.map((tag, index) => (
                     <FoodItem
                       key={String(index)}
                       value={tag}
@@ -128,6 +179,7 @@ export function UpdateFood() {
                     isNew
                     placeholder="Adicionar"
                     onChange={(e) => setNewTag(e.target.value)}
+                    value={newTag}
                     onClick={handleAddTag}
                   />
                 </div>
@@ -137,11 +189,11 @@ export function UpdateFood() {
                 <Input
                   id="inputCost"
                   type="number"
-                  placeholder={`R$ ${data.cost}`}
-                  step="0.00"
+                  value={cost}
+                  onChange={(e) => setCost(e.target.value)}
+                  step="0.01"
                   min="0.00"
                   max="10000.00"
-                  onChange={setNewCost}
                 />
               </div>
             </div>
@@ -149,15 +201,14 @@ export function UpdateFood() {
               <label htmlFor="inputDescription">Descrição</label>
               <Textarea
                 id="inputDescription"
-                placeholder={data.description}
-                onChange={(e) => setNewDescription(e.target.value)}
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
               />
             </div>
             <div className="deleteUpdate">
               <Button title="Excluir prato" id="deleteFood" />
               <Button
                 title="Salvar Alterações"
-                disabled={true}
                 id="addFood"
                 onClick={handleUpdateFood}
               />

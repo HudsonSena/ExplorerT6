@@ -32,8 +32,13 @@ export function CreateFood() {
   const navigate = useNavigate();
 
   function handleAddTag() {
-    setTags((prevState) => [...prevState, newTag]);
-    setNewTag("");
+    if (!newTag) {
+      alert("Você deixou em branco!");
+    } else {
+      setTags((prevState) => [...prevState, newTag]);
+      setNewTag("");
+    }
+
   }
 
   function handleRemoveTag(deleted) {
@@ -141,7 +146,8 @@ export function CreateFood() {
                 <FoodItem
                   isNew
                   placeholder="Adicionar"
-                  onChange={(e) => setNewTag(e.target.value)}
+                  onChange={(e) => setNewTag(e.target.name)}
+                  name={newTag}
                   value={newTag}
                   onClick={handleAddTag}
                 />
