@@ -68,6 +68,9 @@ export function CreateFood() {
       }
 
       const fileUploadForm = new FormData();
+      if (foodImageFile) {
+        fileUploadForm.append("foodimage", foodImageFile);
+      }
       fileUploadForm.append("foodimage", foodImageFile);
       fileUploadForm.append("title", title);
       fileUploadForm.append("category", category);

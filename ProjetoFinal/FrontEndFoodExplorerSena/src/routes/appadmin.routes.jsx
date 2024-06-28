@@ -1,9 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 
-import { CreateFood } from "../pages/CreateFood";
-import { UpdateFood } from "../pages/UpdateFood";
-import { DetailsAdmin } from "../pages/DetailsAdmin";
-import { HomeAdmin } from "../pages/HomeAdmin";
+import { CreateFood } from "../pages/CreateFood/Index";
+import { UpdateFood } from "../pages/UpdateFood/Index";
+import { DetailsAdmin } from "../pages/DetailsAdmin/Index";
+import { HomeAdmin } from "../pages/HomeAdmin/index";
 
 export function AppAdminRoutes() {
   return (

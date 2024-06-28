@@ -72,19 +72,19 @@ export function UpdateFood() {
         return alert("Você deixou sem imagem!");
       }
 
-      if (!title) {
+      if (!title.trim()) {
         return alert("Você deixou o título em Branco!");
       }
 
-      if (!category) {
+      if (!category.trim()) {
         return alert("Você não escolheu a categoria!");
       }
 
-      if (newTag) {
+      if (newTag.trim()) {
         return alert("Você deixou um ingrediente em branco ou não adicionou!");
       }
 
-      if (!cost) {
+      if (!cost.trim()) {
         return alert("Você não colocou o valor do prato!");
       }
 
@@ -98,15 +98,30 @@ export function UpdateFood() {
       tags.forEach((tag) => fileUploadForm.append("tags[]", tag));
       fileUploadForm.append("cost", cost);
 
+      // Logging data for debugging
+      console.log("FormData values:");
+      for (let pair of fileUploadForm.entries()) {
+        console.log(`${pair[0]}: ${pair[1]}`);
+      }
+
       await api.put(`/foods/${params.id}`, fileUploadForm);
 
       alert("Prato atualizado com sucesso!");
-      navigate("/");
+      navigate(-1);
     } catch (error) {
       console.error("Erro ao atualizar prato:", error);
       alert(
         "Erro ao atualizar prato. Verifique os detalhes e tente novamente."
       );
+    }
+  }
+
+  async function handleRemoveFood() {
+    const confirm = window.confirm("Deseja realmente deletar este prato?");
+
+    if (confirm) {
+      await api.delete(`/foods/${params.id}`);
+      navigate(-1);
     }
   }
 
@@ -127,7 +142,7 @@ export function UpdateFood() {
               <div>
                 <label htmlFor="inputImg">Imagem do prato</label>
                 <section>
-                  <img src={foodImage} />
+                  <img src={foodImage} alt="Food" />
                   <Avatar>
                     <FiUpload size={30} />
                     <label htmlFor="inputImg">Selecione imagem</label>
@@ -206,7 +221,7 @@ export function UpdateFood() {
               />
             </div>
             <div className="deleteUpdate">
-              <Button title="Excluir prato" id="deleteFood" />
+              <Button title="Excluir prato" id="deleteFood" onClick={handleRemoveFood} />
               <Button
                 title="Salvar Alterações"
                 id="addFood"

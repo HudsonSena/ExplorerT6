@@ -18,7 +18,7 @@ foodsRoutes.get("/:id", foodsController.show);
 foodsRoutes.use(ensureAuthenticated);
 
 foodsRoutes.post("/", upload.single("foodimage"), foodsController.create);
-foodsRoutes.delete("/", foodsController.delete);
+foodsRoutes.delete("/:id", foodsController.delete);
 foodsRoutes.patch(
   "/:id", upload.single("foodimage"),
   foodsImageController.update

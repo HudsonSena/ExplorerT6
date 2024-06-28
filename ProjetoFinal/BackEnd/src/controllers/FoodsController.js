@@ -58,12 +58,7 @@ class FoodsController {
   }
 
   async delete(request, response) {
-    const user_id = request.user.id;
     const { id } = request.params;
-
-    if (!user_id) {
-      throw new AppError("usuário inválido");
-    }
 
     await knex("foods").where({ id }).delete();
 
@@ -197,20 +192,11 @@ class FoodsController {
   }
 
   async update(request, response) {
-    const user_id = request.user.id;
-    const { title, description, category, cost, tags } = request.body;
     const { id } = request.params;
+    const { title, description, category, cost, tags } = request.body;
 
     const database = await sqliteConnection();
     const food = await database.get("SELECT * FROM foods WHERE id = (?)", [id]);
-
-    if (!food) {
-      throw new AppError("Prato não encontrado no menu");
-    }
-
-    if (!user_id) {
-      throw new AppError("usuário inválido");
-    }
 
     const foodWithUpdatedTitle = await database.get(
       "SELECT * FROM foods WHERE title = (?)",
@@ -243,7 +229,7 @@ class FoodsController {
     const tagsInsert = tags.map((name) => {
       return {
         food_id: id,
-        user_id,
+        user_id: food.user_id,
         name,
       };
     });
