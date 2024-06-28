@@ -146,8 +146,7 @@ export function CreateFood() {
                 <FoodItem
                   isNew
                   placeholder="Adicionar"
-                  onChange={(e) => setNewTag(e.target.name)}
-                  name={newTag}
+                  onChange={(e) => setNewTag(e.target.value)}
                   value={newTag}
                   onClick={handleAddTag}
                 />

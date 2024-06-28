@@ -48,6 +48,7 @@ export const Content = styled.main`
     width: 39rem;
     height: 39rem;
     border-radius: 50%;
+    object-fit: contain;
   }
 
   .infoFood {
@@ -119,6 +120,13 @@ export const Content = styled.main`
         gap: none;
         justify-content: space-evenly;
       }
+    }
+  }
+
+  @media (max-width: 790px) {
+    .sectionFood {
+      display: flex;
+      flex-direction: column;
     }
   }
 `;

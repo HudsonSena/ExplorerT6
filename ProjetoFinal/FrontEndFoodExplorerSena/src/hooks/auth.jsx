@@ -50,7 +50,7 @@ function AuthProvider({ children }) {
       alert("Prato Atualizado");
     } catch (error) {
       if (error.response) {
-        alert(error.repsonse.data.message);
+        alert(error.response.data.message);
       } else {
         alert("Não foi possível atualizar o prato");
       }
