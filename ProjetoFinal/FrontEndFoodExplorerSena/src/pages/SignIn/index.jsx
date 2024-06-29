@@ -15,6 +15,12 @@ export function SignIn() {
         signIn({ email, password });
     }
 
+    function handleKeyDown(event) {
+        if (event.key === "Enter") {
+            handleSignIn();
+        }
+    }
+
     return (
         <Container>
             <div>
@@ -34,6 +40,7 @@ export function SignIn() {
                         type="email"
                         size="40"
                         onChange={e => setEmail(e.target.value)}
+                        onKeyDown={handleKeyDown}
                     />
                     <p>
                         Admin: hudson@gmail.com User: diego@gmail.com
@@ -47,6 +54,7 @@ export function SignIn() {
                         type="password"
                         size="40"
                         onChange={e => setPassword(e.target.value)}
+                        onKeyDown={handleKeyDown}
                     />
                     <p>
                         Admin: 1234567h

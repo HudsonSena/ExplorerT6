@@ -67,6 +67,10 @@ export const Content = styled.main`
       font-size: 2.4rem;
     }
 
+    a {
+      font-weight: 500;
+    }
+
     .tagsline {
       display: flex;
       flex-wrap: wrap;

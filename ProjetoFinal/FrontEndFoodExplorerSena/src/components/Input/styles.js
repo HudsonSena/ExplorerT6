@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-export const Container =  styled.div`
-    width: 50rem;
+export const Container = styled.div`
+    width: auto;
 
     border: none;
     background-color: ${({ theme }) => theme.colors.bgIpt01};

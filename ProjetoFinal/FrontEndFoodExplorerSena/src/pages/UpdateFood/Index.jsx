@@ -28,17 +28,21 @@ export function UpdateFood() {
 
   useEffect(() => {
     async function fetchNote() {
-      const response = await api.get(`/foods/${params.id}`);
-      setData(response.data);
+      try {
+        const response = await api.get(`/foods/${params.id}`);
+        setData(response.data);
 
-      setTitle(response.data.title);
-      setCategory(response.data.category);
-      setTags(response.data.tags.map(tag => tag.name));
-      setCost(response.data.cost);
-      setDescription(response.data.description);
+        setTitle(response.data.title);
+        setCategory(response.data.category);
+        setTags(response.data.tags.map(tag => tag.name));
+        setCost(response.data.cost);
+        setDescription(response.data.description);
 
-      if (response.data.foodimage) {
-        setFoodImage(`${api.defaults.baseURL}/files/${response.data.foodimage}`);
+        if (response.data.foodimage) {
+          setFoodImage(`${api.defaults.baseURL}/files/${response.data.foodimage}`);
+        }
+      } catch (error) {
+        console.error("Erro ao buscar os dados do prato:", error);
       }
     }
 
@@ -68,51 +72,58 @@ export function UpdateFood() {
 
   async function handleUpdateFood() {
     try {
-      if (!foodImageFile && !foodImage) {
-        return alert("Você deixou sem imagem!");
-      }
-
       if (!title.trim()) {
         return alert("Você deixou o título em Branco!");
       }
 
-      if (!category.trim()) {
+      if (!category) {
         return alert("Você não escolheu a categoria!");
       }
 
-      if (newTag.trim()) {
+      if (newTag) {
         return alert("Você deixou um ingrediente em branco ou não adicionou!");
       }
 
-      if (!cost.trim()) {
+      if (!cost) {
         return alert("Você não colocou o valor do prato!");
       }
 
-      const fileUploadForm = new FormData();
-      if (foodImageFile) {
-        fileUploadForm.append("foodimage", foodImageFile);
-      }
-      fileUploadForm.append("title", title);
-      fileUploadForm.append("category", category);
-      fileUploadForm.append("description", description);
-      tags.forEach((tag) => fileUploadForm.append("tags[]", tag));
-      fileUploadForm.append("cost", cost);
-
-      // Logging data for debugging
-      console.log("FormData values:");
-      for (let pair of fileUploadForm.entries()) {
-        console.log(`${pair[0]}: ${pair[1]}`);
+      if (!description.trim()) {
+        return alert("Você deixou a descrição em Branco!");
       }
 
-      await api.put(`/foods/${params.id}`, fileUploadForm);
+      const foodData = {
+        title,
+        category,
+        description,
+        tags,
+        cost,
+      };
 
-      alert("Prato atualizado com sucesso!");
-      navigate(-1);
-    } catch (error) {
-      console.error("Erro ao atualizar prato:", error);
-      alert(
-        "Erro ao atualizar prato. Verifique os detalhes e tente novamente."
-      );
+      const response = await api.put(`/foods/${params.id}`, foodData);
+
+      if (response.status === 200) {
+        alert("Prato atualizado com sucesso!");
+
+        if (foodImageFile) {
+          const imageUploadForm = new FormData();
+          imageUploadForm.append("foodimage", foodImageFile);
+
+          const imageResponse = await api.post(`/foods/${params.id}/upload`, imageUploadForm);
+
+          if (imageResponse.status === 200) {
+            alert("Imagem atualizada com sucesso!");
+          } else {
+            throw new Error(`Erro no upload da imagem: ${imageResponse.statusText}`);
+          }
+        }
+
+        navigate(-1);
+      } else {
+        throw new Error(`Erro na atualização: ${response.statusText}`);
+      }
+    } catch {
+      alert("Erro ao atualizar prato. Verifique os detalhes e tente novamente.");
     }
   }
 
@@ -120,8 +131,13 @@ export function UpdateFood() {
     const confirm = window.confirm("Deseja realmente deletar este prato?");
 
     if (confirm) {
-      await api.delete(`/foods/${params.id}`);
-      navigate(-1);
+      try {
+        await api.delete(`/foods/${params.id}`);
+        navigate(-1);
+      } catch (error) {
+        console.error("Erro ao deletar prato:", error);
+        alert("Erro ao deletar prato. Tente novamente.");
+      }
     }
   }
 

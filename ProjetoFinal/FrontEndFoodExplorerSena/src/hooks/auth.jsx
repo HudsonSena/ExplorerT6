@@ -28,11 +28,17 @@ function AuthProvider({ children }) {
   }
 
   async function signOut() {
-    localStorage.removeItem("@foodexplorersena:token");
-    localStorage.removeItem("@foodexplorersena:user");
-    localStorage.removeItem("@foodexplorersena:admin");
+    const confirm = window.confirm("Deseja realmente sair?");
 
-    setData({});
+    if (confirm) {
+
+      localStorage.removeItem("@foodexplorersena:token");
+      localStorage.removeItem("@foodexplorersena:user");
+      localStorage.removeItem("@foodexplorersena:admin");
+
+      setData({});
+    }
+
   }
 
   async function updateFood({ food, foodImageFile }) {

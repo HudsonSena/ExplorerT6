@@ -16,7 +16,7 @@ export function CardFood({ data, ...rest }) {
     return value < 10 ? `0${value}` : value;
   };
 
-  let [count, setCount] = useState(0);
+  let [count, setCount] = useState(1);
   const [isFavorite, setIsFavorite] = useState(false);
 
   if (count < 0) {
