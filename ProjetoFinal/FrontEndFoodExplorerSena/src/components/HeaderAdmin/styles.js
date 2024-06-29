@@ -5,7 +5,7 @@ export const Container = styled.header`
 
     input {
         width: 100vw;
-    }
+    };
 
     .menuclassic {
         width: 100%;

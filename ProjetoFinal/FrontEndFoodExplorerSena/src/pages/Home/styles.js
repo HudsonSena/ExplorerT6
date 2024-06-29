@@ -100,6 +100,13 @@ export const Content = styled.main`
         width: 96vw;
         padding: 2.4rem;
 
+        .wiperId {
+
+            .swiper-button-prev, .swiper-button-next {
+                box-shadow: none;
+            }
+        }
+
         .intro {
             height: 12rem;
             margin-top: 4.4rem;

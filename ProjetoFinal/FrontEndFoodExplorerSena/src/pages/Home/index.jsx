@@ -59,8 +59,8 @@ export function Home() {
             {foods
               .filter((food) => food.category === "Refeições")
               .map((food) => (
-                <SwiperSlide>
-                  <CardFood key={String(food.id)} data={food} />
+                <SwiperSlide >
+                  <CardFood key={food.id} data={food} />
                 </SwiperSlide>
               ))}
           </Swiper>

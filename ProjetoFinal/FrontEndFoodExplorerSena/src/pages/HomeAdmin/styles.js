@@ -112,7 +112,14 @@ export const Content = styled.main`
     
     @media (max-width: 920px) {
         width: 96vw;
-        padding: 2.4rem;        
+        padding: 2.4rem;
+        
+        .wiperId {
+
+            .swiper-button-prev, .swiper-button-next {
+                box-shadow: none;
+            }
+        }
 
         .intro {
             height: 12rem;
