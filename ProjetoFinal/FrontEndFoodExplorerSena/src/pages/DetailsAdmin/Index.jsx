@@ -25,7 +25,7 @@ export function DetailsAdmin() {
     <Container>
       <HeaderAdmin />
       <Content>
-        <Link to={-1}>
+        <Link to="/">
           <IoIosArrowBack />
           voltar
         </Link>

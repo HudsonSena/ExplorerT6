@@ -1,6 +1,7 @@
 import { styled } from 'styled-components';
 
 export const Container = styled.header`
+    z-index: 2;
     grid-area: header;
 
     input {
@@ -21,8 +22,6 @@ export const Container = styled.header`
         padding: 1rem 12.3rem;
         
         position: fixed;
-
-        z-index: 2;
 
         .newplateSignOut {
             display: flex;
@@ -117,6 +116,14 @@ export const Container = styled.header`
         gap: .8rem;
         align-items: center;
         justify-content: center;
+
+        h1 {
+            cursor: pointer;
+        }
+
+        h1:hover {
+                scale: 1.05;
+        }
 
         span {
             color: ${({ theme }) => theme.colors.txtCostAdm};
