@@ -53,7 +53,7 @@ export const Form = styled.form`
     justify-content: center;
     align-items: center;
 
-    gap: 3.2rem;
+    gap: 2.4rem;
 
     font-family: 'Poppins';
 

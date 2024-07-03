@@ -133,7 +133,7 @@ export function UpdateFood() {
     if (confirm) {
       try {
         await api.delete(`/foods/${params.id}`);
-        navigate(-1);
+        navigate("/");
       } catch (error) {
         console.error("Erro ao deletar prato:", error);
         alert("Erro ao deletar prato. Tente novamente.");

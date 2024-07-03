@@ -1,4 +1,4 @@
-import styled from  'styled-components';
+import styled from 'styled-components';
 
 export const Container = styled.div`
     width: 100%;
@@ -48,7 +48,7 @@ export const Form = styled.form`
     justify-content: center;
     align-items: center;
 
-    gap: 32px;
+    gap: 2.4rem;
 
     font-family: 'Poppins';
 

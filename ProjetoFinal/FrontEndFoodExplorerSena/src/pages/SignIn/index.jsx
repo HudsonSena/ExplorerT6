@@ -36,29 +36,29 @@ export function SignIn() {
                     <label htmlFor="inputMail">Email</label>
                     <Input
                         id="inputMail"
-                        placeholder="Exemplo: exemplo@exemplo.com.br"
+                        placeholder="Email"
                         type="email"
                         size="40"
                         onChange={e => setEmail(e.target.value)}
                         onKeyDown={handleKeyDown}
                     />
                     <p>
-                        Admin: hudson@gmail.com User: diego@gmail.com
+                        *Adm: hudson@gmail.com <br /> *Comum User: sena@gmail.com
                     </p>
                 </div>
                 <div>
                     <label htmlFor="inputPassword">Senha</label>
                     <Input
                         id="inputPassword"
-                        placeholder="No mínimo 6 caracteres"
+                        placeholder="Senha"
                         type="password"
                         size="40"
                         onChange={e => setPassword(e.target.value)}
                         onKeyDown={handleKeyDown}
                     />
                     <p>
-                        Admin: 1234567h
-                        User: 1234567d
+                        *Adm: 12345h <br />
+                        *Comum User: 12345s
                     </p>
                 </div>
 
