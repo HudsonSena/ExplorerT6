@@ -18,7 +18,7 @@ export function CardFoodAdmin({ data, ...rest }) {
       />
       <img src={imgURL} className="imgFood" />
       <ButtonText
-        value={data.title}
+        value={`${data.title} >`}
         className="btnDetails"
         to={`/detailsadmin/${data.id}`}
       />

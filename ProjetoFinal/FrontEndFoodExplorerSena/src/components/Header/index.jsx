@@ -11,6 +11,10 @@ import { useAuth } from "../../hooks/auth";
 export function Header({ onChange }) {
   const { signOut } = useAuth();
 
+  function clickHome() {
+    reload();
+  }
+
   function clickMenu() {
     svgmenu.style.display = "none";
     foodexplorer.style.display = "none";
@@ -44,7 +48,7 @@ export function Header({ onChange }) {
             />
           </svg>
           <div>
-            <h1>food explorer</h1>
+            <h1> <Link to={"/"} onClick={clickHome}>food explorer</Link>  </h1>
           </div>
         </div>
 
@@ -89,7 +93,7 @@ export function Header({ onChange }) {
                 fill="#065E7C"
               />
             </svg>
-            <h1>food explorer</h1>
+            <h1> <Link to={"/"} onClick={clickHome}>food explorer</Link>  </h1>
           </div>
 
           <div className="pedidosResponsive" id="pedidosResponsive">

@@ -16,9 +16,25 @@ export function HomeAdmin() {
 
   useEffect(() => {
     async function fetchFoods() {
-      const response = await api.get(`/foods?title=${search}`);
-      setFoods(response.data);
+      const [titleResponse, tagsResponse] = await Promise.all([
+        api.get(`/foods?title=${search}`),
+        api.get(`/foods?tags=${search}`)
+      ]);
+
+      const combinedFoods = [
+        ...titleResponse.data,
+        ...tagsResponse.data
+      ];
+
+      // Remove duplicates
+      const uniqueFoods = Array.from(new Set(combinedFoods.map(food => food.id)))
+        .map(id => {
+          return combinedFoods.find(food => food.id === id);
+        });
+
+      setFoods(uniqueFoods);
     }
+
     fetchFoods();
   }, [search]);
 
